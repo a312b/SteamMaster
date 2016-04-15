@@ -28,12 +28,12 @@ namespace SteamSharp
             return steamIds.Select(steamId => steamStore.GetSteamStoreGameById(steamId)).ToList();
         }
 
-        public Dictionary<int, SteamStoreGame> DictionaryByIds(string[] steamIds)
-        {
-            var steamStore = new SteamStore();
+        //public Dictionary<int, SteamStoreGame> DictionaryByIds(string[] steamIds)
+        //{
+        //    var steamStore = new SteamStore();
 
-            return steamIds.Select(steamId => steamStore.GetSteamStoreGameById(steamId)).ToDictionary(game => game.data.steam_appid);
-        }
+        //    return steamIds.Select(steamId => steamStore.GetSteamStoreGameById(steamId)).ToDictionary(game => game.data.steam_appid);
+        //}
         //Get a user from the Steam web api 
         public List<SteamUser.Player> SteamUserListByIds(string steamKey, string[] steamUserIds)
         {

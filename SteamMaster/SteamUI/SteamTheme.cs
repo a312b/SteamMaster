@@ -8,8 +8,8 @@ using System.Text;
 using System.Threading;
 using System.Timers;
 using System.Windows.Forms;
+using DummyClassSolution.Properties;
 using SteamSharp.steamStore.models;
-using SteamUI.Properties;
 
 //requires SteamSharp
 
@@ -77,7 +77,6 @@ namespace SteamUI
             List<SteamStoreGame> formGameList = _steamSharpTest.GameListByIds(idArray);
             if (formGameList != null)
             {
-                Size = new Size(Size.Width, 621);
                 ClearGameListBox();
                 foreach (SteamStoreGame game in formGameList)
                 {
@@ -91,7 +90,7 @@ namespace SteamUI
 
         //Takes the current game and the roundCount (iteration#) ands sets the appropriate data 
         //in the specified array of labels and richtextboxes
-        private void LoadGameInfo(SteamStoreGame game, int roundCount)
+        public void LoadGameInfo(SteamStoreGame game, int roundCount)
         {
             StringBuilder SB = new StringBuilder();
             Label[] tagLabels =
@@ -153,7 +152,7 @@ namespace SteamUI
         }
 
         //Clears the viwed game list box, to make sure its clean for a new recommendation computation
-        private void ClearGameListBox()
+        public void ClearGameListBox()
         {
             PictureBox[] pictureBoxes =
             {
@@ -182,7 +181,7 @@ namespace SteamUI
         }
 
         //Loads the appropriate image for the corresponding app ID.
-        private void LoadHeaderImages(int appId, int pb)
+        public void LoadHeaderImages(int appId, int pb)
         {
             PictureBox[] pictureBoxes =
             {
@@ -263,8 +262,15 @@ namespace SteamUI
             Process.Start("http://store.steampowered.com/app/" + currentAppId);
         }
 
+        public delegate void RecommendDelegate(string steamID); //Add SteamID
+
+        public event RecommendDelegate RecommendButtomClick;
+
         private void btnRecommend_Click(object sender, EventArgs e)
         {
+            RecommendButtomClick(steamIdTextBox.Text);
+
+
             ElapsedTime = 0;
             System.Timers.Timer aTimer = new System.Timers.Timer();
             aTimer.Elapsed += new ElapsedEventHandler(timer1_Tick);

@@ -2237,7 +2237,7 @@
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label titleLabel;
-        private System.Windows.Forms.TextBox steamIdTextBox;
+        public System.Windows.Forms.TextBox steamIdTextBox;
         private System.Windows.Forms.Button btnStart;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
         private System.Windows.Forms.Button btnSteamStore;

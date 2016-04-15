@@ -4,6 +4,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 VisualStudioVersion = 14.0.24720.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SteamUI", "SteamUI\SteamUI.csproj", "{77C469A8-1C13-487D-8547-54C5D9F35E6C}"
+	ProjectSection(ProjectDependencies) = postProject
+		{36DF0E1A-EA75-4B5B-B2C1-FB2C8838D0D6} = {36DF0E1A-EA75-4B5B-B2C1-FB2C8838D0D6}
+	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SteamSharp", "SteamSharp\SteamSharp.csproj", "{36DF0E1A-EA75-4B5B-B2C1-FB2C8838D0D6}"
 EndProject
