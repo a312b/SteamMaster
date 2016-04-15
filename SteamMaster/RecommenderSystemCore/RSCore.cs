@@ -47,5 +47,14 @@ namespace RecommenderSystemCore
             return game.data.tags;
         }
 
+
+        public List<SteamStoreGame> SortedRecommendationList()
+        {
+            throw new NotImplementedException();
+        }
+
+
+
+
     }
 }
