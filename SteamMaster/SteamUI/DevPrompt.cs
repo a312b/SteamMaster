@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Runtime.InteropServices;
 using System.Windows.Forms;
-using SteamUI.Properties;
+using DummyClassSolution.Properties;
 using static SteamUI.SteamTheme;
 
 namespace SteamUI

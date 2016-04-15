@@ -133,14 +133,15 @@ namespace SteamUI
                 devLabels[roundCount].Text = SB.ToString().Remove(SB.Length - 2, 1);
                 descriptionBoxes[roundCount].Text = game.data.detailed_description; //detailed
                 releaseLabels[roundCount].Text = game.data.release_date.date;
-                try //error handeling while price can return null
-                {
-                    game.data.price_overview.final.ToString();
-                    priceLabels[roundCount].Text = game.data.price_overview.final + " €";
-                }
-                catch (Exception)
-                {
-                }
+                    if (game.data.price_overview == null)
+                    {
+                        priceLabels[roundCount].Text = "Free";
+                    }
+                    else
+                    {
+                        game.data.price_overview.final.ToString();
+                        priceLabels[roundCount].Text = game.data.price_overview.final + " €";
+                    }
                 priceLabels[roundCount].Visible = true;
                 SB.Clear();
                 foreach (SteamStoreGame.Tag tag in game.data.tags)
@@ -268,28 +269,30 @@ namespace SteamUI
 
         private void btnRecommend_Click(object sender, EventArgs e)
         {
-            RecommendButtomClick(steamIdTextBox.Text);
+            if (string.IsNullOrWhiteSpace(steamIdTextBox.Text))
+            {
+                MessageBox.Show("Please enter a SteamID");
+            }
+            else
+            {
+                ElapsedTime = 0;
+                System.Timers.Timer aTimer = new System.Timers.Timer();
+                aTimer.Elapsed += new ElapsedEventHandler(timer1_Tick);
+                aTimer.Interval = 1000;
+                //aTimer.Enabled = true;
+                aTimer.Start();
 
+                Cursor.Current = Cursors.WaitCursor;
 
-            ElapsedTime = 0;
-            System.Timers.Timer aTimer = new System.Timers.Timer();
-            aTimer.Elapsed += new ElapsedEventHandler(timer1_Tick);
-            aTimer.Interval = 1000;
-            //aTimer.Enabled = true;
-            aTimer.Start();
+                RecommendButtomClick(steamIdTextBox.Text);
 
-            Cursor.Current = Cursors.WaitCursor;
-            GenerateGameList();
-            Cursor.Current = Cursors.Default;
+                Cursor.Current = Cursors.Default;
 
-            timeElapsedLabel.Text = "Time elapsed: " + ElapsedTime + " sec";
-            aTimer.Dispose();
+                timeElapsedLabel.Text = "Time elapsed: " + ElapsedTime + " sec";
+                aTimer.Dispose();
+            }
         }
 
-        private void AllDone()
-        {
-            timeElapsedLabel.Text = ElapsedTime.ToString();
-        }
 
         //Event: Clicking on the specified object calls the TLP converter and 
         private void object_Click(object sender, EventArgs e)

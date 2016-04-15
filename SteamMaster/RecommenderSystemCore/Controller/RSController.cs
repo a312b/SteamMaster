@@ -23,6 +23,7 @@ namespace RecommenderSystemCore.Controller
 
         private void RecommendGameList(string steamID) // fix senere
         {
+            SteamSharp.SteamSharp _steamSharpTest = new SteamSharp.SteamSharp();
             int roundCount = 0;
             string steamId = UI.steamIdTextBox.Text.ToLower(); //not used
             string[] idArray =

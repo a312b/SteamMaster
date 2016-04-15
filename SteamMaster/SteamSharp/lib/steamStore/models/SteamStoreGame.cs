@@ -6,6 +6,7 @@ namespace SteamSharp.steamStore.models
     public class SteamStoreGame
     {
 
+
         public class PcRequirements
         {
             public string minimum { get; set; }
@@ -23,6 +24,8 @@ namespace SteamSharp.steamStore.models
             public string minimum { get; set; }
             public string recommended { get; set; }
         }
+
+
 
         public class PriceOverview
         {
