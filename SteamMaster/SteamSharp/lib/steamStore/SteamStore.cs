@@ -1,5 +1,7 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Linq;
+using System.Net;
 using HtmlAgilityPack;
 using RestSharp;
 using SteamSharp.restsharp;
@@ -28,8 +30,11 @@ namespace SteamSharp.steamStore
 
         public List<SteamStoreGame.Tag> GetTags(string gameId)
         {
-            var src = new HtmlWeb();
-            HtmlDocument document = src.Load("http://store.steampowered.com/app/" + gameId);
+            WebClient wc = new CookieAwareWebClient();
+            string getpage = wc.DownloadString("http://store.steampowered.com/app/371660/");
+
+            var document = new HtmlDocument();
+            document.LoadHtml(getpage);
             //A lot happens here
             //First an array of htmlnodes are created
             //The array is filled using the ToArray() function
@@ -44,12 +49,33 @@ namespace SteamSharp.steamStore
                 string tagDescription = item.InnerHtml;
                 tag.description = tagDescription.Trim();
                 gameTagsList.Add(tag);
-                
+
             }
 
             return gameTagsList;
         }
 
+        //Adds the necessary cookie to avoid ageCheck with the use of WebRequest
+        public class CookieAwareWebClient : WebClient
+        {
+            private readonly CookieContainer cookieContainer = new CookieContainer();
+            private readonly Cookie ageCookie = new Cookie("birthtime", "441759601");
+
+            protected override WebRequest GetWebRequest(Uri address)
+            {
+                ageCookie.Domain = "store.steampowered.com";
+                ageCookie.Expires = DateTime.MaxValue;
+                ageCookie.Path = "/";
+                cookieContainer.Add(ageCookie);
+                WebRequest request = base.GetWebRequest(address);
+                HttpWebRequest webRequest = request as HttpWebRequest;
+                if (webRequest != null)
+                {
+                    webRequest.CookieContainer = cookieContainer;
+                }
+                return request;
+            }
+        }
         public SteamStoreGame GetSteamStoreGameById(string gameId)
         {
 
