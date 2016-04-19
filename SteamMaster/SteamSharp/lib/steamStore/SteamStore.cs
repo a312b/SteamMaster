@@ -31,7 +31,7 @@ namespace SteamSharp.steamStore
         public List<SteamStoreGame.Tag> GetTags(string gameId)
         {
             WebClient wc = new CookieAwareWebClient();
-            string getpage = wc.DownloadString("http://store.steampowered.com/app/371660/");
+            string getpage = wc.DownloadString("http://store.steampowered.com/app/" + gameId);
 
             var document = new HtmlDocument();
             document.LoadHtml(getpage);
