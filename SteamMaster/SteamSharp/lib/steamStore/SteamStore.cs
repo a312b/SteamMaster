@@ -30,6 +30,7 @@ namespace SteamSharp.steamStore
 
         public List<SteamStoreGame.Tag> GetTags(string gameId)
         {
+            //Implements a CookieAwareWebClient that downloads the html with a cookie to string so it's able to be passed to HtmlAgilityPack's LoadHtml
             WebClient wc = new CookieAwareWebClient();
             string getpage = wc.DownloadString("http://store.steampowered.com/app/" + gameId);
 
@@ -55,7 +56,7 @@ namespace SteamSharp.steamStore
             return gameTagsList;
         }
 
-        //Adds the necessary cookie to avoid ageCheck with the use of WebRequest
+        //Overrides the GetWebRequest in WebRequest and adds the necessary cookie to avoid ageCheck
         public class CookieAwareWebClient : WebClient
         {
             private readonly CookieContainer cookieContainer = new CookieContainer();

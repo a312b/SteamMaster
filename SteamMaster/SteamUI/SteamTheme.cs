@@ -284,7 +284,8 @@ namespace SteamUI
 
                 Cursor.Current = Cursors.WaitCursor;
 
-                RecommendButtomClick(steamIdTextBox.Text);
+                RecommendButtomClick(steamIdTextBox.Text); //If you crash, vvv
+                //GenerateGameList();                       //For testing purposes GenerateGameList can be called instead
 
                 Cursor.Current = Cursors.Default;
 
