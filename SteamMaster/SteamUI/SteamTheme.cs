@@ -10,6 +10,7 @@ using System.Timers;
 using System.Windows.Forms;
 using DummyClassSolution.Properties;
 using SteamSharp.steamStore.models;
+using SteamSharp.steamUser.models;
 
 //requires SteamSharp
 
@@ -59,7 +60,7 @@ namespace SteamUI
             steamIdTextBox.Text = "";
         }
 
-        //Where the game list is made by calling SteamSharp.GameListByIds on a set app ID 
+        //Where the game list is made by calling SteamSharp.GameListByIds on a set app ID array (that app ID array is now achieved by getting it from a player)
         //and iterates over all the games to then call functions LoadHeaderImages and LoadGameInfo displaying the game date.
         //A "roundCount" is kept to determine how far we've gotten.
         private void GenerateGameList()
@@ -68,19 +69,32 @@ namespace SteamUI
             string steamId = steamIdTextBox.Text.ToLower(); //not used
             string[] idArray =
             {
-                "340", "280", "570", "80", "240", "400", "343780", "500", "374320", "10500", "252950", "300", "7940",
+                "22380", "280", "570", "80", "240", "400", "343780", "500", "374320", "10500", "252950", "300", "7940",
                 "10180"
-            };
-            //150, 22380, 377160 == nullreference på htmlagility 
-            //340, 570 == nullreference på prisen (der findes f.eks. "price_in_cents_with_discount" i stedet)
+            }; //is overwritten by the below functions, but acts as the default recommendation if no correct game can be suggested
 
+            if (DevKey == "null")
+            {
+                MessageBox.Show(
+                    "You need to enter a Steam Developer API key in the settings box by clicking the cog located in the top right corner.", "Please enter Steam API Key", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+
+            List<UserGameTime.Game> formGameListFromId = _steamSharpTest.SteamUserGameTimeListById(DevKey, steamId);
+            int count = 0;
+            foreach (UserGameTime.Game game in formGameListFromId)
+            {
+                if (count < 12 && game.playtime_forever > 4)
+                {
+                    idArray[count] = game.appid.ToString();
+                    count++;
+                }
+            }
             List<SteamStoreGame> formGameList = _steamSharpTest.GameListByIds(idArray);
             if (formGameList != null)
             {
                 ClearGameListBox();
                 foreach (SteamStoreGame game in formGameList)
                 {
-                    //ThreadPool.QueueUserWorkItem(LoadHeaderImages(game.data.steam_appid, roundCount));
                     LoadHeaderImages(game.data.steam_appid, roundCount);
                     LoadGameInfo(game, roundCount);
                     roundCount++;
@@ -139,8 +153,8 @@ namespace SteamUI
                     }
                     else
                     {
-                        game.data.price_overview.final.ToString();
-                        priceLabels[roundCount].Text = game.data.price_overview.final + " €";
+                        decimal test = (decimal)game.data.price_overview.final/100;
+                        priceLabels[roundCount].Text = test + " €";
                     }
                 priceLabels[roundCount].Visible = true;
                 SB.Clear();
@@ -271,7 +285,7 @@ namespace SteamUI
         {
             if (string.IsNullOrWhiteSpace(steamIdTextBox.Text))
             {
-                MessageBox.Show("Please enter a SteamID");
+                MessageBox.Show("Please enter a Steam64 ID");
             }
             else
             {
@@ -280,16 +294,17 @@ namespace SteamUI
                 aTimer.Elapsed += new ElapsedEventHandler(timer1_Tick);
                 aTimer.Interval = 1000;
                 //aTimer.Enabled = true;
+                loadingPictureBox.Visible = true;
                 aTimer.Start();
 
                 Cursor.Current = Cursors.WaitCursor;
-
-                RecommendButtomClick(steamIdTextBox.Text); //If you crash, vvv
-                //GenerateGameList();                       //For testing purposes GenerateGameList can be called instead
+                //RecommendButtomClick(steamIdTextBox.Text); //If you crash, vvv
+                GenerateGameList();                       //For testing purposes GenerateGameList can be called instead
 
                 Cursor.Current = Cursors.Default;
-
                 timeElapsedLabel.Text = "Time elapsed: " + ElapsedTime + " sec";
+                loadingPictureBox.Visible = false;
+                aTimer.Stop();
                 aTimer.Dispose();
             }
         }
@@ -335,6 +350,11 @@ namespace SteamUI
         private void timer1_Tick(object sender, EventArgs e)
         {
             ElapsedTime++;
+        }
+
+        private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            Process.Start("http://steamid.xyz");
         }
     }
 }

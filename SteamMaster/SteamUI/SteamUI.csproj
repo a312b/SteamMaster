@@ -62,7 +62,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="DummyClass.cs" />
     <Compile Include="DevPrompt.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -74,12 +73,6 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <Compile Include="TagFilterHolder.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="TagFilterHolder.Designer.cs">
-      <DependentUpon>TagFilterHolder.cs</DependentUpon>
-    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SteamTheme.cs">
@@ -90,9 +83,6 @@
     </Compile>
     <EmbeddedResource Include="DevPrompt.resx">
       <DependentUpon>DevPrompt.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="TagFilterHolder.resx">
-      <DependentUpon>TagFilterHolder.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

@@ -161,6 +161,8 @@
             this.button13 = new System.Windows.Forms.Button();
             this.devToolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.linkLabel1 = new System.Windows.Forms.LinkLabel();
+            this.loadingPictureBox = new System.Windows.Forms.PictureBox();
             this.panel1.SuspendLayout();
             this.flowLayoutPanel1.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
@@ -187,6 +189,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox11)).BeginInit();
             this.tableLayoutPanel12.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox12)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.loadingPictureBox)).BeginInit();
             this.SuspendLayout();
             // 
             // button1
@@ -228,6 +231,8 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(27)))), ((int)(((byte)(27)))));
+            this.panel1.Controls.Add(this.loadingPictureBox);
+            this.panel1.Controls.Add(this.linkLabel1);
             this.panel1.Controls.Add(this.btnDevKey);
             this.panel1.Controls.Add(this.steamIdTextBox);
             this.panel1.Controls.Add(this.btnStart);
@@ -265,7 +270,7 @@
             this.steamIdTextBox.Name = "steamIdTextBox";
             this.steamIdTextBox.Size = new System.Drawing.Size(181, 23);
             this.steamIdTextBox.TabIndex = 1;
-            this.steamIdTextBox.Text = "Username";
+            this.steamIdTextBox.Text = "76561198019106142";
             this.steamIdTextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.steamIdTextBox.Click += new System.EventHandler(this.steamIdTextBox_Click);
             // 
@@ -304,9 +309,9 @@
             this.titleLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(175)))), ((int)(((byte)(173)))), ((int)(((byte)(173)))));
             this.titleLabel.Location = new System.Drawing.Point(12, 6);
             this.titleLabel.Name = "titleLabel";
-            this.titleLabel.Size = new System.Drawing.Size(67, 20);
+            this.titleLabel.Size = new System.Drawing.Size(167, 20);
             this.titleLabel.TabIndex = 4;
-            this.titleLabel.Text = "Steamly";
+            this.titleLabel.Text = "Steam Recommender";
             this.titleLabel.MouseDown += new System.Windows.Forms.MouseEventHandler(this.Form_MouseDown);
             // 
             // flowLayoutPanel1
@@ -2167,6 +2172,30 @@
             this.timer1.Interval = 1000;
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
+            // linkLabel1
+            // 
+            this.linkLabel1.AutoSize = true;
+            this.linkLabel1.LinkColor = System.Drawing.Color.Gray;
+            this.linkLabel1.Location = new System.Drawing.Point(443, 22);
+            this.linkLabel1.Name = "linkLabel1";
+            this.linkLabel1.Size = new System.Drawing.Size(83, 13);
+            this.linkLabel1.TabIndex = 3;
+            this.linkLabel1.TabStop = true;
+            this.linkLabel1.Text = "Get Steam64 ID";
+            this.devToolTip1.SetToolTip(this.linkLabel1, "Directs you to steamid.xyz to get a Steam64 ID");
+            this.linkLabel1.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel1_LinkClicked);
+            // 
+            // loadingPictureBox
+            // 
+            this.loadingPictureBox.Image = global::DummyClassSolution.Properties.Resources.loader;
+            this.loadingPictureBox.Location = new System.Drawing.Point(283, 77);
+            this.loadingPictureBox.Name = "loadingPictureBox";
+            this.loadingPictureBox.Size = new System.Drawing.Size(135, 94);
+            this.loadingPictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.loadingPictureBox.TabIndex = 4;
+            this.loadingPictureBox.TabStop = false;
+            this.loadingPictureBox.Visible = false;
+            // 
             // SteamTheme
             // 
             this.AcceptButton = this.btnStart;
@@ -2186,7 +2215,7 @@
             this.Name = "SteamTheme";
             this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Steamly";
+            this.Text = "Steam Recommender";
             this.MouseDown += new System.Windows.Forms.MouseEventHandler(this.Form_MouseDown);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
@@ -2227,6 +2256,7 @@
             this.tableLayoutPanel12.ResumeLayout(false);
             this.tableLayoutPanel12.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox12)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.loadingPictureBox)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -2364,6 +2394,8 @@
         private System.Windows.Forms.ToolTip devToolTip1;
         private System.Windows.Forms.Label timeElapsedLabel;
         private System.Windows.Forms.Timer timer1;
+        private System.Windows.Forms.LinkLabel linkLabel1;
+        private System.Windows.Forms.PictureBox loadingPictureBox;
     }
 }
 

@@ -109,6 +109,7 @@
             this.devKeyTextBox.TabIndex = 2;
             this.devKeyTextBox.Text = "Developer API Key";
             this.devKeyTextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.devKeyTextBox.Click += new System.EventHandler(this.devKeyTextBox_Click);
             // 
             // label1
             // 

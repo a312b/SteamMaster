@@ -51,5 +51,13 @@ namespace SteamUI
                 SendMessage(Handle, WmNclbuttondown, Htcaption, 0);
             }
         }
+
+        private void devKeyTextBox_Click(object sender, EventArgs e)
+        {
+            if (devKeyTextBox.Text == "null")
+            {
+                devKeyTextBox.Text = "";
+            }
+        }
     }
 }
