@@ -1,16 +1,16 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Diagnostics;
 using System.Drawing;
 using System.Linq;
 using System.Runtime.InteropServices;
 using System.Text;
-using System.Threading;
-using System.Timers;
 using System.Windows.Forms;
 using DummyClassSolution.Properties;
 using SteamSharp.steamStore.models;
 using SteamSharp.steamUser.models;
+using Timer = System.Timers.Timer;
 
 //requires SteamSharp
 
@@ -18,11 +18,12 @@ namespace SteamUI
 {
     public partial class SteamTheme : Form
     {
+        public delegate void RecommendDelegate(string steamID); //Add SteamID
         public const int WmNclbuttondown = 0xA1;
         public const int Htcaption = 0x2;
         public static string DevKey = Settings.Default.DevKey;
+        public static int ElapsedTime;
         private readonly SteamSharp.SteamSharp _steamSharpTest = new SteamSharp.SteamSharp();
-        public static int ElapsedTime = 0;
 
         public SteamTheme()
         {
@@ -71,12 +72,15 @@ namespace SteamUI
             {
                 "22380", "280", "570", "80", "240", "400", "343780", "500", "374320", "10500", "252950", "300", "7940",
                 "10180"
-            }; //is overwritten by the below functions, but acts as the default recommendation if no correct game can be suggested
+            };
+                //is overwritten by the below functions, but acts as the default recommendation if no correct game can be suggested
 
             if (DevKey == "null")
             {
                 MessageBox.Show(
-                    "You need to enter a Steam Developer API key in the settings box by clicking the cog located in the top right corner.", "Please enter Steam API Key", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    "You need to enter a Steam Developer API key in the settings box by clicking the cog located in the top right corner.",
+                    "Please enter Steam API Key", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
             }
 
             List<UserGameTime.Game> formGameListFromId = _steamSharpTest.SteamUserGameTimeListById(DevKey, steamId);
@@ -144,25 +148,27 @@ namespace SteamUI
                 gameLabels[roundCount].Visible = true;
                 foreach (string developer in game.data.developers)
                     SB.Append(developer + ", ");
-                devLabels[roundCount].Text = SB.ToString().Remove(SB.Length - 2, 1);
+                devLabels[roundCount].Text = SB.ToString().Remove(SB.Length - 2, 1) + " |  " +
+                                             game.data.release_date.date;
+                    //testing showing releasedate with delevoper instead, because maybe it looks nicer who knows
                 descriptionBoxes[roundCount].Text = game.data.detailed_description; //detailed
-                releaseLabels[roundCount].Text = game.data.release_date.date;
-                    if (game.data.price_overview == null)
-                    {
-                        priceLabels[roundCount].Text = "Free";
-                    }
-                    else
-                    {
-                        decimal test = (decimal)game.data.price_overview.final/100;
-                        priceLabels[roundCount].Text = test + " €";
-                    }
+                releaseLabels[roundCount].Text = "";
+                    //right now testing out showing the releasedate together with the developer, visible two lines above, but no decision has been made yet
+                if (game.data.price_overview == null)
+                {
+                    priceLabels[roundCount].Text = "Free";
+                }
+                else
+                {
+                    decimal test = (decimal) game.data.price_overview.final/100;
+                    priceLabels[roundCount].Text = test + " €";
+                }
                 priceLabels[roundCount].Visible = true;
                 SB.Clear();
                 foreach (SteamStoreGame.Tag tag in game.data.tags)
                     SB.Append(tag.description + ", ");
                 tagLabels[roundCount].Text = SB.ToString().Remove(SB.Length - 2, 1);
                 tagLabels[roundCount].Visible = true;
-                flowLayoutPanel1.Visible = true;
             }
         }
 
@@ -273,11 +279,8 @@ namespace SteamUI
                     }
                 }
             }
-
             Process.Start("http://store.steampowered.com/app/" + currentAppId);
         }
-
-        public delegate void RecommendDelegate(string steamID); //Add SteamID
 
         public event RecommendDelegate RecommendButtomClick;
 
@@ -290,22 +293,34 @@ namespace SteamUI
             else
             {
                 ElapsedTime = 0;
-                System.Timers.Timer aTimer = new System.Timers.Timer();
-                aTimer.Elapsed += new ElapsedEventHandler(timer1_Tick);
-                aTimer.Interval = 1000;
-                //aTimer.Enabled = true;
+                Timer elaspedTimer = new Timer();
+                elaspedTimer.Elapsed += timer1_Tick;
+                elaspedTimer.Interval = 1000;
+                elaspedTimer.Start();
+
                 loadingPictureBox.Visible = true;
-                aTimer.Start();
-
                 Cursor.Current = Cursors.WaitCursor;
-                //RecommendButtomClick(steamIdTextBox.Text); //If you crash, vvv
-                GenerateGameList();                       //For testing purposes GenerateGameList can be called instead
+                BackgroundWorker bgWorker = new BackgroundWorker();
+                bgWorker.DoWork += (s, a) =>
+                {
+                    GenerateGameList();
+                        //For testing purposes GenerateGameList can be called instead of the RecommendButtomClick delegate
+                    bgWorker.ReportProgress(100);
+                };
+                bgWorker.RunWorkerCompleted += (s, a) =>
+                {
+                    // Here you will be informed if the job is done.
+                    // Use this event to unlock your gui
+                    flowLayoutPanel1.Visible = true;
+                    Cursor.Current = Cursors.Default;
+                    timeElapsedLabel.Text = "Time elapsed: " + ElapsedTime + " sec";
+                    elaspedTimer.Stop();
+                    elaspedTimer.Dispose();
+                    loadingPictureBox.Visible = false;
+                };
+                bgWorker.RunWorkerAsync();
 
-                Cursor.Current = Cursors.Default;
-                timeElapsedLabel.Text = "Time elapsed: " + ElapsedTime + " sec";
-                loadingPictureBox.Visible = false;
-                aTimer.Stop();
-                aTimer.Dispose();
+                //RecommendButtomClick(steamIdTextBox.Text); //If you crash use GenerateGameList()
             }
         }
 

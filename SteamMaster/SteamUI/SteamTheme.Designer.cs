@@ -33,6 +33,8 @@
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.loadingPictureBox = new System.Windows.Forms.PictureBox();
+            this.linkLabel1 = new System.Windows.Forms.LinkLabel();
             this.btnDevKey = new System.Windows.Forms.Button();
             this.steamIdTextBox = new System.Windows.Forms.TextBox();
             this.btnStart = new System.Windows.Forms.Button();
@@ -161,9 +163,8 @@
             this.button13 = new System.Windows.Forms.Button();
             this.devToolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.timer1 = new System.Windows.Forms.Timer(this.components);
-            this.linkLabel1 = new System.Windows.Forms.LinkLabel();
-            this.loadingPictureBox = new System.Windows.Forms.PictureBox();
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.loadingPictureBox)).BeginInit();
             this.flowLayoutPanel1.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -189,7 +190,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox11)).BeginInit();
             this.tableLayoutPanel12.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox12)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.loadingPictureBox)).BeginInit();
             this.SuspendLayout();
             // 
             // button1
@@ -241,6 +241,30 @@
             this.panel1.Size = new System.Drawing.Size(672, 580);
             this.panel1.TabIndex = 3;
             // 
+            // loadingPictureBox
+            // 
+            this.loadingPictureBox.Image = global::DummyClassSolution.Properties.Resources.loader;
+            this.loadingPictureBox.Location = new System.Drawing.Point(196, 93);
+            this.loadingPictureBox.Name = "loadingPictureBox";
+            this.loadingPictureBox.Size = new System.Drawing.Size(297, 211);
+            this.loadingPictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.loadingPictureBox.TabIndex = 4;
+            this.loadingPictureBox.TabStop = false;
+            this.loadingPictureBox.Visible = false;
+            // 
+            // linkLabel1
+            // 
+            this.linkLabel1.AutoSize = true;
+            this.linkLabel1.LinkColor = System.Drawing.Color.Gray;
+            this.linkLabel1.Location = new System.Drawing.Point(443, 22);
+            this.linkLabel1.Name = "linkLabel1";
+            this.linkLabel1.Size = new System.Drawing.Size(83, 13);
+            this.linkLabel1.TabIndex = 3;
+            this.linkLabel1.TabStop = true;
+            this.linkLabel1.Text = "Get Steam64 ID";
+            this.devToolTip1.SetToolTip(this.linkLabel1, "Directs you to steamid.xyz to get a Steam64 ID");
+            this.linkLabel1.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel1_LinkClicked);
+            // 
             // btnDevKey
             // 
             this.btnDevKey.BackColor = System.Drawing.Color.Transparent;
@@ -282,9 +306,9 @@
             this.btnStart.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnStart.Font = new System.Drawing.Font("Microsoft YaHei UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnStart.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(207)))), ((int)(((byte)(207)))), ((int)(((byte)(207)))));
-            this.btnStart.Location = new System.Drawing.Point(291, 46);
+            this.btnStart.Location = new System.Drawing.Point(282, 46);
             this.btnStart.Name = "btnStart";
-            this.btnStart.Size = new System.Drawing.Size(121, 25);
+            this.btnStart.Size = new System.Drawing.Size(136, 34);
             this.btnStart.TabIndex = 0;
             this.btnStart.TabStop = false;
             this.btnStart.Text = "Recommend";
@@ -372,16 +396,16 @@
             this.tableLayoutPanel1.Controls.Add(this.pictureBox1, 0, 0);
             this.tableLayoutPanel1.Controls.Add(this.label2, 1, 0);
             this.tableLayoutPanel1.Controls.Add(this.richTextBox1, 1, 1);
-            this.tableLayoutPanel1.Controls.Add(this.label5, 2, 2);
             this.tableLayoutPanel1.Controls.Add(this.label4, 1, 2);
-            this.tableLayoutPanel1.Controls.Add(this.label1, 1, 3);
             this.tableLayoutPanel1.Controls.Add(this.label3, 2, 0);
             this.tableLayoutPanel1.Controls.Add(this.btnSteamStore, 0, 3);
+            this.tableLayoutPanel1.Controls.Add(this.label1, 1, 3);
+            this.tableLayoutPanel1.Controls.Add(this.label5, 2, 2);
             this.tableLayoutPanel1.Location = new System.Drawing.Point(3, 11);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 4;
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 16F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 52F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 21.15385F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 46.15385F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 16F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 16F));
             this.tableLayoutPanel1.Size = new System.Drawing.Size(646, 104);
@@ -409,7 +433,7 @@
             this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(207)))), ((int)(((byte)(207)))), ((int)(((byte)(207)))));
             this.label2.Location = new System.Drawing.Point(196, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(51, 16);
+            this.label2.Size = new System.Drawing.Size(51, 20);
             this.label2.TabIndex = 2;
             this.label2.Text = "Game";
             this.label2.Click += new System.EventHandler(this.object_Click);
@@ -421,11 +445,11 @@
             this.richTextBox1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.richTextBox1.Font = new System.Drawing.Font("Microsoft YaHei UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.richTextBox1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(144)))), ((int)(((byte)(153)))), ((int)(((byte)(161)))));
-            this.richTextBox1.Location = new System.Drawing.Point(196, 19);
+            this.richTextBox1.Location = new System.Drawing.Point(196, 25);
             this.richTextBox1.Name = "richTextBox1";
             this.richTextBox1.ReadOnly = true;
             this.richTextBox1.ScrollBars = System.Windows.Forms.RichTextBoxScrollBars.None;
-            this.richTextBox1.Size = new System.Drawing.Size(381, 48);
+            this.richTextBox1.Size = new System.Drawing.Size(381, 42);
             this.richTextBox1.TabIndex = 4;
             this.richTextBox1.TabStop = false;
             this.richTextBox1.Text = "Description \nof \nthe \ngame";
@@ -478,7 +502,7 @@
             this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(144)))), ((int)(((byte)(153)))), ((int)(((byte)(161)))));
             this.label3.Location = new System.Drawing.Point(583, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(57, 16);
+            this.label3.Size = new System.Drawing.Size(57, 19);
             this.label3.TabIndex = 3;
             this.label3.Text = "Price/€";
             this.label3.Visible = false;
@@ -524,16 +548,16 @@
             this.tableLayoutPanel2.Controls.Add(this.pictureBox2, 0, 0);
             this.tableLayoutPanel2.Controls.Add(this.label6, 1, 0);
             this.tableLayoutPanel2.Controls.Add(this.richTextBox2, 1, 1);
-            this.tableLayoutPanel2.Controls.Add(this.label7, 2, 2);
             this.tableLayoutPanel2.Controls.Add(this.label8, 1, 2);
             this.tableLayoutPanel2.Controls.Add(this.label9, 1, 3);
             this.tableLayoutPanel2.Controls.Add(this.label10, 2, 0);
             this.tableLayoutPanel2.Controls.Add(this.button3, 0, 3);
+            this.tableLayoutPanel2.Controls.Add(this.label7, 2, 2);
             this.tableLayoutPanel2.Location = new System.Drawing.Point(3, 129);
             this.tableLayoutPanel2.Name = "tableLayoutPanel2";
             this.tableLayoutPanel2.RowCount = 4;
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 16F));
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 52F));
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20.19231F));
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 47.11538F));
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 16F));
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 16F));
             this.tableLayoutPanel2.Size = new System.Drawing.Size(646, 104);
@@ -560,7 +584,7 @@
             this.label6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(207)))), ((int)(((byte)(207)))), ((int)(((byte)(207)))));
             this.label6.Location = new System.Drawing.Point(196, 0);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(51, 16);
+            this.label6.Size = new System.Drawing.Size(51, 20);
             this.label6.TabIndex = 2;
             this.label6.Text = "Game";
             this.label6.Click += new System.EventHandler(this.object_Click);
@@ -572,11 +596,11 @@
             this.richTextBox2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.richTextBox2.Font = new System.Drawing.Font("Microsoft YaHei UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.richTextBox2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(144)))), ((int)(((byte)(153)))), ((int)(((byte)(161)))));
-            this.richTextBox2.Location = new System.Drawing.Point(196, 19);
+            this.richTextBox2.Location = new System.Drawing.Point(196, 24);
             this.richTextBox2.Name = "richTextBox2";
             this.richTextBox2.ReadOnly = true;
             this.richTextBox2.ScrollBars = System.Windows.Forms.RichTextBoxScrollBars.None;
-            this.richTextBox2.Size = new System.Drawing.Size(381, 48);
+            this.richTextBox2.Size = new System.Drawing.Size(381, 43);
             this.richTextBox2.TabIndex = 4;
             this.richTextBox2.TabStop = false;
             this.richTextBox2.Text = "Description \nof \nthe \ngame";
@@ -629,7 +653,7 @@
             this.label10.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(144)))), ((int)(((byte)(153)))), ((int)(((byte)(161)))));
             this.label10.Location = new System.Drawing.Point(583, 0);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(57, 16);
+            this.label10.Size = new System.Drawing.Size(57, 19);
             this.label10.TabIndex = 3;
             this.label10.Text = "Price/€";
             this.label10.Visible = false;
@@ -683,8 +707,8 @@
             this.tableLayoutPanel3.Location = new System.Drawing.Point(3, 247);
             this.tableLayoutPanel3.Name = "tableLayoutPanel3";
             this.tableLayoutPanel3.RowCount = 4;
-            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 16F));
-            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 52F));
+            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 21.15385F));
+            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 46.15385F));
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 16F));
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 16F));
             this.tableLayoutPanel3.Size = new System.Drawing.Size(646, 104);
@@ -711,7 +735,7 @@
             this.label11.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(207)))), ((int)(((byte)(207)))), ((int)(((byte)(207)))));
             this.label11.Location = new System.Drawing.Point(196, 0);
             this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(51, 16);
+            this.label11.Size = new System.Drawing.Size(51, 20);
             this.label11.TabIndex = 2;
             this.label11.Text = "Game";
             this.label11.Click += new System.EventHandler(this.object_Click);
@@ -723,11 +747,11 @@
             this.richTextBox3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.richTextBox3.Font = new System.Drawing.Font("Microsoft YaHei UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.richTextBox3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(144)))), ((int)(((byte)(153)))), ((int)(((byte)(161)))));
-            this.richTextBox3.Location = new System.Drawing.Point(196, 19);
+            this.richTextBox3.Location = new System.Drawing.Point(196, 25);
             this.richTextBox3.Name = "richTextBox3";
             this.richTextBox3.ReadOnly = true;
             this.richTextBox3.ScrollBars = System.Windows.Forms.RichTextBoxScrollBars.None;
-            this.richTextBox3.Size = new System.Drawing.Size(381, 48);
+            this.richTextBox3.Size = new System.Drawing.Size(381, 42);
             this.richTextBox3.TabIndex = 4;
             this.richTextBox3.TabStop = false;
             this.richTextBox3.Text = "Description \nof \nthe \ngame";
@@ -780,7 +804,7 @@
             this.label15.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(144)))), ((int)(((byte)(153)))), ((int)(((byte)(161)))));
             this.label15.Location = new System.Drawing.Point(583, 0);
             this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(57, 16);
+            this.label15.Size = new System.Drawing.Size(57, 19);
             this.label15.TabIndex = 3;
             this.label15.Text = "Price/€";
             this.label15.Visible = false;
@@ -834,8 +858,8 @@
             this.tableLayoutPanel4.Location = new System.Drawing.Point(3, 365);
             this.tableLayoutPanel4.Name = "tableLayoutPanel4";
             this.tableLayoutPanel4.RowCount = 4;
-            this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 16F));
-            this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 52F));
+            this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 21.15385F));
+            this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 46.15385F));
             this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 16F));
             this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 16F));
             this.tableLayoutPanel4.Size = new System.Drawing.Size(646, 104);
@@ -862,7 +886,7 @@
             this.label16.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(207)))), ((int)(((byte)(207)))), ((int)(((byte)(207)))));
             this.label16.Location = new System.Drawing.Point(196, 0);
             this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(51, 16);
+            this.label16.Size = new System.Drawing.Size(51, 20);
             this.label16.TabIndex = 2;
             this.label16.Text = "Game";
             this.label16.Click += new System.EventHandler(this.object_Click);
@@ -874,11 +898,11 @@
             this.richTextBox4.Dock = System.Windows.Forms.DockStyle.Fill;
             this.richTextBox4.Font = new System.Drawing.Font("Microsoft YaHei UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.richTextBox4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(144)))), ((int)(((byte)(153)))), ((int)(((byte)(161)))));
-            this.richTextBox4.Location = new System.Drawing.Point(196, 19);
+            this.richTextBox4.Location = new System.Drawing.Point(196, 25);
             this.richTextBox4.Name = "richTextBox4";
             this.richTextBox4.ReadOnly = true;
             this.richTextBox4.ScrollBars = System.Windows.Forms.RichTextBoxScrollBars.None;
-            this.richTextBox4.Size = new System.Drawing.Size(381, 48);
+            this.richTextBox4.Size = new System.Drawing.Size(381, 42);
             this.richTextBox4.TabIndex = 4;
             this.richTextBox4.TabStop = false;
             this.richTextBox4.Text = "Description \nof \nthe \ngame";
@@ -931,7 +955,7 @@
             this.label20.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(144)))), ((int)(((byte)(153)))), ((int)(((byte)(161)))));
             this.label20.Location = new System.Drawing.Point(583, 0);
             this.label20.Name = "label20";
-            this.label20.Size = new System.Drawing.Size(57, 16);
+            this.label20.Size = new System.Drawing.Size(57, 19);
             this.label20.TabIndex = 3;
             this.label20.Text = "Price/€";
             this.label20.Visible = false;
@@ -985,8 +1009,8 @@
             this.tableLayoutPanel5.Location = new System.Drawing.Point(3, 483);
             this.tableLayoutPanel5.Name = "tableLayoutPanel5";
             this.tableLayoutPanel5.RowCount = 4;
-            this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 16F));
-            this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 52F));
+            this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 21.15385F));
+            this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 46.15385F));
             this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 16F));
             this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 16F));
             this.tableLayoutPanel5.Size = new System.Drawing.Size(646, 104);
@@ -1013,7 +1037,7 @@
             this.label21.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(207)))), ((int)(((byte)(207)))), ((int)(((byte)(207)))));
             this.label21.Location = new System.Drawing.Point(196, 0);
             this.label21.Name = "label21";
-            this.label21.Size = new System.Drawing.Size(51, 16);
+            this.label21.Size = new System.Drawing.Size(51, 20);
             this.label21.TabIndex = 2;
             this.label21.Text = "Game";
             this.label21.Click += new System.EventHandler(this.object_Click);
@@ -1025,11 +1049,11 @@
             this.richTextBox5.Dock = System.Windows.Forms.DockStyle.Fill;
             this.richTextBox5.Font = new System.Drawing.Font("Microsoft YaHei UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.richTextBox5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(144)))), ((int)(((byte)(153)))), ((int)(((byte)(161)))));
-            this.richTextBox5.Location = new System.Drawing.Point(196, 19);
+            this.richTextBox5.Location = new System.Drawing.Point(196, 25);
             this.richTextBox5.Name = "richTextBox5";
             this.richTextBox5.ReadOnly = true;
             this.richTextBox5.ScrollBars = System.Windows.Forms.RichTextBoxScrollBars.None;
-            this.richTextBox5.Size = new System.Drawing.Size(381, 48);
+            this.richTextBox5.Size = new System.Drawing.Size(381, 42);
             this.richTextBox5.TabIndex = 4;
             this.richTextBox5.TabStop = false;
             this.richTextBox5.Text = "Description \nof \nthe \ngame";
@@ -1082,7 +1106,7 @@
             this.label25.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(144)))), ((int)(((byte)(153)))), ((int)(((byte)(161)))));
             this.label25.Location = new System.Drawing.Point(583, 0);
             this.label25.Name = "label25";
-            this.label25.Size = new System.Drawing.Size(57, 16);
+            this.label25.Size = new System.Drawing.Size(57, 19);
             this.label25.TabIndex = 3;
             this.label25.Text = "Price/€";
             this.label25.Visible = false;
@@ -1136,8 +1160,8 @@
             this.tableLayoutPanel6.Location = new System.Drawing.Point(3, 601);
             this.tableLayoutPanel6.Name = "tableLayoutPanel6";
             this.tableLayoutPanel6.RowCount = 4;
-            this.tableLayoutPanel6.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 16F));
-            this.tableLayoutPanel6.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 52F));
+            this.tableLayoutPanel6.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 21.15385F));
+            this.tableLayoutPanel6.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 46.15385F));
             this.tableLayoutPanel6.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 16F));
             this.tableLayoutPanel6.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 16F));
             this.tableLayoutPanel6.Size = new System.Drawing.Size(646, 104);
@@ -1164,7 +1188,7 @@
             this.label26.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(207)))), ((int)(((byte)(207)))), ((int)(((byte)(207)))));
             this.label26.Location = new System.Drawing.Point(196, 0);
             this.label26.Name = "label26";
-            this.label26.Size = new System.Drawing.Size(51, 16);
+            this.label26.Size = new System.Drawing.Size(51, 20);
             this.label26.TabIndex = 2;
             this.label26.Text = "Game";
             this.label26.Click += new System.EventHandler(this.object_Click);
@@ -1176,11 +1200,11 @@
             this.richTextBox6.Dock = System.Windows.Forms.DockStyle.Fill;
             this.richTextBox6.Font = new System.Drawing.Font("Microsoft YaHei UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.richTextBox6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(144)))), ((int)(((byte)(153)))), ((int)(((byte)(161)))));
-            this.richTextBox6.Location = new System.Drawing.Point(196, 19);
+            this.richTextBox6.Location = new System.Drawing.Point(196, 25);
             this.richTextBox6.Name = "richTextBox6";
             this.richTextBox6.ReadOnly = true;
             this.richTextBox6.ScrollBars = System.Windows.Forms.RichTextBoxScrollBars.None;
-            this.richTextBox6.Size = new System.Drawing.Size(381, 48);
+            this.richTextBox6.Size = new System.Drawing.Size(381, 42);
             this.richTextBox6.TabIndex = 4;
             this.richTextBox6.TabStop = false;
             this.richTextBox6.Text = "Description \nof \nthe \ngame";
@@ -1233,7 +1257,7 @@
             this.label30.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(144)))), ((int)(((byte)(153)))), ((int)(((byte)(161)))));
             this.label30.Location = new System.Drawing.Point(583, 0);
             this.label30.Name = "label30";
-            this.label30.Size = new System.Drawing.Size(57, 16);
+            this.label30.Size = new System.Drawing.Size(57, 19);
             this.label30.TabIndex = 3;
             this.label30.Text = "Price/€";
             this.label30.Visible = false;
@@ -1287,8 +1311,8 @@
             this.tableLayoutPanel7.Location = new System.Drawing.Point(3, 719);
             this.tableLayoutPanel7.Name = "tableLayoutPanel7";
             this.tableLayoutPanel7.RowCount = 4;
-            this.tableLayoutPanel7.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 16F));
-            this.tableLayoutPanel7.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 52F));
+            this.tableLayoutPanel7.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20.19231F));
+            this.tableLayoutPanel7.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 47.11538F));
             this.tableLayoutPanel7.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 16F));
             this.tableLayoutPanel7.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 16F));
             this.tableLayoutPanel7.Size = new System.Drawing.Size(646, 104);
@@ -1315,7 +1339,7 @@
             this.label31.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(207)))), ((int)(((byte)(207)))), ((int)(((byte)(207)))));
             this.label31.Location = new System.Drawing.Point(196, 0);
             this.label31.Name = "label31";
-            this.label31.Size = new System.Drawing.Size(51, 16);
+            this.label31.Size = new System.Drawing.Size(51, 20);
             this.label31.TabIndex = 2;
             this.label31.Text = "Game";
             this.label31.Click += new System.EventHandler(this.object_Click);
@@ -1327,11 +1351,11 @@
             this.richTextBox7.Dock = System.Windows.Forms.DockStyle.Fill;
             this.richTextBox7.Font = new System.Drawing.Font("Microsoft YaHei UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.richTextBox7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(144)))), ((int)(((byte)(153)))), ((int)(((byte)(161)))));
-            this.richTextBox7.Location = new System.Drawing.Point(196, 19);
+            this.richTextBox7.Location = new System.Drawing.Point(196, 24);
             this.richTextBox7.Name = "richTextBox7";
             this.richTextBox7.ReadOnly = true;
             this.richTextBox7.ScrollBars = System.Windows.Forms.RichTextBoxScrollBars.None;
-            this.richTextBox7.Size = new System.Drawing.Size(381, 48);
+            this.richTextBox7.Size = new System.Drawing.Size(381, 43);
             this.richTextBox7.TabIndex = 4;
             this.richTextBox7.TabStop = false;
             this.richTextBox7.Text = "Description \nof \nthe \ngame";
@@ -1384,7 +1408,7 @@
             this.label35.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(144)))), ((int)(((byte)(153)))), ((int)(((byte)(161)))));
             this.label35.Location = new System.Drawing.Point(583, 0);
             this.label35.Name = "label35";
-            this.label35.Size = new System.Drawing.Size(57, 16);
+            this.label35.Size = new System.Drawing.Size(57, 19);
             this.label35.TabIndex = 3;
             this.label35.Text = "Price/€";
             this.label35.Visible = false;
@@ -1438,8 +1462,8 @@
             this.tableLayoutPanel8.Location = new System.Drawing.Point(3, 837);
             this.tableLayoutPanel8.Name = "tableLayoutPanel8";
             this.tableLayoutPanel8.RowCount = 4;
-            this.tableLayoutPanel8.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 16F));
-            this.tableLayoutPanel8.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 52F));
+            this.tableLayoutPanel8.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 21.15385F));
+            this.tableLayoutPanel8.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 46.15385F));
             this.tableLayoutPanel8.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 16F));
             this.tableLayoutPanel8.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 16F));
             this.tableLayoutPanel8.Size = new System.Drawing.Size(646, 104);
@@ -1466,7 +1490,7 @@
             this.label36.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(207)))), ((int)(((byte)(207)))), ((int)(((byte)(207)))));
             this.label36.Location = new System.Drawing.Point(196, 0);
             this.label36.Name = "label36";
-            this.label36.Size = new System.Drawing.Size(51, 16);
+            this.label36.Size = new System.Drawing.Size(51, 20);
             this.label36.TabIndex = 2;
             this.label36.Text = "Game";
             this.label36.Click += new System.EventHandler(this.object_Click);
@@ -1478,11 +1502,11 @@
             this.richTextBox8.Dock = System.Windows.Forms.DockStyle.Fill;
             this.richTextBox8.Font = new System.Drawing.Font("Microsoft YaHei UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.richTextBox8.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(144)))), ((int)(((byte)(153)))), ((int)(((byte)(161)))));
-            this.richTextBox8.Location = new System.Drawing.Point(196, 19);
+            this.richTextBox8.Location = new System.Drawing.Point(196, 25);
             this.richTextBox8.Name = "richTextBox8";
             this.richTextBox8.ReadOnly = true;
             this.richTextBox8.ScrollBars = System.Windows.Forms.RichTextBoxScrollBars.None;
-            this.richTextBox8.Size = new System.Drawing.Size(381, 48);
+            this.richTextBox8.Size = new System.Drawing.Size(381, 42);
             this.richTextBox8.TabIndex = 4;
             this.richTextBox8.TabStop = false;
             this.richTextBox8.Text = "Description \nof \nthe \ngame";
@@ -1535,7 +1559,7 @@
             this.label40.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(144)))), ((int)(((byte)(153)))), ((int)(((byte)(161)))));
             this.label40.Location = new System.Drawing.Point(583, 0);
             this.label40.Name = "label40";
-            this.label40.Size = new System.Drawing.Size(57, 16);
+            this.label40.Size = new System.Drawing.Size(57, 19);
             this.label40.TabIndex = 3;
             this.label40.Text = "Price/€";
             this.label40.Visible = false;
@@ -1589,8 +1613,8 @@
             this.tableLayoutPanel9.Location = new System.Drawing.Point(3, 955);
             this.tableLayoutPanel9.Name = "tableLayoutPanel9";
             this.tableLayoutPanel9.RowCount = 4;
-            this.tableLayoutPanel9.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 16F));
-            this.tableLayoutPanel9.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 52F));
+            this.tableLayoutPanel9.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20.19231F));
+            this.tableLayoutPanel9.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 47.11538F));
             this.tableLayoutPanel9.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 16F));
             this.tableLayoutPanel9.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 16F));
             this.tableLayoutPanel9.Size = new System.Drawing.Size(646, 104);
@@ -1617,7 +1641,7 @@
             this.label41.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(207)))), ((int)(((byte)(207)))), ((int)(((byte)(207)))));
             this.label41.Location = new System.Drawing.Point(196, 0);
             this.label41.Name = "label41";
-            this.label41.Size = new System.Drawing.Size(51, 16);
+            this.label41.Size = new System.Drawing.Size(51, 20);
             this.label41.TabIndex = 2;
             this.label41.Text = "Game";
             this.label41.Click += new System.EventHandler(this.object_Click);
@@ -1629,11 +1653,11 @@
             this.richTextBox9.Dock = System.Windows.Forms.DockStyle.Fill;
             this.richTextBox9.Font = new System.Drawing.Font("Microsoft YaHei UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.richTextBox9.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(144)))), ((int)(((byte)(153)))), ((int)(((byte)(161)))));
-            this.richTextBox9.Location = new System.Drawing.Point(196, 19);
+            this.richTextBox9.Location = new System.Drawing.Point(196, 24);
             this.richTextBox9.Name = "richTextBox9";
             this.richTextBox9.ReadOnly = true;
             this.richTextBox9.ScrollBars = System.Windows.Forms.RichTextBoxScrollBars.None;
-            this.richTextBox9.Size = new System.Drawing.Size(381, 48);
+            this.richTextBox9.Size = new System.Drawing.Size(381, 43);
             this.richTextBox9.TabIndex = 4;
             this.richTextBox9.TabStop = false;
             this.richTextBox9.Text = "Description \nof \nthe \ngame";
@@ -1686,7 +1710,7 @@
             this.label45.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(144)))), ((int)(((byte)(153)))), ((int)(((byte)(161)))));
             this.label45.Location = new System.Drawing.Point(583, 0);
             this.label45.Name = "label45";
-            this.label45.Size = new System.Drawing.Size(57, 16);
+            this.label45.Size = new System.Drawing.Size(57, 19);
             this.label45.TabIndex = 3;
             this.label45.Text = "Price/€";
             this.label45.Visible = false;
@@ -1740,8 +1764,8 @@
             this.tableLayoutPanel10.Location = new System.Drawing.Point(3, 1073);
             this.tableLayoutPanel10.Name = "tableLayoutPanel10";
             this.tableLayoutPanel10.RowCount = 4;
-            this.tableLayoutPanel10.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 16F));
-            this.tableLayoutPanel10.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 52F));
+            this.tableLayoutPanel10.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20.19231F));
+            this.tableLayoutPanel10.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 47.11538F));
             this.tableLayoutPanel10.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 16F));
             this.tableLayoutPanel10.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 16F));
             this.tableLayoutPanel10.Size = new System.Drawing.Size(646, 104);
@@ -1768,7 +1792,7 @@
             this.label46.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(207)))), ((int)(((byte)(207)))), ((int)(((byte)(207)))));
             this.label46.Location = new System.Drawing.Point(196, 0);
             this.label46.Name = "label46";
-            this.label46.Size = new System.Drawing.Size(51, 16);
+            this.label46.Size = new System.Drawing.Size(51, 20);
             this.label46.TabIndex = 2;
             this.label46.Text = "Game";
             this.label46.Click += new System.EventHandler(this.object_Click);
@@ -1780,11 +1804,11 @@
             this.richTextBox10.Dock = System.Windows.Forms.DockStyle.Fill;
             this.richTextBox10.Font = new System.Drawing.Font("Microsoft YaHei UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.richTextBox10.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(144)))), ((int)(((byte)(153)))), ((int)(((byte)(161)))));
-            this.richTextBox10.Location = new System.Drawing.Point(196, 19);
+            this.richTextBox10.Location = new System.Drawing.Point(196, 24);
             this.richTextBox10.Name = "richTextBox10";
             this.richTextBox10.ReadOnly = true;
             this.richTextBox10.ScrollBars = System.Windows.Forms.RichTextBoxScrollBars.None;
-            this.richTextBox10.Size = new System.Drawing.Size(381, 48);
+            this.richTextBox10.Size = new System.Drawing.Size(381, 43);
             this.richTextBox10.TabIndex = 4;
             this.richTextBox10.TabStop = false;
             this.richTextBox10.Text = "Description \nof \nthe \ngame";
@@ -1837,7 +1861,7 @@
             this.label50.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(144)))), ((int)(((byte)(153)))), ((int)(((byte)(161)))));
             this.label50.Location = new System.Drawing.Point(583, 0);
             this.label50.Name = "label50";
-            this.label50.Size = new System.Drawing.Size(57, 16);
+            this.label50.Size = new System.Drawing.Size(57, 19);
             this.label50.TabIndex = 3;
             this.label50.Text = "Price/€";
             this.label50.Visible = false;
@@ -1891,8 +1915,8 @@
             this.tableLayoutPanel11.Location = new System.Drawing.Point(3, 1191);
             this.tableLayoutPanel11.Name = "tableLayoutPanel11";
             this.tableLayoutPanel11.RowCount = 4;
-            this.tableLayoutPanel11.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 16F));
-            this.tableLayoutPanel11.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 52F));
+            this.tableLayoutPanel11.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 21.15385F));
+            this.tableLayoutPanel11.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 46.15385F));
             this.tableLayoutPanel11.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 16F));
             this.tableLayoutPanel11.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 16F));
             this.tableLayoutPanel11.Size = new System.Drawing.Size(646, 104);
@@ -1919,7 +1943,7 @@
             this.label51.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(207)))), ((int)(((byte)(207)))), ((int)(((byte)(207)))));
             this.label51.Location = new System.Drawing.Point(196, 0);
             this.label51.Name = "label51";
-            this.label51.Size = new System.Drawing.Size(51, 16);
+            this.label51.Size = new System.Drawing.Size(51, 20);
             this.label51.TabIndex = 2;
             this.label51.Text = "Game";
             this.label51.Click += new System.EventHandler(this.object_Click);
@@ -1931,11 +1955,11 @@
             this.richTextBox11.Dock = System.Windows.Forms.DockStyle.Fill;
             this.richTextBox11.Font = new System.Drawing.Font("Microsoft YaHei UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.richTextBox11.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(144)))), ((int)(((byte)(153)))), ((int)(((byte)(161)))));
-            this.richTextBox11.Location = new System.Drawing.Point(196, 19);
+            this.richTextBox11.Location = new System.Drawing.Point(196, 25);
             this.richTextBox11.Name = "richTextBox11";
             this.richTextBox11.ReadOnly = true;
             this.richTextBox11.ScrollBars = System.Windows.Forms.RichTextBoxScrollBars.None;
-            this.richTextBox11.Size = new System.Drawing.Size(381, 48);
+            this.richTextBox11.Size = new System.Drawing.Size(381, 42);
             this.richTextBox11.TabIndex = 4;
             this.richTextBox11.TabStop = false;
             this.richTextBox11.Text = "Description \nof \nthe \ngame";
@@ -1988,7 +2012,7 @@
             this.label55.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(144)))), ((int)(((byte)(153)))), ((int)(((byte)(161)))));
             this.label55.Location = new System.Drawing.Point(583, 0);
             this.label55.Name = "label55";
-            this.label55.Size = new System.Drawing.Size(57, 16);
+            this.label55.Size = new System.Drawing.Size(57, 19);
             this.label55.TabIndex = 3;
             this.label55.Text = "Price/€";
             this.label55.Visible = false;
@@ -2042,8 +2066,8 @@
             this.tableLayoutPanel12.Location = new System.Drawing.Point(3, 1309);
             this.tableLayoutPanel12.Name = "tableLayoutPanel12";
             this.tableLayoutPanel12.RowCount = 4;
-            this.tableLayoutPanel12.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 16F));
-            this.tableLayoutPanel12.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 52F));
+            this.tableLayoutPanel12.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20.19231F));
+            this.tableLayoutPanel12.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 47.11538F));
             this.tableLayoutPanel12.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 16F));
             this.tableLayoutPanel12.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 16F));
             this.tableLayoutPanel12.Size = new System.Drawing.Size(646, 104);
@@ -2070,7 +2094,7 @@
             this.label56.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(207)))), ((int)(((byte)(207)))), ((int)(((byte)(207)))));
             this.label56.Location = new System.Drawing.Point(196, 0);
             this.label56.Name = "label56";
-            this.label56.Size = new System.Drawing.Size(51, 16);
+            this.label56.Size = new System.Drawing.Size(51, 20);
             this.label56.TabIndex = 2;
             this.label56.Text = "Game";
             this.label56.Click += new System.EventHandler(this.object_Click);
@@ -2082,11 +2106,11 @@
             this.richTextBox12.Dock = System.Windows.Forms.DockStyle.Fill;
             this.richTextBox12.Font = new System.Drawing.Font("Microsoft YaHei UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.richTextBox12.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(144)))), ((int)(((byte)(153)))), ((int)(((byte)(161)))));
-            this.richTextBox12.Location = new System.Drawing.Point(196, 19);
+            this.richTextBox12.Location = new System.Drawing.Point(196, 24);
             this.richTextBox12.Name = "richTextBox12";
             this.richTextBox12.ReadOnly = true;
             this.richTextBox12.ScrollBars = System.Windows.Forms.RichTextBoxScrollBars.None;
-            this.richTextBox12.Size = new System.Drawing.Size(381, 48);
+            this.richTextBox12.Size = new System.Drawing.Size(381, 43);
             this.richTextBox12.TabIndex = 4;
             this.richTextBox12.TabStop = false;
             this.richTextBox12.Text = "Description \nof \nthe \ngame";
@@ -2139,7 +2163,7 @@
             this.label60.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(144)))), ((int)(((byte)(153)))), ((int)(((byte)(161)))));
             this.label60.Location = new System.Drawing.Point(583, 0);
             this.label60.Name = "label60";
-            this.label60.Size = new System.Drawing.Size(57, 16);
+            this.label60.Size = new System.Drawing.Size(57, 19);
             this.label60.TabIndex = 3;
             this.label60.Text = "Price/€";
             this.label60.Visible = false;
@@ -2172,30 +2196,6 @@
             this.timer1.Interval = 1000;
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
-            // linkLabel1
-            // 
-            this.linkLabel1.AutoSize = true;
-            this.linkLabel1.LinkColor = System.Drawing.Color.Gray;
-            this.linkLabel1.Location = new System.Drawing.Point(443, 22);
-            this.linkLabel1.Name = "linkLabel1";
-            this.linkLabel1.Size = new System.Drawing.Size(83, 13);
-            this.linkLabel1.TabIndex = 3;
-            this.linkLabel1.TabStop = true;
-            this.linkLabel1.Text = "Get Steam64 ID";
-            this.devToolTip1.SetToolTip(this.linkLabel1, "Directs you to steamid.xyz to get a Steam64 ID");
-            this.linkLabel1.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel1_LinkClicked);
-            // 
-            // loadingPictureBox
-            // 
-            this.loadingPictureBox.Image = global::DummyClassSolution.Properties.Resources.loader;
-            this.loadingPictureBox.Location = new System.Drawing.Point(283, 77);
-            this.loadingPictureBox.Name = "loadingPictureBox";
-            this.loadingPictureBox.Size = new System.Drawing.Size(135, 94);
-            this.loadingPictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
-            this.loadingPictureBox.TabIndex = 4;
-            this.loadingPictureBox.TabStop = false;
-            this.loadingPictureBox.Visible = false;
-            // 
             // SteamTheme
             // 
             this.AcceptButton = this.btnStart;
@@ -2219,6 +2219,7 @@
             this.MouseDown += new System.Windows.Forms.MouseEventHandler(this.Form_MouseDown);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.loadingPictureBox)).EndInit();
             this.flowLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();
@@ -2256,7 +2257,6 @@
             this.tableLayoutPanel12.ResumeLayout(false);
             this.tableLayoutPanel12.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox12)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.loadingPictureBox)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
