@@ -305,7 +305,6 @@ namespace SteamUI
                 {
                     GenerateGameList();
                         //For testing purposes GenerateGameList can be called instead of the RecommendButtomClick delegate
-                    bgWorker.ReportProgress(100);
                 };
                 bgWorker.RunWorkerCompleted += (s, a) =>
                 {
