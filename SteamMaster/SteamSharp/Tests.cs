@@ -1,4 +1,7 @@
 ﻿using System;
+using System.Collections.Generic;
+using SteamSharp.steamStore;
+using SteamSharp.steamStore.models;
 using SteamSharp.steamUser;
 
 namespace SteamSharp
@@ -59,6 +62,12 @@ namespace SteamSharp
         {
             var spydata = _steamSharpTest.GameSteamSpyDataById("730");
             Console.Write($"Game: {spydata.name} and owners: {spydata.owners}");
+        }
+
+        public List<SteamStoreGame.Tag> GetTags(string gameId)
+        {
+            SteamStore store = new SteamStore();
+            return store.GetTags(gameId);
         }
     }
 

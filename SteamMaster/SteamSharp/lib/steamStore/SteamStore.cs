@@ -40,17 +40,24 @@ namespace SteamSharp.steamStore
             //First an array of htmlnodes are created
             //The array is filled using the ToArray() function
             //The data is scraped from the html document using the provided xpath
-            HtmlNode[] nodes = document.DocumentNode.SelectNodes("//*[@id=\"game_highlights\"]/div[1]/div/div[4]/div/div[2]//a").ToArray();
 
             var gameTagsList = new List<SteamStoreGame.Tag>();
 
-            foreach (HtmlNode item in nodes)
+            if (document.DocumentNode.SelectNodes("//*[@id=\"game_highlights\"]/div[1]/div/div[4]/div/div[2]//a") !=
+                null)
             {
-                var tag = new SteamStoreGame.Tag();
-                string tagDescription = item.InnerHtml;
-                tag.description = tagDescription.Trim();
-                gameTagsList.Add(tag);
+                HtmlNode[] nodes =
+                    document.DocumentNode.SelectNodes("//*[@id=\"game_highlights\"]/div[1]/div/div[4]/div/div[2]//a")
+                        .ToArray();
 
+                foreach (HtmlNode item in nodes)
+                {
+                    var tag = new SteamStoreGame.Tag();
+                    string tagDescription = item.InnerHtml;
+                    tag.description = tagDescription.Trim();
+                    gameTagsList.Add(tag);
+
+                }
             }
 
             return gameTagsList;

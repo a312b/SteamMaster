@@ -1,10 +1,16 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using MongoDB.Bson.IO;
 using RecommenderSystemCore.Controller;
+using SteamSharp;
+using SteamSharp.steamStore;
+using SteamSharp.steamStore.models;
 using SteamUI;
 
 namespace RecommenderSystemCore
@@ -21,5 +27,6 @@ namespace RecommenderSystemCore
 
             Application.Run(UI); //StartSearchPage()
         }
+
     }
 }
