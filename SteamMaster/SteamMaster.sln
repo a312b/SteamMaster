@@ -14,6 +14,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Database", "Database\Databa
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RecommenderSystemCore", "RecommenderSystemCore\RecommenderSystemCore.csproj", "{44977C3E-D6DF-4904-81AB-A914CDFFB914}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Filter System", "Filter System\Filter System.csproj", "{77568C8D-01C6-4158-B685-4197C6918B55}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -36,6 +38,10 @@ Global
 		{44977C3E-D6DF-4904-81AB-A914CDFFB914}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{44977C3E-D6DF-4904-81AB-A914CDFFB914}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{44977C3E-D6DF-4904-81AB-A914CDFFB914}.Release|Any CPU.Build.0 = Release|Any CPU
+		{77568C8D-01C6-4158-B685-4197C6918B55}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{77568C8D-01C6-4158-B685-4197C6918B55}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{77568C8D-01C6-4158-B685-4197C6918B55}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{77568C8D-01C6-4158-B685-4197C6918B55}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
