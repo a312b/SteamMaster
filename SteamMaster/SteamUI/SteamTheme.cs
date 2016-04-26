@@ -67,13 +67,15 @@ namespace SteamUI
         private void GenerateGameList()
         {
             int roundCount = 0;
-            string steamId = steamIdTextBox.Text.ToLower(); //not used
+            int gameCount = 0;
+            int minGameTime = 4; //in minutes
+            string steamId = steamIdTextBox.Text;
             string[] idArray =
             {
                 "22380", "280", "570", "80", "240", "400", "343780", "500", "374320", "10500", "252950", "300", "7940",
                 "10180"
-            };
-                //is overwritten by the below functions, but acts as the default recommendation if no correct game can be suggested
+            };//is overwritten by the below functions, but currently acts as the default recommendation if 
+              //no correct game can be suggested (for testing)
 
             if (DevKey == "null")
             {
@@ -84,25 +86,33 @@ namespace SteamUI
             }
 
             List<UserGameTime.Game> formGameListFromId = _steamSharpTest.SteamUserGameTimeListById(DevKey, steamId);
-            int count = 0;
             foreach (UserGameTime.Game game in formGameListFromId)
             {
-                if (count < 12 && game.playtime_forever > 4)
+                if (gameCount < idArray.Length && game.playtime_forever > minGameTime)
                 {
-                    idArray[count] = game.appid.ToString();
-                    count++;
+                    idArray[gameCount] = game.appid.ToString();
+                    gameCount++;
                 }
             }
-            List<SteamStoreGame> formGameList = _steamSharpTest.GameListByIds(idArray);
-            if (formGameList != null)
+            List<SteamStoreGame> userGameListByIds = _steamSharpTest.GameListByIds(idArray);
+            List<SteamStoreGame.Tag> totalTagList = new List<SteamStoreGame.Tag>();
+            if (userGameListByIds != null)
             {
                 ClearGameListBox();
-                foreach (SteamStoreGame game in formGameList)
+                foreach (SteamStoreGame game in userGameListByIds)
                 {
                     LoadHeaderImages(game.data.steam_appid, roundCount);
                     LoadGameInfo(game, roundCount);
                     roundCount++;
+                    totalTagList.AddRange(game.data.tags);
                 }
+            }
+
+            IOrderedEnumerable<IGrouping<string, SteamStoreGame.Tag>> tagsOrderByDescending = totalTagList.GroupBy(tag => tag.description)
+            .OrderByDescending(tags => tags.Count());
+            foreach (var tag in tagsOrderByDescending)
+            {
+                //do something with tag.Key + tag.Count();
             }
         }
 
@@ -114,32 +124,34 @@ namespace SteamUI
             Label[] tagLabels =
             {
                 label1, label9, label14, label19, label24, label29, label34, label39, label44, label49,
-                label54, label59
+                label54, label59, label64, label69, label74, label79, label84, label89
             };
             Label[] devLabels =
             {
                 label4, label8, label13, label18, label23, label28, label33, label38, label43,
-                label48, label53, label58
+                label48, label53, label58, label63, label68, label73, label78, label83, label88
             };
             Label[] releaseLabels =
             {
                 label5, label7, label12, label17, label22, label27, label32, label37, label42,
-                label47, label52, label57
+                label47, label52, label57 //not added new releaselabels becuase they aren't used right now
             };
             Label[] gameLabels =
             {
                 label2, label6, label11, label16, label21, label26, label31, label36, label41,
-                label46, label51, label56
+                label46, label51, label56, label61, label66, label71, label76, label81, label86
             };
             Label[] priceLabels =
             {
                 label3, label10, label15, label20, label25, label30, label35, label40, label45,
-                label50, label55, label60
+                label50, label55, label60, label65, label70, label75, label80, label85, label90
             };
             RichTextBox[] descriptionBoxes =
             {
                 richTextBox1, richTextBox2, richTextBox3, richTextBox4, richTextBox5,
-                richTextBox6, richTextBox7, richTextBox8, richTextBox9, richTextBox10, richTextBox11, richTextBox12
+                richTextBox6, richTextBox7, richTextBox8, richTextBox9, richTextBox10,
+                richTextBox11, richTextBox12, richTextBox13, richTextBox14, richTextBox15,
+                richTextBox16, richTextBox17, richTextBox18
             };
 
             if (roundCount < gameLabels.Length)
@@ -148,11 +160,11 @@ namespace SteamUI
                 gameLabels[roundCount].Visible = true;
                 foreach (string developer in game.data.developers)
                     SB.Append(developer + ", ");
-                devLabels[roundCount].Text = SB.ToString().Remove(SB.Length - 2, 1) + " |  " +
+                devLabels[roundCount].Text = SB.ToString().Remove(SB.Length - 2, 1) + " | " +
                                              game.data.release_date.date;
                     //testing showing releasedate with delevoper instead, because maybe it looks nicer who knows
                 descriptionBoxes[roundCount].Text = game.data.detailed_description; //detailed
-                releaseLabels[roundCount].Text = "";
+                //releaseLabels[roundCount].Text = "";
                     //right now testing out showing the releasedate together with the developer, visible two lines above, but no decision has been made yet
                 if (game.data.price_overview == null)
                 {
@@ -178,12 +190,13 @@ namespace SteamUI
             PictureBox[] pictureBoxes =
             {
                 pictureBox1, pictureBox2, pictureBox3, pictureBox4, pictureBox5, pictureBox6,
-                pictureBox7, pictureBox8, pictureBox9, pictureBox10, pictureBox11, pictureBox12
+                pictureBox7, pictureBox8, pictureBox9, pictureBox10, pictureBox11, pictureBox12,
+                pictureBox13, pictureBox14, pictureBox15, pictureBox16, pictureBox17, pictureBox18
             };
             Label[] gameLabels =
             {
                 label2, label6, label11, label16, label21, label26, label31, label36, label41,
-                label46, label51, label56
+                label46, label51, label56, label61, label66, label71, label76, label81, label86
             };
 
             foreach (PictureBox pb in pictureBoxes)
@@ -207,7 +220,8 @@ namespace SteamUI
             PictureBox[] pictureBoxes =
             {
                 pictureBox1, pictureBox2, pictureBox3, pictureBox4, pictureBox5, pictureBox6,
-                pictureBox7, pictureBox8, pictureBox9, pictureBox10, pictureBox11, pictureBox12
+                pictureBox7, pictureBox8, pictureBox9, pictureBox10, pictureBox11, pictureBox12,
+                pictureBox13, pictureBox14, pictureBox15, pictureBox16, pictureBox17, pictureBox18
             };
             try
             {
@@ -231,9 +245,8 @@ namespace SteamUI
             sender.Size = sender.Size != full ? full : regular;
             Label[] hiddenLabels =
             {
-                label4, label5, label8, label7, label13, label12, label18, label17, label23, label22, label28, label27,
-                label33, label32, label38, label37,
-                label43, label42, label48, label47, label53, label52, label58, label57
+                label4, label8, label13, label18, label23, label28,
+                label33, label38, label43, label48, label53, label58
             };
 
             foreach (RichTextBox richTextBox in sender.Controls.OfType<RichTextBox>())
@@ -303,13 +316,10 @@ namespace SteamUI
                 BackgroundWorker bgWorker = new BackgroundWorker();
                 bgWorker.DoWork += (s, a) =>
                 {
-                    GenerateGameList();
-                        //For testing purposes GenerateGameList can be called instead of the RecommendButtomClick delegate
+                    GenerateGameList(); //For testing purposes GenerateGameList can be called instead of the RecommendButtomClick delegate
                 };
                 bgWorker.RunWorkerCompleted += (s, a) =>
                 {
-                    // Here you will be informed if the job is done.
-                    // Use this event to unlock your gui
                     flowLayoutPanel1.Visible = true;
                     Cursor.Current = Cursors.Default;
                     timeElapsedLabel.Text = "Time elapsed: " + ElapsedTime + " sec";

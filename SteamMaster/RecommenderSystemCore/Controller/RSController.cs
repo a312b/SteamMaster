@@ -21,7 +21,7 @@ namespace RecommenderSystemCore.Controller
 
         public SteamTheme UI { get; set; }
 
-        private void RecommendGameList(string steamID) // fix senere
+        private void RecommendGameList(string steamID) // fix senere - mere funktion findes i funktionen GenerateGameList() under UI;
         {
             SteamSharp.SteamSharp _steamSharpTest = new SteamSharp.SteamSharp();
             int roundCount = 0;
