@@ -68,13 +68,14 @@ namespace SteamUI
         {
             int roundCount = 0;
             int gameCount = 0;
+            int minGameTime = 4; //in minutes
             string steamId = steamIdTextBox.Text;
             string[] idArray =
             {
                 "22380", "280", "570", "80", "240", "400", "343780", "500", "374320", "10500", "252950", "300", "7940",
                 "10180"
-            };
-                //is overwritten by the below functions, but acts as the default recommendation if no correct game can be suggested (for testing)
+            };//is overwritten by the below functions, but currently acts as the default recommendation if 
+              //no correct game can be suggested (for testing)
 
             if (DevKey == "null")
             {
@@ -87,7 +88,7 @@ namespace SteamUI
             List<UserGameTime.Game> formGameListFromId = _steamSharpTest.SteamUserGameTimeListById(DevKey, steamId);
             foreach (UserGameTime.Game game in formGameListFromId)
             {
-                if (gameCount < 14 && game.playtime_forever > 4)
+                if (gameCount < idArray.Length && game.playtime_forever > minGameTime)
                 {
                     idArray[gameCount] = game.appid.ToString();
                     gameCount++;
