@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Filter_System.Filter_Core.Models;
-using SteamSharp.steamStore.models;
+using SteamSharpCore.steamStore.models;
 
 namespace Filter_System.Filter_Core.Filters
 {
