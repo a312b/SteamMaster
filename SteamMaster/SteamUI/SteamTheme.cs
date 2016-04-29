@@ -26,7 +26,7 @@ namespace SteamUI
         public const int Htcaption = 0x2;
         public static string DevKey = Settings.Default.DevKey;
         public static int ElapsedTime;
-        private readonly SteamSharpCore.SteamSharp _steamSharpTest = new SteamSharpCore.SteamSharp("CA552B4A7A38C341BF5CE9F29B136A3C");
+        private readonly SteamSharpCore.SteamSharp _steamSharpTest = new SteamSharpCore.SteamSharp(DevKey);
         private readonly gameDatabase _database = new gameDatabase(); 
 
         public SteamTheme()
@@ -89,11 +89,6 @@ namespace SteamUI
                 return;
             }
 
-
-
-
-
-
             List<UserGameTime.Game> formGameListFromId = _steamSharpTest.SteamUserGameTimeListById(steamId);
             foreach (UserGameTime.Game game in formGameListFromId)
             {
@@ -104,20 +99,16 @@ namespace SteamUI
                 }
             }
 
-            List<Game> userGameListByIds = new List<Game>();
-            Database.Database db = new Database.Database();
+            List<Game> userGameListFromIds = new List<Game>();
             foreach (string appId in idArray)
             {
-                userGameListByIds.AddRange(_database.FindGameById(appId));
+                userGameListFromIds.AddRange(_database.FindGameById(appId));
             }
-
-            //_database.FindGameById(steamId);
-            List<SteamStoreGame> userGameListByIds2 = _steamSharpTest.GameListByIds(idArray); /////////////// YA KNOW?!
             //List<Tag> totalTagList = new List<SteamStoreGame.Tag>();
             //if (userGameListByIds != null)
             //{
                 ClearGameListBox();
-                foreach (Game game in userGameListByIds)
+                foreach (Game game in userGameListFromIds)
                 {
                     LoadHeaderImages(game.SteamAppId, roundCount);
                     LoadGameInfo(game, roundCount);
