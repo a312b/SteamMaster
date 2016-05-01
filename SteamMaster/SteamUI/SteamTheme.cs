@@ -10,10 +10,11 @@ using System.Windows.Forms;
 using DummyClassSolution.Properties;
 using SteamSharpCore.steamStore.models;
 using SteamSharpCore.steamUser.models;
-using Database;
-using Database.lib.converter.models;
-using gameDatabase = Database.Database;
+using DatabaseCore;
+using DatabaseCore.lib.converter.models;
+using gameDatabase = DatabaseCore.Database;
 using Timer = System.Timers.Timer;
+using static SteamSharpCore.steamStore.models.SteamStoreGame;
 
 //requires SteamSharp
 
@@ -26,7 +27,7 @@ namespace SteamUI
         public const int Htcaption = 0x2;
         public static string DevKey = Settings.Default.DevKey;
         public static int ElapsedTime;
-        private readonly SteamSharpCore.SteamSharp _steamSharpTest = new SteamSharpCore.SteamSharp(DevKey);
+        private readonly SteamSharpCore.SteamSharp _steamSharp = new SteamSharpCore.SteamSharp(DevKey);
         private readonly gameDatabase _database = new gameDatabase(); 
 
         public SteamTheme()
@@ -70,16 +71,10 @@ namespace SteamUI
         //A "roundCount" is kept to determine how far we've gotten.
         private void GenerateGameList()
         {
-            int roundCount = 0;
-            int gameCount = 0;
-            int minGameTime = 4; //in minutes
+            const int minGameTime = 4; //in minutes
+            const int maxRecommendations = 18;
             string steamId = steamIdTextBox.Text;
-            string[] idArray =
-            {
-                "22380", "280", "570", "80", "240", "400", "343780", "500", "374320", "10500", "252950", "300", "7940",
-                "10180"
-            };//is overwritten by the below functions, but currently acts as the default recommendation if 
-              //no correct game can be suggested (for testing)
+            List<int> idList = new List<int>();
 
             if (DevKey == "null")
             {
@@ -89,40 +84,49 @@ namespace SteamUI
                 return;
             }
 
-            List<UserGameTime.Game> formGameListFromId = _steamSharpTest.SteamUserGameTimeListById(steamId);
+            List<UserGameTime.Game> formGameListFromId = _steamSharp.SteamUserGameTimeListById(steamId);
             foreach (UserGameTime.Game game in formGameListFromId)
             {
-                if (gameCount < idArray.Length && game.playtime_forever > minGameTime)
+                if (idList.Count < maxRecommendations && game.playtime_forever > minGameTime)
                 {
-                    idArray[gameCount] = game.appid.ToString();
-                    gameCount++;
+                    idList.Add(game.appid);
                 }
             }
 
-            List<Game> userGameListFromIds = new List<Game>();
-            foreach (string appId in idArray)
+            DisplayGamesInUI(idList);
+
+            Dictionary<int, Game> userGameListFromIds = _database.FindGamesById(idList);
+            List<Tag> totalTagList = new List<SteamStoreGame.Tag>();
+            if (userGameListFromIds != null)
             {
-                userGameListFromIds.AddRange(_database.FindGameById(appId));
-            }
-            //List<Tag> totalTagList = new List<SteamStoreGame.Tag>();
-            //if (userGameListByIds != null)
-            //{
-                ClearGameListBox();
-                foreach (Game game in userGameListFromIds)
+                foreach (Game game in userGameListFromIds.Values)
                 {
-                    LoadHeaderImages(game.SteamAppId, roundCount);
-                    LoadGameInfo(game, roundCount);
-                    roundCount++;
-                    //totalTagList.AddRange(game.Tags);
+                    totalTagList.AddRange(game.Tags);
                 }
-            //}
+            }
 
-            //IOrderedEnumerable<IGrouping<string, SteamStoreGame.Tag>> tagsOrderByDescending = totalTagList.GroupBy(tag => tag.description)
-            //.OrderByDescending(tags => tags.Count());
-            //foreach (var tag in tagsOrderByDescending)
-            //{
+            IOrderedEnumerable<IGrouping<string, SteamStoreGame.Tag>> tagsOrderByDescending = totalTagList.GroupBy(tag => tag.description)
+            .OrderByDescending(tags => tags.Count());
+            foreach (var tag in tagsOrderByDescending)
+            {
                 //do something with tag.Key + tag.Count();
-            //}
+            }
+        }
+
+        //Takes the idList and creates a dictionary containing the appID and database Game. We then iterate over these games to call seperate functions to actually display the info.
+        private void DisplayGamesInUI(List<int> idList)
+        {
+            int roundCount = 0;
+            Dictionary<int, Game> userGameListFromIds = _database.FindGamesById(idList);
+
+            ClearGameListBox();
+            if (userGameListFromIds == null) return;
+            foreach (Game game in userGameListFromIds.Values)
+            {
+                LoadHeaderImages(game.SteamAppId, roundCount);
+                LoadGameInfo(game, roundCount);
+                roundCount++;
+            }
         }
 
         //Takes the current game and the roundCount (iteration#) ands sets the appropriate data 
@@ -143,7 +147,7 @@ namespace SteamUI
             Label[] releaseLabels =
             {
                 label5, label7, label12, label17, label22, label27, label32, label37, label42,
-                label47, label52, label57 //not added new releaselabels becuase they aren't used right now
+                label47, label52, label57, label62, label67, label72, label77, label82, label87 //not added new releaselabels becuase they aren't used right now
             };
             Label[] gameLabels =
             {
@@ -169,19 +173,17 @@ namespace SteamUI
                 gameLabels[roundCount].Visible = true;
                 foreach (string developer in game.Developer)
                     SB.Append(developer + ", ");
-                devLabels[roundCount].Text = SB.ToString().Remove(SB.Length - 2, 1) + " | " +
-                                             game.ReleaseDate;
-                    //testing showing releasedate with delevoper instead, because maybe it looks nicer who knows
-                descriptionBoxes[roundCount].Text = game.Description; //detailed
-                //releaseLabels[roundCount].Text = ""; //right now testing out showing the releasedate together with the developer, but no decision has been made yet
+                devLabels[roundCount].Text = SB.ToString().Remove(SB.Length - 2, 1);
+                descriptionBoxes[roundCount].Text = game.Description.Substring(0, 275);
+                releaseLabels[roundCount].Visible = true;
+                releaseLabels[roundCount].Text = game.ReleaseDate; //right now testing out showing the releasedate together with the developer, but no decision has been made yet
                 if (game.Price == 0)
                 {
                     priceLabels[roundCount].Text = "Free";
                 }
                 else
                 {
-                    decimal test = (decimal) game.Price/100;
-                    priceLabels[roundCount].Text = test + " €";
+                    priceLabels[roundCount].Text = game.Price + " €";
                 }
                 priceLabels[roundCount].Visible = true;
                 SB.Clear();
@@ -247,16 +249,22 @@ namespace SteamUI
         //Resizes the TableLayoutPanels and makes sure the labels that are hidden are in the correct visible state.
         private void ResizeTablePanels(TableLayoutPanel sender)
         {
+            
             Size full = new Size(646, 164);
             Size regular = new Size(646, 104);
-
             sender.Size = sender.Size != full ? full : regular;
             Label[] hiddenLabels =
             {
                 label4, label8, label13, label18, label23, label28,
-                label33, label38, label43, label48, label53, label58
+                label33, label38, label43, label48, label53, label58,
+                label63, label68, label73, label78, label83, label88
             };
-
+            foreach (PictureBox pictureBox in sender.Controls.OfType<PictureBox>())
+            {
+                if (pictureBox.Image == null) return;
+                TableLayoutPanel tpl = pictureBox.Parent as TableLayoutPanel;
+                tpl.SetRowSpan(pictureBox, tpl.GetRowSpan(pictureBox) == 3 ? 4 : 3);
+            }
             foreach (RichTextBox richTextBox in sender.Controls.OfType<RichTextBox>())
             {
                 richTextBox.Visible = richTextBox.Visible == false;
@@ -264,11 +272,6 @@ namespace SteamUI
             foreach (Button storeBtn in sender.Controls.OfType<Button>())
             {
                 storeBtn.Visible = storeBtn.Visible == false;
-            }
-            foreach (PictureBox pictureBox in sender.Controls.OfType<PictureBox>())
-            {
-                TableLayoutPanel tpl = pictureBox.Parent as TableLayoutPanel;
-                tpl.SetRowSpan(pictureBox, tpl.GetRowSpan(pictureBox) == 3 ? 4 : 3);
             }
             foreach (Label label in sender.Controls.OfType<Label>())
             {
@@ -322,15 +325,22 @@ namespace SteamUI
                 loadingPictureBox.Visible = true;
                 Cursor.Current = Cursors.WaitCursor;
                 BackgroundWorker bgWorker = new BackgroundWorker();
+                bgWorker.DoWork += (s, a) =>
+                {
                     GenerateGameList(); //For testing purposes GenerateGameList can be called instead of the RecommendButtomClick delegate
+                    //RecommendButtomClick(steamIdTextBox.Text); //If you crash use GenerateGameList()
+
+                };
+                bgWorker.RunWorkerCompleted += (s, a) =>
+                {
                     flowLayoutPanel1.Visible = true;
                     Cursor.Current = Cursors.Default;
                     timeElapsedLabel.Text = "Time elapsed: " + ElapsedTime + " sec";
                     elaspedTimer.Stop();
                     elaspedTimer.Dispose();
                     loadingPictureBox.Visible = false;
-
-                //RecommendButtomClick(steamIdTextBox.Text); //If you crash use GenerateGameList()
+                };
+                bgWorker.RunWorkerAsync();
             }
         }
 
