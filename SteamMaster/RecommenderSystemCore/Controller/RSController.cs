@@ -4,7 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using SteamSharp.steamStore.models;
+using SteamSharpCore.steamStore.models;
+using SteamSharpCore;
+using SteamSharpCore.steamStore.models;
 using SteamUI;
 
 namespace RecommenderSystemCore.Controller
@@ -23,7 +25,7 @@ namespace RecommenderSystemCore.Controller
 
         private void RecommendGameList(string steamID) // fix senere - mere funktion findes i funktionen GenerateGameList() under UI;
         {
-            SteamSharp.SteamSharp _steamSharpTest = new SteamSharp.SteamSharp();
+            SteamSharpCore.SteamSharp _steamSharpTest = new SteamSharpCore.SteamSharp("");
             int roundCount = 0;
             string steamId = UI.steamIdTextBox.Text.ToLower(); //not used
             string[] idArray =
@@ -42,7 +44,7 @@ namespace RecommenderSystemCore.Controller
                 {
                     //ThreadPool.QueueUserWorkItem(LoadHeaderImages(game.data.steam_appid, roundCount));
                     UI.LoadHeaderImages(game.data.steam_appid, roundCount);
-                    UI.LoadGameInfo(game, roundCount);
+                    //UI.LoadGameInfo(game, roundCount);
                     roundCount++;
                 }
             }

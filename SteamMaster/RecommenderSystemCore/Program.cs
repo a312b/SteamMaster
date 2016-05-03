@@ -8,9 +8,9 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using MongoDB.Bson.IO;
 using RecommenderSystemCore.Controller;
-using SteamSharp;
-using SteamSharp.steamStore;
-using SteamSharp.steamStore.models;
+using SteamSharpCore;
+using SteamSharpCore.steamStore;
+using SteamSharpCore.steamStore.models;
 using SteamUI;
 
 namespace RecommenderSystemCore

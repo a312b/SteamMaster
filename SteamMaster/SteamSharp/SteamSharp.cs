@@ -1,13 +1,14 @@
 ﻿using System.Collections.Generic;
+using System.IO;
 using System.Linq;
-using SteamSharp.steamSpy;
-using SteamSharp.steamSpy.models;
-using SteamSharp.steamStore;
-using SteamSharp.steamStore.models;
-using SteamSharp.steamUser;
-using SteamSharp.steamUser.models;
+using SteamSharpCore.steamSpy;
+using SteamSharpCore.steamSpy.models;
+using SteamSharpCore.steamStore;
+using SteamSharpCore.steamStore.models;
+using SteamSharpCore.steamUser;
+using SteamSharpCore.steamUser.models;
 
-namespace SteamSharp
+namespace SteamSharpCore
 {
     //Main Class for interacting with the library
     //All database code lacks and implementation
@@ -18,47 +19,46 @@ namespace SteamSharp
 
     public class SteamSharp
     {
+        private SteamStore SteamStore { get; }
+        private SteamApi SteamApi { get; }
+        private SteamSpy SteamSpy { get; }
+        //Key used for most requests to the server
+        //Generate/retrieve one here: http://steamcommunity.com/dev/apikey
+        public SteamSharp(string steamKey)
+        {
+            SteamStore = new SteamStore();
+            SteamApi = new SteamApi(steamKey);
+            SteamSpy = new SteamSpy();
+        }
         //Functions that are used in production
 
+        public SteamStoreGame GameById(string steamId)
+        {
+            return SteamStore.GetSteamStoreGameById(steamId);
+        }
         //Get a list of games from the steam store.
         public List<SteamStoreGame> GameListByIds(string[] steamIds)
         {
-            var steamStore = new SteamStore();
-
-            return steamIds.Select(steamId => steamStore.GetSteamStoreGameById(steamId)).ToList();
+            return steamIds.Select(steamId => SteamStore.GetSteamStoreGameById(steamId)).ToList();
         }
-
-        //public Dictionary<int, SteamStoreGame> DictionaryByIds(string[] steamIds)
-        //{
-        //    var steamStore = new SteamStore();
-
-        //    return steamIds.Select(steamId => steamStore.GetSteamStoreGameById(steamId)).ToDictionary(game => game.data.steam_appid);
-        //}
         //Get a user from the Steam web api 
-        public List<SteamUser.Player> SteamUserListByIds(string steamKey, string[] steamUserIds)
+        public List<SteamUser.Player> SteamUserListByIds(string[] steamUserIds)
         {
-            var steamUserWebApi = new SteamApi(steamKey);
-            var steamUserList = steamUserWebApi.GetSteamUserData(steamUserIds).players;
-            return steamUserList;
+            return SteamApi.GetSteamUserData(steamUserIds).players;
         }
         //Get list of the games by user and the time played. Time played for 2 weeks are null for games that user hasn't played within the period.
         //Note: Steam havent always recorded game time. (start 2009)
         //The return is in minutes
-        public List<UserGameTime.Game> SteamUserGameTimeListById(string steamKey, string steamUserId)
+        public List<UserGameTime.Game> SteamUserGameTimeListById(string steamUserId)
         {
-            var steamUserWebApi = new SteamApi(steamKey);
-            var gameTimeList = steamUserWebApi.GetGameTimeForUserById(steamUserId).games;
-            return gameTimeList;
+            return SteamApi.GetGameTimeForUserById(steamUserId).games;
         }
 
         //Steam Spy data about steam games
         //Get Steam spy data for a steam game by its id
         public SteamSpyData GameSteamSpyDataById(string steamId)
         {
-            var steamSpyRequest = new SteamSpy();
-            var gameData = steamSpyRequest.GetSteamSpyDataById(steamId);
-
-            return gameData;
+            return SteamSpy.GetSteamSpyDataById(steamId);
         }
 
     }

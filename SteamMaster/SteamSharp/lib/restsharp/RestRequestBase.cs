@@ -1,7 +1,7 @@
 ﻿using System;
 using RestSharp;
 
-namespace SteamSharp.restsharp
+namespace SteamSharpCore.restsharp
 {
     internal abstract class RestRequestBase
     {

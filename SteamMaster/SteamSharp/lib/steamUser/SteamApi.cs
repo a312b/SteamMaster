@@ -1,14 +1,12 @@
 ﻿using RestSharp;
-using SteamSharp.restsharp;
-using SteamSharp.steamUser.models;
+using SteamSharpCore.restsharp;
+using SteamSharpCore.steamUser.models;
 using static System.String;
 
-namespace SteamSharp.steamUser
+namespace SteamSharpCore.steamUser
 {
     internal class SteamApi : RestRequestBase
     {
-        //Key used for most requests to the server
-        //Generate/retrieve one here: http://steamcommunity.com/dev/apikey
         private string SteamDelveoperKey { get; }
 
         public SteamApi(string steamKey)
