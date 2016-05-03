@@ -145,6 +145,7 @@ namespace Filter_System.Filter_Core.Filters.Filter_Pre_Calculations
 
                 List<List<string>> tagList = tagIEnumerable.Select(entry => entry.ToList()).ToList();
                 returnDictionary.Add(i, tagList);
+
             }
             return returnDictionary;
         }
