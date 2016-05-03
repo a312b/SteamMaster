@@ -1,13 +1,11 @@
 ﻿using RestSharp;
-using SteamSharp.restsharp;
-using SteamSharp.steamSpy.models;
+using SteamSharpCore.restsharp;
+using SteamSharpCore.steamSpy.models;
 
-namespace SteamSharp.steamSpy
+namespace SteamSharpCore.steamSpy
 {
     internal class SteamSpy : RestRequestBase
     {
-        //RestRequestBase Restsharp = new RestRequestBase("http://www.steamspy.com/api.php");
-
         public SteamSpy()
         {
             BaseUrl = "http://www.steamspy.com/api.php";

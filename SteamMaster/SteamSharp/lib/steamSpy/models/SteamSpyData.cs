@@ -1,4 +1,4 @@
-﻿namespace SteamSharp.steamSpy.models
+﻿namespace SteamSharpCore.steamSpy.models
 {
     public class SteamSpyData
     {
@@ -6,7 +6,7 @@
         public string name { get; set; }
         public string developer { get; set; }
         public string publisher { get; set; }
-        public int score_rank { get; set; }
+        public string score_rank { get; set; }
         public int owners { get; set; }
         public int owners_variance { get; set; }
         public int players_forever { get; set; }

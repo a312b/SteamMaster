@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace SteamSharp.steamUser.models
+namespace SteamSharpCore.steamUser.models
 {
     public class SteamUser
     {

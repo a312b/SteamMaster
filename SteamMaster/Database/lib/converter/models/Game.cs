@@ -1,25 +1,29 @@
 ﻿using System;
 using System.Collections.Generic;
-using SteamSharp.steamStore.models;
+using MongoDB.Bson;
+using SteamSharpCore.steamStore.models;
 
 namespace Database.lib.converter.models
 {
     public class Game
     {
+        public ObjectId _id { get; set; }
         //The main class. Contains all the information about a Steam game. Data is pulled from Steam Store, Steamspy and Steam Store Api.
         //The data is stored in JSON like format in the database. A game can be retrieved by its AppId from the database.
         //Note: All games have 2 id's. One is the Steam App Id, the other is the Id givin by the Database. Use the Steam App Id in most cases.
         public string Title { get; set; }
-        public string Developer { get;  set; }
+        public List<string> Developer { get;  set; }
 
         //Note: The developer and publisher can be the same. Ex: Valve
-        public string Publisher { get;  set; }
+        public List<string> Publisher { get;  set; }
 
         //Note these Id's have varying length.
         public int SteamAppId { get;  set; }
+        public string Description { get; set; }
 
         //String is converted from the Steam Store Api to a DateTime object. This can be used for sorting.
-        public DateTime ReleaseDate { get;  set; }
+        public bool Released { get; set; }
+        public string ReleaseDate { get;  set; }
         public int AveragePlayTime { get;  set; }
         public int AveragePlayTime2Weeks { get;  set; }
 
@@ -40,6 +44,9 @@ namespace Database.lib.converter.models
         public List<SteamStoreGame.Tag> Tags { get; set; }
 
         public int OwnerCount { get;  set; }
+        public bool Windows { get; set; }
+        public bool Mac { get; set; }
+        public bool Linux { get; set; }
 
     }
 }

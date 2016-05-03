@@ -4,22 +4,22 @@ using System.Linq;
 using System.Security.AccessControl;
 using System.Text;
 using System.Threading.Tasks;
-using SteamSharp.steamStore;
-using SteamSharp.steamStore.models;
+using SteamSharpCore.steamStore;
+using SteamSharpCore.steamStore.models;
 
 
 namespace RecommenderSystemCore
 {
     public class RSCore
     {
-        public RSCore(SteamSharp.SteamSharp steamOperations)
+        public RSCore(SteamSharpCore.SteamSharp steamOperations)
         {
             SteamOprations = steamOperations;
 
         }
 
 
-        public SteamSharp.SteamSharp SteamOprations { get; set; }
+        public SteamSharpCore.SteamSharp SteamOprations { get; set; }
 
 
         Dictionary<int, SteamStoreGame> WorkingDictionary = new Dictionary<int, SteamStoreGame>();
