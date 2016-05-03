@@ -129,23 +129,23 @@ namespace Filter_System.Filter_Core.Filters.Filter_Pre_Calculations
         }
 
 
-        private Dictionary<int, List<string>> CalculateTagCombosForID(int appID, int tagRange)
+        private Dictionary<int, List<List<string>>> CalculateTagCombosForID(int appID, int Range) //Calculate all possible tag combinations for a appID. Range indicates how many tags are relevant.
         {
             List<string> appIDTags = new List<string>();
             AppIDTAgDictionary.TryGetValue(appID, out appIDTags);
-            Dictionary<int, List<string>> returnDictionary = new Dictionary<int, List<string>>();;
+            Dictionary<int, List<List<string>>> returnDictionary = new Dictionary<int, List<List<string>>>();
 
-            int TagRange = appIDTags.Count < tagRange ? appIDTags.Count : tagRange;
+            int TagRange = appIDTags.Count < Range ? appIDTags.Count : Range;
 
-            for (int i = TagRange; i <= 0; i--)
+            for (int i = TagRange; i >= 0; i--)
             {
-                var tagList =
+                IEnumerable<IEnumerable<string>> tagIEnumerable =
                     appIDTags.GetRange(0, TagRange)
                         .Combinations(i);
 
-                returnDictionary.Add(i, tagList.ToList()[0].ToList());
+                List<List<string>> tagList = tagIEnumerable.Select(entry => entry.ToList()).ToList();
+                returnDictionary.Add(i, tagList);
             }
-
             return returnDictionary;
         }
 
