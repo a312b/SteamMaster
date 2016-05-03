@@ -18,75 +18,161 @@ namespace Filter_System.Filter_Core.Filters.Filter_Pre_Calculations
         }
 
         private Tuple<List<int>, List<List<string>>> AppIDWithTags;
-        private Dictionary<List<string>, int> TagCombinationDictionary = new Dictionary<List<string>, int>(new ListComparer()); 
+        private Dictionary<int, List<string>> AppIDTAgDictionary = new Dictionary<int, List<string>>(); 
+
+        private void LoadTags()
+        {
+            TagReader tagReader = new TagReader(@"C:\Users\jeppe\Dropbox\Software\Projekt\P2\TagsForAppID.txt");
+            AppIDWithTags = tagReader.AppIDWithTag();
+
+            for (int i = 0; i < AppIDWithTags.Item1.Count; i++)
+            {
+                AppIDTAgDictionary.Add(AppIDWithTags.Item1[i], AppIDWithTags.Item2[i]);
+            }
+        }
+
+        #region DiversificationCalculations
 
         public void DiversifictaionCalculation()
         {
-            TagCombinationCalculation();
-            // test region
-            #region
 
-            //StreamWriter writer = new StreamWriter(@"C:\Users\jeppe\Dropbox\Software\Projekt\P2\TagCombinations.txt", false);
+            Dictionary<List<string>, int> TagCombinationDictionary = TagCombinationCalculation(4, 15, AppIDWithTags.Item2);
 
-            //List<KeyValuePair<List<string>, int>> sortedDic = TagCombinationDictionary.ToList();
 
-            //sortedDic.Sort((x, y) => y.Value.CompareTo(x.Value));
+            #region test region
 
-            //foreach (var entry in sortedDic)
-            //{
-            //    if (entry.Value > 5)
-            //    {
-            //        writer.WriteLine($"{entry.Key[0]}, {entry.Key[1]}, {entry.Key[2]}, {entry.Key[3]}, {entry.Key[4]}");
-            //        writer.WriteLine($":        {entry.Value}");
-            //    }
-            //}
+            StreamWriter writer = new StreamWriter(@"C:\Users\jeppe\Dropbox\Software\Projekt\P2\TagCombinations.txt", false);
 
-            //writer.Close();
-            //Console.WriteLine("Dones");
+            List<KeyValuePair<List<string>, int>> sortedDic = TagCombinationDictionary.ToList();
+
+            sortedDic.Sort((x, y) => y.Value.CompareTo(x.Value));
+
+            foreach (var entry in sortedDic)
+            {
+                if (entry.Value > 5)
+                {
+                    writer.WriteLine($"{entry.Key[0]}, {entry.Key[1]}, {entry.Key[2]}, {entry.Key[3]}, {entry.Key[4]}");
+                    writer.WriteLine($":        {entry.Value}");
+                }
+            }
+
+            writer.Close();
+            Console.WriteLine("Dones");
             #endregion
 
 
         }
 
 
-        private void TagCombinationCalculation()
+        private Dictionary<List<string>, int> TagCombinationCalculation(int minimumTagAmount, int tagRange, IEnumerable<List<string>> tagListCollection)
         {
-            for (int i = 0; i < AppIDWithTags.Item1.Count; i++)
+            Dictionary<List<string>, int> resultDictionary = new Dictionary<List<string>, int>();
+
+            foreach (var tagList in tagListCollection)
             {
-                List<string> tagList = AppIDWithTags.Item2[i];
-                if (tagList.Count > 4 && !tagList.Contains("Trains"))
+                if (tagList.Count > minimumTagAmount && !tagList.Contains("Trains"))
                 {
-                    int range = 15;
-                    tagList = tagList.GetRange(0, tagList.Count < range ? tagList.Count : range);
-                    var result = tagList.Combinations(5);
+                    int range = tagRange;
+                    var result = tagList.GetRange(0, tagList.Count < range ? tagList.Count : range).Combinations(5);
                     foreach (var entry in result)
                     {
                         List<string> workList = entry.ToList();
-                        AddOrCountToCombinationDictionary(workList);
+                        resultDictionary = AddOrCountToCombinationDictionary(workList);
                     }
                 }
-
             }
+            return resultDictionary;
         }
 
-        private void AddOrCountToCombinationDictionary(List<string> tagCombinationList)
+        private Dictionary<List<string>, int> TagCombinationCalculation(int minimumTagAmount, int tagRange, params List<string>[] tagListArray)
+        {
+            List<List<string>> tagListCollection = tagListArray.ToList();
+
+            return TagCombinationCalculation(minimumTagAmount, tagRange, tagListCollection);
+        }
+
+        private Dictionary<List<string>, int> AddOrCountToCombinationDictionary(List<string> tagCombinationList)
         {
             tagCombinationList.Sort();
+            Dictionary<List<string>, int> returnDictionary = new Dictionary<List<string>, int>();
 
-            if (TagCombinationDictionary.ContainsKey(tagCombinationList))
+            if (returnDictionary.ContainsKey(tagCombinationList))
             {
-                TagCombinationDictionary[tagCombinationList]++;
+                returnDictionary[tagCombinationList]++;
             }
             else if (!tagCombinationList.Contains("Action") && !tagCombinationList.Contains("Indie") && !tagCombinationList.Contains("TrackIR"))
             {
-                TagCombinationDictionary.Add(tagCombinationList, 1);
+                returnDictionary.Add(tagCombinationList, 1);
             }
+
+            return returnDictionary;
         }
 
-        private void LoadTags()
+
+        #endregion
+
+        #region Tag Similarity calculations
+
+        private Tuple<List<int>, List<double>> GetAppsSimilarToApp(int appID)
         {
-            TagReader tagReader = new TagReader(@"C:\Users\jeppe\Dropbox\Software\Projekt\P2\TagsForAppID.txt");
-            AppIDWithTags = tagReader.AppIDWithTag();
+            List<int> appIDList = AppIDWithTags.Item1;
+            List<double> recommendationValue = new List<double>();
+
+            Tuple<List<int>, List<double>> appIDWithRecValue = new Tuple<List<int>, List<double>>(appIDList,
+                recommendationValue);
+
+            foreach (var appEntry in appIDList)
+            {
+            }
+
+            return appIDWithRecValue;
         }
+
+
+        private Dictionary<int, List<string>> CalculateTagCombosForID(int appID, int tagRange)
+        {
+            List<string> appIDTags = new List<string>();
+            AppIDTAgDictionary.TryGetValue(appID, out appIDTags);
+            Dictionary<int, List<string>> returnDictionary = new Dictionary<int, List<string>>();;
+
+            int TagRange = appIDTags.Count < tagRange ? appIDTags.Count : tagRange;
+
+            for (int i = TagRange; i <= 0; i--)
+            {
+                var tagList =
+                    appIDTags.GetRange(0, TagRange)
+                        .Combinations(i);
+
+                returnDictionary.Add(i, tagList.ToList()[0].ToList());
+            }
+
+            return returnDictionary;
+        }
+
+        private double CompareTags(int appIDOriginal, int appIDCompareTo)
+        {
+            List<string> appID2List;
+            AppIDTAgDictionary.TryGetValue(appIDCompareTo, out appID2List);
+
+
+            if (appID2List != null)
+            {
+            }
+
+        }
+
+        private Dictionary<int, List<string>> getMultipleTagCombinations(int maxTagCombination, int minTagcombination)
+        {
+            Dictionary<int, List<string>> returnDictionary = new Dictionary<int, List<string>>();
+
+            for (int i = minTagcombination; i <= maxTagCombination; i++)
+            {
+                Dictionary<int, List<string>> workDictionary = TagCombinationCalculation()
+
+
+            }
+        } 
+
+#endregion
     }
 }
