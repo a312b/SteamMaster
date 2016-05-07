@@ -15,19 +15,39 @@ namespace Filter_System.Filter_Core.Filters.Filter_Pre_Calculations
         public Pre_Calculations()
         {
             LoadTags();
+            ConstructCombinationDictionary();
         }
 
         private Tuple<List<int>, List<List<string>>> AppIDWithTags;
         private Dictionary<int, List<string>> AppIDTAgDictionary = new Dictionary<int, List<string>>(); 
+        private Dictionary<List<string>, List<int>> TagCombinationWithAppIDs = new Dictionary<List<string>, List<int>>(); 
 
         private void LoadTags()
         {
             TagReader tagReader = new TagReader(@"C:\Users\jeppe\Dropbox\Software\Projekt\P2\TagsForAppID.txt");
             AppIDWithTags = tagReader.AppIDWithTag();
+        }
 
-            for (int i = 0; i < AppIDWithTags.Item1.Count; i++)
+        private void ConstructCombinationDictionary()
+        {
+            foreach (int ID in AppIDWithTags.Item1)
             {
-                AppIDTAgDictionary.Add(AppIDWithTags.Item1[i], AppIDWithTags.Item2[i]);
+                var workDictionary = CalculateTagCombosForID(ID, 10);
+
+                foreach (var entry in workDictionary)
+                {
+                    foreach (var combination in entry.Value)
+                    {
+                        if (TagCombinationWithAppIDs.ContainsKey(combination))
+                        {
+                            TagCombinationWithAppIDs[combination].Add(ID);
+                        }
+                        else
+                        {
+                            TagCombinationWithAppIDs.Add(combination, new List<int> { ID });
+                        }
+                    }
+                }
             }
         }
 
@@ -113,66 +133,95 @@ namespace Filter_System.Filter_Core.Filters.Filter_Pre_Calculations
 
         #region Tag Similarity calculations
 
-        private Tuple<List<int>, List<double>> GetAppsSimilarToApp(int appID)
+        private List<int> GetAppsSimilarToApp(int appID, int relevantTagRange)
         {
             List<int> appIDList = AppIDWithTags.Item1;
+            appIDList.Sort();
             List<double> recommendationValue = new List<double>();
 
-            Tuple<List<int>, List<double>> appIDWithRecValue = new Tuple<List<int>, List<double>>(appIDList,
-                recommendationValue);
+            Dictionary<int, double> appIDRecValueDictionary = appIDList.ToDictionary<int, int, double>(ID => ID, Value => 0);
 
-            foreach (var appEntry in appIDList)
+            Dictionary<int, List<List<string>>> TagCombosForID = CalculateTagCombosForID(appID, relevantTagRange);
+
+            #region point giving to similar tagged games
+            for (int i = relevantTagRange; i >= 1; i--)
             {
+                foreach (var combination in TagCombosForID[i])
+                {
+                    if (TagCombinationWithAppIDs.ContainsKey(combination))
+                    {
+                        foreach (int ID in TagCombinationWithAppIDs[combination])
+                        {
+                            appIDRecValueDictionary[ID] += i;
+                        }
+                    }
+                }
             }
+            #endregion
 
-            return appIDWithRecValue;
+            recommendationValue.AddRange(appIDList.Select(ID => appIDRecValueDictionary[ID]));
+
+            Tuple<List<int>, List<double>> appIDWithRecValue = new Tuple<List<int>, List<double>>(appIDList,
+            recommendationValue);
+            
+
+
+            return A
         }
 
 
-        private Dictionary<int, List<List<string>>> CalculateTagCombosForID(int appID, int Range) //Calculate all possible tag combinations for a appID. Range indicates how many tags are relevant.
+        private Dictionary<int, List<List<string>>> CalculateTagCombosForID(int appID, int Range) //Calculate all possible tag combinations for an appID. Range indicates how many tags are relevant.
+            // Dictionary returned consist of an int key that represents the amount of tags for the combinations represented in the value
         {
             List<string> appIDTags = new List<string>();
             AppIDTAgDictionary.TryGetValue(appID, out appIDTags);
             Dictionary<int, List<List<string>>> returnDictionary = new Dictionary<int, List<List<string>>>();
 
-            int TagRange = appIDTags.Count < Range ? appIDTags.Count : Range;
-
-            for (int i = TagRange; i >= 0; i--)
+            if (appIDTags != null || appIDTags.Count != 0)
             {
-                IEnumerable<IEnumerable<string>> tagIEnumerable =
-                    appIDTags.GetRange(0, TagRange)
-                        .Combinations(i);
+                int tagRange = appIDTags.Count < Range ? appIDTags.Count : Range;
 
-                List<List<string>> tagList = tagIEnumerable.Select(entry => entry.ToList()).ToList();
-                returnDictionary.Add(i, tagList);
+                for (int i = tagRange; i >= 1; i--)
+                {
+                    IEnumerable<IEnumerable<string>> tagIEnumerable =
+                        appIDTags.GetRange(0, tagRange)
+                            .Combinations(i);
 
+                    List<List<string>> tagList = tagIEnumerable.Select(entry => entry.ToList()).ToList();
+                    returnDictionary.Add(i, tagList);
+
+                }
             }
+
             return returnDictionary;
         }
 
-        private double CompareTags(int appIDOriginal, int appIDCompareTo)
-        {
-            List<string> appID2List;
-            AppIDTAgDictionary.TryGetValue(appIDCompareTo, out appID2List);
+        
 
 
-            if (appID2List != null)
-            {
-            }
-
-        }
-
-        private Dictionary<int, List<string>> getMultipleTagCombinations(int maxTagCombination, int minTagcombination)
-        {
-            Dictionary<int, List<string>> returnDictionary = new Dictionary<int, List<string>>();
-
-            for (int i = minTagcombination; i <= maxTagCombination; i++)
-            {
-                Dictionary<int, List<string>> workDictionary = TagCombinationCalculation()
+        //private double CompareTags(int appIDOriginal, int appIDCompareTo)
+        //{
+        //    List<string> appID2List;
+        //    AppIDTAgDictionary.TryGetValue(appIDCompareTo, out appID2List);
 
 
-            }
-        } 
+        //    if (appID2List != null)
+        //    {
+        //    }
+
+        //}
+
+        //private Dictionary<int, List<string>> getMultipleTagCombinations(int maxTagCombination, int minTagcombination)
+        //{
+        //    Dictionary<int, List<string>> returnDictionary = new Dictionary<int, List<string>>();
+
+        //    for (int i = minTagcombination; i <= maxTagCombination; i++)
+        //    {
+        //        Dictionary<int, List<string>> workDictionary = TagCombinationCalculation()
+
+
+        //    }
+        //} 
 
 #endregion
     }

@@ -48,6 +48,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Filter Core\Filters\DiversificationFilter.cs" />
+    <Compile Include="Filter Core\Filters\Filter Pre-Calculations\Models\AppWorkClass.cs" />
     <Compile Include="Filter Core\Filters\Filter Pre-Calculations\Models\ListComparer.cs" />
     <Compile Include="Filter Core\Filters\Filter Pre-Calculations\Models\UseFullMethods.cs" />
     <Compile Include="Filter Core\Filters\Filter Pre-Calculations\Pre-Calculations.cs" />
