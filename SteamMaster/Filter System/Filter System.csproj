@@ -34,6 +34,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Database">
+      <HintPath>..\SteamSharp\bin\Debug\Database.dll</HintPath>
+    </Reference>
     <Reference Include="SteamSharp">
       <HintPath>..\SteamSharp\bin\Debug\SteamSharp.dll</HintPath>
     </Reference>

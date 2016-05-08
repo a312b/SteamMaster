@@ -10,9 +10,9 @@ using System.Windows.Forms;
 using DatabaseCore.lib.converter.models;
 using DummyClassSolution.Properties;
 using SteamSharpCore;
+using SteamSharpCore.steamStore.models;
 using SteamSharpCore.steamUser.models;
 using gameDatabase = DatabaseCore.Database;
-using static SteamSharpCore.steamStore.models.SteamStoreGame;
 using Timer = System.Timers.Timer;
 
 //requires SteamSharp
@@ -95,7 +95,7 @@ namespace SteamUI
             DisplayGamesInUI(idList);
 
             Dictionary<int, Game> userGameListFromIds = _database.FindGamesById(idList);
-            List<Tag> totalTagList = new List<Tag>();
+            List<SteamStoreGame.Tag> totalTagList = new List<SteamStoreGame.Tag>();
             if (userGameListFromIds != null)
             {
                 foreach (Game game in userGameListFromIds.Values)
@@ -104,7 +104,7 @@ namespace SteamUI
                 }
             }
 
-            IOrderedEnumerable<IGrouping<string, Tag>> tagsOrderByDescending = totalTagList.GroupBy(
+            IOrderedEnumerable<IGrouping<string, SteamStoreGame.Tag>> tagsOrderByDescending = totalTagList.GroupBy(
                 tag => tag.description)
                 .OrderByDescending(tags => tags.Count());
             foreach (var tag in tagsOrderByDescending)
@@ -187,7 +187,7 @@ namespace SteamUI
                 }
                 priceLabels[roundCount].Visible = true;
                 SB.Clear();
-                foreach (Tag tag in game.Tags)
+                foreach (SteamStoreGame.Tag tag in game.Tags)
                     SB.Append(tag.description + ", ");
                 tagLabels[roundCount].Text = SB.ToString().Remove(SB.Length - 2, 1);
                 tagLabels[roundCount].Visible = true;

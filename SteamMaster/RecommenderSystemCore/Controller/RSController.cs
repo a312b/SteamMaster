@@ -6,7 +6,6 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using SteamSharpCore.steamStore.models;
 using SteamSharpCore;
-using SteamSharpCore.steamStore.models;
 using SteamUI;
 
 namespace RecommenderSystemCore.Controller

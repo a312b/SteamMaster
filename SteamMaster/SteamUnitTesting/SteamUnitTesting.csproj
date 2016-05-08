@@ -37,13 +37,10 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Database">
-      <HintPath>..\SteamUI\bin\Debug\ReleaseDLL\Database.dll</HintPath>
+      <HintPath>..\SteamSharp\bin\Debug\Database.dll</HintPath>
     </Reference>
     <Reference Include="MongoDB.Bson">
       <HintPath>..\packages\MongoDB.Bson.2.2.3\lib\net45\MongoDB.Bson.dll</HintPath>
-    </Reference>
-    <Reference Include="MongoDB.Driver">
-      <HintPath>..\SteamUI\bin\Debug\MongoDB.Driver.dll</HintPath>
     </Reference>
     <Reference Include="MongoDB.Driver.Core">
       <HintPath>..\packages\MongoDB.Driver.Core.2.2.3\lib\net45\MongoDB.Driver.Core.dll</HintPath>
@@ -52,7 +49,7 @@
       <HintPath>..\SteamUI\bin\Debug\RestSharp.dll</HintPath>
     </Reference>
     <Reference Include="SteamSharp">
-      <HintPath>..\SteamUI\bin\Debug\ReleaseDLL\SteamSharp.dll</HintPath>
+      <HintPath>..\SteamSharp\bin\Debug\SteamSharp.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Windows.Forms" />

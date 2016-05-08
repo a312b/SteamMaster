@@ -85,9 +85,9 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\SteamSharp\SteamSharp.csproj">
+    <ProjectReference Include="..\SteamSharp\SteamSharpCore.csproj">
       <Project>{36df0e1a-ea75-4b5b-b2c1-fb2c8838d0d6}</Project>
-      <Name>SteamSharp</Name>
+      <Name>SteamSharpCore</Name>
     </ProjectReference>
     <ProjectReference Include="..\SteamUI\SteamUI.csproj">
       <Project>{77c469a8-1c13-487d-8547-54c5d9f35e6c}</Project>

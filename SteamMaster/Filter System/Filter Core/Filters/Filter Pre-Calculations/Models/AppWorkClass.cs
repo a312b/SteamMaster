@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Filter_System.Filter_Core.Filters.Filter_Pre_Calculations.Models
 {
-    public class AppWorkClass
+    public class AppWorkClass : IComparable<AppWorkClass>
     {
         public AppWorkClass(int appID, List<string> tagList)
         {
@@ -22,6 +22,14 @@ namespace Filter_System.Filter_Core.Filters.Filter_Pre_Calculations.Models
 
         public double Score { get; set; }
 
-        public List<List<string>> TagCombinationList { get; set; } 
+        public List<List<string>> TagCombinationList { get; set; }
+
+        public int CompareTo(AppWorkClass other) //Sort after the score of the App
+        {
+            int sourceScore = Convert.ToInt32(Score);
+            int compareScore = Convert.ToInt32(Score);
+            return sourceScore - compareScore;
+        }
+        
     }
 }

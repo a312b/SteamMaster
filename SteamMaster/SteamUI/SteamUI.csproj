@@ -50,16 +50,15 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Database">
-      <HintPath>bin\Debug\ReleaseDLL\Database.dll</HintPath>
+      <HintPath>..\SteamSharp\bin\Debug\Database.dll</HintPath>
     </Reference>
-    <Reference Include="MongoDB.Driver, Version=2.2.3.3, Culture=neutral, PublicKeyToken=null" />
     <Reference Include="RestSharp, Version=105.2.3.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>bin\Debug\RestSharp.dll</HintPath>
     </Reference>
     <Reference Include="SteamSharp, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>bin\Debug\ReleaseDLL\SteamSharp.dll</HintPath>
+      <HintPath>..\SteamSharp\bin\Debug\SteamSharp.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />

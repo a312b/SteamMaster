@@ -15,12 +15,14 @@ namespace Filter_System.Filter_Core.Filters.Filter_Pre_Calculations
         public Pre_Calculations()
         {
             LoadTags();
+            ConstructAppWorkClassDictionary();
             ConstructCombinationDictionary();
         }
 
         private Tuple<List<int>, List<List<string>>> AppIDWithTags;
-        private Dictionary<int, List<string>> AppIDTAgDictionary = new Dictionary<int, List<string>>(); 
-        private Dictionary<List<string>, List<int>> TagCombinationWithAppIDs = new Dictionary<List<string>, List<int>>(); 
+        public Dictionary<List<string>, List<int>> TagCombinationWithAppIDs = new Dictionary<List<string>, List<int>>(); 
+
+        private Dictionary<int, AppWorkClass> IDAppWorkClass = new Dictionary<int, AppWorkClass>();
 
         private void LoadTags()
         {
@@ -38,9 +40,10 @@ namespace Filter_System.Filter_Core.Filters.Filter_Pre_Calculations
                 {
                     foreach (var combination in entry.Value)
                     {
+                        combination.Sort();
                         if (TagCombinationWithAppIDs.ContainsKey(combination))
                         {
-                            TagCombinationWithAppIDs[combination].Add(ID);
+                            TagCombinationWithAppIDs[combination].Add(ID); // tjek her
                         }
                         else
                         {
@@ -48,6 +51,15 @@ namespace Filter_System.Filter_Core.Filters.Filter_Pre_Calculations
                         }
                     }
                 }
+            }
+        }
+
+        private void ConstructAppWorkClassDictionary()
+        {
+            for (int i = 0; i < AppIDWithTags.Item1.Count; i++)
+            {
+                int ID = AppIDWithTags.Item1[i];
+                IDAppWorkClass.Add(ID, new AppWorkClass(ID, AppIDWithTags.Item2[i]));
             }
         }
 
@@ -61,23 +73,23 @@ namespace Filter_System.Filter_Core.Filters.Filter_Pre_Calculations
 
             #region test region
 
-            StreamWriter writer = new StreamWriter(@"C:\Users\jeppe\Dropbox\Software\Projekt\P2\TagCombinations.txt", false);
+            //StreamWriter writer = new StreamWriter(@"C:\Users\jeppe\Dropbox\Software\Projekt\P2\TagCombinations.txt", false);
 
-            List<KeyValuePair<List<string>, int>> sortedDic = TagCombinationDictionary.ToList();
+            //List<KeyValuePair<List<string>, int>> sortedDic = TagCombinationDictionary.ToList();
 
-            sortedDic.Sort((x, y) => y.Value.CompareTo(x.Value));
+            //sortedDic.Sort((x, y) => y.Value.CompareTo(x.Value));
 
-            foreach (var entry in sortedDic)
-            {
-                if (entry.Value > 5)
-                {
-                    writer.WriteLine($"{entry.Key[0]}, {entry.Key[1]}, {entry.Key[2]}, {entry.Key[3]}, {entry.Key[4]}");
-                    writer.WriteLine($":        {entry.Value}");
-                }
-            }
+            //foreach (var entry in sortedDic)
+            //{
+            //    if (entry.Value > 5)
+            //    {
+            //        writer.WriteLine($"{entry.Key[0]}, {entry.Key[1]}, {entry.Key[2]}, {entry.Key[3]}, {entry.Key[4]}");
+            //        writer.WriteLine($":        {entry.Value}");
+            //    }
+            //}
 
-            writer.Close();
-            Console.WriteLine("Dones");
+            //writer.Close();
+            //Console.WriteLine("Dones");
             #endregion
 
 
@@ -133,51 +145,52 @@ namespace Filter_System.Filter_Core.Filters.Filter_Pre_Calculations
 
         #region Tag Similarity calculations
 
-        private List<int> GetAppsSimilarToApp(int appID, int relevantTagRange)
+        public List<AppWorkClass> GetAppsSimilarToApp(int appID, int relevantTagRange)
         {
             List<int> appIDList = AppIDWithTags.Item1;
             appIDList.Sort();
-            List<double> recommendationValue = new List<double>();
 
-            Dictionary<int, double> appIDRecValueDictionary = appIDList.ToDictionary<int, int, double>(ID => ID, Value => 0);
+            Dictionary<int, AppWorkClass> AppWCDictionary = IDAppWorkClass;
 
             Dictionary<int, List<List<string>>> TagCombosForID = CalculateTagCombosForID(appID, relevantTagRange);
 
             #region point giving to similar tagged games
             for (int i = relevantTagRange; i >= 1; i--)
             {
-                foreach (var combination in TagCombosForID[i])
+                if (TagCombosForID.ContainsKey(i))
                 {
-                    if (TagCombinationWithAppIDs.ContainsKey(combination))
+                    foreach (var combination in TagCombosForID[i])
                     {
-                        foreach (int ID in TagCombinationWithAppIDs[combination])
+                        combination.Sort();
+                        if (TagCombinationWithAppIDs.ContainsKey(combination))
                         {
-                            appIDRecValueDictionary[ID] += i;
+                            foreach (int ID in TagCombinationWithAppIDs[combination]) // kig her
+                            {
+                                AppWCDictionary[ID].Score += i; //Kig her
+                            }
                         }
                     }
                 }
             }
             #endregion
 
-            recommendationValue.AddRange(appIDList.Select(ID => appIDRecValueDictionary[ID]));
-
-            Tuple<List<int>, List<double>> appIDWithRecValue = new Tuple<List<int>, List<double>>(appIDList,
-            recommendationValue);
-            
+            List<AppWorkClass> returnList = AppWCDictionary.Values.ToList();
+            returnList.Sort();
 
 
-            return A
+            return returnList;
         }
 
 
-        private Dictionary<int, List<List<string>>> CalculateTagCombosForID(int appID, int Range) //Calculate all possible tag combinations for an appID. Range indicates how many tags are relevant.
+        public Dictionary<int, List<List<string>>> CalculateTagCombosForID(int appID, int Range) //Calculate all possible tag combinations for an appID. Range indicates how many tags are relevant.
             // Dictionary returned consist of an int key that represents the amount of tags for the combinations represented in the value
         {
-            List<string> appIDTags = new List<string>();
-            AppIDTAgDictionary.TryGetValue(appID, out appIDTags);
+            AppWorkClass workClass;
+            IDAppWorkClass.TryGetValue(appID, out workClass);
+            List<string> appIDTags = workClass.TagList;
             Dictionary<int, List<List<string>>> returnDictionary = new Dictionary<int, List<List<string>>>();
 
-            if (appIDTags != null || appIDTags.Count != 0)
+            if (appIDTags != null && appIDTags.Count != 0)
             {
                 int tagRange = appIDTags.Count < Range ? appIDTags.Count : Range;
 
