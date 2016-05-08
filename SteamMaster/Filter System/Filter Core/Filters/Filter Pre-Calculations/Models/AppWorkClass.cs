@@ -27,7 +27,7 @@ namespace Filter_System.Filter_Core.Filters.Filter_Pre_Calculations.Models
         public int CompareTo(AppWorkClass other) //Sort after the score of the App
         {
             int sourceScore = Convert.ToInt32(Score);
-            int compareScore = Convert.ToInt32(Score);
+            int compareScore = Convert.ToInt32(other.Score);
             return sourceScore - compareScore;
         }
         

@@ -20,7 +20,9 @@ namespace Filter_System.Filter_Core.Filters.Filter_Pre_Calculations
         }
 
         private Tuple<List<int>, List<List<string>>> AppIDWithTags;
-        public Dictionary<List<string>, List<int>> TagCombinationWithAppIDs = new Dictionary<List<string>, List<int>>(); 
+        static ListComparer listComparer = new ListComparer();
+
+        public Dictionary<List<string>, List<int>> TagCombinationWithAppIDs = new Dictionary<List<string>, List<int>>(listComparer); 
 
         private Dictionary<int, AppWorkClass> IDAppWorkClass = new Dictionary<int, AppWorkClass>();
 

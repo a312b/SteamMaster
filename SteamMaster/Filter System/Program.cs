@@ -64,20 +64,22 @@ namespace Filter_System
             Pre_Calculations calculations = new Pre_Calculations();
             calculations.DiversifictaionCalculation();
 
-            var what = calculations.TagCombinationWithAppIDs;
+            //var what = calculations.TagCombinationWithAppIDs;
 
 
-            Console.WriteLine(what.Count);
+            //Console.WriteLine(what.Count);
 
-            //List<AppWorkClass> wubbaList = calculations.GetAppsSimilarToApp(72850, 5);
+            List<AppWorkClass> wubbaList = calculations.GetAppsSimilarToApp(271590, 6);
 
-            //foreach (var entry in wubbaList)
-            //{
-            //    if (entry.Score > 0)
-            //    {
-            //        Console.WriteLine(entry.AppID + " score: " + entry.Score);
-            //    }
-            //}
+            wubbaList.Sort();
+
+            foreach (var entry in wubbaList)
+            {
+                if (entry.Score > 1)
+                {
+                    Console.WriteLine(entry.AppID + " score: " + entry.Score);
+                }
+            }
 
             Console.WriteLine("Donas");
             Console.ReadKey();
