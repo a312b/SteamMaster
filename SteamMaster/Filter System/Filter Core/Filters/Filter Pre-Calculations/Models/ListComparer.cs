@@ -6,14 +6,14 @@ using System.Threading.Tasks;
 
 namespace Filter_System.Filter_Core.Filters.Filter_Pre_Calculations.Models
 {
-    public class ListComparer : IEqualityComparer<List<string>>
+    public class ListComparer <T> : IEqualityComparer<List<T>> //A class used for implementing IEqualityComparer 
     {
-        public bool Equals(List<string> x, List<string> y)
+        public bool Equals(List<T> x, List<T> y)
         {
             return x.SequenceEqual(y);
         }
 
-        public int GetHashCode(List<string> obj)
+        public int GetHashCode(List<T> obj)
         {
             string listCombined = "";
             foreach (var entry in obj)

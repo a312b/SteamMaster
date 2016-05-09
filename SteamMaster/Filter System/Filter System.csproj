@@ -37,7 +37,8 @@
     <Reference Include="Database">
       <HintPath>..\SteamSharp\bin\Debug\Database.dll</HintPath>
     </Reference>
-    <Reference Include="SteamSharp">
+    <Reference Include="SteamSharp, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
       <HintPath>..\SteamSharp\bin\Debug\SteamSharp.dll</HintPath>
     </Reference>
     <Reference Include="System" />

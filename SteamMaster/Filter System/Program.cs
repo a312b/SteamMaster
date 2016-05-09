@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -12,62 +13,29 @@ namespace Filter_System
     {
         static void Main(string[] args)
         {
-
-            //Dictionary<int, string> woop = new Dictionary<int, string>();
-
-            // woop.Add(1, "Hej");
-            // woop.Add(2, "Dig");
-
-            // woop[2] = "Loooooow rider";
-
-            // Console.WriteLine($"{woop[2]}");
-
-            // Console.ReadKey();
-
-
-            //string dob = "wub";
-            //dob += "balubba";
-
-            //string dib = "wabbalubba";
-            //string deb = "wubbalubbasdfsdfsdfsdfsdgherheheeddddddddddddddddddddddddddddddh";
-
-            //Console.WriteLine(dob.GetHashCode());
-            //Console.WriteLine(dib.GetHashCode());
-            //Console.WriteLine(deb.GetHashCode());
-
-            //List<int> tal = new List<int>();
-
-            //for (int i = 0; i < 20; i++)
-            //{
-            //    tal.Add(i + 1);
-            //}
-
-            //var result = UseFullMethods.Combinations(tal, 3);
-
-            //int combinations = 0;
-
-            //foreach (var entry in result)
-            //{
-            //    List<int> printList = entry.ToList();
-            //    foreach (var number in printList)
-            //    {
-            //        Console.Write(number);
-            //    }
-            //    Console.WriteLine();
-            //    combinations++;
-            //}
-
-            //Console.WriteLine();
-            //Console.WriteLine("Combinationer: " + combinations);
-
+            Stopwatch timeStopwatch = Stopwatch.StartNew();
 
             Pre_Calculations calculations = new Pre_Calculations();
             calculations.DiversifictaionCalculation();
+
+            //timeStopwatch.Stop();
+
+            //Console.WriteLine($"Elapsed Time for constructor methods: {timeStopwatch.Elapsed}");
+
+            //timeStopwatch.Reset();
+            //timeStopwatch.Start();
+
+            //calculations.FileAppSimilarity();
+
+            //timeStopwatch.Stop();
+
+            //Console.WriteLine($"Elapsed Time for calculating AppSimilarity: {timeStopwatch.Elapsed}");
 
             //var what = calculations.TagCombinationWithAppIDs;
 
 
             //Console.WriteLine(what.Count);
+
 
             List<AppWorkClass> wubbaList = calculations.GetAppsSimilarToApp(271590, 6);
 
@@ -75,11 +43,13 @@ namespace Filter_System
 
             foreach (var entry in wubbaList)
             {
-                if (entry.Score > 1)
+                if (entry.Score < 100)
                 {
                     Console.WriteLine(entry.AppID + " score: " + entry.Score);
                 }
             }
+
+
 
             Console.WriteLine("Donas");
             Console.ReadKey();
