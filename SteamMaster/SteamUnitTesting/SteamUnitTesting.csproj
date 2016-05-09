@@ -37,7 +37,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Database">
-      <HintPath>..\SteamSharp\bin\Debug\Database.dll</HintPath>
+      <HintPath>..\..\..\..\..\Desktop\Database.dll</HintPath>
     </Reference>
     <Reference Include="MongoDB.Bson">
       <HintPath>..\SteamSharp\bin\Debug\MongoDB.Bson.dll</HintPath>

@@ -174,7 +174,7 @@ namespace SteamUI
                 foreach (string developer in game.Developer)
                     SB.Append(developer + ", ");
                 devLabels[roundCount].Text = SB.ToString().Remove(SB.Length - 2, 1);
-                descriptionBoxes[roundCount].Text = game.Description.Substring(0, 275);
+                descriptionBoxes[roundCount].Text = game.Description;
                 releaseLabels[roundCount].Text = game.ReleaseDate;
                 releaseLabels[roundCount].Visible = true;
                 if (game.Price == 0)
