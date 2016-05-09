@@ -37,6 +37,15 @@
     <Reference Include="Database">
       <HintPath>..\SteamSharp\bin\Debug\Database.dll</HintPath>
     </Reference>
+    <Reference Include="MongoDB.Bson">
+      <HintPath>..\SteamSharp\bin\Debug\MongoDB.Bson.dll</HintPath>
+    </Reference>
+    <Reference Include="MongoDB.Driver">
+      <HintPath>..\SteamSharp\bin\Debug\MongoDB.Driver.dll</HintPath>
+    </Reference>
+    <Reference Include="MongoDB.Driver.Core">
+      <HintPath>..\SteamSharp\bin\Debug\MongoDB.Driver.Core.dll</HintPath>
+    </Reference>
     <Reference Include="SteamSharp, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\SteamSharp\bin\Debug\SteamSharp.dll</HintPath>

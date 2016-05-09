@@ -1,14 +1,12 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Database.lib;
-using Database.lib.converter.models;
+using DatabaseCore.lib;
+using DatabaseCore.lib.converter.models;
+using MongoDB.Driver;
 using SteamSharpCore.steamSpy.models;
 using SteamSharpCore.steamStore.models;
 
-namespace Database
+namespace DatabaseCore
 {
     public class Database
     {
@@ -16,7 +14,7 @@ namespace Database
 
         public Database()
         {
-            Mongo = new MongoDb("mongodb://localhost:27017", "SteamSharp", "games");
+            Mongo = new MongoDb("mongodb://localhost:27017", "SteamSharp", "Games");
         }
         public void InsertGame(SteamStoreGame game, SteamSpyData data)
         {
@@ -27,14 +25,39 @@ namespace Database
             Mongo.DbInsertGameNoPrice(game, data);
         }
 
-        public List<Game> FindAllGames()
+        public Dictionary<int, Game> FindAllGames()
         {
-            return Mongo.DbFindGames();
+            var filter = Builders<Game>.Filter.Empty;
+            var gameList = Mongo.DbFindGameByFilter(filter);
+            return gameList.ToDictionary(game => game.SteamAppId);
+        }
+        public List<Game> FindAllGamesList()
+        {
+            var filter = Builders<Game>.Filter.Empty;
+            var gameList = Mongo.DbFindGameByFilter(filter);
+            return gameList;
         }
 
-        public List<Game> FindGameById(string appId)
+        public Dictionary<int, Game> FindGamesById(List<int> appIds)
         {
-            return Mongo.DbFindGameById(appId);
-        } 
+            var gamesList = new List<Game>();
+            foreach (var appId in appIds)
+            {
+                var filter = Builders<Game>.Filter.Eq("SteamAppId", appId);
+                gamesList.AddRange(Mongo.DbFindGameByFilter(filter));
+            }
+            return gamesList.ToDictionary(game => game.SteamAppId);
+        }
+
+        public List<Game> FindGameByFilter(FilterDefinition<Game> filter)
+        {
+            return Mongo.DbFindGameByFilter(filter);
+        }
+
+        public void DeleteById(int id)
+        {
+            var filter = Builders<Game>.Filter.Eq("SteamAppId", id);
+            Mongo.DbDeleteByFilter(filter);
+        }
     }
 }

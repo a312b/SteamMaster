@@ -40,10 +40,13 @@
       <HintPath>..\SteamSharp\bin\Debug\Database.dll</HintPath>
     </Reference>
     <Reference Include="MongoDB.Bson">
-      <HintPath>..\packages\MongoDB.Bson.2.2.3\lib\net45\MongoDB.Bson.dll</HintPath>
+      <HintPath>..\SteamSharp\bin\Debug\MongoDB.Bson.dll</HintPath>
+    </Reference>
+    <Reference Include="MongoDB.Driver">
+      <HintPath>..\SteamSharp\bin\Debug\MongoDB.Driver.dll</HintPath>
     </Reference>
     <Reference Include="MongoDB.Driver.Core">
-      <HintPath>..\packages\MongoDB.Driver.Core.2.2.3\lib\net45\MongoDB.Driver.Core.dll</HintPath>
+      <HintPath>..\SteamSharp\bin\Debug\MongoDB.Driver.Core.dll</HintPath>
     </Reference>
     <Reference Include="RestSharp">
       <HintPath>..\SteamUI\bin\Debug\RestSharp.dll</HintPath>

@@ -32,12 +32,12 @@ namespace Filter_System.Filter_Core.Filters.Filter_Pre_Calculations
         {
             Database mongoDatabase = new Database();
 
-            List<Game> AllGames = mongoDatabase.FindAllGamesList();
+            List<Game> allGames = mongoDatabase.FindAllGamesList();
 
             List<int> AppID = new List<int>();
             List<List<string>> Tags = new List<List<string>>();
 
-            foreach (var game in AllGames)
+            foreach (var game in allGames)
             {
                 AppID.Add(game.SteamAppId);
                 Tags.Add(game.Tags.Select(tag => tag.ToString()).ToList());
