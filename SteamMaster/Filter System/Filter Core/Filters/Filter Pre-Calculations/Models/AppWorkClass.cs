@@ -8,12 +8,27 @@ namespace Filter_System.Filter_Core.Filters.Filter_Pre_Calculations.Models
 {
     public class AppWorkClass : IComparable<AppWorkClass>
     {
-        public AppWorkClass(int appID, List<string> tagList)
+        public AppWorkClass(int appID, List<string> tagList, double score)
         {
             AppID = appID;
             TagList = tagList;
-            Score = 0;
+            Score = score;
 
+        }
+
+        public AppWorkClass(int appID, double score) : this(appID, new List<string>(), score)
+        {
+
+        }
+
+        public AppWorkClass(int appID, List<string> tagList) : this(appID, tagList, 0)
+        {
+
+        }
+
+        public AppWorkClass(int appID) : this(appID, new List<string>(), 0)
+        {
+            
         }
 
         public int AppID { get; private set; }
