@@ -25,7 +25,7 @@ namespace SteamUnitTesting
         {
             //Arrange 
             List<int> testAppId = new List<int> { 240 };
-            string expected = "Counter-Strike: Source";
+            const string expected = "Counter-Strike: Source";
 
             //Act
             Dictionary<int, Game> userGameListFromIds = _database.FindGamesById(testAppId);
@@ -40,7 +40,7 @@ namespace SteamUnitTesting
         {
             //Arrange
             const string steamId = "76561198019106142";
-            int excepted = 10180;
+            const int excepted = 10180;
 
             //Act
             List<UserGameTime.Game> testGame = _steamSharp.SteamUserGameTimeListById(steamId);
@@ -55,7 +55,7 @@ namespace SteamUnitTesting
         {
             //Arrange
             string[] idArray = { "76561198019106142" };
-            int excepted = 1262258157;
+            const int excepted = 1262258157;
 
             //Act
             List<SteamUser.Player> playerList = _steamSharp.SteamUserListByIds(idArray);
@@ -70,7 +70,7 @@ namespace SteamUnitTesting
         {
             //Arrange
             SteamSpyData steamSpyDataById = new SteamSpyData();
-            string excepted = "Counter-Strike: Source";
+            const string excepted = "Counter-Strike: Source";
 
             //Act
             steamSpyDataById = _steamSharp.GameSteamSpyDataById("240");
