@@ -66,11 +66,11 @@
     <Compile Include="Filter Core\Filters\Filter Pre-Calculations\Models\UseFullMethods.cs" />
     <Compile Include="Filter Core\Filters\Filter Pre-Calculations\Pre-Calculations.cs" />
     <Compile Include="Filter Core\Filters\Filter Pre-Calculations\Models\TagReader.cs" />
-    <Compile Include="Filter Core\Filters\PopularityFilter.cs" />
-    <Compile Include="Filter Core\Models\FilterMerge.cs" />
+    <Compile Include="Filter Core\Filters\GameValueXFilter.cs" />
+    <Compile Include="Filter Core\Filters\FilterMerge.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Filter Core\Models\Filter.cs" />
+    <Compile Include="Filter Core\Filters\Models\Filter.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
