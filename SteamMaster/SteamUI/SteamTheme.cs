@@ -71,7 +71,7 @@ namespace SteamUI
         private void GenerateGameList()
         {
             const int minGameTime = 4; //in minutes
-            const int maxRecommendations = 18;
+            const int maxRecommendations = 30;
             string steamId = steamIdTextBox.Text;
             List<int> idList = new List<int>();
 
@@ -86,7 +86,7 @@ namespace SteamUI
             List<UserGameTime.Game> formGameListFromId = _steamSharp.SteamUserGameTimeListById(steamId);
             foreach (UserGameTime.Game game in formGameListFromId)
             {
-                if (idList.Count < maxRecommendations && game.playtime_forever > minGameTime)
+                if (idList.Count <= maxRecommendations && game.playtime_forever > minGameTime)
                 {
                     idList.Add(game.appid);
                 }
@@ -137,34 +137,46 @@ namespace SteamUI
             Label[] tagLabels =
             {
                 label1, label9, label14, label19, label24, label29, label34, label39, label44, label49,
-                label54, label59, label64, label69, label74, label79, label84, label89
+                label54, label59, label64, label69, label74, label79, label84, label89, label94, label99,
+                label104, label109, label114, label119, label124, label129, label134, label139, label144,
+                label149
             };
             Label[] devLabels =
             {
-                label4, label8, label13, label18, label23, label28, label33, label38, label43,
-                label48, label53, label58, label63, label68, label73, label78, label83, label88
+                label4, label8, label13, label18, label23, label28, label33, label38, label43, label48,
+                label53, label58, label63, label68, label73, label78, label83, label88, label92, label98,
+                label103, label108, label113, label118, label123, label128, label133, label137, label142,
+                label147 
             };
             Label[] releaseLabels =
             {
-                label5, label7, label12, label17, label22, label27, label32, label37, label42,
-                label47, label52, label57, label62, label67, label72, label77, label82, label87
+                label5, label7, label12, label17, label22, label27, label32, label37, label42, label47,
+                label52, label57, label62, label67, label72, label77, label82, label87, label95, label100,
+                label102, label107, label112, label117, label122, label127, label132, label140, label145,
+                label150
             };
             Label[] gameLabels =
             {
-                label2, label6, label11, label16, label21, label26, label31, label36, label41,
-                label46, label51, label56, label61, label66, label71, label76, label81, label86
+                label2, label6, label11, label16, label21, label26, label31, label36, label41, label46,
+                label51, label56, label61, label66, label71, label76, label81, label86, label91, label96,
+                label101, label106, label111, label116, label121, label126, label131, label136, label141,
+                label146
             };
             Label[] priceLabels =
             {
-                label3, label10, label15, label20, label25, label30, label35, label40, label45,
-                label50, label55, label60, label65, label70, label75, label80, label85, label90
+                label3, label10, label15, label20, label25, label30, label35, label40, label45, label50,
+                label55, label60, label65, label70, label75, label80, label85, label90, label93, label98,
+                label105, label110, label115, label120, label125, label130, label135, label138, label143,
+                label148
             };
             RichTextBox[] descriptionBoxes =
             {
                 richTextBox1, richTextBox2, richTextBox3, richTextBox4, richTextBox5,
                 richTextBox6, richTextBox7, richTextBox8, richTextBox9, richTextBox10,
                 richTextBox11, richTextBox12, richTextBox13, richTextBox14, richTextBox15,
-                richTextBox16, richTextBox17, richTextBox18
+                richTextBox16, richTextBox17, richTextBox18, richTextBox19, richTextBox20,
+                richTextBox21, richTextBox22, richTextBox23, richTextBox24, richTextBox25,
+                richTextBox26, richTextBox27, richTextBox28, richTextBox29, richTextBox30
             };
 
             if (roundCount < gameLabels.Length)
@@ -201,20 +213,21 @@ namespace SteamUI
             {
                 pictureBox1, pictureBox2, pictureBox3, pictureBox4, pictureBox5, pictureBox6,
                 pictureBox7, pictureBox8, pictureBox9, pictureBox10, pictureBox11, pictureBox12,
-                pictureBox13, pictureBox14, pictureBox15, pictureBox16, pictureBox17, pictureBox18
+                pictureBox13, pictureBox14, pictureBox15, pictureBox16, pictureBox17, pictureBox18,
+                pictureBox19, pictureBox20, pictureBox21, pictureBox22, pictureBox23, pictureBox24,
+                pictureBox25, pictureBox26, pictureBox27, pictureBox28, pictureBox29, pictureBox30
             };
             Label[] gameLabels =
             {
-                label2, label6, label11, label16, label21, label26, label31, label36, label41,
-                label46, label51, label56, label61, label66, label71, label76, label81, label86
+                label2, label6, label11, label16, label21, label26, label31, label36, label41, label46,
+                label51, label56, label61, label66, label71, label76, label81, label86, label91, label96,
+                label101, label106, label111, label116, label121, label126, label131, label136, label141,
+                label146
             };
 
-            foreach (PictureBox pb in pictureBoxes)
+            foreach (PictureBox pb in pictureBoxes.Where(pb => pb.Image != null))
             {
-                if (pb.Image != null)
-                {
-                    pb.Image = null;
-                }
+                pb.Image = null;
             }
 
             foreach (Label gameLabel in gameLabels)
@@ -231,7 +244,9 @@ namespace SteamUI
             {
                 pictureBox1, pictureBox2, pictureBox3, pictureBox4, pictureBox5, pictureBox6,
                 pictureBox7, pictureBox8, pictureBox9, pictureBox10, pictureBox11, pictureBox12,
-                pictureBox13, pictureBox14, pictureBox15, pictureBox16, pictureBox17, pictureBox18
+                pictureBox13, pictureBox14, pictureBox15, pictureBox16, pictureBox17, pictureBox18,
+                pictureBox19, pictureBox20, pictureBox21, pictureBox22, pictureBox23, pictureBox24,
+                pictureBox25, pictureBox26, pictureBox27, pictureBox28, pictureBox29, pictureBox30
             };
             try
             {
@@ -242,7 +257,7 @@ namespace SteamUI
             }
             catch (Exception e)
             {
-                Debug.WriteLine("{0} exception caught", e);
+                Debug.WriteLine("{0} header image exception caught", e);
             }
         }
 
@@ -256,7 +271,9 @@ namespace SteamUI
             {
                 label4, label8, label13, label18, label23, label28,
                 label33, label38, label43, label48, label53, label58,
-                label63, label68, label73, label78, label83, label88
+                label63, label68, label73, label78, label83, label88, label92, label98,
+                label103, label108, label113, label118, label123, label128, label133, label137, label142,
+                label147
             };
             foreach (PictureBox pictureBox in sender.Controls.OfType<PictureBox>())
             {

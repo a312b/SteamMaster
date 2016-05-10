@@ -223,6 +223,126 @@
             this.button19 = new System.Windows.Forms.Button();
             this.devToolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.tableLayoutPanel37 = new System.Windows.Forms.TableLayoutPanel();
+            this.pictureBox19 = new System.Windows.Forms.PictureBox();
+            this.label91 = new System.Windows.Forms.Label();
+            this.richTextBox19 = new System.Windows.Forms.RichTextBox();
+            this.label92 = new System.Windows.Forms.Label();
+            this.label93 = new System.Windows.Forms.Label();
+            this.button20 = new System.Windows.Forms.Button();
+            this.label94 = new System.Windows.Forms.Label();
+            this.label95 = new System.Windows.Forms.Label();
+            this.tableLayoutPanel38 = new System.Windows.Forms.TableLayoutPanel();
+            this.pictureBox20 = new System.Windows.Forms.PictureBox();
+            this.label96 = new System.Windows.Forms.Label();
+            this.richTextBox20 = new System.Windows.Forms.RichTextBox();
+            this.label97 = new System.Windows.Forms.Label();
+            this.label98 = new System.Windows.Forms.Label();
+            this.button21 = new System.Windows.Forms.Button();
+            this.label99 = new System.Windows.Forms.Label();
+            this.label100 = new System.Windows.Forms.Label();
+            this.tableLayoutPanel39 = new System.Windows.Forms.TableLayoutPanel();
+            this.pictureBox21 = new System.Windows.Forms.PictureBox();
+            this.label101 = new System.Windows.Forms.Label();
+            this.richTextBox21 = new System.Windows.Forms.RichTextBox();
+            this.label102 = new System.Windows.Forms.Label();
+            this.label103 = new System.Windows.Forms.Label();
+            this.label104 = new System.Windows.Forms.Label();
+            this.label105 = new System.Windows.Forms.Label();
+            this.button22 = new System.Windows.Forms.Button();
+            this.tableLayoutPanel40 = new System.Windows.Forms.TableLayoutPanel();
+            this.pictureBox22 = new System.Windows.Forms.PictureBox();
+            this.label106 = new System.Windows.Forms.Label();
+            this.richTextBox22 = new System.Windows.Forms.RichTextBox();
+            this.label107 = new System.Windows.Forms.Label();
+            this.label108 = new System.Windows.Forms.Label();
+            this.label109 = new System.Windows.Forms.Label();
+            this.label110 = new System.Windows.Forms.Label();
+            this.button23 = new System.Windows.Forms.Button();
+            this.tableLayoutPanel41 = new System.Windows.Forms.TableLayoutPanel();
+            this.pictureBox23 = new System.Windows.Forms.PictureBox();
+            this.label111 = new System.Windows.Forms.Label();
+            this.richTextBox23 = new System.Windows.Forms.RichTextBox();
+            this.label112 = new System.Windows.Forms.Label();
+            this.label113 = new System.Windows.Forms.Label();
+            this.label114 = new System.Windows.Forms.Label();
+            this.label115 = new System.Windows.Forms.Label();
+            this.button24 = new System.Windows.Forms.Button();
+            this.tableLayoutPanel42 = new System.Windows.Forms.TableLayoutPanel();
+            this.pictureBox24 = new System.Windows.Forms.PictureBox();
+            this.label116 = new System.Windows.Forms.Label();
+            this.richTextBox24 = new System.Windows.Forms.RichTextBox();
+            this.label117 = new System.Windows.Forms.Label();
+            this.label118 = new System.Windows.Forms.Label();
+            this.label119 = new System.Windows.Forms.Label();
+            this.label120 = new System.Windows.Forms.Label();
+            this.button25 = new System.Windows.Forms.Button();
+            this.tableLayoutPanel43 = new System.Windows.Forms.TableLayoutPanel();
+            this.pictureBox25 = new System.Windows.Forms.PictureBox();
+            this.label121 = new System.Windows.Forms.Label();
+            this.richTextBox25 = new System.Windows.Forms.RichTextBox();
+            this.label122 = new System.Windows.Forms.Label();
+            this.label123 = new System.Windows.Forms.Label();
+            this.label124 = new System.Windows.Forms.Label();
+            this.label125 = new System.Windows.Forms.Label();
+            this.button26 = new System.Windows.Forms.Button();
+            this.tableLayoutPanel44 = new System.Windows.Forms.TableLayoutPanel();
+            this.pictureBox26 = new System.Windows.Forms.PictureBox();
+            this.label126 = new System.Windows.Forms.Label();
+            this.richTextBox26 = new System.Windows.Forms.RichTextBox();
+            this.label127 = new System.Windows.Forms.Label();
+            this.label128 = new System.Windows.Forms.Label();
+            this.label129 = new System.Windows.Forms.Label();
+            this.label130 = new System.Windows.Forms.Label();
+            this.button27 = new System.Windows.Forms.Button();
+            this.tableLayoutPanel45 = new System.Windows.Forms.TableLayoutPanel();
+            this.pictureBox27 = new System.Windows.Forms.PictureBox();
+            this.label131 = new System.Windows.Forms.Label();
+            this.richTextBox27 = new System.Windows.Forms.RichTextBox();
+            this.label132 = new System.Windows.Forms.Label();
+            this.label133 = new System.Windows.Forms.Label();
+            this.label134 = new System.Windows.Forms.Label();
+            this.label135 = new System.Windows.Forms.Label();
+            this.button28 = new System.Windows.Forms.Button();
+            this.tableLayoutPanel46 = new System.Windows.Forms.TableLayoutPanel();
+            this.pictureBox28 = new System.Windows.Forms.PictureBox();
+            this.label136 = new System.Windows.Forms.Label();
+            this.richTextBox28 = new System.Windows.Forms.RichTextBox();
+            this.label137 = new System.Windows.Forms.Label();
+            this.label138 = new System.Windows.Forms.Label();
+            this.button29 = new System.Windows.Forms.Button();
+            this.label139 = new System.Windows.Forms.Label();
+            this.label140 = new System.Windows.Forms.Label();
+            this.tableLayoutPanel47 = new System.Windows.Forms.TableLayoutPanel();
+            this.pictureBox29 = new System.Windows.Forms.PictureBox();
+            this.label141 = new System.Windows.Forms.Label();
+            this.richTextBox29 = new System.Windows.Forms.RichTextBox();
+            this.label142 = new System.Windows.Forms.Label();
+            this.label143 = new System.Windows.Forms.Label();
+            this.button30 = new System.Windows.Forms.Button();
+            this.label144 = new System.Windows.Forms.Label();
+            this.label145 = new System.Windows.Forms.Label();
+            this.tableLayoutPanel48 = new System.Windows.Forms.TableLayoutPanel();
+            this.pictureBox30 = new System.Windows.Forms.PictureBox();
+            this.label146 = new System.Windows.Forms.Label();
+            this.richTextBox30 = new System.Windows.Forms.RichTextBox();
+            this.label147 = new System.Windows.Forms.Label();
+            this.label148 = new System.Windows.Forms.Label();
+            this.button31 = new System.Windows.Forms.Button();
+            this.label149 = new System.Windows.Forms.Label();
+            this.label150 = new System.Windows.Forms.Label();
+            this.tableLayoutPanel49 = new System.Windows.Forms.TableLayoutPanel();
+            this.tableLayoutPanel50 = new System.Windows.Forms.TableLayoutPanel();
+            this.tableLayoutPanel51 = new System.Windows.Forms.TableLayoutPanel();
+            this.tableLayoutPanel52 = new System.Windows.Forms.TableLayoutPanel();
+            this.tableLayoutPanel53 = new System.Windows.Forms.TableLayoutPanel();
+            this.tableLayoutPanel54 = new System.Windows.Forms.TableLayoutPanel();
+            this.tableLayoutPanel55 = new System.Windows.Forms.TableLayoutPanel();
+            this.tableLayoutPanel56 = new System.Windows.Forms.TableLayoutPanel();
+            this.tableLayoutPanel57 = new System.Windows.Forms.TableLayoutPanel();
+            this.tableLayoutPanel58 = new System.Windows.Forms.TableLayoutPanel();
+            this.tableLayoutPanel59 = new System.Windows.Forms.TableLayoutPanel();
+            this.tableLayoutPanel60 = new System.Windows.Forms.TableLayoutPanel();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.loadingPictureBox)).BeginInit();
             this.flowLayoutPanel1.SuspendLayout();
@@ -262,6 +382,30 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox17)).BeginInit();
             this.tableLayoutPanel30.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox18)).BeginInit();
+            this.tableLayoutPanel37.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox19)).BeginInit();
+            this.tableLayoutPanel38.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox20)).BeginInit();
+            this.tableLayoutPanel39.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox21)).BeginInit();
+            this.tableLayoutPanel40.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox22)).BeginInit();
+            this.tableLayoutPanel41.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox23)).BeginInit();
+            this.tableLayoutPanel42.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox24)).BeginInit();
+            this.tableLayoutPanel43.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox25)).BeginInit();
+            this.tableLayoutPanel44.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox26)).BeginInit();
+            this.tableLayoutPanel45.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox27)).BeginInit();
+            this.tableLayoutPanel46.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox28)).BeginInit();
+            this.tableLayoutPanel47.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox29)).BeginInit();
+            this.tableLayoutPanel48.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox30)).BeginInit();
             this.SuspendLayout();
             // 
             // button1
@@ -450,6 +594,30 @@
             this.flowLayoutPanel1.Controls.Add(this.tableLayoutPanel29);
             this.flowLayoutPanel1.Controls.Add(this.tableLayoutPanel36);
             this.flowLayoutPanel1.Controls.Add(this.tableLayoutPanel30);
+            this.flowLayoutPanel1.Controls.Add(this.tableLayoutPanel49);
+            this.flowLayoutPanel1.Controls.Add(this.tableLayoutPanel37);
+            this.flowLayoutPanel1.Controls.Add(this.tableLayoutPanel50);
+            this.flowLayoutPanel1.Controls.Add(this.tableLayoutPanel38);
+            this.flowLayoutPanel1.Controls.Add(this.tableLayoutPanel51);
+            this.flowLayoutPanel1.Controls.Add(this.tableLayoutPanel39);
+            this.flowLayoutPanel1.Controls.Add(this.tableLayoutPanel52);
+            this.flowLayoutPanel1.Controls.Add(this.tableLayoutPanel40);
+            this.flowLayoutPanel1.Controls.Add(this.tableLayoutPanel53);
+            this.flowLayoutPanel1.Controls.Add(this.tableLayoutPanel41);
+            this.flowLayoutPanel1.Controls.Add(this.tableLayoutPanel54);
+            this.flowLayoutPanel1.Controls.Add(this.tableLayoutPanel42);
+            this.flowLayoutPanel1.Controls.Add(this.tableLayoutPanel55);
+            this.flowLayoutPanel1.Controls.Add(this.tableLayoutPanel43);
+            this.flowLayoutPanel1.Controls.Add(this.tableLayoutPanel56);
+            this.flowLayoutPanel1.Controls.Add(this.tableLayoutPanel44);
+            this.flowLayoutPanel1.Controls.Add(this.tableLayoutPanel57);
+            this.flowLayoutPanel1.Controls.Add(this.tableLayoutPanel45);
+            this.flowLayoutPanel1.Controls.Add(this.tableLayoutPanel58);
+            this.flowLayoutPanel1.Controls.Add(this.tableLayoutPanel46);
+            this.flowLayoutPanel1.Controls.Add(this.tableLayoutPanel59);
+            this.flowLayoutPanel1.Controls.Add(this.tableLayoutPanel47);
+            this.flowLayoutPanel1.Controls.Add(this.tableLayoutPanel60);
+            this.flowLayoutPanel1.Controls.Add(this.tableLayoutPanel48);
             this.flowLayoutPanel1.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
             this.flowLayoutPanel1.Location = new System.Drawing.Point(12, 136);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
@@ -3222,6 +3390,1837 @@
             this.timer1.Interval = 1000;
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
+            // tableLayoutPanel37
+            // 
+            this.tableLayoutPanel37.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.tableLayoutPanel37.ColumnCount = 3;
+            this.tableLayoutPanel37.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 30F));
+            this.tableLayoutPanel37.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 58.97833F));
+            this.tableLayoutPanel37.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 11.14551F));
+            this.tableLayoutPanel37.Controls.Add(this.pictureBox19, 0, 0);
+            this.tableLayoutPanel37.Controls.Add(this.label91, 1, 0);
+            this.tableLayoutPanel37.Controls.Add(this.richTextBox19, 1, 1);
+            this.tableLayoutPanel37.Controls.Add(this.label92, 1, 2);
+            this.tableLayoutPanel37.Controls.Add(this.label93, 2, 0);
+            this.tableLayoutPanel37.Controls.Add(this.button20, 0, 3);
+            this.tableLayoutPanel37.Controls.Add(this.label94, 1, 3);
+            this.tableLayoutPanel37.Controls.Add(this.label95, 2, 2);
+            this.tableLayoutPanel37.Location = new System.Drawing.Point(3, 2135);
+            this.tableLayoutPanel37.Name = "tableLayoutPanel37";
+            this.tableLayoutPanel37.RowCount = 4;
+            this.tableLayoutPanel37.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 21.15385F));
+            this.tableLayoutPanel37.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 46.15385F));
+            this.tableLayoutPanel37.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 16F));
+            this.tableLayoutPanel37.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 16F));
+            this.tableLayoutPanel37.Size = new System.Drawing.Size(646, 104);
+            this.tableLayoutPanel37.TabIndex = 30;
+            this.tableLayoutPanel37.Click += new System.EventHandler(this.object_Click);
+            // 
+            // pictureBox19
+            // 
+            this.pictureBox19.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pictureBox19.Location = new System.Drawing.Point(3, 3);
+            this.pictureBox19.Name = "pictureBox19";
+            this.tableLayoutPanel37.SetRowSpan(this.pictureBox19, 4);
+            this.pictureBox19.Size = new System.Drawing.Size(187, 98);
+            this.pictureBox19.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox19.TabIndex = 0;
+            this.pictureBox19.TabStop = false;
+            this.pictureBox19.WaitOnLoad = true;
+            this.pictureBox19.Click += new System.EventHandler(this.object_Click);
+            // 
+            // label91
+            // 
+            this.label91.AutoSize = true;
+            this.label91.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.label91.Font = new System.Drawing.Font("Microsoft YaHei UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label91.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(207)))), ((int)(((byte)(207)))), ((int)(((byte)(207)))));
+            this.label91.Location = new System.Drawing.Point(196, 0);
+            this.label91.Name = "label91";
+            this.label91.Size = new System.Drawing.Size(51, 20);
+            this.label91.TabIndex = 2;
+            this.label91.Text = "Game";
+            this.label91.Click += new System.EventHandler(this.object_Click);
+            // 
+            // richTextBox19
+            // 
+            this.richTextBox19.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(27)))), ((int)(((byte)(27)))));
+            this.richTextBox19.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.richTextBox19.Cursor = System.Windows.Forms.Cursors.Default;
+            this.richTextBox19.DetectUrls = false;
+            this.richTextBox19.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.richTextBox19.Font = new System.Drawing.Font("Microsoft YaHei UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.richTextBox19.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(144)))), ((int)(((byte)(153)))), ((int)(((byte)(161)))));
+            this.richTextBox19.Location = new System.Drawing.Point(196, 25);
+            this.richTextBox19.Name = "richTextBox19";
+            this.richTextBox19.ReadOnly = true;
+            this.richTextBox19.ScrollBars = System.Windows.Forms.RichTextBoxScrollBars.None;
+            this.richTextBox19.Size = new System.Drawing.Size(374, 42);
+            this.richTextBox19.TabIndex = 4;
+            this.richTextBox19.TabStop = false;
+            this.richTextBox19.Text = "Description \nof \nthe \ngame";
+            this.richTextBox19.Visible = false;
+            this.richTextBox19.Click += new System.EventHandler(this.object_Click);
+            // 
+            // label92
+            // 
+            this.label92.AutoSize = true;
+            this.label92.BackColor = System.Drawing.Color.Transparent;
+            this.label92.Font = new System.Drawing.Font("Microsoft YaHei UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label92.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(207)))), ((int)(((byte)(207)))), ((int)(((byte)(207)))));
+            this.label92.Location = new System.Drawing.Point(196, 70);
+            this.label92.Name = "label92";
+            this.label92.Size = new System.Drawing.Size(68, 16);
+            this.label92.TabIndex = 5;
+            this.label92.Text = "Developer";
+            this.label92.Visible = false;
+            // 
+            // label93
+            // 
+            this.label93.AutoSize = true;
+            this.label93.Font = new System.Drawing.Font("Microsoft YaHei UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label93.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(144)))), ((int)(((byte)(153)))), ((int)(((byte)(161)))));
+            this.label93.Location = new System.Drawing.Point(576, 0);
+            this.label93.Name = "label93";
+            this.label93.Size = new System.Drawing.Size(57, 19);
+            this.label93.TabIndex = 3;
+            this.label93.Text = "Price/€";
+            this.label93.Visible = false;
+            // 
+            // button20
+            // 
+            this.button20.AutoSize = true;
+            this.button20.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button20.Font = new System.Drawing.Font("Microsoft YaHei UI", 6.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button20.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(207)))), ((int)(((byte)(207)))), ((int)(((byte)(207)))));
+            this.button20.Image = ((System.Drawing.Image)(resources.GetObject("button20.Image")));
+            this.button20.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button20.Location = new System.Drawing.Point(243, 89);
+            this.button20.Margin = new System.Windows.Forms.Padding(50, 3, 3, 3);
+            this.button20.Name = "button20";
+            this.button20.Size = new System.Drawing.Size(90, 12);
+            this.button20.TabIndex = 6;
+            this.button20.Text = "     Steam Store";
+            this.button20.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.button20.UseVisualStyleBackColor = true;
+            this.button20.Visible = false;
+            // 
+            // label94
+            // 
+            this.label94.AutoSize = true;
+            this.label94.BackColor = System.Drawing.Color.Transparent;
+            this.label94.Font = new System.Drawing.Font("Microsoft YaHei UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label94.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(77)))), ((int)(((byte)(77)))), ((int)(((byte)(77)))));
+            this.label94.Location = new System.Drawing.Point(576, 86);
+            this.label94.Name = "label94";
+            this.label94.Size = new System.Drawing.Size(43, 18);
+            this.label94.TabIndex = 1;
+            this.label94.Text = "Tags, Tags, Tags, Tags";
+            this.label94.Visible = false;
+            // 
+            // label95
+            // 
+            this.label95.AutoSize = true;
+            this.label95.BackColor = System.Drawing.Color.Transparent;
+            this.label95.Font = new System.Drawing.Font("Microsoft YaHei UI", 6.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label95.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(207)))), ((int)(((byte)(207)))), ((int)(((byte)(207)))));
+            this.label95.Location = new System.Drawing.Point(576, 70);
+            this.label95.Name = "label95";
+            this.label95.Size = new System.Drawing.Size(39, 14);
+            this.label95.TabIndex = 6;
+            this.label95.Text = "Release";
+            this.label95.Visible = false;
+            // 
+            // tableLayoutPanel38
+            // 
+            this.tableLayoutPanel38.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.tableLayoutPanel38.ColumnCount = 3;
+            this.tableLayoutPanel38.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 30F));
+            this.tableLayoutPanel38.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 58.97833F));
+            this.tableLayoutPanel38.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 11.14551F));
+            this.tableLayoutPanel38.Controls.Add(this.pictureBox20, 0, 0);
+            this.tableLayoutPanel38.Controls.Add(this.label96, 1, 0);
+            this.tableLayoutPanel38.Controls.Add(this.richTextBox20, 1, 1);
+            this.tableLayoutPanel38.Controls.Add(this.label97, 1, 2);
+            this.tableLayoutPanel38.Controls.Add(this.label98, 2, 0);
+            this.tableLayoutPanel38.Controls.Add(this.button21, 0, 3);
+            this.tableLayoutPanel38.Controls.Add(this.label99, 1, 3);
+            this.tableLayoutPanel38.Controls.Add(this.label100, 2, 2);
+            this.tableLayoutPanel38.Location = new System.Drawing.Point(3, 2253);
+            this.tableLayoutPanel38.Name = "tableLayoutPanel38";
+            this.tableLayoutPanel38.RowCount = 4;
+            this.tableLayoutPanel38.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 21.15385F));
+            this.tableLayoutPanel38.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 46.15385F));
+            this.tableLayoutPanel38.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 16F));
+            this.tableLayoutPanel38.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 16F));
+            this.tableLayoutPanel38.Size = new System.Drawing.Size(646, 104);
+            this.tableLayoutPanel38.TabIndex = 31;
+            this.tableLayoutPanel38.Click += new System.EventHandler(this.object_Click);
+            // 
+            // pictureBox20
+            // 
+            this.pictureBox20.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pictureBox20.Location = new System.Drawing.Point(3, 3);
+            this.pictureBox20.Name = "pictureBox20";
+            this.tableLayoutPanel38.SetRowSpan(this.pictureBox20, 4);
+            this.pictureBox20.Size = new System.Drawing.Size(187, 98);
+            this.pictureBox20.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox20.TabIndex = 0;
+            this.pictureBox20.TabStop = false;
+            this.pictureBox20.WaitOnLoad = true;
+            this.pictureBox20.Click += new System.EventHandler(this.object_Click);
+            // 
+            // label96
+            // 
+            this.label96.AutoSize = true;
+            this.label96.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.label96.Font = new System.Drawing.Font("Microsoft YaHei UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label96.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(207)))), ((int)(((byte)(207)))), ((int)(((byte)(207)))));
+            this.label96.Location = new System.Drawing.Point(196, 0);
+            this.label96.Name = "label96";
+            this.label96.Size = new System.Drawing.Size(51, 20);
+            this.label96.TabIndex = 2;
+            this.label96.Text = "Game";
+            this.label96.Click += new System.EventHandler(this.object_Click);
+            // 
+            // richTextBox20
+            // 
+            this.richTextBox20.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(27)))), ((int)(((byte)(27)))));
+            this.richTextBox20.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.richTextBox20.Cursor = System.Windows.Forms.Cursors.Default;
+            this.richTextBox20.DetectUrls = false;
+            this.richTextBox20.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.richTextBox20.Font = new System.Drawing.Font("Microsoft YaHei UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.richTextBox20.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(144)))), ((int)(((byte)(153)))), ((int)(((byte)(161)))));
+            this.richTextBox20.Location = new System.Drawing.Point(196, 25);
+            this.richTextBox20.Name = "richTextBox20";
+            this.richTextBox20.ReadOnly = true;
+            this.richTextBox20.ScrollBars = System.Windows.Forms.RichTextBoxScrollBars.None;
+            this.richTextBox20.Size = new System.Drawing.Size(374, 42);
+            this.richTextBox20.TabIndex = 4;
+            this.richTextBox20.TabStop = false;
+            this.richTextBox20.Text = "Description \nof \nthe \ngame";
+            this.richTextBox20.Visible = false;
+            this.richTextBox20.Click += new System.EventHandler(this.object_Click);
+            // 
+            // label97
+            // 
+            this.label97.AutoSize = true;
+            this.label97.BackColor = System.Drawing.Color.Transparent;
+            this.label97.Font = new System.Drawing.Font("Microsoft YaHei UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label97.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(207)))), ((int)(((byte)(207)))), ((int)(((byte)(207)))));
+            this.label97.Location = new System.Drawing.Point(196, 70);
+            this.label97.Name = "label97";
+            this.label97.Size = new System.Drawing.Size(68, 16);
+            this.label97.TabIndex = 5;
+            this.label97.Text = "Developer";
+            this.label97.Visible = false;
+            // 
+            // label98
+            // 
+            this.label98.AutoSize = true;
+            this.label98.Font = new System.Drawing.Font("Microsoft YaHei UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label98.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(144)))), ((int)(((byte)(153)))), ((int)(((byte)(161)))));
+            this.label98.Location = new System.Drawing.Point(576, 0);
+            this.label98.Name = "label98";
+            this.label98.Size = new System.Drawing.Size(57, 19);
+            this.label98.TabIndex = 3;
+            this.label98.Text = "Price/€";
+            this.label98.Visible = false;
+            // 
+            // button21
+            // 
+            this.button21.AutoSize = true;
+            this.button21.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button21.Font = new System.Drawing.Font("Microsoft YaHei UI", 6.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button21.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(207)))), ((int)(((byte)(207)))), ((int)(((byte)(207)))));
+            this.button21.Image = ((System.Drawing.Image)(resources.GetObject("button21.Image")));
+            this.button21.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button21.Location = new System.Drawing.Point(243, 89);
+            this.button21.Margin = new System.Windows.Forms.Padding(50, 3, 3, 3);
+            this.button21.Name = "button21";
+            this.button21.Size = new System.Drawing.Size(90, 12);
+            this.button21.TabIndex = 6;
+            this.button21.Text = "     Steam Store";
+            this.button21.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.button21.UseVisualStyleBackColor = true;
+            this.button21.Visible = false;
+            // 
+            // label99
+            // 
+            this.label99.AutoSize = true;
+            this.label99.BackColor = System.Drawing.Color.Transparent;
+            this.label99.Font = new System.Drawing.Font("Microsoft YaHei UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label99.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(77)))), ((int)(((byte)(77)))), ((int)(((byte)(77)))));
+            this.label99.Location = new System.Drawing.Point(576, 86);
+            this.label99.Name = "label99";
+            this.label99.Size = new System.Drawing.Size(43, 18);
+            this.label99.TabIndex = 1;
+            this.label99.Text = "Tags, Tags, Tags, Tags";
+            this.label99.Visible = false;
+            // 
+            // label100
+            // 
+            this.label100.AutoSize = true;
+            this.label100.BackColor = System.Drawing.Color.Transparent;
+            this.label100.Font = new System.Drawing.Font("Microsoft YaHei UI", 6.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label100.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(207)))), ((int)(((byte)(207)))), ((int)(((byte)(207)))));
+            this.label100.Location = new System.Drawing.Point(576, 70);
+            this.label100.Name = "label100";
+            this.label100.Size = new System.Drawing.Size(39, 14);
+            this.label100.TabIndex = 6;
+            this.label100.Text = "Release";
+            this.label100.Visible = false;
+            // 
+            // tableLayoutPanel39
+            // 
+            this.tableLayoutPanel39.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.tableLayoutPanel39.ColumnCount = 3;
+            this.tableLayoutPanel39.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 30F));
+            this.tableLayoutPanel39.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 59.28793F));
+            this.tableLayoutPanel39.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 10.83591F));
+            this.tableLayoutPanel39.Controls.Add(this.pictureBox21, 0, 0);
+            this.tableLayoutPanel39.Controls.Add(this.label101, 1, 0);
+            this.tableLayoutPanel39.Controls.Add(this.richTextBox21, 1, 1);
+            this.tableLayoutPanel39.Controls.Add(this.label102, 2, 2);
+            this.tableLayoutPanel39.Controls.Add(this.label103, 1, 2);
+            this.tableLayoutPanel39.Controls.Add(this.label104, 1, 3);
+            this.tableLayoutPanel39.Controls.Add(this.label105, 2, 0);
+            this.tableLayoutPanel39.Controls.Add(this.button22, 0, 3);
+            this.tableLayoutPanel39.Location = new System.Drawing.Point(3, 2371);
+            this.tableLayoutPanel39.Name = "tableLayoutPanel39";
+            this.tableLayoutPanel39.RowCount = 4;
+            this.tableLayoutPanel39.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20.19231F));
+            this.tableLayoutPanel39.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 47.11538F));
+            this.tableLayoutPanel39.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 16F));
+            this.tableLayoutPanel39.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 16F));
+            this.tableLayoutPanel39.Size = new System.Drawing.Size(646, 104);
+            this.tableLayoutPanel39.TabIndex = 32;
+            this.tableLayoutPanel39.Click += new System.EventHandler(this.object_Click);
+            // 
+            // pictureBox21
+            // 
+            this.pictureBox21.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pictureBox21.Location = new System.Drawing.Point(3, 3);
+            this.pictureBox21.Name = "pictureBox21";
+            this.tableLayoutPanel39.SetRowSpan(this.pictureBox21, 4);
+            this.pictureBox21.Size = new System.Drawing.Size(187, 98);
+            this.pictureBox21.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox21.TabIndex = 0;
+            this.pictureBox21.TabStop = false;
+            this.pictureBox21.Click += new System.EventHandler(this.object_Click);
+            // 
+            // label101
+            // 
+            this.label101.AutoSize = true;
+            this.label101.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.label101.Font = new System.Drawing.Font("Microsoft YaHei UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label101.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(207)))), ((int)(((byte)(207)))), ((int)(((byte)(207)))));
+            this.label101.Location = new System.Drawing.Point(196, 0);
+            this.label101.Name = "label101";
+            this.label101.Size = new System.Drawing.Size(51, 20);
+            this.label101.TabIndex = 2;
+            this.label101.Text = "Game";
+            this.label101.Click += new System.EventHandler(this.object_Click);
+            // 
+            // richTextBox21
+            // 
+            this.richTextBox21.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(27)))), ((int)(((byte)(27)))));
+            this.richTextBox21.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.richTextBox21.Cursor = System.Windows.Forms.Cursors.Default;
+            this.richTextBox21.DetectUrls = false;
+            this.richTextBox21.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.richTextBox21.Font = new System.Drawing.Font("Microsoft YaHei UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.richTextBox21.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(144)))), ((int)(((byte)(153)))), ((int)(((byte)(161)))));
+            this.richTextBox21.Location = new System.Drawing.Point(196, 24);
+            this.richTextBox21.Name = "richTextBox21";
+            this.richTextBox21.ReadOnly = true;
+            this.richTextBox21.ScrollBars = System.Windows.Forms.RichTextBoxScrollBars.None;
+            this.richTextBox21.Size = new System.Drawing.Size(376, 43);
+            this.richTextBox21.TabIndex = 4;
+            this.richTextBox21.TabStop = false;
+            this.richTextBox21.Text = "Description \nof \nthe \ngame";
+            this.richTextBox21.Visible = false;
+            this.richTextBox21.Click += new System.EventHandler(this.object_Click);
+            // 
+            // label102
+            // 
+            this.label102.AutoSize = true;
+            this.label102.BackColor = System.Drawing.Color.Transparent;
+            this.label102.Font = new System.Drawing.Font("Microsoft YaHei UI", 6.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label102.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(207)))), ((int)(((byte)(207)))), ((int)(((byte)(207)))));
+            this.label102.Location = new System.Drawing.Point(578, 70);
+            this.label102.Name = "label102";
+            this.label102.Size = new System.Drawing.Size(39, 14);
+            this.label102.TabIndex = 6;
+            this.label102.Text = "Release";
+            this.label102.Visible = false;
+            // 
+            // label103
+            // 
+            this.label103.AutoSize = true;
+            this.label103.BackColor = System.Drawing.Color.Transparent;
+            this.label103.Font = new System.Drawing.Font("Microsoft YaHei UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label103.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(207)))), ((int)(((byte)(207)))), ((int)(((byte)(207)))));
+            this.label103.Location = new System.Drawing.Point(196, 70);
+            this.label103.Name = "label103";
+            this.label103.Size = new System.Drawing.Size(68, 16);
+            this.label103.TabIndex = 5;
+            this.label103.Text = "Developer";
+            this.label103.Visible = false;
+            // 
+            // label104
+            // 
+            this.label104.AutoSize = true;
+            this.label104.BackColor = System.Drawing.Color.Transparent;
+            this.label104.Font = new System.Drawing.Font("Microsoft YaHei UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label104.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(77)))), ((int)(((byte)(77)))), ((int)(((byte)(77)))));
+            this.label104.Location = new System.Drawing.Point(578, 86);
+            this.label104.Name = "label104";
+            this.label104.Size = new System.Drawing.Size(43, 18);
+            this.label104.TabIndex = 1;
+            this.label104.Text = "Tags, Tags, Tags, Tags";
+            this.label104.Visible = false;
+            // 
+            // label105
+            // 
+            this.label105.AutoSize = true;
+            this.label105.Font = new System.Drawing.Font("Microsoft YaHei UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label105.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(144)))), ((int)(((byte)(153)))), ((int)(((byte)(161)))));
+            this.label105.Location = new System.Drawing.Point(578, 0);
+            this.label105.Name = "label105";
+            this.label105.Size = new System.Drawing.Size(57, 19);
+            this.label105.TabIndex = 3;
+            this.label105.Text = "Price/€";
+            this.label105.Visible = false;
+            // 
+            // button22
+            // 
+            this.button22.AutoSize = true;
+            this.button22.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button22.Font = new System.Drawing.Font("Microsoft YaHei UI", 6.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button22.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(207)))), ((int)(((byte)(207)))), ((int)(((byte)(207)))));
+            this.button22.Image = ((System.Drawing.Image)(resources.GetObject("button22.Image")));
+            this.button22.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button22.Location = new System.Drawing.Point(243, 89);
+            this.button22.Margin = new System.Windows.Forms.Padding(50, 3, 3, 3);
+            this.button22.Name = "button22";
+            this.button22.Size = new System.Drawing.Size(90, 12);
+            this.button22.TabIndex = 6;
+            this.button22.Text = "     Steam Store";
+            this.button22.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.button22.UseVisualStyleBackColor = true;
+            this.button22.Visible = false;
+            // 
+            // tableLayoutPanel40
+            // 
+            this.tableLayoutPanel40.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.tableLayoutPanel40.ColumnCount = 3;
+            this.tableLayoutPanel40.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 30F));
+            this.tableLayoutPanel40.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 59.28793F));
+            this.tableLayoutPanel40.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 10.83591F));
+            this.tableLayoutPanel40.Controls.Add(this.pictureBox22, 0, 0);
+            this.tableLayoutPanel40.Controls.Add(this.label106, 1, 0);
+            this.tableLayoutPanel40.Controls.Add(this.richTextBox22, 1, 1);
+            this.tableLayoutPanel40.Controls.Add(this.label107, 2, 2);
+            this.tableLayoutPanel40.Controls.Add(this.label108, 1, 2);
+            this.tableLayoutPanel40.Controls.Add(this.label109, 1, 3);
+            this.tableLayoutPanel40.Controls.Add(this.label110, 2, 0);
+            this.tableLayoutPanel40.Controls.Add(this.button23, 0, 3);
+            this.tableLayoutPanel40.Location = new System.Drawing.Point(3, 2489);
+            this.tableLayoutPanel40.Name = "tableLayoutPanel40";
+            this.tableLayoutPanel40.RowCount = 4;
+            this.tableLayoutPanel40.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20.19231F));
+            this.tableLayoutPanel40.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 47.11538F));
+            this.tableLayoutPanel40.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 16F));
+            this.tableLayoutPanel40.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 16F));
+            this.tableLayoutPanel40.Size = new System.Drawing.Size(646, 104);
+            this.tableLayoutPanel40.TabIndex = 33;
+            this.tableLayoutPanel40.Click += new System.EventHandler(this.object_Click);
+            // 
+            // pictureBox22
+            // 
+            this.pictureBox22.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pictureBox22.Location = new System.Drawing.Point(3, 3);
+            this.pictureBox22.Name = "pictureBox22";
+            this.tableLayoutPanel40.SetRowSpan(this.pictureBox22, 4);
+            this.pictureBox22.Size = new System.Drawing.Size(187, 98);
+            this.pictureBox22.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox22.TabIndex = 0;
+            this.pictureBox22.TabStop = false;
+            this.pictureBox22.Click += new System.EventHandler(this.object_Click);
+            // 
+            // label106
+            // 
+            this.label106.AutoSize = true;
+            this.label106.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.label106.Font = new System.Drawing.Font("Microsoft YaHei UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label106.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(207)))), ((int)(((byte)(207)))), ((int)(((byte)(207)))));
+            this.label106.Location = new System.Drawing.Point(196, 0);
+            this.label106.Name = "label106";
+            this.label106.Size = new System.Drawing.Size(51, 20);
+            this.label106.TabIndex = 2;
+            this.label106.Text = "Game";
+            this.label106.Click += new System.EventHandler(this.object_Click);
+            // 
+            // richTextBox22
+            // 
+            this.richTextBox22.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(27)))), ((int)(((byte)(27)))));
+            this.richTextBox22.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.richTextBox22.Cursor = System.Windows.Forms.Cursors.Default;
+            this.richTextBox22.DetectUrls = false;
+            this.richTextBox22.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.richTextBox22.Font = new System.Drawing.Font("Microsoft YaHei UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.richTextBox22.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(144)))), ((int)(((byte)(153)))), ((int)(((byte)(161)))));
+            this.richTextBox22.Location = new System.Drawing.Point(196, 24);
+            this.richTextBox22.Name = "richTextBox22";
+            this.richTextBox22.ReadOnly = true;
+            this.richTextBox22.ScrollBars = System.Windows.Forms.RichTextBoxScrollBars.None;
+            this.richTextBox22.Size = new System.Drawing.Size(376, 43);
+            this.richTextBox22.TabIndex = 4;
+            this.richTextBox22.TabStop = false;
+            this.richTextBox22.Text = "Description \nof \nthe \ngame";
+            this.richTextBox22.Visible = false;
+            this.richTextBox22.Click += new System.EventHandler(this.object_Click);
+            // 
+            // label107
+            // 
+            this.label107.AutoSize = true;
+            this.label107.BackColor = System.Drawing.Color.Transparent;
+            this.label107.Font = new System.Drawing.Font("Microsoft YaHei UI", 6.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label107.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(207)))), ((int)(((byte)(207)))), ((int)(((byte)(207)))));
+            this.label107.Location = new System.Drawing.Point(578, 70);
+            this.label107.Name = "label107";
+            this.label107.Size = new System.Drawing.Size(39, 14);
+            this.label107.TabIndex = 6;
+            this.label107.Text = "Release";
+            this.label107.Visible = false;
+            // 
+            // label108
+            // 
+            this.label108.AutoSize = true;
+            this.label108.BackColor = System.Drawing.Color.Transparent;
+            this.label108.Font = new System.Drawing.Font("Microsoft YaHei UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label108.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(207)))), ((int)(((byte)(207)))), ((int)(((byte)(207)))));
+            this.label108.Location = new System.Drawing.Point(196, 70);
+            this.label108.Name = "label108";
+            this.label108.Size = new System.Drawing.Size(68, 16);
+            this.label108.TabIndex = 5;
+            this.label108.Text = "Developer";
+            this.label108.Visible = false;
+            // 
+            // label109
+            // 
+            this.label109.AutoSize = true;
+            this.label109.BackColor = System.Drawing.Color.Transparent;
+            this.label109.Font = new System.Drawing.Font("Microsoft YaHei UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label109.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(77)))), ((int)(((byte)(77)))), ((int)(((byte)(77)))));
+            this.label109.Location = new System.Drawing.Point(578, 86);
+            this.label109.Name = "label109";
+            this.label109.Size = new System.Drawing.Size(43, 18);
+            this.label109.TabIndex = 1;
+            this.label109.Text = "Tags, Tags, Tags, Tags";
+            this.label109.Visible = false;
+            // 
+            // label110
+            // 
+            this.label110.AutoSize = true;
+            this.label110.Font = new System.Drawing.Font("Microsoft YaHei UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label110.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(144)))), ((int)(((byte)(153)))), ((int)(((byte)(161)))));
+            this.label110.Location = new System.Drawing.Point(578, 0);
+            this.label110.Name = "label110";
+            this.label110.Size = new System.Drawing.Size(57, 19);
+            this.label110.TabIndex = 3;
+            this.label110.Text = "Price/€";
+            this.label110.Visible = false;
+            // 
+            // button23
+            // 
+            this.button23.AutoSize = true;
+            this.button23.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button23.Font = new System.Drawing.Font("Microsoft YaHei UI", 6.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button23.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(207)))), ((int)(((byte)(207)))), ((int)(((byte)(207)))));
+            this.button23.Image = ((System.Drawing.Image)(resources.GetObject("button23.Image")));
+            this.button23.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button23.Location = new System.Drawing.Point(243, 89);
+            this.button23.Margin = new System.Windows.Forms.Padding(50, 3, 3, 3);
+            this.button23.Name = "button23";
+            this.button23.Size = new System.Drawing.Size(90, 12);
+            this.button23.TabIndex = 6;
+            this.button23.Text = "     Steam Store";
+            this.button23.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.button23.UseVisualStyleBackColor = true;
+            this.button23.Visible = false;
+            // 
+            // tableLayoutPanel41
+            // 
+            this.tableLayoutPanel41.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.tableLayoutPanel41.ColumnCount = 3;
+            this.tableLayoutPanel41.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 30F));
+            this.tableLayoutPanel41.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 59.59752F));
+            this.tableLayoutPanel41.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 10.52632F));
+            this.tableLayoutPanel41.Controls.Add(this.pictureBox23, 0, 0);
+            this.tableLayoutPanel41.Controls.Add(this.label111, 1, 0);
+            this.tableLayoutPanel41.Controls.Add(this.richTextBox23, 1, 1);
+            this.tableLayoutPanel41.Controls.Add(this.label112, 2, 2);
+            this.tableLayoutPanel41.Controls.Add(this.label113, 1, 2);
+            this.tableLayoutPanel41.Controls.Add(this.label114, 1, 3);
+            this.tableLayoutPanel41.Controls.Add(this.label115, 2, 0);
+            this.tableLayoutPanel41.Controls.Add(this.button24, 0, 3);
+            this.tableLayoutPanel41.Location = new System.Drawing.Point(3, 2607);
+            this.tableLayoutPanel41.Name = "tableLayoutPanel41";
+            this.tableLayoutPanel41.RowCount = 4;
+            this.tableLayoutPanel41.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20.19231F));
+            this.tableLayoutPanel41.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 47.11538F));
+            this.tableLayoutPanel41.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 16F));
+            this.tableLayoutPanel41.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 16F));
+            this.tableLayoutPanel41.Size = new System.Drawing.Size(646, 104);
+            this.tableLayoutPanel41.TabIndex = 34;
+            this.tableLayoutPanel41.Click += new System.EventHandler(this.object_Click);
+            // 
+            // pictureBox23
+            // 
+            this.pictureBox23.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pictureBox23.Location = new System.Drawing.Point(3, 3);
+            this.pictureBox23.Name = "pictureBox23";
+            this.tableLayoutPanel41.SetRowSpan(this.pictureBox23, 4);
+            this.pictureBox23.Size = new System.Drawing.Size(187, 98);
+            this.pictureBox23.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox23.TabIndex = 0;
+            this.pictureBox23.TabStop = false;
+            this.pictureBox23.Click += new System.EventHandler(this.object_Click);
+            // 
+            // label111
+            // 
+            this.label111.AutoSize = true;
+            this.label111.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.label111.Font = new System.Drawing.Font("Microsoft YaHei UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label111.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(207)))), ((int)(((byte)(207)))), ((int)(((byte)(207)))));
+            this.label111.Location = new System.Drawing.Point(196, 0);
+            this.label111.Name = "label111";
+            this.label111.Size = new System.Drawing.Size(51, 20);
+            this.label111.TabIndex = 2;
+            this.label111.Text = "Game";
+            this.label111.Click += new System.EventHandler(this.object_Click);
+            // 
+            // richTextBox23
+            // 
+            this.richTextBox23.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(27)))), ((int)(((byte)(27)))));
+            this.richTextBox23.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.richTextBox23.Cursor = System.Windows.Forms.Cursors.Default;
+            this.richTextBox23.DetectUrls = false;
+            this.richTextBox23.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.richTextBox23.Font = new System.Drawing.Font("Microsoft YaHei UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.richTextBox23.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(144)))), ((int)(((byte)(153)))), ((int)(((byte)(161)))));
+            this.richTextBox23.Location = new System.Drawing.Point(196, 24);
+            this.richTextBox23.Name = "richTextBox23";
+            this.richTextBox23.ReadOnly = true;
+            this.richTextBox23.ScrollBars = System.Windows.Forms.RichTextBoxScrollBars.None;
+            this.richTextBox23.Size = new System.Drawing.Size(378, 43);
+            this.richTextBox23.TabIndex = 4;
+            this.richTextBox23.TabStop = false;
+            this.richTextBox23.Text = "Description \nof \nthe \ngame";
+            this.richTextBox23.Visible = false;
+            this.richTextBox23.Click += new System.EventHandler(this.object_Click);
+            // 
+            // label112
+            // 
+            this.label112.AutoSize = true;
+            this.label112.BackColor = System.Drawing.Color.Transparent;
+            this.label112.Font = new System.Drawing.Font("Microsoft YaHei UI", 6.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label112.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(207)))), ((int)(((byte)(207)))), ((int)(((byte)(207)))));
+            this.label112.Location = new System.Drawing.Point(580, 70);
+            this.label112.Name = "label112";
+            this.label112.Size = new System.Drawing.Size(39, 14);
+            this.label112.TabIndex = 6;
+            this.label112.Text = "Release";
+            this.label112.Visible = false;
+            // 
+            // label113
+            // 
+            this.label113.AutoSize = true;
+            this.label113.BackColor = System.Drawing.Color.Transparent;
+            this.label113.Font = new System.Drawing.Font("Microsoft YaHei UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label113.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(207)))), ((int)(((byte)(207)))), ((int)(((byte)(207)))));
+            this.label113.Location = new System.Drawing.Point(196, 70);
+            this.label113.Name = "label113";
+            this.label113.Size = new System.Drawing.Size(68, 16);
+            this.label113.TabIndex = 5;
+            this.label113.Text = "Developer";
+            this.label113.Visible = false;
+            // 
+            // label114
+            // 
+            this.label114.AutoSize = true;
+            this.label114.BackColor = System.Drawing.Color.Transparent;
+            this.label114.Font = new System.Drawing.Font("Microsoft YaHei UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label114.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(77)))), ((int)(((byte)(77)))), ((int)(((byte)(77)))));
+            this.label114.Location = new System.Drawing.Point(580, 86);
+            this.label114.Name = "label114";
+            this.label114.Size = new System.Drawing.Size(43, 18);
+            this.label114.TabIndex = 1;
+            this.label114.Text = "Tags, Tags, Tags, Tags";
+            this.label114.Visible = false;
+            // 
+            // label115
+            // 
+            this.label115.AutoSize = true;
+            this.label115.Font = new System.Drawing.Font("Microsoft YaHei UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label115.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(144)))), ((int)(((byte)(153)))), ((int)(((byte)(161)))));
+            this.label115.Location = new System.Drawing.Point(580, 0);
+            this.label115.Name = "label115";
+            this.label115.Size = new System.Drawing.Size(57, 19);
+            this.label115.TabIndex = 3;
+            this.label115.Text = "Price/€";
+            this.label115.Visible = false;
+            // 
+            // button24
+            // 
+            this.button24.AutoSize = true;
+            this.button24.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button24.Font = new System.Drawing.Font("Microsoft YaHei UI", 6.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button24.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(207)))), ((int)(((byte)(207)))), ((int)(((byte)(207)))));
+            this.button24.Image = ((System.Drawing.Image)(resources.GetObject("button24.Image")));
+            this.button24.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button24.Location = new System.Drawing.Point(243, 89);
+            this.button24.Margin = new System.Windows.Forms.Padding(50, 3, 3, 3);
+            this.button24.Name = "button24";
+            this.button24.Size = new System.Drawing.Size(90, 12);
+            this.button24.TabIndex = 6;
+            this.button24.Text = "     Steam Store";
+            this.button24.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.button24.UseVisualStyleBackColor = true;
+            this.button24.Visible = false;
+            // 
+            // tableLayoutPanel42
+            // 
+            this.tableLayoutPanel42.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.tableLayoutPanel42.ColumnCount = 3;
+            this.tableLayoutPanel42.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 30F));
+            this.tableLayoutPanel42.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 59.59752F));
+            this.tableLayoutPanel42.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 10.52632F));
+            this.tableLayoutPanel42.Controls.Add(this.pictureBox24, 0, 0);
+            this.tableLayoutPanel42.Controls.Add(this.label116, 1, 0);
+            this.tableLayoutPanel42.Controls.Add(this.richTextBox24, 1, 1);
+            this.tableLayoutPanel42.Controls.Add(this.label117, 2, 2);
+            this.tableLayoutPanel42.Controls.Add(this.label118, 1, 2);
+            this.tableLayoutPanel42.Controls.Add(this.label119, 1, 3);
+            this.tableLayoutPanel42.Controls.Add(this.label120, 2, 0);
+            this.tableLayoutPanel42.Controls.Add(this.button25, 0, 3);
+            this.tableLayoutPanel42.Location = new System.Drawing.Point(3, 2725);
+            this.tableLayoutPanel42.Name = "tableLayoutPanel42";
+            this.tableLayoutPanel42.RowCount = 4;
+            this.tableLayoutPanel42.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20.19231F));
+            this.tableLayoutPanel42.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 47.11538F));
+            this.tableLayoutPanel42.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 16F));
+            this.tableLayoutPanel42.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 16F));
+            this.tableLayoutPanel42.Size = new System.Drawing.Size(646, 104);
+            this.tableLayoutPanel42.TabIndex = 35;
+            this.tableLayoutPanel42.Click += new System.EventHandler(this.object_Click);
+            // 
+            // pictureBox24
+            // 
+            this.pictureBox24.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pictureBox24.Location = new System.Drawing.Point(3, 3);
+            this.pictureBox24.Name = "pictureBox24";
+            this.tableLayoutPanel42.SetRowSpan(this.pictureBox24, 4);
+            this.pictureBox24.Size = new System.Drawing.Size(187, 98);
+            this.pictureBox24.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox24.TabIndex = 0;
+            this.pictureBox24.TabStop = false;
+            this.pictureBox24.Click += new System.EventHandler(this.object_Click);
+            // 
+            // label116
+            // 
+            this.label116.AutoSize = true;
+            this.label116.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.label116.Font = new System.Drawing.Font("Microsoft YaHei UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label116.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(207)))), ((int)(((byte)(207)))), ((int)(((byte)(207)))));
+            this.label116.Location = new System.Drawing.Point(196, 0);
+            this.label116.Name = "label116";
+            this.label116.Size = new System.Drawing.Size(51, 20);
+            this.label116.TabIndex = 2;
+            this.label116.Text = "Game";
+            this.label116.Click += new System.EventHandler(this.object_Click);
+            // 
+            // richTextBox24
+            // 
+            this.richTextBox24.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(27)))), ((int)(((byte)(27)))));
+            this.richTextBox24.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.richTextBox24.Cursor = System.Windows.Forms.Cursors.Default;
+            this.richTextBox24.DetectUrls = false;
+            this.richTextBox24.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.richTextBox24.Font = new System.Drawing.Font("Microsoft YaHei UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.richTextBox24.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(144)))), ((int)(((byte)(153)))), ((int)(((byte)(161)))));
+            this.richTextBox24.Location = new System.Drawing.Point(196, 24);
+            this.richTextBox24.Name = "richTextBox24";
+            this.richTextBox24.ReadOnly = true;
+            this.richTextBox24.ScrollBars = System.Windows.Forms.RichTextBoxScrollBars.None;
+            this.richTextBox24.Size = new System.Drawing.Size(378, 43);
+            this.richTextBox24.TabIndex = 4;
+            this.richTextBox24.TabStop = false;
+            this.richTextBox24.Text = "Description \nof \nthe \ngame";
+            this.richTextBox24.Visible = false;
+            this.richTextBox24.Click += new System.EventHandler(this.object_Click);
+            // 
+            // label117
+            // 
+            this.label117.AutoSize = true;
+            this.label117.BackColor = System.Drawing.Color.Transparent;
+            this.label117.Font = new System.Drawing.Font("Microsoft YaHei UI", 6.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label117.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(207)))), ((int)(((byte)(207)))), ((int)(((byte)(207)))));
+            this.label117.Location = new System.Drawing.Point(580, 70);
+            this.label117.Name = "label117";
+            this.label117.Size = new System.Drawing.Size(39, 14);
+            this.label117.TabIndex = 6;
+            this.label117.Text = "Release";
+            this.label117.Visible = false;
+            // 
+            // label118
+            // 
+            this.label118.AutoSize = true;
+            this.label118.BackColor = System.Drawing.Color.Transparent;
+            this.label118.Font = new System.Drawing.Font("Microsoft YaHei UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label118.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(207)))), ((int)(((byte)(207)))), ((int)(((byte)(207)))));
+            this.label118.Location = new System.Drawing.Point(196, 70);
+            this.label118.Name = "label118";
+            this.label118.Size = new System.Drawing.Size(68, 16);
+            this.label118.TabIndex = 5;
+            this.label118.Text = "Developer";
+            this.label118.Visible = false;
+            // 
+            // label119
+            // 
+            this.label119.AutoSize = true;
+            this.label119.BackColor = System.Drawing.Color.Transparent;
+            this.label119.Font = new System.Drawing.Font("Microsoft YaHei UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label119.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(77)))), ((int)(((byte)(77)))), ((int)(((byte)(77)))));
+            this.label119.Location = new System.Drawing.Point(580, 86);
+            this.label119.Name = "label119";
+            this.label119.Size = new System.Drawing.Size(43, 18);
+            this.label119.TabIndex = 1;
+            this.label119.Text = "Tags, Tags, Tags, Tags";
+            this.label119.Visible = false;
+            // 
+            // label120
+            // 
+            this.label120.AutoSize = true;
+            this.label120.Font = new System.Drawing.Font("Microsoft YaHei UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label120.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(144)))), ((int)(((byte)(153)))), ((int)(((byte)(161)))));
+            this.label120.Location = new System.Drawing.Point(580, 0);
+            this.label120.Name = "label120";
+            this.label120.Size = new System.Drawing.Size(57, 19);
+            this.label120.TabIndex = 3;
+            this.label120.Text = "Price/€";
+            this.label120.Visible = false;
+            // 
+            // button25
+            // 
+            this.button25.AutoSize = true;
+            this.button25.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button25.Font = new System.Drawing.Font("Microsoft YaHei UI", 6.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button25.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(207)))), ((int)(((byte)(207)))), ((int)(((byte)(207)))));
+            this.button25.Image = ((System.Drawing.Image)(resources.GetObject("button25.Image")));
+            this.button25.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button25.Location = new System.Drawing.Point(243, 89);
+            this.button25.Margin = new System.Windows.Forms.Padding(50, 3, 3, 3);
+            this.button25.Name = "button25";
+            this.button25.Size = new System.Drawing.Size(90, 12);
+            this.button25.TabIndex = 6;
+            this.button25.Text = "     Steam Store";
+            this.button25.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.button25.UseVisualStyleBackColor = true;
+            this.button25.Visible = false;
+            // 
+            // tableLayoutPanel43
+            // 
+            this.tableLayoutPanel43.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.tableLayoutPanel43.ColumnCount = 3;
+            this.tableLayoutPanel43.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 30F));
+            this.tableLayoutPanel43.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 59.44273F));
+            this.tableLayoutPanel43.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 10.68111F));
+            this.tableLayoutPanel43.Controls.Add(this.pictureBox25, 0, 0);
+            this.tableLayoutPanel43.Controls.Add(this.label121, 1, 0);
+            this.tableLayoutPanel43.Controls.Add(this.richTextBox25, 1, 1);
+            this.tableLayoutPanel43.Controls.Add(this.label122, 2, 2);
+            this.tableLayoutPanel43.Controls.Add(this.label123, 1, 2);
+            this.tableLayoutPanel43.Controls.Add(this.label124, 1, 3);
+            this.tableLayoutPanel43.Controls.Add(this.label125, 2, 0);
+            this.tableLayoutPanel43.Controls.Add(this.button26, 0, 3);
+            this.tableLayoutPanel43.Location = new System.Drawing.Point(3, 2843);
+            this.tableLayoutPanel43.Name = "tableLayoutPanel43";
+            this.tableLayoutPanel43.RowCount = 4;
+            this.tableLayoutPanel43.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20.19231F));
+            this.tableLayoutPanel43.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 47.11538F));
+            this.tableLayoutPanel43.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 16F));
+            this.tableLayoutPanel43.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 16F));
+            this.tableLayoutPanel43.Size = new System.Drawing.Size(646, 104);
+            this.tableLayoutPanel43.TabIndex = 36;
+            this.tableLayoutPanel43.Click += new System.EventHandler(this.object_Click);
+            // 
+            // pictureBox25
+            // 
+            this.pictureBox25.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pictureBox25.Location = new System.Drawing.Point(3, 3);
+            this.pictureBox25.Name = "pictureBox25";
+            this.tableLayoutPanel43.SetRowSpan(this.pictureBox25, 4);
+            this.pictureBox25.Size = new System.Drawing.Size(187, 98);
+            this.pictureBox25.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox25.TabIndex = 0;
+            this.pictureBox25.TabStop = false;
+            this.pictureBox25.Click += new System.EventHandler(this.object_Click);
+            // 
+            // label121
+            // 
+            this.label121.AutoSize = true;
+            this.label121.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.label121.Font = new System.Drawing.Font("Microsoft YaHei UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label121.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(207)))), ((int)(((byte)(207)))), ((int)(((byte)(207)))));
+            this.label121.Location = new System.Drawing.Point(196, 0);
+            this.label121.Name = "label121";
+            this.label121.Size = new System.Drawing.Size(51, 20);
+            this.label121.TabIndex = 2;
+            this.label121.Text = "Game";
+            this.label121.Click += new System.EventHandler(this.object_Click);
+            // 
+            // richTextBox25
+            // 
+            this.richTextBox25.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(27)))), ((int)(((byte)(27)))));
+            this.richTextBox25.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.richTextBox25.Cursor = System.Windows.Forms.Cursors.Default;
+            this.richTextBox25.DetectUrls = false;
+            this.richTextBox25.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.richTextBox25.Font = new System.Drawing.Font("Microsoft YaHei UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.richTextBox25.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(144)))), ((int)(((byte)(153)))), ((int)(((byte)(161)))));
+            this.richTextBox25.Location = new System.Drawing.Point(196, 24);
+            this.richTextBox25.Name = "richTextBox25";
+            this.richTextBox25.ReadOnly = true;
+            this.richTextBox25.ScrollBars = System.Windows.Forms.RichTextBoxScrollBars.None;
+            this.richTextBox25.Size = new System.Drawing.Size(377, 43);
+            this.richTextBox25.TabIndex = 4;
+            this.richTextBox25.TabStop = false;
+            this.richTextBox25.Text = "Description \nof \nthe \ngame";
+            this.richTextBox25.Visible = false;
+            this.richTextBox25.Click += new System.EventHandler(this.object_Click);
+            // 
+            // label122
+            // 
+            this.label122.AutoSize = true;
+            this.label122.BackColor = System.Drawing.Color.Transparent;
+            this.label122.Font = new System.Drawing.Font("Microsoft YaHei UI", 6.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label122.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(207)))), ((int)(((byte)(207)))), ((int)(((byte)(207)))));
+            this.label122.Location = new System.Drawing.Point(579, 70);
+            this.label122.Name = "label122";
+            this.label122.Size = new System.Drawing.Size(39, 14);
+            this.label122.TabIndex = 6;
+            this.label122.Text = "Release";
+            this.label122.Visible = false;
+            // 
+            // label123
+            // 
+            this.label123.AutoSize = true;
+            this.label123.BackColor = System.Drawing.Color.Transparent;
+            this.label123.Font = new System.Drawing.Font("Microsoft YaHei UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label123.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(207)))), ((int)(((byte)(207)))), ((int)(((byte)(207)))));
+            this.label123.Location = new System.Drawing.Point(196, 70);
+            this.label123.Name = "label123";
+            this.label123.Size = new System.Drawing.Size(68, 16);
+            this.label123.TabIndex = 5;
+            this.label123.Text = "Developer";
+            this.label123.Visible = false;
+            // 
+            // label124
+            // 
+            this.label124.AutoSize = true;
+            this.label124.BackColor = System.Drawing.Color.Transparent;
+            this.label124.Font = new System.Drawing.Font("Microsoft YaHei UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label124.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(77)))), ((int)(((byte)(77)))), ((int)(((byte)(77)))));
+            this.label124.Location = new System.Drawing.Point(579, 86);
+            this.label124.Name = "label124";
+            this.label124.Size = new System.Drawing.Size(43, 18);
+            this.label124.TabIndex = 1;
+            this.label124.Text = "Tags, Tags, Tags, Tags";
+            this.label124.Visible = false;
+            // 
+            // label125
+            // 
+            this.label125.AutoSize = true;
+            this.label125.Font = new System.Drawing.Font("Microsoft YaHei UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label125.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(144)))), ((int)(((byte)(153)))), ((int)(((byte)(161)))));
+            this.label125.Location = new System.Drawing.Point(579, 0);
+            this.label125.Name = "label125";
+            this.label125.Size = new System.Drawing.Size(57, 19);
+            this.label125.TabIndex = 3;
+            this.label125.Text = "Price/€";
+            this.label125.Visible = false;
+            // 
+            // button26
+            // 
+            this.button26.AutoSize = true;
+            this.button26.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button26.Font = new System.Drawing.Font("Microsoft YaHei UI", 6.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button26.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(207)))), ((int)(((byte)(207)))), ((int)(((byte)(207)))));
+            this.button26.Image = ((System.Drawing.Image)(resources.GetObject("button26.Image")));
+            this.button26.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button26.Location = new System.Drawing.Point(243, 89);
+            this.button26.Margin = new System.Windows.Forms.Padding(50, 3, 3, 3);
+            this.button26.Name = "button26";
+            this.button26.Size = new System.Drawing.Size(90, 12);
+            this.button26.TabIndex = 6;
+            this.button26.Text = "     Steam Store";
+            this.button26.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.button26.UseVisualStyleBackColor = true;
+            this.button26.Visible = false;
+            // 
+            // tableLayoutPanel44
+            // 
+            this.tableLayoutPanel44.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.tableLayoutPanel44.ColumnCount = 3;
+            this.tableLayoutPanel44.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 30F));
+            this.tableLayoutPanel44.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 59.44273F));
+            this.tableLayoutPanel44.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 10.68111F));
+            this.tableLayoutPanel44.Controls.Add(this.pictureBox26, 0, 0);
+            this.tableLayoutPanel44.Controls.Add(this.label126, 1, 0);
+            this.tableLayoutPanel44.Controls.Add(this.richTextBox26, 1, 1);
+            this.tableLayoutPanel44.Controls.Add(this.label127, 2, 2);
+            this.tableLayoutPanel44.Controls.Add(this.label128, 1, 2);
+            this.tableLayoutPanel44.Controls.Add(this.label129, 1, 3);
+            this.tableLayoutPanel44.Controls.Add(this.label130, 2, 0);
+            this.tableLayoutPanel44.Controls.Add(this.button27, 0, 3);
+            this.tableLayoutPanel44.Location = new System.Drawing.Point(3, 2961);
+            this.tableLayoutPanel44.Name = "tableLayoutPanel44";
+            this.tableLayoutPanel44.RowCount = 4;
+            this.tableLayoutPanel44.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20.19231F));
+            this.tableLayoutPanel44.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 47.11538F));
+            this.tableLayoutPanel44.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 16F));
+            this.tableLayoutPanel44.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 16F));
+            this.tableLayoutPanel44.Size = new System.Drawing.Size(646, 104);
+            this.tableLayoutPanel44.TabIndex = 37;
+            this.tableLayoutPanel44.Click += new System.EventHandler(this.object_Click);
+            // 
+            // pictureBox26
+            // 
+            this.pictureBox26.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pictureBox26.Location = new System.Drawing.Point(3, 3);
+            this.pictureBox26.Name = "pictureBox26";
+            this.tableLayoutPanel44.SetRowSpan(this.pictureBox26, 4);
+            this.pictureBox26.Size = new System.Drawing.Size(187, 98);
+            this.pictureBox26.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox26.TabIndex = 0;
+            this.pictureBox26.TabStop = false;
+            this.pictureBox26.Click += new System.EventHandler(this.object_Click);
+            // 
+            // label126
+            // 
+            this.label126.AutoSize = true;
+            this.label126.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.label126.Font = new System.Drawing.Font("Microsoft YaHei UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label126.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(207)))), ((int)(((byte)(207)))), ((int)(((byte)(207)))));
+            this.label126.Location = new System.Drawing.Point(196, 0);
+            this.label126.Name = "label126";
+            this.label126.Size = new System.Drawing.Size(51, 20);
+            this.label126.TabIndex = 2;
+            this.label126.Text = "Game";
+            this.label126.Click += new System.EventHandler(this.object_Click);
+            // 
+            // richTextBox26
+            // 
+            this.richTextBox26.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(27)))), ((int)(((byte)(27)))));
+            this.richTextBox26.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.richTextBox26.Cursor = System.Windows.Forms.Cursors.Default;
+            this.richTextBox26.DetectUrls = false;
+            this.richTextBox26.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.richTextBox26.Font = new System.Drawing.Font("Microsoft YaHei UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.richTextBox26.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(144)))), ((int)(((byte)(153)))), ((int)(((byte)(161)))));
+            this.richTextBox26.Location = new System.Drawing.Point(196, 24);
+            this.richTextBox26.Name = "richTextBox26";
+            this.richTextBox26.ReadOnly = true;
+            this.richTextBox26.ScrollBars = System.Windows.Forms.RichTextBoxScrollBars.None;
+            this.richTextBox26.Size = new System.Drawing.Size(377, 43);
+            this.richTextBox26.TabIndex = 4;
+            this.richTextBox26.TabStop = false;
+            this.richTextBox26.Text = "Description \nof \nthe \ngame";
+            this.richTextBox26.Visible = false;
+            this.richTextBox26.Click += new System.EventHandler(this.object_Click);
+            // 
+            // label127
+            // 
+            this.label127.AutoSize = true;
+            this.label127.BackColor = System.Drawing.Color.Transparent;
+            this.label127.Font = new System.Drawing.Font("Microsoft YaHei UI", 6.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label127.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(207)))), ((int)(((byte)(207)))), ((int)(((byte)(207)))));
+            this.label127.Location = new System.Drawing.Point(579, 70);
+            this.label127.Name = "label127";
+            this.label127.Size = new System.Drawing.Size(39, 14);
+            this.label127.TabIndex = 6;
+            this.label127.Text = "Release";
+            this.label127.Visible = false;
+            // 
+            // label128
+            // 
+            this.label128.AutoSize = true;
+            this.label128.BackColor = System.Drawing.Color.Transparent;
+            this.label128.Font = new System.Drawing.Font("Microsoft YaHei UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label128.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(207)))), ((int)(((byte)(207)))), ((int)(((byte)(207)))));
+            this.label128.Location = new System.Drawing.Point(196, 70);
+            this.label128.Name = "label128";
+            this.label128.Size = new System.Drawing.Size(68, 16);
+            this.label128.TabIndex = 5;
+            this.label128.Text = "Developer";
+            this.label128.Visible = false;
+            // 
+            // label129
+            // 
+            this.label129.AutoSize = true;
+            this.label129.BackColor = System.Drawing.Color.Transparent;
+            this.label129.Font = new System.Drawing.Font("Microsoft YaHei UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label129.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(77)))), ((int)(((byte)(77)))), ((int)(((byte)(77)))));
+            this.label129.Location = new System.Drawing.Point(579, 86);
+            this.label129.Name = "label129";
+            this.label129.Size = new System.Drawing.Size(43, 18);
+            this.label129.TabIndex = 1;
+            this.label129.Text = "Tags, Tags, Tags, Tags";
+            this.label129.Visible = false;
+            // 
+            // label130
+            // 
+            this.label130.AutoSize = true;
+            this.label130.Font = new System.Drawing.Font("Microsoft YaHei UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label130.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(144)))), ((int)(((byte)(153)))), ((int)(((byte)(161)))));
+            this.label130.Location = new System.Drawing.Point(579, 0);
+            this.label130.Name = "label130";
+            this.label130.Size = new System.Drawing.Size(57, 19);
+            this.label130.TabIndex = 3;
+            this.label130.Text = "Price/€";
+            this.label130.Visible = false;
+            // 
+            // button27
+            // 
+            this.button27.AutoSize = true;
+            this.button27.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button27.Font = new System.Drawing.Font("Microsoft YaHei UI", 6.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button27.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(207)))), ((int)(((byte)(207)))), ((int)(((byte)(207)))));
+            this.button27.Image = ((System.Drawing.Image)(resources.GetObject("button27.Image")));
+            this.button27.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button27.Location = new System.Drawing.Point(243, 89);
+            this.button27.Margin = new System.Windows.Forms.Padding(50, 3, 3, 3);
+            this.button27.Name = "button27";
+            this.button27.Size = new System.Drawing.Size(90, 12);
+            this.button27.TabIndex = 6;
+            this.button27.Text = "     Steam Store";
+            this.button27.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.button27.UseVisualStyleBackColor = true;
+            this.button27.Visible = false;
+            // 
+            // tableLayoutPanel45
+            // 
+            this.tableLayoutPanel45.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.tableLayoutPanel45.ColumnCount = 3;
+            this.tableLayoutPanel45.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 30F));
+            this.tableLayoutPanel45.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 59.75232F));
+            this.tableLayoutPanel45.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 10.37152F));
+            this.tableLayoutPanel45.Controls.Add(this.pictureBox27, 0, 0);
+            this.tableLayoutPanel45.Controls.Add(this.label131, 1, 0);
+            this.tableLayoutPanel45.Controls.Add(this.richTextBox27, 1, 1);
+            this.tableLayoutPanel45.Controls.Add(this.label132, 2, 2);
+            this.tableLayoutPanel45.Controls.Add(this.label133, 1, 2);
+            this.tableLayoutPanel45.Controls.Add(this.label134, 1, 3);
+            this.tableLayoutPanel45.Controls.Add(this.label135, 2, 0);
+            this.tableLayoutPanel45.Controls.Add(this.button28, 0, 3);
+            this.tableLayoutPanel45.Location = new System.Drawing.Point(3, 3079);
+            this.tableLayoutPanel45.Name = "tableLayoutPanel45";
+            this.tableLayoutPanel45.RowCount = 4;
+            this.tableLayoutPanel45.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20.19231F));
+            this.tableLayoutPanel45.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 47.11538F));
+            this.tableLayoutPanel45.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 16F));
+            this.tableLayoutPanel45.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 16F));
+            this.tableLayoutPanel45.Size = new System.Drawing.Size(646, 104);
+            this.tableLayoutPanel45.TabIndex = 38;
+            this.tableLayoutPanel45.Click += new System.EventHandler(this.object_Click);
+            // 
+            // pictureBox27
+            // 
+            this.pictureBox27.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pictureBox27.Location = new System.Drawing.Point(3, 3);
+            this.pictureBox27.Name = "pictureBox27";
+            this.tableLayoutPanel45.SetRowSpan(this.pictureBox27, 4);
+            this.pictureBox27.Size = new System.Drawing.Size(187, 98);
+            this.pictureBox27.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox27.TabIndex = 0;
+            this.pictureBox27.TabStop = false;
+            this.pictureBox27.Click += new System.EventHandler(this.object_Click);
+            // 
+            // label131
+            // 
+            this.label131.AutoSize = true;
+            this.label131.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.label131.Font = new System.Drawing.Font("Microsoft YaHei UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label131.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(207)))), ((int)(((byte)(207)))), ((int)(((byte)(207)))));
+            this.label131.Location = new System.Drawing.Point(196, 0);
+            this.label131.Name = "label131";
+            this.label131.Size = new System.Drawing.Size(51, 20);
+            this.label131.TabIndex = 2;
+            this.label131.Text = "Game";
+            this.label131.Click += new System.EventHandler(this.object_Click);
+            // 
+            // richTextBox27
+            // 
+            this.richTextBox27.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(27)))), ((int)(((byte)(27)))));
+            this.richTextBox27.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.richTextBox27.Cursor = System.Windows.Forms.Cursors.Default;
+            this.richTextBox27.DetectUrls = false;
+            this.richTextBox27.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.richTextBox27.Font = new System.Drawing.Font("Microsoft YaHei UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.richTextBox27.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(144)))), ((int)(((byte)(153)))), ((int)(((byte)(161)))));
+            this.richTextBox27.Location = new System.Drawing.Point(196, 24);
+            this.richTextBox27.Name = "richTextBox27";
+            this.richTextBox27.ReadOnly = true;
+            this.richTextBox27.ScrollBars = System.Windows.Forms.RichTextBoxScrollBars.None;
+            this.richTextBox27.Size = new System.Drawing.Size(379, 43);
+            this.richTextBox27.TabIndex = 4;
+            this.richTextBox27.TabStop = false;
+            this.richTextBox27.Text = "Description \nof \nthe \ngame";
+            this.richTextBox27.Visible = false;
+            this.richTextBox27.Click += new System.EventHandler(this.object_Click);
+            // 
+            // label132
+            // 
+            this.label132.AutoSize = true;
+            this.label132.BackColor = System.Drawing.Color.Transparent;
+            this.label132.Font = new System.Drawing.Font("Microsoft YaHei UI", 6.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label132.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(207)))), ((int)(((byte)(207)))), ((int)(((byte)(207)))));
+            this.label132.Location = new System.Drawing.Point(581, 70);
+            this.label132.Name = "label132";
+            this.label132.Size = new System.Drawing.Size(39, 14);
+            this.label132.TabIndex = 6;
+            this.label132.Text = "Release";
+            this.label132.Visible = false;
+            // 
+            // label133
+            // 
+            this.label133.AutoSize = true;
+            this.label133.BackColor = System.Drawing.Color.Transparent;
+            this.label133.Font = new System.Drawing.Font("Microsoft YaHei UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label133.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(207)))), ((int)(((byte)(207)))), ((int)(((byte)(207)))));
+            this.label133.Location = new System.Drawing.Point(196, 70);
+            this.label133.Name = "label133";
+            this.label133.Size = new System.Drawing.Size(68, 16);
+            this.label133.TabIndex = 5;
+            this.label133.Text = "Developer";
+            this.label133.Visible = false;
+            // 
+            // label134
+            // 
+            this.label134.AutoSize = true;
+            this.label134.BackColor = System.Drawing.Color.Transparent;
+            this.label134.Font = new System.Drawing.Font("Microsoft YaHei UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label134.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(77)))), ((int)(((byte)(77)))), ((int)(((byte)(77)))));
+            this.label134.Location = new System.Drawing.Point(581, 86);
+            this.label134.Name = "label134";
+            this.label134.Size = new System.Drawing.Size(43, 18);
+            this.label134.TabIndex = 1;
+            this.label134.Text = "Tags, Tags, Tags, Tags";
+            this.label134.Visible = false;
+            // 
+            // label135
+            // 
+            this.label135.AutoSize = true;
+            this.label135.Font = new System.Drawing.Font("Microsoft YaHei UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label135.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(144)))), ((int)(((byte)(153)))), ((int)(((byte)(161)))));
+            this.label135.Location = new System.Drawing.Point(581, 0);
+            this.label135.Name = "label135";
+            this.label135.Size = new System.Drawing.Size(57, 19);
+            this.label135.TabIndex = 3;
+            this.label135.Text = "Price/€";
+            this.label135.Visible = false;
+            // 
+            // button28
+            // 
+            this.button28.AutoSize = true;
+            this.button28.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button28.Font = new System.Drawing.Font("Microsoft YaHei UI", 6.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button28.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(207)))), ((int)(((byte)(207)))), ((int)(((byte)(207)))));
+            this.button28.Image = ((System.Drawing.Image)(resources.GetObject("button28.Image")));
+            this.button28.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button28.Location = new System.Drawing.Point(243, 89);
+            this.button28.Margin = new System.Windows.Forms.Padding(50, 3, 3, 3);
+            this.button28.Name = "button28";
+            this.button28.Size = new System.Drawing.Size(90, 12);
+            this.button28.TabIndex = 6;
+            this.button28.Text = "     Steam Store";
+            this.button28.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.button28.UseVisualStyleBackColor = true;
+            this.button28.Visible = false;
+            // 
+            // tableLayoutPanel46
+            // 
+            this.tableLayoutPanel46.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.tableLayoutPanel46.ColumnCount = 3;
+            this.tableLayoutPanel46.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 30F));
+            this.tableLayoutPanel46.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 59.28793F));
+            this.tableLayoutPanel46.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 10.83591F));
+            this.tableLayoutPanel46.Controls.Add(this.pictureBox28, 0, 0);
+            this.tableLayoutPanel46.Controls.Add(this.label136, 1, 0);
+            this.tableLayoutPanel46.Controls.Add(this.richTextBox28, 1, 1);
+            this.tableLayoutPanel46.Controls.Add(this.label137, 1, 2);
+            this.tableLayoutPanel46.Controls.Add(this.label138, 2, 0);
+            this.tableLayoutPanel46.Controls.Add(this.button29, 0, 3);
+            this.tableLayoutPanel46.Controls.Add(this.label139, 1, 3);
+            this.tableLayoutPanel46.Controls.Add(this.label140, 2, 2);
+            this.tableLayoutPanel46.Location = new System.Drawing.Point(3, 3197);
+            this.tableLayoutPanel46.Name = "tableLayoutPanel46";
+            this.tableLayoutPanel46.RowCount = 4;
+            this.tableLayoutPanel46.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 21.15385F));
+            this.tableLayoutPanel46.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 46.15385F));
+            this.tableLayoutPanel46.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 16F));
+            this.tableLayoutPanel46.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 16F));
+            this.tableLayoutPanel46.Size = new System.Drawing.Size(646, 104);
+            this.tableLayoutPanel46.TabIndex = 39;
+            this.tableLayoutPanel46.Click += new System.EventHandler(this.object_Click);
+            // 
+            // pictureBox28
+            // 
+            this.pictureBox28.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pictureBox28.Location = new System.Drawing.Point(3, 3);
+            this.pictureBox28.Name = "pictureBox28";
+            this.tableLayoutPanel46.SetRowSpan(this.pictureBox28, 4);
+            this.pictureBox28.Size = new System.Drawing.Size(187, 98);
+            this.pictureBox28.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox28.TabIndex = 0;
+            this.pictureBox28.TabStop = false;
+            this.pictureBox28.WaitOnLoad = true;
+            this.pictureBox28.Click += new System.EventHandler(this.object_Click);
+            // 
+            // label136
+            // 
+            this.label136.AutoSize = true;
+            this.label136.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.label136.Font = new System.Drawing.Font("Microsoft YaHei UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label136.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(207)))), ((int)(((byte)(207)))), ((int)(((byte)(207)))));
+            this.label136.Location = new System.Drawing.Point(196, 0);
+            this.label136.Name = "label136";
+            this.label136.Size = new System.Drawing.Size(51, 20);
+            this.label136.TabIndex = 2;
+            this.label136.Text = "Game";
+            this.label136.Click += new System.EventHandler(this.object_Click);
+            // 
+            // richTextBox28
+            // 
+            this.richTextBox28.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(27)))), ((int)(((byte)(27)))));
+            this.richTextBox28.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.richTextBox28.Cursor = System.Windows.Forms.Cursors.Default;
+            this.richTextBox28.DetectUrls = false;
+            this.richTextBox28.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.richTextBox28.Font = new System.Drawing.Font("Microsoft YaHei UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.richTextBox28.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(144)))), ((int)(((byte)(153)))), ((int)(((byte)(161)))));
+            this.richTextBox28.Location = new System.Drawing.Point(196, 25);
+            this.richTextBox28.Name = "richTextBox28";
+            this.richTextBox28.ReadOnly = true;
+            this.richTextBox28.ScrollBars = System.Windows.Forms.RichTextBoxScrollBars.None;
+            this.richTextBox28.Size = new System.Drawing.Size(376, 42);
+            this.richTextBox28.TabIndex = 4;
+            this.richTextBox28.TabStop = false;
+            this.richTextBox28.Text = "Description \nof \nthe \ngame";
+            this.richTextBox28.Visible = false;
+            this.richTextBox28.Click += new System.EventHandler(this.object_Click);
+            // 
+            // label137
+            // 
+            this.label137.AutoSize = true;
+            this.label137.BackColor = System.Drawing.Color.Transparent;
+            this.label137.Font = new System.Drawing.Font("Microsoft YaHei UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label137.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(207)))), ((int)(((byte)(207)))), ((int)(((byte)(207)))));
+            this.label137.Location = new System.Drawing.Point(196, 70);
+            this.label137.Name = "label137";
+            this.label137.Size = new System.Drawing.Size(68, 16);
+            this.label137.TabIndex = 5;
+            this.label137.Text = "Developer";
+            this.label137.Visible = false;
+            // 
+            // label138
+            // 
+            this.label138.AutoSize = true;
+            this.label138.Font = new System.Drawing.Font("Microsoft YaHei UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label138.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(144)))), ((int)(((byte)(153)))), ((int)(((byte)(161)))));
+            this.label138.Location = new System.Drawing.Point(578, 0);
+            this.label138.Name = "label138";
+            this.label138.Size = new System.Drawing.Size(57, 19);
+            this.label138.TabIndex = 3;
+            this.label138.Text = "Price/€";
+            this.label138.Visible = false;
+            // 
+            // button29
+            // 
+            this.button29.AutoSize = true;
+            this.button29.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button29.Font = new System.Drawing.Font("Microsoft YaHei UI", 6.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button29.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(207)))), ((int)(((byte)(207)))), ((int)(((byte)(207)))));
+            this.button29.Image = ((System.Drawing.Image)(resources.GetObject("button29.Image")));
+            this.button29.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button29.Location = new System.Drawing.Point(243, 89);
+            this.button29.Margin = new System.Windows.Forms.Padding(50, 3, 3, 3);
+            this.button29.Name = "button29";
+            this.button29.Size = new System.Drawing.Size(90, 12);
+            this.button29.TabIndex = 6;
+            this.button29.Text = "     Steam Store";
+            this.button29.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.button29.UseVisualStyleBackColor = true;
+            this.button29.Visible = false;
+            // 
+            // label139
+            // 
+            this.label139.AutoSize = true;
+            this.label139.BackColor = System.Drawing.Color.Transparent;
+            this.label139.Font = new System.Drawing.Font("Microsoft YaHei UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label139.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(77)))), ((int)(((byte)(77)))), ((int)(((byte)(77)))));
+            this.label139.Location = new System.Drawing.Point(578, 86);
+            this.label139.Name = "label139";
+            this.label139.Size = new System.Drawing.Size(43, 18);
+            this.label139.TabIndex = 1;
+            this.label139.Text = "Tags, Tags, Tags, Tags";
+            this.label139.Visible = false;
+            // 
+            // label140
+            // 
+            this.label140.AutoSize = true;
+            this.label140.BackColor = System.Drawing.Color.Transparent;
+            this.label140.Font = new System.Drawing.Font("Microsoft YaHei UI", 6.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label140.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(207)))), ((int)(((byte)(207)))), ((int)(((byte)(207)))));
+            this.label140.Location = new System.Drawing.Point(578, 70);
+            this.label140.Name = "label140";
+            this.label140.Size = new System.Drawing.Size(39, 14);
+            this.label140.TabIndex = 6;
+            this.label140.Text = "Release";
+            this.label140.Visible = false;
+            // 
+            // tableLayoutPanel47
+            // 
+            this.tableLayoutPanel47.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.tableLayoutPanel47.ColumnCount = 3;
+            this.tableLayoutPanel47.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 30F));
+            this.tableLayoutPanel47.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 58.97833F));
+            this.tableLayoutPanel47.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 11.14551F));
+            this.tableLayoutPanel47.Controls.Add(this.pictureBox29, 0, 0);
+            this.tableLayoutPanel47.Controls.Add(this.label141, 1, 0);
+            this.tableLayoutPanel47.Controls.Add(this.richTextBox29, 1, 1);
+            this.tableLayoutPanel47.Controls.Add(this.label142, 1, 2);
+            this.tableLayoutPanel47.Controls.Add(this.label143, 2, 0);
+            this.tableLayoutPanel47.Controls.Add(this.button30, 0, 3);
+            this.tableLayoutPanel47.Controls.Add(this.label144, 1, 3);
+            this.tableLayoutPanel47.Controls.Add(this.label145, 2, 2);
+            this.tableLayoutPanel47.Location = new System.Drawing.Point(3, 3315);
+            this.tableLayoutPanel47.Name = "tableLayoutPanel47";
+            this.tableLayoutPanel47.RowCount = 4;
+            this.tableLayoutPanel47.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 21.15385F));
+            this.tableLayoutPanel47.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 46.15385F));
+            this.tableLayoutPanel47.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 16F));
+            this.tableLayoutPanel47.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 16F));
+            this.tableLayoutPanel47.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableLayoutPanel47.Size = new System.Drawing.Size(646, 104);
+            this.tableLayoutPanel47.TabIndex = 40;
+            this.tableLayoutPanel47.Click += new System.EventHandler(this.object_Click);
+            // 
+            // pictureBox29
+            // 
+            this.pictureBox29.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pictureBox29.Location = new System.Drawing.Point(3, 3);
+            this.pictureBox29.Name = "pictureBox29";
+            this.tableLayoutPanel47.SetRowSpan(this.pictureBox29, 4);
+            this.pictureBox29.Size = new System.Drawing.Size(187, 98);
+            this.pictureBox29.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox29.TabIndex = 0;
+            this.pictureBox29.TabStop = false;
+            this.pictureBox29.WaitOnLoad = true;
+            this.pictureBox29.Click += new System.EventHandler(this.object_Click);
+            // 
+            // label141
+            // 
+            this.label141.AutoSize = true;
+            this.label141.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.label141.Font = new System.Drawing.Font("Microsoft YaHei UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label141.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(207)))), ((int)(((byte)(207)))), ((int)(((byte)(207)))));
+            this.label141.Location = new System.Drawing.Point(196, 0);
+            this.label141.Name = "label141";
+            this.label141.Size = new System.Drawing.Size(51, 20);
+            this.label141.TabIndex = 2;
+            this.label141.Text = "Game";
+            this.label141.Click += new System.EventHandler(this.object_Click);
+            // 
+            // richTextBox29
+            // 
+            this.richTextBox29.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(27)))), ((int)(((byte)(27)))));
+            this.richTextBox29.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.richTextBox29.Cursor = System.Windows.Forms.Cursors.Default;
+            this.richTextBox29.DetectUrls = false;
+            this.richTextBox29.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.richTextBox29.Font = new System.Drawing.Font("Microsoft YaHei UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.richTextBox29.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(144)))), ((int)(((byte)(153)))), ((int)(((byte)(161)))));
+            this.richTextBox29.Location = new System.Drawing.Point(196, 25);
+            this.richTextBox29.Name = "richTextBox29";
+            this.richTextBox29.ReadOnly = true;
+            this.richTextBox29.ScrollBars = System.Windows.Forms.RichTextBoxScrollBars.None;
+            this.richTextBox29.Size = new System.Drawing.Size(374, 42);
+            this.richTextBox29.TabIndex = 4;
+            this.richTextBox29.TabStop = false;
+            this.richTextBox29.Text = "Description \nof \nthe \ngame";
+            this.richTextBox29.Visible = false;
+            this.richTextBox29.Click += new System.EventHandler(this.object_Click);
+            // 
+            // label142
+            // 
+            this.label142.AutoSize = true;
+            this.label142.BackColor = System.Drawing.Color.Transparent;
+            this.label142.Font = new System.Drawing.Font("Microsoft YaHei UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label142.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(207)))), ((int)(((byte)(207)))), ((int)(((byte)(207)))));
+            this.label142.Location = new System.Drawing.Point(196, 70);
+            this.label142.Name = "label142";
+            this.label142.Size = new System.Drawing.Size(68, 16);
+            this.label142.TabIndex = 5;
+            this.label142.Text = "Developer";
+            this.label142.Visible = false;
+            // 
+            // label143
+            // 
+            this.label143.AutoSize = true;
+            this.label143.Font = new System.Drawing.Font("Microsoft YaHei UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label143.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(144)))), ((int)(((byte)(153)))), ((int)(((byte)(161)))));
+            this.label143.Location = new System.Drawing.Point(576, 0);
+            this.label143.Name = "label143";
+            this.label143.Size = new System.Drawing.Size(57, 19);
+            this.label143.TabIndex = 3;
+            this.label143.Text = "Price/€";
+            this.label143.Visible = false;
+            // 
+            // button30
+            // 
+            this.button30.AutoSize = true;
+            this.button30.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button30.Font = new System.Drawing.Font("Microsoft YaHei UI", 6.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button30.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(207)))), ((int)(((byte)(207)))), ((int)(((byte)(207)))));
+            this.button30.Image = ((System.Drawing.Image)(resources.GetObject("button30.Image")));
+            this.button30.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button30.Location = new System.Drawing.Point(243, 89);
+            this.button30.Margin = new System.Windows.Forms.Padding(50, 3, 3, 3);
+            this.button30.Name = "button30";
+            this.button30.Size = new System.Drawing.Size(90, 12);
+            this.button30.TabIndex = 6;
+            this.button30.Text = "     Steam Store";
+            this.button30.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.button30.UseVisualStyleBackColor = true;
+            this.button30.Visible = false;
+            // 
+            // label144
+            // 
+            this.label144.AutoSize = true;
+            this.label144.BackColor = System.Drawing.Color.Transparent;
+            this.label144.Font = new System.Drawing.Font("Microsoft YaHei UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label144.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(77)))), ((int)(((byte)(77)))), ((int)(((byte)(77)))));
+            this.label144.Location = new System.Drawing.Point(576, 86);
+            this.label144.Name = "label144";
+            this.label144.Size = new System.Drawing.Size(43, 18);
+            this.label144.TabIndex = 1;
+            this.label144.Text = "Tags, Tags, Tags, Tags";
+            this.label144.Visible = false;
+            // 
+            // label145
+            // 
+            this.label145.AutoSize = true;
+            this.label145.BackColor = System.Drawing.Color.Transparent;
+            this.label145.Font = new System.Drawing.Font("Microsoft YaHei UI", 6.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label145.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(207)))), ((int)(((byte)(207)))), ((int)(((byte)(207)))));
+            this.label145.Location = new System.Drawing.Point(576, 70);
+            this.label145.Name = "label145";
+            this.label145.Size = new System.Drawing.Size(39, 14);
+            this.label145.TabIndex = 6;
+            this.label145.Text = "Release";
+            this.label145.Visible = false;
+            // 
+            // tableLayoutPanel48
+            // 
+            this.tableLayoutPanel48.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.tableLayoutPanel48.ColumnCount = 3;
+            this.tableLayoutPanel48.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 30F));
+            this.tableLayoutPanel48.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 58.97833F));
+            this.tableLayoutPanel48.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 11.14551F));
+            this.tableLayoutPanel48.Controls.Add(this.pictureBox30, 0, 0);
+            this.tableLayoutPanel48.Controls.Add(this.label146, 1, 0);
+            this.tableLayoutPanel48.Controls.Add(this.richTextBox30, 1, 1);
+            this.tableLayoutPanel48.Controls.Add(this.label147, 1, 2);
+            this.tableLayoutPanel48.Controls.Add(this.label148, 2, 0);
+            this.tableLayoutPanel48.Controls.Add(this.button31, 0, 3);
+            this.tableLayoutPanel48.Controls.Add(this.label149, 1, 3);
+            this.tableLayoutPanel48.Controls.Add(this.label150, 2, 2);
+            this.tableLayoutPanel48.Location = new System.Drawing.Point(3, 3433);
+            this.tableLayoutPanel48.Name = "tableLayoutPanel48";
+            this.tableLayoutPanel48.RowCount = 4;
+            this.tableLayoutPanel48.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 21.15385F));
+            this.tableLayoutPanel48.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 46.15385F));
+            this.tableLayoutPanel48.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 16F));
+            this.tableLayoutPanel48.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 16F));
+            this.tableLayoutPanel48.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableLayoutPanel48.Size = new System.Drawing.Size(646, 104);
+            this.tableLayoutPanel48.TabIndex = 41;
+            this.tableLayoutPanel48.Click += new System.EventHandler(this.object_Click);
+            // 
+            // pictureBox30
+            // 
+            this.pictureBox30.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pictureBox30.Location = new System.Drawing.Point(3, 3);
+            this.pictureBox30.Name = "pictureBox30";
+            this.tableLayoutPanel48.SetRowSpan(this.pictureBox30, 4);
+            this.pictureBox30.Size = new System.Drawing.Size(187, 98);
+            this.pictureBox30.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox30.TabIndex = 0;
+            this.pictureBox30.TabStop = false;
+            this.pictureBox30.WaitOnLoad = true;
+            this.pictureBox30.Click += new System.EventHandler(this.object_Click);
+            // 
+            // label146
+            // 
+            this.label146.AutoSize = true;
+            this.label146.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.label146.Font = new System.Drawing.Font("Microsoft YaHei UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label146.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(207)))), ((int)(((byte)(207)))), ((int)(((byte)(207)))));
+            this.label146.Location = new System.Drawing.Point(196, 0);
+            this.label146.Name = "label146";
+            this.label146.Size = new System.Drawing.Size(51, 20);
+            this.label146.TabIndex = 2;
+            this.label146.Text = "Game";
+            this.label146.Click += new System.EventHandler(this.object_Click);
+            // 
+            // richTextBox30
+            // 
+            this.richTextBox30.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(27)))), ((int)(((byte)(27)))));
+            this.richTextBox30.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.richTextBox30.Cursor = System.Windows.Forms.Cursors.Default;
+            this.richTextBox30.DetectUrls = false;
+            this.richTextBox30.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.richTextBox30.Font = new System.Drawing.Font("Microsoft YaHei UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.richTextBox30.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(144)))), ((int)(((byte)(153)))), ((int)(((byte)(161)))));
+            this.richTextBox30.Location = new System.Drawing.Point(196, 25);
+            this.richTextBox30.Name = "richTextBox30";
+            this.richTextBox30.ReadOnly = true;
+            this.richTextBox30.ScrollBars = System.Windows.Forms.RichTextBoxScrollBars.None;
+            this.richTextBox30.Size = new System.Drawing.Size(374, 42);
+            this.richTextBox30.TabIndex = 4;
+            this.richTextBox30.TabStop = false;
+            this.richTextBox30.Text = "Description \nof \nthe \ngame";
+            this.richTextBox30.Visible = false;
+            this.richTextBox30.Click += new System.EventHandler(this.object_Click);
+            // 
+            // label147
+            // 
+            this.label147.AutoSize = true;
+            this.label147.BackColor = System.Drawing.Color.Transparent;
+            this.label147.Font = new System.Drawing.Font("Microsoft YaHei UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label147.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(207)))), ((int)(((byte)(207)))), ((int)(((byte)(207)))));
+            this.label147.Location = new System.Drawing.Point(196, 70);
+            this.label147.Name = "label147";
+            this.label147.Size = new System.Drawing.Size(68, 16);
+            this.label147.TabIndex = 5;
+            this.label147.Text = "Developer";
+            this.label147.Visible = false;
+            // 
+            // label148
+            // 
+            this.label148.AutoSize = true;
+            this.label148.Font = new System.Drawing.Font("Microsoft YaHei UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label148.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(144)))), ((int)(((byte)(153)))), ((int)(((byte)(161)))));
+            this.label148.Location = new System.Drawing.Point(576, 0);
+            this.label148.Name = "label148";
+            this.label148.Size = new System.Drawing.Size(57, 19);
+            this.label148.TabIndex = 3;
+            this.label148.Text = "Price/€";
+            this.label148.Visible = false;
+            // 
+            // button31
+            // 
+            this.button31.AutoSize = true;
+            this.button31.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button31.Font = new System.Drawing.Font("Microsoft YaHei UI", 6.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button31.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(207)))), ((int)(((byte)(207)))), ((int)(((byte)(207)))));
+            this.button31.Image = ((System.Drawing.Image)(resources.GetObject("button31.Image")));
+            this.button31.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button31.Location = new System.Drawing.Point(243, 89);
+            this.button31.Margin = new System.Windows.Forms.Padding(50, 3, 3, 3);
+            this.button31.Name = "button31";
+            this.button31.Size = new System.Drawing.Size(90, 12);
+            this.button31.TabIndex = 6;
+            this.button31.Text = "     Steam Store";
+            this.button31.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.button31.UseVisualStyleBackColor = true;
+            this.button31.Visible = false;
+            // 
+            // label149
+            // 
+            this.label149.AutoSize = true;
+            this.label149.BackColor = System.Drawing.Color.Transparent;
+            this.label149.Font = new System.Drawing.Font("Microsoft YaHei UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label149.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(77)))), ((int)(((byte)(77)))), ((int)(((byte)(77)))));
+            this.label149.Location = new System.Drawing.Point(576, 86);
+            this.label149.Name = "label149";
+            this.label149.Size = new System.Drawing.Size(43, 18);
+            this.label149.TabIndex = 1;
+            this.label149.Text = "Tags, Tags, Tags, Tags";
+            this.label149.Visible = false;
+            // 
+            // label150
+            // 
+            this.label150.AutoSize = true;
+            this.label150.BackColor = System.Drawing.Color.Transparent;
+            this.label150.Font = new System.Drawing.Font("Microsoft YaHei UI", 6.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label150.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(207)))), ((int)(((byte)(207)))), ((int)(((byte)(207)))));
+            this.label150.Location = new System.Drawing.Point(576, 70);
+            this.label150.Name = "label150";
+            this.label150.Size = new System.Drawing.Size(39, 14);
+            this.label150.TabIndex = 6;
+            this.label150.Text = "Release";
+            this.label150.Visible = false;
+            // 
+            // tableLayoutPanel49
+            // 
+            this.tableLayoutPanel49.CellBorderStyle = System.Windows.Forms.TableLayoutPanelCellBorderStyle.Single;
+            this.tableLayoutPanel49.ColumnCount = 1;
+            this.tableLayoutPanel49.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel49.Location = new System.Drawing.Point(3, 2127);
+            this.tableLayoutPanel49.Name = "tableLayoutPanel49";
+            this.tableLayoutPanel49.RowCount = 1;
+            this.tableLayoutPanel49.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel49.Size = new System.Drawing.Size(646, 2);
+            this.tableLayoutPanel49.TabIndex = 12;
+            // 
+            // tableLayoutPanel50
+            // 
+            this.tableLayoutPanel50.CellBorderStyle = System.Windows.Forms.TableLayoutPanelCellBorderStyle.Single;
+            this.tableLayoutPanel50.ColumnCount = 1;
+            this.tableLayoutPanel50.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel50.Location = new System.Drawing.Point(3, 2245);
+            this.tableLayoutPanel50.Name = "tableLayoutPanel50";
+            this.tableLayoutPanel50.RowCount = 1;
+            this.tableLayoutPanel50.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel50.Size = new System.Drawing.Size(646, 2);
+            this.tableLayoutPanel50.TabIndex = 12;
+            // 
+            // tableLayoutPanel51
+            // 
+            this.tableLayoutPanel51.CellBorderStyle = System.Windows.Forms.TableLayoutPanelCellBorderStyle.Single;
+            this.tableLayoutPanel51.ColumnCount = 1;
+            this.tableLayoutPanel51.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel51.Location = new System.Drawing.Point(3, 2363);
+            this.tableLayoutPanel51.Name = "tableLayoutPanel51";
+            this.tableLayoutPanel51.RowCount = 1;
+            this.tableLayoutPanel51.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel51.Size = new System.Drawing.Size(646, 2);
+            this.tableLayoutPanel51.TabIndex = 12;
+            // 
+            // tableLayoutPanel52
+            // 
+            this.tableLayoutPanel52.CellBorderStyle = System.Windows.Forms.TableLayoutPanelCellBorderStyle.Single;
+            this.tableLayoutPanel52.ColumnCount = 1;
+            this.tableLayoutPanel52.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel52.Location = new System.Drawing.Point(3, 2481);
+            this.tableLayoutPanel52.Name = "tableLayoutPanel52";
+            this.tableLayoutPanel52.RowCount = 1;
+            this.tableLayoutPanel52.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel52.Size = new System.Drawing.Size(646, 2);
+            this.tableLayoutPanel52.TabIndex = 12;
+            // 
+            // tableLayoutPanel53
+            // 
+            this.tableLayoutPanel53.CellBorderStyle = System.Windows.Forms.TableLayoutPanelCellBorderStyle.Single;
+            this.tableLayoutPanel53.ColumnCount = 1;
+            this.tableLayoutPanel53.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel53.Location = new System.Drawing.Point(3, 2599);
+            this.tableLayoutPanel53.Name = "tableLayoutPanel53";
+            this.tableLayoutPanel53.RowCount = 1;
+            this.tableLayoutPanel53.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel53.Size = new System.Drawing.Size(646, 2);
+            this.tableLayoutPanel53.TabIndex = 12;
+            // 
+            // tableLayoutPanel54
+            // 
+            this.tableLayoutPanel54.CellBorderStyle = System.Windows.Forms.TableLayoutPanelCellBorderStyle.Single;
+            this.tableLayoutPanel54.ColumnCount = 1;
+            this.tableLayoutPanel54.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel54.Location = new System.Drawing.Point(3, 2717);
+            this.tableLayoutPanel54.Name = "tableLayoutPanel54";
+            this.tableLayoutPanel54.RowCount = 1;
+            this.tableLayoutPanel54.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel54.Size = new System.Drawing.Size(646, 2);
+            this.tableLayoutPanel54.TabIndex = 12;
+            // 
+            // tableLayoutPanel55
+            // 
+            this.tableLayoutPanel55.CellBorderStyle = System.Windows.Forms.TableLayoutPanelCellBorderStyle.Single;
+            this.tableLayoutPanel55.ColumnCount = 1;
+            this.tableLayoutPanel55.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel55.Location = new System.Drawing.Point(3, 2835);
+            this.tableLayoutPanel55.Name = "tableLayoutPanel55";
+            this.tableLayoutPanel55.RowCount = 1;
+            this.tableLayoutPanel55.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel55.Size = new System.Drawing.Size(646, 2);
+            this.tableLayoutPanel55.TabIndex = 12;
+            // 
+            // tableLayoutPanel56
+            // 
+            this.tableLayoutPanel56.CellBorderStyle = System.Windows.Forms.TableLayoutPanelCellBorderStyle.Single;
+            this.tableLayoutPanel56.ColumnCount = 1;
+            this.tableLayoutPanel56.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel56.Location = new System.Drawing.Point(3, 2953);
+            this.tableLayoutPanel56.Name = "tableLayoutPanel56";
+            this.tableLayoutPanel56.RowCount = 1;
+            this.tableLayoutPanel56.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel56.Size = new System.Drawing.Size(646, 2);
+            this.tableLayoutPanel56.TabIndex = 12;
+            // 
+            // tableLayoutPanel57
+            // 
+            this.tableLayoutPanel57.CellBorderStyle = System.Windows.Forms.TableLayoutPanelCellBorderStyle.Single;
+            this.tableLayoutPanel57.ColumnCount = 1;
+            this.tableLayoutPanel57.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel57.Location = new System.Drawing.Point(3, 3071);
+            this.tableLayoutPanel57.Name = "tableLayoutPanel57";
+            this.tableLayoutPanel57.RowCount = 1;
+            this.tableLayoutPanel57.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel57.Size = new System.Drawing.Size(646, 2);
+            this.tableLayoutPanel57.TabIndex = 12;
+            // 
+            // tableLayoutPanel58
+            // 
+            this.tableLayoutPanel58.CellBorderStyle = System.Windows.Forms.TableLayoutPanelCellBorderStyle.Single;
+            this.tableLayoutPanel58.ColumnCount = 1;
+            this.tableLayoutPanel58.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel58.Location = new System.Drawing.Point(3, 3189);
+            this.tableLayoutPanel58.Name = "tableLayoutPanel58";
+            this.tableLayoutPanel58.RowCount = 1;
+            this.tableLayoutPanel58.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel58.Size = new System.Drawing.Size(646, 2);
+            this.tableLayoutPanel58.TabIndex = 12;
+            // 
+            // tableLayoutPanel59
+            // 
+            this.tableLayoutPanel59.CellBorderStyle = System.Windows.Forms.TableLayoutPanelCellBorderStyle.Single;
+            this.tableLayoutPanel59.ColumnCount = 1;
+            this.tableLayoutPanel59.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel59.Location = new System.Drawing.Point(3, 3307);
+            this.tableLayoutPanel59.Name = "tableLayoutPanel59";
+            this.tableLayoutPanel59.RowCount = 1;
+            this.tableLayoutPanel59.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel59.Size = new System.Drawing.Size(646, 2);
+            this.tableLayoutPanel59.TabIndex = 12;
+            // 
+            // tableLayoutPanel60
+            // 
+            this.tableLayoutPanel60.CellBorderStyle = System.Windows.Forms.TableLayoutPanelCellBorderStyle.Single;
+            this.tableLayoutPanel60.ColumnCount = 1;
+            this.tableLayoutPanel60.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel60.Location = new System.Drawing.Point(3, 3425);
+            this.tableLayoutPanel60.Name = "tableLayoutPanel60";
+            this.tableLayoutPanel60.RowCount = 1;
+            this.tableLayoutPanel60.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel60.Size = new System.Drawing.Size(646, 2);
+            this.tableLayoutPanel60.TabIndex = 12;
+            // 
             // SteamTheme
             // 
             this.AcceptButton = this.btnStart;
@@ -3301,6 +5300,42 @@
             this.tableLayoutPanel30.ResumeLayout(false);
             this.tableLayoutPanel30.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox18)).EndInit();
+            this.tableLayoutPanel37.ResumeLayout(false);
+            this.tableLayoutPanel37.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox19)).EndInit();
+            this.tableLayoutPanel38.ResumeLayout(false);
+            this.tableLayoutPanel38.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox20)).EndInit();
+            this.tableLayoutPanel39.ResumeLayout(false);
+            this.tableLayoutPanel39.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox21)).EndInit();
+            this.tableLayoutPanel40.ResumeLayout(false);
+            this.tableLayoutPanel40.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox22)).EndInit();
+            this.tableLayoutPanel41.ResumeLayout(false);
+            this.tableLayoutPanel41.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox23)).EndInit();
+            this.tableLayoutPanel42.ResumeLayout(false);
+            this.tableLayoutPanel42.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox24)).EndInit();
+            this.tableLayoutPanel43.ResumeLayout(false);
+            this.tableLayoutPanel43.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox25)).EndInit();
+            this.tableLayoutPanel44.ResumeLayout(false);
+            this.tableLayoutPanel44.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox26)).EndInit();
+            this.tableLayoutPanel45.ResumeLayout(false);
+            this.tableLayoutPanel45.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox27)).EndInit();
+            this.tableLayoutPanel46.ResumeLayout(false);
+            this.tableLayoutPanel46.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox28)).EndInit();
+            this.tableLayoutPanel47.ResumeLayout(false);
+            this.tableLayoutPanel47.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox29)).EndInit();
+            this.tableLayoutPanel48.ResumeLayout(false);
+            this.tableLayoutPanel48.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox30)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -3500,6 +5535,126 @@
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel34;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel35;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel36;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel37;
+        private System.Windows.Forms.PictureBox pictureBox19;
+        private System.Windows.Forms.Label label91;
+        private System.Windows.Forms.RichTextBox richTextBox19;
+        private System.Windows.Forms.Label label92;
+        private System.Windows.Forms.Label label93;
+        private System.Windows.Forms.Button button20;
+        private System.Windows.Forms.Label label94;
+        private System.Windows.Forms.Label label95;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel38;
+        private System.Windows.Forms.PictureBox pictureBox20;
+        private System.Windows.Forms.Label label96;
+        private System.Windows.Forms.RichTextBox richTextBox20;
+        private System.Windows.Forms.Label label97;
+        private System.Windows.Forms.Label label98;
+        private System.Windows.Forms.Button button21;
+        private System.Windows.Forms.Label label99;
+        private System.Windows.Forms.Label label100;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel39;
+        private System.Windows.Forms.PictureBox pictureBox21;
+        private System.Windows.Forms.Label label101;
+        private System.Windows.Forms.RichTextBox richTextBox21;
+        private System.Windows.Forms.Label label102;
+        private System.Windows.Forms.Label label103;
+        private System.Windows.Forms.Label label104;
+        private System.Windows.Forms.Label label105;
+        private System.Windows.Forms.Button button22;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel40;
+        private System.Windows.Forms.PictureBox pictureBox22;
+        private System.Windows.Forms.Label label106;
+        private System.Windows.Forms.RichTextBox richTextBox22;
+        private System.Windows.Forms.Label label107;
+        private System.Windows.Forms.Label label108;
+        private System.Windows.Forms.Label label109;
+        private System.Windows.Forms.Label label110;
+        private System.Windows.Forms.Button button23;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel41;
+        private System.Windows.Forms.PictureBox pictureBox23;
+        private System.Windows.Forms.Label label111;
+        private System.Windows.Forms.RichTextBox richTextBox23;
+        private System.Windows.Forms.Label label112;
+        private System.Windows.Forms.Label label113;
+        private System.Windows.Forms.Label label114;
+        private System.Windows.Forms.Label label115;
+        private System.Windows.Forms.Button button24;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel42;
+        private System.Windows.Forms.PictureBox pictureBox24;
+        private System.Windows.Forms.Label label116;
+        private System.Windows.Forms.RichTextBox richTextBox24;
+        private System.Windows.Forms.Label label117;
+        private System.Windows.Forms.Label label118;
+        private System.Windows.Forms.Label label119;
+        private System.Windows.Forms.Label label120;
+        private System.Windows.Forms.Button button25;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel43;
+        private System.Windows.Forms.PictureBox pictureBox25;
+        private System.Windows.Forms.Label label121;
+        private System.Windows.Forms.RichTextBox richTextBox25;
+        private System.Windows.Forms.Label label122;
+        private System.Windows.Forms.Label label123;
+        private System.Windows.Forms.Label label124;
+        private System.Windows.Forms.Label label125;
+        private System.Windows.Forms.Button button26;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel44;
+        private System.Windows.Forms.PictureBox pictureBox26;
+        private System.Windows.Forms.Label label126;
+        private System.Windows.Forms.RichTextBox richTextBox26;
+        private System.Windows.Forms.Label label127;
+        private System.Windows.Forms.Label label128;
+        private System.Windows.Forms.Label label129;
+        private System.Windows.Forms.Label label130;
+        private System.Windows.Forms.Button button27;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel45;
+        private System.Windows.Forms.PictureBox pictureBox27;
+        private System.Windows.Forms.Label label131;
+        private System.Windows.Forms.RichTextBox richTextBox27;
+        private System.Windows.Forms.Label label132;
+        private System.Windows.Forms.Label label133;
+        private System.Windows.Forms.Label label134;
+        private System.Windows.Forms.Label label135;
+        private System.Windows.Forms.Button button28;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel46;
+        private System.Windows.Forms.PictureBox pictureBox28;
+        private System.Windows.Forms.Label label136;
+        private System.Windows.Forms.RichTextBox richTextBox28;
+        private System.Windows.Forms.Label label137;
+        private System.Windows.Forms.Label label138;
+        private System.Windows.Forms.Button button29;
+        private System.Windows.Forms.Label label139;
+        private System.Windows.Forms.Label label140;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel47;
+        private System.Windows.Forms.PictureBox pictureBox29;
+        private System.Windows.Forms.Label label141;
+        private System.Windows.Forms.RichTextBox richTextBox29;
+        private System.Windows.Forms.Label label142;
+        private System.Windows.Forms.Label label143;
+        private System.Windows.Forms.Button button30;
+        private System.Windows.Forms.Label label144;
+        private System.Windows.Forms.Label label145;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel48;
+        private System.Windows.Forms.PictureBox pictureBox30;
+        private System.Windows.Forms.Label label146;
+        private System.Windows.Forms.RichTextBox richTextBox30;
+        private System.Windows.Forms.Label label147;
+        private System.Windows.Forms.Label label148;
+        private System.Windows.Forms.Button button31;
+        private System.Windows.Forms.Label label149;
+        private System.Windows.Forms.Label label150;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel49;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel50;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel51;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel52;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel53;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel54;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel55;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel56;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel57;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel58;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel59;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel60;
     }
 }
 
