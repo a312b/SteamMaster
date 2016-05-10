@@ -7,9 +7,14 @@ using Filter_System.Filter_Core.Models;
 
 namespace Filter_System.Filter_Core.Filters
 {
-    class GameValueXFilter : Filter<Game>
+    public class GameValueXFilter : Filter<Game>
     {
         public GameValueXFilter()
+        {
+            OwnerCount();
+        }
+
+        public GameValueXFilter(double filterWeight) : base(filterWeight)
         {
             OwnerCount();
         }

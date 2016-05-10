@@ -37,22 +37,25 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Database">
-      <HintPath>..\..\..\..\..\Desktop\Database.dll</HintPath>
+      <HintPath>D:\SOFTWARE\Logs\Database.dll</HintPath>
+    </Reference>
+    <Reference Include="HtmlAgilityPack">
+      <HintPath>D:\SOFTWARE\Logs\HtmlAgilityPack.dll</HintPath>
     </Reference>
     <Reference Include="MongoDB.Bson">
-      <HintPath>..\SteamSharp\bin\Debug\MongoDB.Bson.dll</HintPath>
+      <HintPath>D:\SOFTWARE\Logs\MongoDB.Bson.dll</HintPath>
     </Reference>
     <Reference Include="MongoDB.Driver">
-      <HintPath>..\SteamSharp\bin\Debug\MongoDB.Driver.dll</HintPath>
+      <HintPath>D:\SOFTWARE\Logs\MongoDB.Driver.dll</HintPath>
     </Reference>
     <Reference Include="MongoDB.Driver.Core">
-      <HintPath>..\SteamSharp\bin\Debug\MongoDB.Driver.Core.dll</HintPath>
+      <HintPath>D:\SOFTWARE\Logs\MongoDB.Driver.Core.dll</HintPath>
     </Reference>
     <Reference Include="RestSharp">
-      <HintPath>..\SteamUI\bin\Debug\RestSharp.dll</HintPath>
+      <HintPath>D:\SOFTWARE\Logs\RestSharp.dll</HintPath>
     </Reference>
     <Reference Include="SteamSharp">
-      <HintPath>..\SteamSharp\bin\Debug\SteamSharp.dll</HintPath>
+      <HintPath>D:\SOFTWARE\Logs\SteamSharp.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Windows.Forms" />

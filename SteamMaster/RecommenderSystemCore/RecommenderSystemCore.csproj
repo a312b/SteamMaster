@@ -53,23 +53,29 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Database">
-      <HintPath>..\SteamSharp\bin\Debug\Database.dll</HintPath>
+      <HintPath>D:\SOFTWARE\Logs\Database.dll</HintPath>
+    </Reference>
+    <Reference Include="HtmlAgilityPack">
+      <HintPath>D:\SOFTWARE\Logs\HtmlAgilityPack.dll</HintPath>
     </Reference>
     <Reference Include="MongoDB.Bson, Version=2.2.3.3, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\SteamSharp\bin\Debug\MongoDB.Bson.dll</HintPath>
+      <HintPath>D:\SOFTWARE\Logs\MongoDB.Bson.dll</HintPath>
     </Reference>
     <Reference Include="MongoDB.Driver, Version=2.2.3.3, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\SteamSharp\bin\Debug\MongoDB.Driver.dll</HintPath>
+      <HintPath>D:\SOFTWARE\Logs\MongoDB.Driver.dll</HintPath>
     </Reference>
     <Reference Include="MongoDB.Driver.Core, Version=2.2.3.3, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\SteamSharp\bin\Debug\MongoDB.Driver.Core.dll</HintPath>
+      <HintPath>D:\SOFTWARE\Logs\MongoDB.Driver.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="RestSharp">
+      <HintPath>D:\SOFTWARE\Logs\RestSharp.dll</HintPath>
     </Reference>
     <Reference Include="SteamSharp, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\SteamSharp\bin\Debug\SteamSharp.dll</HintPath>
+      <HintPath>D:\SOFTWARE\Logs\SteamSharp.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
@@ -94,6 +100,10 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\Filter System\Filter System.csproj">
+      <Project>{77568c8d-01c6-4158-b685-4197c6918b55}</Project>
+      <Name>Filter System</Name>
+    </ProjectReference>
     <ProjectReference Include="..\SteamUI\SteamUI.csproj">
       <Project>{77c469a8-1c13-487d-8547-54c5d9f35e6c}</Project>
       <Name>SteamUI</Name>

@@ -3,12 +3,17 @@ using System.Collections.Generic;
 
 namespace Filter_System.Filter_Core.Models
 {
-    abstract class Filter <T>
+    public abstract class Filter <T>
     {
         protected Filter()
         {
             FilterWeight = 1;
         }
+
+        protected Filter(double filterWeight)
+        {
+            FilterWeight = filterWeight;
+        } 
 
 
         public virtual Dictionary<int, double> Execute(Dictionary<int, T> dictionaryToSort) // Execute FilterSort and applies weight

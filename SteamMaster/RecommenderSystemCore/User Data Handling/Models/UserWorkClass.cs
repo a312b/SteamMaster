@@ -3,8 +3,12 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using DatabaseCore;
+using DatabaseCore.lib.converter.models;
 using SteamSharpCore;
 using SteamSharpCore.steamUser.models;
+using Filter_System.Filter_Core.Filters;
+using Filter_System.Filter_Core.Models;
 
 namespace RecommenderSystemCore.User_Data_Handling.Models
 {
@@ -17,18 +21,60 @@ namespace RecommenderSystemCore.User_Data_Handling.Models
 
             userData = new Tuple<SteamUser.Player, List<UserGameTime.Game>>(user, userListGameList);
 
-            foreach (var game in userListGameList)
-            {
-                GameWorkClassList.Add(new UserGameWorkClass(game));
-            }
         }
+
+        private readonly Database mongoDatabase;
 
         readonly SteamSharp sharpCore;
 
         private Tuple<SteamUser.Player, List<UserGameTime.Game>> userData;
-        
-        public List<UserGameTime.Game> userListGameList { get; }
 
-        public List<UserGameWorkClass> GameWorkClassList { get; } 
+        private void LoadGames()
+        {
+            foreach (var game in userListGameList)
+            {
+                GameWorkClassList.Add(new UserGameWorkClass(game));
+            }
+
+            foreach (var game in GameWorkClassList)
+            {
+                UserGameIDs.Add(game.appID);
+            }
+            
+            DBGameDictionary = mongoDatabase.FindGamesById(UserGameIDs);
+        }
+        
+        public List<UserGameTime.Game> userListGameList { get; } //GameList directly from user
+
+        public List<UserGameWorkClass> GameWorkClassList { get; } //GameList for work
+
+        public Dictionary<int, Game> DBGameDictionary { get; private set; } //GameList with Games corresponding to the database 
+
+        public List<int>  UserGameIDs { get; }
+
+        public List<UserGameWorkClass> GetUsersMostPlayedGames()
+        {
+            GameValueXFilter avgPlayTimeForeverFilter = new GameValueXFilter(0.5);
+            avgPlayTimeForeverFilter.AvgPlayTimeForever();
+            GameValueXFilter ownedFilter = new GameValueXFilter(0.5);
+            ownedFilter.OwnerCount();
+
+            FilterMerge popularityFilter = new FilterMerge();
+
+            Dictionary<int, double> popularityDictionary =
+                popularityFilter.Execute(ownedFilter.Execute(DBGameDictionary),
+                    avgPlayTimeForeverFilter.Execute(DBGameDictionary));
+
+            List<UserGameWorkClass> returnList = userListGameList.Select(game => new UserGameWorkClass(game, popularityDictionary[game.appid])).ToList();
+
+            foreach (var game in returnList.Where(game => game.PlayTimeForever < 2))
+            {
+                returnList.Remove(game);
+            }
+
+            returnList.Sort();
+
+            return returnList;
+        } 
     }
 }

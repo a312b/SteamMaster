@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Filter_System.Filter_Core.Models
 {
-    class FilterMerge : Filter<double> //Class for merging the values of dictionaries returned from different filters
+    public class FilterMerge : Filter<double> //Class for merging the values of dictionaries returned from different filters
     {
         protected override Dictionary<int, double> FilterSort(Dictionary<int, double> dictionaryToSort)
         {

@@ -10,7 +10,7 @@ using SteamSharpCore.steamUser.models;
 
 namespace RecommenderSystemCore.User_Data_Handling.Models
 {
-    class UserGameWorkClass
+    class UserGameWorkClass : IComparable<UserGameWorkClass>
     {
         public UserGameWorkClass(UserGameTime.Game game)
         {
@@ -46,6 +46,13 @@ namespace RecommenderSystemCore.User_Data_Handling.Models
 
         public double Score { get; set; }
 
-        public List<string> TagList { get; private set; } 
+        public List<string> TagList { get; private set; }
+
+        public int CompareTo(UserGameWorkClass other) //Sort after the score of the App
+        {
+            int sourceScore = Convert.ToInt32(Score);
+            int compareScore = Convert.ToInt32(other.Score);
+            return sourceScore - compareScore;
+        }
     }
 }
