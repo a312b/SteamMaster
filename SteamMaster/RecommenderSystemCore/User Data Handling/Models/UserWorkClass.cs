@@ -54,18 +54,14 @@ namespace RecommenderSystemCore.User_Data_Handling.Models
 
         public List<UserGameWorkClass> GetUsersMostPlayedGames()
         {
-            GameValueXFilter avgPlayTimeForeverFilter = new GameValueXFilter(0.5);
-            avgPlayTimeForeverFilter.AvgPlayTimeForever();
+            #region whack kode
+            PlayerGameXFilter playTimeForeverFilter = new PlayerGameXFilter(0.5);
             GameValueXFilter ownedFilter = new GameValueXFilter(0.5);
             ownedFilter.OwnerCount();
 
-            FilterMerge popularityFilter = new FilterMerge();
+            Dictionary<int, double> playTimeDictionary = playTimeForeverFilter.Execute(userListGameList);
 
-            Dictionary<int, double> popularityDictionary =
-                popularityFilter.Execute(ownedFilter.Execute(DBGameDictionary),
-                    avgPlayTimeForeverFilter.Execute(DBGameDictionary));
-
-            List<UserGameWorkClass> returnList = userListGameList.Select(game => new UserGameWorkClass(game, popularityDictionary[game.appid])).ToList();
+            List<UserGameWorkClass> returnList = userListGameList.Select(game => new UserGameWorkClass(game, playTimeDictionary[game.appid])).ToList();
 
             foreach (var game in returnList.Where(game => game.PlayTimeForever < 2))
             {
@@ -75,6 +71,9 @@ namespace RecommenderSystemCore.User_Data_Handling.Models
             returnList.Sort();
 
             return returnList;
+            #endregion
+
+
         } 
     }
 }

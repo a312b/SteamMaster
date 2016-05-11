@@ -35,12 +35,13 @@ namespace Filter_System.Filter_Core.Filters
                 i++;
             }
 
-            foreach (var game in rankingList)
-            {
-                Console.WriteLine($"ID: {game.AppID} Score: {game.Score}");
-            }
-
             return returnDictionary;
+        }
+
+        public Dictionary<int, double> Execute(List<Game> listToSort)
+        {
+            Dictionary<int, Game> dictionaryToSort = listToSort.ToDictionary(game => game.SteamAppId);
+            return Execute(dictionaryToSort);
         }
 
 

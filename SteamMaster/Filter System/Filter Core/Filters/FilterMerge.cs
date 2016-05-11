@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using DatabaseCore.lib.converter.models;
 
 namespace Filter_System.Filter_Core.Models
 {
@@ -48,6 +49,27 @@ namespace Filter_System.Filter_Core.Models
             }
 
             return returnDictionary;
+        }
+
+        public Dictionary<int, double> Execute(params List<Game>[] listToSort)
+        {
+            List<Dictionary<int, double>> dictionaryCollection = new List<Dictionary<int, double>>();
+
+            foreach (var list in listToSort)
+            {
+                Dictionary<int, double> workDictionary = new Dictionary<int, double>();
+                int value = 1;
+                foreach (var Game in list)
+                {
+                    workDictionary.Add(Game.SteamAppId, value);
+                    value++;
+                }
+
+                dictionaryCollection.Add(workDictionary);
+
+            }
+
+            return Execute(dictionaryCollection.ToArray());
         }
     }
 }
