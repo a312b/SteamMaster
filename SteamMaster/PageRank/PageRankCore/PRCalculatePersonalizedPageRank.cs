@@ -26,7 +26,6 @@ namespace PageRank
         private PRTagGameDictionaries _tagGameDictionaries;
         private Dictionary<int, PRUserGame> _userGameDictionary;
         private List<UserGameTime.Game> _userGames;
-        private SteamSharp _steamSharp;
 
         #endregion
 
@@ -46,8 +45,8 @@ namespace PageRank
             _userGameDictionary = GenerateUserGameDictionary();
             _tagGameDictionaries = GenerateTagGameDictionaries(_userGameDictionary);
             _tagGameDictionaries.Start();
-
             BiasTagPageRank();
+
         }
 
         private Dictionary<int, PRUserGame> GenerateUserGameDictionary()

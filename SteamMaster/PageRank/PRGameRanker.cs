@@ -32,11 +32,12 @@ namespace PageRank
 
         #region Methods
 
-        public List<PRGame> GetRankedGameList()
+        public List<Game> GetRankedGameList()
         {
             Start();
-            return _userRecommendations.Take(30).ToList();
-            //return _userRecommendations.Select(game => game.AppID).Take(30).ToList();
+            List<PRGame> topRecommendations = _userRecommendations.Take(30).ToList();
+            List<Game> recommendations = topRecommendations.Select(game => _databaseGames[game.AppID]).ToList();
+            return recommendations;
         }
 
         private Dictionary<int, Game> RemoveDemoGames(Dictionary<int, Game> gameDictionary)
