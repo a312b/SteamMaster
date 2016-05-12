@@ -11,7 +11,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Filter System", "Filter Sys
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SteamUnitTesting", "SteamUnitTesting\SteamUnitTesting.csproj", "{38908592-C8DC-4E4A-B5FE-B736A20A26E9}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PageRank", "..\..\PageRank\PageRank\PageRank.csproj", "{8AE4F059-243C-43D0-8469-37179E68C8C7}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PageRank", "PageRank\PageRank.csproj", "{8AE4F059-243C-43D0-8469-37179E68C8C7}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
