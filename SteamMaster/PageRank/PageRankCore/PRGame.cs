@@ -4,7 +4,7 @@ using System.Linq;
 
 namespace PageRank
 {
-    class PRGame : IComparable<PRGame>
+    public class PRGame : IComparable<PRGame>
     {
         #region Fields
 

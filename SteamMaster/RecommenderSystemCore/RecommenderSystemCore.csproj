@@ -110,6 +110,10 @@
       <Project>{77568c8d-01c6-4158-b685-4197c6918b55}</Project>
       <Name>Filter System</Name>
     </ProjectReference>
+    <ProjectReference Include="..\PageRank\PageRank.csproj">
+      <Project>{8ae4f059-243c-43d0-8469-37179e68c8c7}</Project>
+      <Name>PageRank</Name>
+    </ProjectReference>
     <ProjectReference Include="..\SteamUI\SteamUI.csproj">
       <Project>{77c469a8-1c13-487d-8547-54c5d9f35e6c}</Project>
       <Name>SteamUI</Name>
