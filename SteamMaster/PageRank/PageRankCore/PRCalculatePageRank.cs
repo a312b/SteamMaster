@@ -35,12 +35,8 @@ namespace PageRank
 
         public void Start()
         {
-            //Previous and current iterations are tracked here so we can check
-            //the convergence between the iterations. 
-            double previousIteration = 0;
             double currentIteration = Games.Values.Sum(game => game.GamePageRank);
             int iterations = 0;
-
 
             while (iterations < Iterations)
             {
@@ -50,12 +46,14 @@ namespace PageRank
                     tag.TagPageRank = ComputePageRank(tag);
                 }
                 UpdateGamePageRanks();
-                //Keeping track of the iterations to check the convergence
-                previousIteration = currentIteration;
-                currentIteration = Games.Values.Sum(game => game.GamePageRank);
+
                 iterations++;
                 //Prints for debugging purposes
                 Console.WriteLine(currentIteration);
+
+                //Keeps track of the iterations to check the convergence
+                double previousIteration = currentIteration;
+                currentIteration = Games.Values.Sum(game => game.GamePageRank);
 
                 //Break if convergence requirements are met
                 if (previousIteration - currentIteration < Convergence) break;

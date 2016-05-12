@@ -40,11 +40,12 @@ namespace PageRank
         #endregion
 
         #region Methods
-        
-        //Some preliminary calculations are performed here. 
-        //A user game dictionary is made so that it can be uesd as input for generating
-        //tag and game dictionaries for the purpose of counting tag frequency which is
-        //needed for the BiasTagPageRank function.
+        /// <summary>
+        /// Some preliminary calculations are performed here. A user game 
+        /// dictionary is made so that it can be uesd as input for generating
+        /// tag and game dictionaries for the purpose of counting tag frequency
+        /// which is needed for the BiasTagPageRank function.
+        /// </summary>
         public void Start()
         {
             _userGameDictionary = GenerateUserGameDictionary();
@@ -113,19 +114,26 @@ namespace PageRank
                 tagMultipliers.Add(outlinks, multiplier += increment);
             }
 
-            //In this loop, each tag is either multiplied by the value specified 
-            //by its number of outlinks. If it does not exist in the user's library,
-            //its value is set to one divided by the total number of games
+            //In this loop, each tag that exists in the user's library is multiplied by
+            //the value specified by its number of outlinks. If it does not exist in the user's library,
+            //its value is set to one divided by the total number of games.
             foreach (PRTag prTag in CalculatePageRank.Tags.Values)
             {
                 if (_tagGameDictionaries.TagDictionary.ContainsKey(prTag.Tag))
                 {
-                    double tagMultiplier = tagMultipliers[_tagGameDictionaries.TagDictionary[prTag.Tag].OutLinks];
+                    int outlinks = GetTagOutlinks(prTag);
+                    double tagMultiplier = tagMultipliers[outlinks];
                     prTag.TagPageRank = prTag.TagPageRank*tagMultiplier;
                     continue;
                 }
                 prTag.TagPageRank = (double)1/CalculatePageRank.Games.Count;
             }
+        }
+
+        private int GetTagOutlinks(PRTag prTag)
+        {
+            //Gets the number of outlinks for a tag based on the corresponding entry in the tag dictionary.
+            return _tagGameDictionaries.TagDictionary[prTag.Tag].OutLinks;
         }
 
         #endregion

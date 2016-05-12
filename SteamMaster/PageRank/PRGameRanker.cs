@@ -41,14 +41,23 @@ namespace PageRank
         public List<Game> GetRankedGameList()
         {
             Start();
-            List<PRGame> topRecommendations = _userRecommendations.Take(30).ToList();
-            List<Game> recommendations = topRecommendations.Select(game => _databaseGames[game.AppID]).ToList();
+            List<PRGame> rankedRecommendations = _userRecommendations.ToList();
+            List<Game> recommendations = rankedRecommendations.Select(game => _databaseGames[game.AppID]).ToList();
             return recommendations;
         }
 
+        /// <summary>
+        /// This function removes demo games. Not because they are irrelevant, but because
+        /// demo games usually have the same tags as the actual released game, and therefore
+        /// will have the same ranking. And we would rather recommend a released game than 
+        /// a game demo.
+        /// </summary>
+        /// <param name="gameDictionary"></param>
+        /// <returns></returns>
         private Dictionary<int, Game> RemoveDemoGames(Dictionary<int, Game> gameDictionary)
         {
             List<int> demoGames = new List<int>();
+            //The linq though
             foreach (Game game in gameDictionary.Values)
             {
                 string[] segments = game.Title.Split(' ');
