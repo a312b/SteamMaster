@@ -46,22 +46,22 @@ namespace PageRank
             return recommendations;
         }
 
-        //public List<PRGame> GetRankedGameList(string lol)
-        //{
-        //      This is a test class for getting actual pagerank scores
-        //    Start();
-        //    return _userRecommendations.Take(50).ToList();
-        //}
+        public List<PRGame> GetRankedGameList(string lol)
+        {
+            //This is a test class for getting actual pagerank scores
+            Start();
+            return _userRecommendations.Take(50).ToList();
+        }
 
-        /// <summary>
-        /// This function removes demo games. Not because they are irrelevant, but because
-        /// demo games usually have the same tags as the actual released game, and therefore
-        /// will have the same ranking. And we would rather recommend a released game than 
-        /// a game demo.
-        /// </summary>
-        /// <param name="gameDictionary"></param>
-        /// <returns></returns>
-        private Dictionary<int, Game> RemoveDemoGames(Dictionary<int, Game> gameDictionary)
+    /// <summary>
+    /// This function removes demo games. Not because they are irrelevant, but because
+    /// demo games usually have the same tags as the actual released game, and therefore
+    /// will have the same ranking. And we would rather recommend a released game than 
+    /// a game demo.
+    /// </summary>
+    /// <param name="gameDictionary"></param>
+    /// <returns></returns>
+    private Dictionary<int, Game> RemoveDemoGames(Dictionary<int, Game> gameDictionary)
         {
             List<int> demoGames = new List<int>();
             //The linq though
