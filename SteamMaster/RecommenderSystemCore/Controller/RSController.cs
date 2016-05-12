@@ -5,7 +5,11 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using DatabaseCore;
+using DatabaseCore.lib.converter.models;
+using Filter_System.Filter_Core.Filters;
+using Filter_System.Filter_Core.Models;
 using PageRank;
+using RecommenderSystemCore.User_Data_Handling.Models;
 using SteamSharpCore.steamStore.models;
 using SteamSharpCore;
 using SteamUI;
@@ -21,8 +25,7 @@ namespace RecommenderSystemCore.Controller
             database = new Database();
             UI = ui;
 
-
-         //   ui.RecommendButtomClick += 
+            //   ui.RecommendButtomClick += 
 
         }
 
@@ -38,10 +41,43 @@ namespace RecommenderSystemCore.Controller
             
         }
 
-        private void ExecuteRecommendation(string steamID)
+        private List<int> ExecuteRecommendation(string steamID)
         {
-            
+            UserWorkClass User = new UserWorkClass(steamID);
+            List<int> returnList = new List<int>();
+            Dictionary<int, Game> dbGames = database.FindAllGames();
+
+            PageRank = new PRGameRanker(dbGames, User.userListGameList);
+            List<Game> PageRankList = PageRank.GetRankedGameList();
+
+
         }
+
+        private Dictionary<int, double> FilterManagement(Dictionary<int, Game> dictionaryToFilter)
+        {
+            //Controls the weight of the filters in PopularityFilter
+            double MostPlayedValue = 1;
+            double MostPlayed2WeeksValue = 1;
+            //Controls the weight of the PopularityFilter as a whole
+            double PopularityValue = 1;
+
+
+            Dictionary<int, double> MostPlayedFilter = new GameValueXFilter(MostPlayedValue).Execute(dictionaryToFilter);
+            Dictionary<int, double> MostPlayed2WeeksFilter =
+                new GameValueXFilter(MostPlayed2WeeksValue).Execute(dictionaryToFilter);
+
+            Dictionary<int, double> PopularityFilter = new FilterMerge(PopularityValue).Execute(MostPlayed2WeeksFilter, MostPlayedFilter);
+
+
+
+        }
+
+        private Dictionary<int, double> FilterManagement(List<Game> listToFilter)
+        {
+            Dictionary<int, Game> dictionaryToFilter = listToFilter.ToDictionary(game => game.SteamAppId);
+
+            return FilterManagement(dictionaryToFilter);
+        } 
 
         //private void RecommendGameList(string steamID) // fix senere - mere funktion findes i funktionen GenerateGameList() under UI;
         //{

@@ -72,6 +72,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Filter Core\Filters 2.0\Models\FilterBase.cs" />
     <Compile Include="Filter Core\Filters\DiversificationFilter.cs" />
     <Compile Include="Filter Core\Filters\Filter Pre-Calculations\Models\AppWorkClass.cs" />
     <Compile Include="Filter Core\Filters\Filter Pre-Calculations\Models\ListComparer.cs" />

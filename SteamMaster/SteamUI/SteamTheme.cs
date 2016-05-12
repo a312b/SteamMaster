@@ -345,7 +345,7 @@ namespace SteamUI
                 {
                     GenerateGameList();
                         //For testing purposes GenerateGameList can be called instead of the RecommendButtomClick delegate
-                    //RecommendButtomClick(steamIdTextBox.Text); //If you crash use GenerateGameList()
+                    RecommendButtomClick(steamIdTextBox.Text); //If you crash use GenerateGameList()
                 };
                 bgWorker.RunWorkerCompleted += (s, a) =>
                 {

@@ -7,6 +7,7 @@ using Filter_System.Filter_Core.Models;
 
 namespace Filter_System.Filter_Core.Filters
 {
+    
     public class GameValueXFilter : Filter<Game>
     {
         public GameValueXFilter()

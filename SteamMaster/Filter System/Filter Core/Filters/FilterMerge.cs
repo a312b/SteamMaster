@@ -9,6 +9,16 @@ namespace Filter_System.Filter_Core.Models
 {
     public class FilterMerge : Filter<double> //Class for merging the values of dictionaries returned from different filters
     {
+        public FilterMerge(double filterWeight) : base(filterWeight)
+        {
+            
+        }
+
+        public FilterMerge()
+        {
+            
+        }
+
         protected override Dictionary<int, double> FilterSort(Dictionary<int, double> dictionaryToSort)
         {
             return dictionaryToSort;
@@ -25,9 +35,10 @@ namespace Filter_System.Filter_Core.Models
                 foreach (int key in keys)
                 {
                     double Value;
-                    dictionary.TryGetValue(key, out Value);
-
-                    returnDictionary[key] += Value;
+                    if (dictionary.TryGetValue(key, out Value))
+                    {
+                        returnDictionary[key] += Value;
+                    }
                 }
             }
 
