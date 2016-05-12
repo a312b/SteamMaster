@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 14
-VisualStudioVersion = 14.0.24720.0
+VisualStudioVersion = 14.0.25123.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SteamUI", "SteamUI\SteamUI.csproj", "{77C469A8-1C13-487D-8547-54C5D9F35E6C}"
 EndProject
@@ -10,6 +10,8 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Filter System", "Filter System\Filter System.csproj", "{77568C8D-01C6-4158-B685-4197C6918B55}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SteamUnitTesting", "SteamUnitTesting\SteamUnitTesting.csproj", "{38908592-C8DC-4E4A-B5FE-B736A20A26E9}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PageRank", "..\..\PageRank\PageRank\PageRank.csproj", "{8AE4F059-243C-43D0-8469-37179E68C8C7}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -33,6 +35,10 @@ Global
 		{38908592-C8DC-4E4A-B5FE-B736A20A26E9}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{38908592-C8DC-4E4A-B5FE-B736A20A26E9}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{38908592-C8DC-4E4A-B5FE-B736A20A26E9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8AE4F059-243C-43D0-8469-37179E68C8C7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8AE4F059-243C-43D0-8469-37179E68C8C7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8AE4F059-243C-43D0-8469-37179E68C8C7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8AE4F059-243C-43D0-8469-37179E68C8C7}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
