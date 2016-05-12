@@ -14,16 +14,19 @@ using SteamSharpCore;
 using SteamSharpCore.steamStore;
 using SteamSharpCore.steamStore.models;
 using SteamUI;
+using System.Windows.Forms;
 
 namespace RecommenderSystemCore
 {
     class Program
     {
-        [STAThread]
         static void Main(string[] args)
         {
             SteamTheme UI = new SteamTheme();
             RSController controller = new RSController(UI);
+            Application.EnableVisualStyles();
+            Application.SetCompatibleTextRenderingDefault(false);
+            Application.Run(UI); //StartSearchPage()
         }
 
     }
