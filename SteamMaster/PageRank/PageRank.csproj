@@ -82,6 +82,7 @@
     <Compile Include="PageRankCore\PRTag.cs" />
     <Compile Include="PageRankCore\PRTagGameDictionaries.cs" />
     <Compile Include="PageRankCore\PRUserGame.cs" />
+    <Compile Include="Testing.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

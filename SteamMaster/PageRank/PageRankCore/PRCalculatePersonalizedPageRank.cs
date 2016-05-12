@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 using DatabaseCore;
 using DatabaseCore.lib.converter.models;
@@ -85,7 +86,21 @@ namespace PageRank
         {
             //This is where the value of each tag is adjusted according to the user
             //Afterwards the rank of each game is updated accordingly
-            CalculateMultiplier();
+
+            //CalculateMultiplier(); -- Changed algorithm. This function is now obsolete
+            //leaving it here just in case
+
+            foreach (PRTag prTag in CalculatePageRank.Tags.Values)
+            {
+                if (_tagGameDictionaries.TagDictionary.ContainsKey(prTag.Tag))
+                {
+                    int tagFrequency = GetTagOutlinks(prTag);
+                    prTag.TagPageRank = prTag.TagPageRank * tagFrequency;
+                    continue;
+                }
+                prTag.TagPageRank = 1.0/CalculatePageRank.Games.Count;
+            }
+
             CalculatePageRank.UpdateGamePageRanks();
         }
 
@@ -122,11 +137,13 @@ namespace PageRank
                 if (_tagGameDictionaries.TagDictionary.ContainsKey(prTag.Tag))
                 {
                     int outlinks = GetTagOutlinks(prTag);
-                    double tagMultiplier = tagMultipliers[outlinks];
+                    //double tagMultiplier = tagMultipliers[outlinks];
+                    double tagMultiplier = outlinks;
                     prTag.TagPageRank = prTag.TagPageRank*tagMultiplier;
                     continue;
                 }
                 prTag.TagPageRank = (double)1/CalculatePageRank.Games.Count;
+                
             }
         }
 

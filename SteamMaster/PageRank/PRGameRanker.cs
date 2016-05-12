@@ -41,10 +41,17 @@ namespace PageRank
         public List<Game> GetRankedGameList()
         {
             Start();
-            List<PRGame> rankedRecommendations = _userRecommendations.ToList();
-            List<Game> recommendations = rankedRecommendations.Select(game => _databaseGames[game.AppID]).ToList();
+
+            List<Game> recommendations = _userRecommendations.Select(game => _databaseGames[game.AppID]).ToList();
             return recommendations;
         }
+
+        //public List<PRGame> GetRankedGameList(string lol)
+        //{
+        //      This is a test class for getting actual pagerank scores
+        //    Start();
+        //    return _userRecommendations.Take(50).ToList();
+        //}
 
         /// <summary>
         /// This function removes demo games. Not because they are irrelevant, but because
