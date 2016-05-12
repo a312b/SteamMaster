@@ -22,10 +22,10 @@ namespace RecommenderSystemCore
     {
         static void Main(string[] args)
         {
-            SteamTheme UI = new SteamTheme();
-            RSController controller = new RSController(UI);
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
+            SteamTheme UI = new SteamTheme();
+            RSController controller = new RSController(UI);
             Application.Run(UI); //StartSearchPage()
         }
 

@@ -117,11 +117,12 @@ namespace SteamUI
         private void DisplayGamesInUI(List<Game> gameList)
         {
             int roundCount = 0;
-          //  Dictionary<int, Game> userGameListFromIds = _database.FindGamesById(idList);
+            //gameDatabase _database = new gameDatabase();
+            //Dictionary<int, Game> userGameListFromIds = _database.FindGamesById(idList);
 
             ClearGameListBox();
             if (gameList == null) return;
-            foreach (Game game in gameList)
+            foreach (Game game in gameList.Take(30).ToList())
             {
                 LoadHeaderImages(game.SteamAppId, roundCount);
                 LoadGameInfo(game, roundCount);
@@ -179,12 +180,14 @@ namespace SteamUI
                 richTextBox26, richTextBox27, richTextBox28, richTextBox29, richTextBox30
             };
 
-            if (roundCount < gameLabels.Length)
+            if (roundCount < gameLabels.Length && game.Developer != null)
             {
                 gameLabels[roundCount].Text = game.Title;
                 gameLabels[roundCount].Visible = true;
+
                 foreach (string developer in game.Developer)
                     SB.Append(developer + ", ");
+
                 devLabels[roundCount].Text = SB.ToString().Remove(SB.Length - 2, 1);
                 descriptionBoxes[roundCount].Text = game.Description;
                 releaseLabels[roundCount].Text = game.ReleaseDate;
