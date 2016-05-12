@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -41,15 +42,15 @@ namespace RecommenderSystemCore.User_Data_Handling.Models
             {
                 UserGameIDs.Add(game.appID);
             }
-            
-            DBGameDictionary = mongoDatabase.FindGamesById(UserGameIDs);
+
+            DBGameList = mongoDatabase.FindGamesById(UserGameIDs).Select(game => game.Value).ToList();
         }
         
         public List<UserGameTime.Game> userListGameList { get; } //GameList directly from user
 
         public List<UserGameWorkClass> GameWorkClassList { get; } //GameList for work
 
-        public Dictionary<int, Game> DBGameDictionary { get; private set; } //GameList with Games corresponding to the database 
+        public List<Game> DBGameList { get; private set; } //GameList with Games corresponding to the database 
 
         public List<int>  UserGameIDs { get; }
 

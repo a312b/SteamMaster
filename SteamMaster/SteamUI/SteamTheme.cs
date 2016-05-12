@@ -21,13 +21,13 @@ namespace SteamUI
 {
     public partial class SteamTheme : Form
     {
-        public delegate void RecommendDelegate(string steamID); //Add SteamID
+        public delegate List<Game> RecommendDelegate(string steamID); //Add SteamID
         public const int WmNclbuttondown = 0xA1;
         public const int Htcaption = 0x2;
         public static string DevKey = Settings.Default.DevKey;
         public static int ElapsedTime;
-        private readonly gameDatabase _database = new gameDatabase();
-        private readonly SteamSharp _steamSharp = new SteamSharp(DevKey);
+        //private readonly gameDatabase _database = new gameDatabase();
+        //private readonly SteamSharp _steamSharp = new SteamSharp(DevKey);
 
         public SteamTheme()
         {
@@ -68,60 +68,60 @@ namespace SteamUI
         //Where the game list is made by calling SteamSharp.GameListByIds on a set app ID array (that app ID array is now achieved by getting it from a player)
         //and iterates over all the games to then call functions LoadHeaderImages and LoadGameInfo displaying the game date.
         //A "roundCount" is kept to determine how far we've gotten.
-        private void GenerateGameList()
-        {
-            const int minGameTime = 4; //in minutes
-            const int maxRecommendations = 30;
-            string steamId = steamIdTextBox.Text;
-            List<int> idList = new List<int>();
+        //private void GenerateGameList()
+        //{
+        //    const int minGameTime = 4; //in minutes
+        //    const int maxRecommendations = 30;
+        //    string steamId = steamIdTextBox.Text;
+        //    List<int> idList = new List<int>();
 
-            if (DevKey == "null")
-            {
-                MessageBox.Show(
-                    "You need to enter a Steam Developer API key in the settings box by clicking the cog located in the top right corner.",
-                    "Please enter Steam API Key", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return;
-            }
+        //    if (DevKey == "null")
+        //    {
+        //        MessageBox.Show(
+        //            "You need to enter a Steam Developer API key in the settings box by clicking the cog located in the top right corner.",
+        //            "Please enter Steam API Key", MessageBoxButtons.OK, MessageBoxIcon.Error);
+        //        return;
+        //    }
 
-            List<UserGameTime.Game> formGameListFromId = _steamSharp.SteamUserGameTimeListById(steamId);
-            foreach (UserGameTime.Game game in formGameListFromId)
-            {
-                if (idList.Count <= maxRecommendations && game.playtime_forever > minGameTime)
-                {
-                    idList.Add(game.appid);
-                }
-            }
+        //    List<UserGameTime.Game> formGameListFromId = _steamSharp.SteamUserGameTimeListById(steamId);
+        //    foreach (UserGameTime.Game game in formGameListFromId)
+        //    {
+        //        if (idList.Count <= maxRecommendations && game.playtime_forever > minGameTime)
+        //        {
+        //            idList.Add(game.appid);
+        //        }
+        //    }
 
-            DisplayGamesInUI(idList);
+        //    DisplayGamesInUI(idList);
 
-            Dictionary<int, Game> userGameListFromIds = _database.FindGamesById(idList);
-            List<SteamStoreGame.Tag> totalTagList = new List<SteamStoreGame.Tag>();
-            if (userGameListFromIds != null)
-            {
-                foreach (Game game in userGameListFromIds.Values)
-                {
-                    totalTagList.AddRange(game.Tags);
-                }
-            }
+        //    Dictionary<int, Game> userGameListFromIds = _database.FindGamesById(idList);
+        //    List<SteamStoreGame.Tag> totalTagList = new List<SteamStoreGame.Tag>();
+        //    if (userGameListFromIds != null)
+        //    {
+        //        foreach (Game game in userGameListFromIds.Values)
+        //        {
+        //            totalTagList.AddRange(game.Tags);
+        //        }
+        //    }
 
-            IOrderedEnumerable<IGrouping<string, SteamStoreGame.Tag>> tagsOrderByDescending = totalTagList.GroupBy(
-                tag => tag.description)
-                .OrderByDescending(tags => tags.Count());
-            foreach (var tag in tagsOrderByDescending)
-            {
-                //do something with tag.Key + tag.Count();
-            }
-        }
+        //    IOrderedEnumerable<IGrouping<string, SteamStoreGame.Tag>> tagsOrderByDescending = totalTagList.GroupBy(
+        //        tag => tag.description)
+        //        .OrderByDescending(tags => tags.Count());
+        //    foreach (var tag in tagsOrderByDescending)
+        //    {
+        //        //do something with tag.Key + tag.Count();
+        //    }
+        //}
 
         //Takes the idList and creates a dictionary containing the appID and database Game. We then iterate over these games to call seperate functions to actually display the info.
-        private void DisplayGamesInUI(List<int> idList)
+        private void DisplayGamesInUI(List<Game> gameList)
         {
             int roundCount = 0;
-            Dictionary<int, Game> userGameListFromIds = _database.FindGamesById(idList);
+          //  Dictionary<int, Game> userGameListFromIds = _database.FindGamesById(idList);
 
             ClearGameListBox();
-            if (userGameListFromIds == null) return;
-            foreach (Game game in userGameListFromIds.Values)
+            if (gameList == null) return;
+            foreach (Game game in gameList)
             {
                 LoadHeaderImages(game.SteamAppId, roundCount);
                 LoadGameInfo(game, roundCount);
@@ -343,9 +343,9 @@ namespace SteamUI
                 BackgroundWorker bgWorker = new BackgroundWorker();
                 bgWorker.DoWork += (s, a) =>
                 {
-                    GenerateGameList();
                         //For testing purposes GenerateGameList can be called instead of the RecommendButtomClick delegate
-                    RecommendButtomClick(steamIdTextBox.Text); //If you crash use GenerateGameList()
+                    List<Game> gameList = RecommendButtomClick(steamIdTextBox.Text); //If you crash use GenerateGameList()
+                    DisplayGamesInUI(gameList);
                 };
                 bgWorker.RunWorkerCompleted += (s, a) =>
                 {

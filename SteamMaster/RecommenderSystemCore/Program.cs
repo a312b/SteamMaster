@@ -6,7 +6,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using DatabaseCore;
 using MongoDB.Bson.IO;
+using PageRank;
 using RecommenderSystemCore.Controller;
 using SteamSharpCore;
 using SteamSharpCore.steamStore;
@@ -17,15 +19,11 @@ namespace RecommenderSystemCore
 {
     class Program
     {
+        [STAThread]
         static void Main(string[] args)
         {
-            Application.EnableVisualStyles();
-            Application.SetCompatibleTextRenderingDefault(false);
-
             SteamTheme UI = new SteamTheme();
-            RSController Control = new RSController(UI);
-
-            Application.Run(UI); //StartSearchPage()
+            RSController controller = new RSController(UI);
         }
 
     }

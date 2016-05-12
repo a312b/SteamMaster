@@ -47,30 +47,18 @@ namespace Filter_System.Filter_Core.Filters_2._0.Models
             {
                 position.Add(i);
             }
-            
+
+            Dictionary<int, double> EndValue = ValueAccumulation(gamesToSort);
+
             Dictionary<int, Game> gameDictionary = gamesToSort.ToDictionary(game => game.SteamAppId);
 
-            #region Value accumulation
-            Dictionary<int, double> originValue = new Dictionary<int, double>();
-            int value = 1;
-            foreach (var game in gamesToSort)
-            {
-             originValue.Add(game.SteamAppId, value);
-             value++;
-            }
-
-            Dictionary<int, double> sortValue = FilterSort(gamesToSort);
-
-            Dictionary<int, double> EndValue = originValue.ToDictionary(game => game.Key, game => game.Value + (sortValue[game.Key]*FilterWeight));
-
-            #endregion
-
+            
             List<int> appIDList = EndValue.Keys.ToList();
             List<double> ValueList = EndValue.Values.ToList();
             
             List<Tuple<int, double>> sortTuple = appIDList.Select((t, i) => new Tuple<int, double>(t, ValueList[i])).ToList();
-
             sortTuple.Sort((x, y) => x.Item2.CompareTo(y.Item2));
+
 
             List<Game> returnList = new List<Game>();
             foreach (var entry in sortTuple)
@@ -81,6 +69,31 @@ namespace Filter_System.Filter_Core.Filters_2._0.Models
             }
 
             return returnList;
+        }
+
+        private Dictionary<int, double> ValueAccumulation(List<Game> gamesToSort)
+        {
+            Dictionary<int, double> originValue = new Dictionary<int, double>();
+            int value = 1;
+            foreach (var game in gamesToSort)
+            {
+                originValue.Add(game.SteamAppId, value);
+                value++;
+            }
+
+            Dictionary<int, double> sortValue = FilterSort(gamesToSort);
+
+            Dictionary<int, double> EndValue = new Dictionary<int, double>();
+
+            foreach (var entry in sortValue)
+            {
+                if (originValue.ContainsKey(entry.Key))
+                {
+                    EndValue.Add(entry.Key, originValue[entry.Key] + (sortValue[entry.Key] * FilterWeight));
+                }
+            }
+
+            return EndValue;
         }
 
         protected abstract Dictionary<int, double> FilterSort(List<Game> gamesToSort);

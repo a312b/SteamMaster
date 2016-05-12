@@ -1,17 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
+﻿using System.Collections.Generic;
 using DatabaseCore;
 using DatabaseCore.lib.converter.models;
-using Filter_System.Filter_Core.Filters;
-using Filter_System.Filter_Core.Models;
+using Filter_System.Filter_Core.Filters_2._0;
 using PageRank;
 using RecommenderSystemCore.User_Data_Handling.Models;
-using SteamSharpCore.steamStore.models;
-using SteamSharpCore;
 using SteamUI;
 
 namespace RecommenderSystemCore.Controller
@@ -20,12 +12,10 @@ namespace RecommenderSystemCore.Controller
     {
         public RSController(SteamTheme ui)
         {
-
-
             database = new Database();
             UI = ui;
 
-            //   ui.RecommendButtomClick += 
+            UI.RecommendButtomClick += ExecuteRecommendation;
 
         }
 
@@ -37,47 +27,48 @@ namespace RecommenderSystemCore.Controller
 
         public void Start()
         {
-            UI.Show();
-            
+            UI.Show(); 
         }
 
-        private List<int> ExecuteRecommendation(string steamID)
+        private List<Game> ExecuteRecommendation(string steamID)
         {
+            List<Game> RecommenderList = new List<Game>();
             UserWorkClass User = new UserWorkClass(steamID);
-            List<int> returnList = new List<int>();
+
             Dictionary<int, Game> dbGames = database.FindAllGames();
-
             PageRank = new PRGameRanker(dbGames, User.userListGameList);
-            List<Game> PageRankList = PageRank.GetRankedGameList();
+            RecommenderList = PageRank.GetRankedGameList();
 
+            RecommenderList = FilterManagement(RecommenderList, User);
 
+            return RecommenderList;
         }
 
-        private Dictionary<int, double> FilterManagement(Dictionary<int, Game> dictionaryToFilter)
+        private List<Game> FilterManagement(List<Game> ListToFilter, UserWorkClass User)
         {
             //Controls the weight of the filters in PopularityFilter
-            double MostPlayedValue = 1;
-            double MostPlayed2WeeksValue = 1;
-            //Controls the weight of the PopularityFilter as a whole
-            double PopularityValue = 1;
+            double MostOwnedValue = 1;
+            double AvgPlayedForeverValue = 0;
+            double AvgPlayTime2WeeksValue = 0;
 
+            GameFilterX StandardGameFilter = new GameFilterX();
+            PlayerGameFilterX PlayerGameRemoval = new PlayerGameFilterX();
+            
 
-            Dictionary<int, double> MostPlayedFilter = new GameValueXFilter(MostPlayedValue).Execute(dictionaryToFilter);
-            Dictionary<int, double> MostPlayed2WeeksFilter =
-                new GameValueXFilter(MostPlayed2WeeksValue).Execute(dictionaryToFilter);
+            StandardGameFilter.OwnerCount(MostOwnedValue);
+            ListToFilter = StandardGameFilter.Execute(ListToFilter);
 
-            Dictionary<int, double> PopularityFilter = new FilterMerge(PopularityValue).Execute(MostPlayed2WeeksFilter, MostPlayedFilter);
+            StandardGameFilter.AvgPlayTimeForever(AvgPlayedForeverValue);
+            ListToFilter = StandardGameFilter.Execute(ListToFilter);
 
+            StandardGameFilter.AvgPlayTime2Weeks(AvgPlayTime2WeeksValue);
+            ListToFilter = StandardGameFilter.Execute(ListToFilter);
 
-
+            ListToFilter = PlayerGameRemoval.Execute(ListToFilter, User.DBGameList);
+        
+            return ListToFilter;
         }
 
-        private Dictionary<int, double> FilterManagement(List<Game> listToFilter)
-        {
-            Dictionary<int, Game> dictionaryToFilter = listToFilter.ToDictionary(game => game.SteamAppId);
-
-            return FilterManagement(dictionaryToFilter);
-        } 
 
         //private void RecommendGameList(string steamID) // fix senere - mere funktion findes i funktionen GenerateGameList() under UI;
         //{
