@@ -9,7 +9,7 @@ using SteamSharpCore;
 
 namespace PageRank
 {
-    class PRGameRanker
+    public class PRGameRanker
     {
         #region Fields
 
