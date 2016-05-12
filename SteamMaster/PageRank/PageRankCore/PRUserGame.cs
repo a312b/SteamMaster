@@ -2,6 +2,9 @@
 
 namespace PageRank
 {
+    /// <summary>
+    /// Same as the class it inherits from, except it includes recent and overall playtime
+    /// </summary>
     class PRUserGame : PRGame
     {
         public double PlayTime => _gameInfo.playtime_forever;      //Total time played in minutes

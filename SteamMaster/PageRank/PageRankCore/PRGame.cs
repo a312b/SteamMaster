@@ -4,6 +4,10 @@ using System.Linq;
 
 namespace PageRank
 {
+    /// <summary>
+    /// This class contains all the necessary information
+    /// about a game regarding calculating pagerank
+    /// </summary>
     public class PRGame : IComparable<PRGame>
     {
         #region Fields

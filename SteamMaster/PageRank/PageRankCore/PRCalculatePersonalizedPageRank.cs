@@ -40,6 +40,11 @@ namespace PageRank
         #endregion
 
         #region Methods
+        
+        //Some preliminary calculations are performed here. 
+        //A user game dictionary is made so that it can be uesd as input for generating
+        //tag and game dictionaries for the purpose of counting tag frequency which is
+        //needed for the BiasTagPageRank function.
         public void Start()
         {
             _userGameDictionary = GenerateUserGameDictionary();
@@ -74,8 +79,11 @@ namespace PageRank
             return tagGameDictionaries;
         }
 
+        
         private void BiasTagPageRank()
         {
+            //This is where the value of each tag is adjusted according to the user
+            //Afterwards the rank of each game is updated accordingly
             CalculateMultiplier();
             CalculatePageRank.UpdateGamePageRanks();
         }
@@ -84,16 +92,30 @@ namespace PageRank
         {
             int minimumOutlinks = _tagGameDictionaries.TagDictionary.Values.Min(tag => tag.OutLinks);
             int maximumOutlinks = _tagGameDictionaries.TagDictionary.Values.Max(tag => tag.OutLinks);
+            
             int variance = maximumOutlinks - minimumOutlinks;
-            double increment = 0.9/variance;
+
+            //This is the start value for the tag weight modifier
             double multiplier = 0.1;
 
+            //This is the amount the multiplier is incremented every time
+            //outlinks is increased by 1. With the current value,
+            //the tag with the most outlinks is multiplied by a number
+            //10 factors higher than the tag with the least outlinks
+            double increment = 0.9/variance;
+
+            //This is a dictionary containing the number of outlinks as a key,
+            //and the multiplier as a value.
             Dictionary<int, double> tagMultipliers = new Dictionary<int, double>();
 
             for (int outlinks = minimumOutlinks; outlinks <= maximumOutlinks; outlinks++)
             {
                 tagMultipliers.Add(outlinks, multiplier += increment);
             }
+
+            //In this loop, each tag is either multiplied by the value specified 
+            //by its number of outlinks. If it does not exist in the user's library,
+            //its value is set to one divided by the total number of games
             foreach (PRTag prTag in CalculatePageRank.Tags.Values)
             {
                 if (_tagGameDictionaries.TagDictionary.ContainsKey(prTag.Tag))

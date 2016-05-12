@@ -35,7 +35,6 @@ namespace PageRank
 
         public void Start()
         {
-            //Function requires exclude list file -- comment out if it crashes here
             //Previous and current iterations are tracked here so we can check
             //the convergence between the iterations. 
             double previousIteration = 0;

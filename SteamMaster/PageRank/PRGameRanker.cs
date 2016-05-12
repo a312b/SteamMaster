@@ -9,7 +9,12 @@ using SteamSharpCore;
 using SteamSharpCore.steamUser.models;
 
 namespace PageRank
+    
 {
+    /// <summary>
+    /// Serves as an interface for calculating a ranked list 
+    /// of game recommendation based on input games.
+    /// </summary>
     public class PRGameRanker
     {
         #region Fields
@@ -32,6 +37,7 @@ namespace PageRank
 
         #region Methods
 
+        
         public List<Game> GetRankedGameList()
         {
             Start();
@@ -62,24 +68,28 @@ namespace PageRank
         private void Start()
         {
             _databaseGames = RemoveDemoGames(_databaseGames);
+
             PRTagGameDictionaries tagsAndGames = new PRTagGameDictionaries(_databaseGames);
             tagsAndGames.Start();
-            try
-            {
-                tagsAndGames = RemoveRedundantTags(tagsAndGames);
-            }
-            catch (Exception)
-            {
-                //Place the exlude list textfile in your documents folder
-            }
+            tagsAndGames = RemoveRedundantTags(tagsAndGames);
+
             PRCalculatePageRank unbiasedPageRank = new PRCalculatePageRank(tagsAndGames);
             unbiasedPageRank.Start();
+
             var userPageRank = new PRCalculatePersonalizedPageRank(unbiasedPageRank, _userGames);
             userPageRank.Start();
+
             _userRecommendations = new List<PRGame>(userPageRank.CalculatePageRank.Games.Values.ToList());
             _userRecommendations.Sort();
         }
 
+        /// <summary>
+        /// This function removes the tags that I have deemed redundant, either
+        /// because they don't really describe a game quality, or because
+        /// it is not related to gaming at all. This includes joke tags
+        /// </summary>
+        /// <param name="tagsAndGames"></param>
+        /// <returns></returns>
         private PRTagGameDictionaries RemoveRedundantTags(PRTagGameDictionaries tagsAndGames)
         {
             string path = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) + @"\Exclude list.txt";
