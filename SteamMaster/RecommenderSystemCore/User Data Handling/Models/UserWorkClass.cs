@@ -54,7 +54,7 @@ namespace RecommenderSystemCore.User_Data_Handling.Models
 
         public List<UserGameWorkClass> GetUsersMostPlayedGames()
         {
-            #region whack kode
+
             PlayerGameXFilter playTimeForeverFilter = new PlayerGameXFilter(0.5);
             GameValueXFilter ownedFilter = new GameValueXFilter(0.5);
             ownedFilter.OwnerCount();
@@ -71,7 +71,7 @@ namespace RecommenderSystemCore.User_Data_Handling.Models
             returnList.Sort();
 
             return returnList;
-            #endregion
+
 
 
         } 

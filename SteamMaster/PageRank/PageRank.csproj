@@ -35,26 +35,29 @@
   <ItemGroup>
     <Reference Include="Database, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\..\Desktop\dlls\Database.dll</HintPath>
+      <HintPath>D:\SOFTWARE\Logs\Database.dll</HintPath>
     </Reference>
     <Reference Include="HtmlAgilityPack">
-      <HintPath>..\..\..\..\Desktop\dlls\HtmlAgilityPack.dll</HintPath>
+      <HintPath>D:\SOFTWARE\Logs\HtmlAgilityPack.dll</HintPath>
     </Reference>
     <Reference Include="MongoDB.Bson, Version=2.2.3.3, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\..\SteamMaster\SteamMaster\packages\MongoDB.Bson.2.2.3\lib\net45\MongoDB.Bson.dll</HintPath>
+      <HintPath>D:\SOFTWARE\Logs\MongoDB.Bson.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="MongoDB.Driver, Version=2.2.3.3, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\..\SteamMaster\SteamMaster\packages\MongoDB.Driver.2.2.3\lib\net45\MongoDB.Driver.dll</HintPath>
+      <HintPath>D:\SOFTWARE\Logs\MongoDB.Driver.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="MongoDB.Driver.Core, Version=2.2.3.3, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\..\SteamMaster\SteamMaster\packages\MongoDB.Driver.Core.2.2.3\lib\net45\MongoDB.Driver.Core.dll</HintPath>
+      <HintPath>D:\SOFTWARE\Logs\MongoDB.Driver.Core.dll</HintPath>
       <Private>True</Private>
+    </Reference>
+    <Reference Include="RestSharp">
+      <HintPath>D:\SOFTWARE\Logs\RestSharp.dll</HintPath>
     </Reference>
     <Reference Include="SteamSharp, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\..\Desktop\dlls\SteamSharp.dll</HintPath>
+      <HintPath>D:\SOFTWARE\Logs\SteamSharp.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />

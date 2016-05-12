@@ -26,7 +26,7 @@ namespace Filter_System.Filter_Core.Models
                 double assignValue;
                 returnDictionary.TryGetValue(key, out assignValue);
 
-                returnDictionary[key] = assignValue*FilterWeight;
+                returnDictionary[key] = assignValue*1+FilterWeight;
             }
 
             return returnDictionary;
