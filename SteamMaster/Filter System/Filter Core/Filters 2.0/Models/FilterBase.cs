@@ -41,30 +41,46 @@ namespace Filter_System.Filter_Core.Filters_2._0.Models
 
         public virtual List<Game> Execute(List<Game> gamesToSort)
         {
+
             List<int> position = new List<int>();
             for (int i = 0; i < gamesToSort.Count; i++)
             {
                 position.Add(i);
             }
-
-            Tuple<List<int>, List<Game>> originPosition = new Tuple<List<int>, List<Game>>(position, gamesToSort);
+            
+            Dictionary<int, Game> gameDictionary = gamesToSort.ToDictionary(game => game.SteamAppId);
 
             #region Value accumulation
-                        Dictionary<int, double> originValue = new Dictionary<int, double>();
-                        int value = 1;
-                        foreach (var game in gamesToSort)
-                        {
-                            originValue.Add(game.SteamAppId, value);
-                            value++;
-                        }
+            Dictionary<int, double> originValue = new Dictionary<int, double>();
+            int value = 1;
+            foreach (var game in gamesToSort)
+            {
+             originValue.Add(game.SteamAppId, value);
+             value++;
+            }
 
-                        Dictionary<int, double> sortValue = FilterSort(gamesToSort);
+            Dictionary<int, double> sortValue = FilterSort(gamesToSort);
 
-                        Dictionary<int, double> EndValue = originValue.ToDictionary(game => game.Key, game => game.Value + sortValue[game.Key]);
+            Dictionary<int, double> EndValue = originValue.ToDictionary(game => game.Key, game => game.Value + (sortValue[game.Key]*FilterWeight));
 
             #endregion
 
+            List<int> appIDList = EndValue.Keys.ToList();
+            List<double> ValueList = EndValue.Values.ToList();
+            
+            List<Tuple<int, double>> sortTuple = appIDList.Select((t, i) => new Tuple<int, double>(t, ValueList[i])).ToList();
 
+            sortTuple.Sort((x, y) => x.Item2.CompareTo(y.Item2));
+
+            List<Game> returnList = new List<Game>();
+            foreach (var entry in sortTuple)
+            {
+                Game workGame;
+                gameDictionary.TryGetValue(entry.Item1, out workGame);
+                returnList.Add(workGame);
+            }
+
+            return returnList;
         }
 
         protected abstract Dictionary<int, double> FilterSort(List<Game> gamesToSort);
