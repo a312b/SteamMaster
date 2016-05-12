@@ -17,6 +17,8 @@ namespace RecommenderSystemCore.Controller
             ui.RecommendButtomClick += RecommendGameList;
 
             UI = ui;
+            
+            
         }
 
 
