@@ -32,10 +32,9 @@ namespace PageRank
 
         #region Constructor
 
-        public PRCalculatePersonalizedPageRank(PRCalculatePageRank calculatePageRank, string steamUserID, SteamSharp steamSharp)
+        public PRCalculatePersonalizedPageRank(PRCalculatePageRank calculatePageRank, List<UserGameTime.Game> userGames)
         {
-            _steamSharp = steamSharp;
-            _userGames = _steamSharp.SteamUserGameTimeListById(steamUserID);
+            _userGames = userGames;
             CalculatePageRank = calculatePageRank;
         }
 
