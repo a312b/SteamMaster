@@ -25,12 +25,10 @@ namespace SteamUI
         public SteamTheme()
         {
             InitializeComponent();
-
         }
 
         [DllImport("User32.dll")]
         public static extern bool ReleaseCapture();
-
         [DllImport("User32.dll")]
         public static extern int SendMessage(IntPtr hWnd, int msg, int wParam, int lParam);
 
@@ -64,7 +62,6 @@ namespace SteamUI
         {
             int roundCount = 0;
 
-            ClearGameListBox();
             if (gameList == null) return;
             foreach (Game game in gameList.Take(30).ToList())
             {
@@ -153,37 +150,6 @@ namespace SteamUI
                 tagLabels[roundCount].Text = SB.ToString().Remove(SB.Length - 2, 1);
                 tagLabels[roundCount].Visible = true;
             }
-        }
-
-        //Clears the viwed game list box, to make sure its clean for a new recommendation computation
-        public void ClearGameListBox()
-        {
-            //PictureBox[] pictureBoxes =
-            //{
-            //    pictureBox1, pictureBox2, pictureBox3, pictureBox4, pictureBox5, pictureBox6,
-            //    pictureBox7, pictureBox8, pictureBox9, pictureBox10, pictureBox11, pictureBox12,
-            //    pictureBox13, pictureBox14, pictureBox15, pictureBox16, pictureBox17, pictureBox18,
-            //    pictureBox19, pictureBox20, pictureBox21, pictureBox22, pictureBox23, pictureBox24,
-            //    pictureBox25, pictureBox26, pictureBox27, pictureBox28, pictureBox29, pictureBox30
-            //};
-            //Label[] gameLabels =
-            //{
-            //    label2, label6, label11, label16, label21, label26, label31, label36, label41, label46,
-            //    label51, label56, label61, label66, label71, label76, label81, label86, label91, label96,
-            //    label101, label106, label111, label116, label121, label126, label131, label136, label141,
-            //    label146
-            //};
-
-            //foreach (PictureBox pb in pictureBoxes.Where(pb => pb.Image != null))
-            //{
-            //    pb.Image = null;
-            //}
-
-            //foreach (Label gameLabel in gameLabels)
-            //{
-            //    gameLabel.Visible = false;
-            //}
-            flowLayoutPanel1.Visible = false;
         }
 
         //Loads the appropriate image for the corresponding app ID.
@@ -299,15 +265,13 @@ namespace SteamUI
                 bgWorker.RunWorkerCompleted += (s, a) =>
                 {
                     DisplayGamesInUI(gameList);
-                    Cursor.Current = Cursors.Default;
                     timeElapsedLabel.Text = "Time elapsed: " + ElapsedTime + " sec";
                     elaspedTimer.Stop();
-                    elaspedTimer.Dispose();
                     loadingPictureBox.Visible = false;
+                    Cursor.Current = Cursors.Default;
                     flowLayoutPanel1.Visible = true;
                 };
                 bgWorker.RunWorkerAsync();
-
             }
         }
 
