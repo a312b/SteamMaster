@@ -493,6 +493,7 @@
             this.steamIdTextBox.Text = "Steam64 ID";
             this.steamIdTextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.steamIdTextBox.Click += new System.EventHandler(this.steamIdTextBox_Click);
+            this.steamIdTextBox.KeyDown += new System.Windows.Forms.KeyEventHandler(this.steamIdTextBox_KeyDown);
             // 
             // btnStart
             // 
