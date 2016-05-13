@@ -206,12 +206,9 @@ namespace SteamUI
             }
             foreach (Label label in sender.Controls.OfType<Label>())
             {
-                foreach (Label hiddenLabel in hiddenLabels)
+                foreach (Label hiddenLabel in hiddenLabels.Where(hiddenLabel => label.Name == hiddenLabel.Name))
                 {
-                    if (label.Name == hiddenLabel.Name)
-                    {
-                        label.Visible = label.Visible == false;
-                    }
+                    label.Visible = label.Visible == false;
                 }
             }
         }
