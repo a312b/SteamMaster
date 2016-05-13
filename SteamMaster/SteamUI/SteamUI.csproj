@@ -90,12 +90,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="DevPrompt.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="DevPrompt.Designer.cs">
-      <DependentUpon>DevPrompt.cs</DependentUpon>
-    </Compile>
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -109,9 +103,6 @@
     <Compile Include="SteamTheme.Designer.cs">
       <DependentUpon>SteamTheme.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="DevPrompt.resx">
-      <DependentUpon>DevPrompt.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <SubType>Designer</SubType>

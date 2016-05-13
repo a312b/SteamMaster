@@ -117,25 +117,10 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <metadata name="devToolTip1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+  <metadata name="steamIDToolTip.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>17, 17</value>
   </metadata>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
-  <data name="btnDevKey.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAABl0RVh0U29m
-        dHdhcmUAQWRvYmUgSW1hZ2VSZWFkeXHJZTwAAAH/SURBVDhPbZLNyzFhFMbnb3hq6in/kp68NfWE5N0o
-        SSyUIhuFrIRXgyTfRVko3xsLC/lYKBsLllixsz/vuc4MK4tfzlznus597hkKESmNRuMTOkMmqD95FBlQ
-        rVZf/DAqozH0fD4F1Kb2xfxh3hkZUC6Xwb/pdConzudz2u/3dDqdBNTQ6vU6zWYzYq9uZowBhUJBG41G
-        dL/f6XK50PV6pePxSOv1WkANDb3H40HwIsMYAzKZjKVUKtHhcKDdbieh5XJJi8VCQA0NPXjgRYYxBqTT
-        aUev16PVaiUrYt1WqwWTgBoaevDAiwyjKPF4XGfeJ47HY6rVasRalrGYZKGh99oIGUZXotEo3W43WXE4
-        HNJkMpEm6yqDPlChoQcPvMggq4RCIdputzQYDGQ1rBqLxYh1lUEfqNDQgwdeZJBV/H6/zsiLwV3xhpvN
-        JrGWZb5Nsvi8uAI88CLD6PISPR6PI5FIULvdpm63S5vNRv4POAFgIDT04Ekmk8QZF2N8BbfbrXq9Xup0
-        OlSpVKjf78s9z+ezgBoaevD4fD7izDdjDLDb7Y5UKiX3y+VyVCwWZQM8A9RYGz08Y1vO/DLGAE3TgB6J
-        RMjlclEgEJAvkc/nBdTBYJCcTieFw2GC18wYA2w224u/jIX5ZeRUgNrUVPP3nZEBVqv1EzpDJqg/eKzK
-        fzQgb/KC0b+zAAAAAElFTkSuQmCC
-</value>
-  </data>
   <data name="btnSteamStore.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
@@ -496,8 +481,8 @@
         AABJRU5ErkJggg==
 </value>
   </data>
-  <metadata name="timer1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>136, 17</value>
+  <metadata name="steamIDToolTip.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>17, 17</value>
   </metadata>
   <metadata name="$this.TrayHeight" type="System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>40</value>

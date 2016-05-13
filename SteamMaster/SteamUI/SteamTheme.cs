@@ -8,11 +8,7 @@ using System.Runtime.InteropServices;
 using System.Text;
 using System.Windows.Forms;
 using DatabaseCore.lib.converter.models;
-using DummyClassSolution.Properties;
-using SteamSharpCore;
 using SteamSharpCore.steamStore.models;
-using SteamSharpCore.steamUser.models;
-using gameDatabase = DatabaseCore.Database;
 using Timer = System.Timers.Timer;
 
 //requires SteamSharp
@@ -24,14 +20,12 @@ namespace SteamUI
         public delegate List<Game> RecommendDelegate(string steamID); //Add SteamID
         public const int WmNclbuttondown = 0xA1;
         public const int Htcaption = 0x2;
-        public static string DevKey = Settings.Default.DevKey;
         public static int ElapsedTime;
-        //private readonly gameDatabase _database = new gameDatabase();
-        //private readonly SteamSharp _steamSharp = new SteamSharp(DevKey);
 
         public SteamTheme()
         {
             InitializeComponent();
+
         }
 
         [DllImport("User32.dll")]
@@ -65,60 +59,10 @@ namespace SteamUI
             steamIdTextBox.Text = "";
         }
 
-        //Where the game list is made by calling SteamSharp.GameListByIds on a set app ID array (that app ID array is now achieved by getting it from a player)
-        //and iterates over all the games to then call functions LoadHeaderImages and LoadGameInfo displaying the game date.
-        //A "roundCount" is kept to determine how far we've gotten.
-        //private void GenerateGameList()
-        //{
-        //    const int minGameTime = 4; //in minutes
-        //    const int maxRecommendations = 30;
-        //    string steamId = steamIdTextBox.Text;
-        //    List<int> idList = new List<int>();
-
-        //    if (DevKey == "null")
-        //    {
-        //        MessageBox.Show(
-        //            "You need to enter a Steam Developer API key in the settings box by clicking the cog located in the top right corner.",
-        //            "Please enter Steam API Key", MessageBoxButtons.OK, MessageBoxIcon.Error);
-        //        return;
-        //    }
-
-        //    List<UserGameTime.Game> formGameListFromId = _steamSharp.SteamUserGameTimeListById(steamId);
-        //    foreach (UserGameTime.Game game in formGameListFromId)
-        //    {
-        //        if (idList.Count <= maxRecommendations && game.playtime_forever > minGameTime)
-        //        {
-        //            idList.Add(game.appid);
-        //        }
-        //    }
-
-        //    DisplayGamesInUI(idList);
-
-        //    Dictionary<int, Game> userGameListFromIds = _database.FindGamesById(idList);
-        //    List<SteamStoreGame.Tag> totalTagList = new List<SteamStoreGame.Tag>();
-        //    if (userGameListFromIds != null)
-        //    {
-        //        foreach (Game game in userGameListFromIds.Values)
-        //        {
-        //            totalTagList.AddRange(game.Tags);
-        //        }
-        //    }
-
-        //    IOrderedEnumerable<IGrouping<string, SteamStoreGame.Tag>> tagsOrderByDescending = totalTagList.GroupBy(
-        //        tag => tag.description)
-        //        .OrderByDescending(tags => tags.Count());
-        //    foreach (var tag in tagsOrderByDescending)
-        //    {
-        //        //do something with tag.Key + tag.Count();
-        //    }
-        //}
-
-        //Takes the idList and creates a dictionary containing the appID and database Game. We then iterate over these games to call seperate functions to actually display the info.
+        //Takes a list of DatabaseCore games and then iterate over these games to call two seperate functions to actually display the info.
         private void DisplayGamesInUI(List<Game> gameList)
         {
             int roundCount = 0;
-            //gameDatabase _database = new gameDatabase();
-            //Dictionary<int, Game> userGameListFromIds = _database.FindGamesById(idList);
 
             ClearGameListBox();
             if (gameList == null) return;
@@ -214,31 +158,31 @@ namespace SteamUI
         //Clears the viwed game list box, to make sure its clean for a new recommendation computation
         public void ClearGameListBox()
         {
-            PictureBox[] pictureBoxes =
-            {
-                pictureBox1, pictureBox2, pictureBox3, pictureBox4, pictureBox5, pictureBox6,
-                pictureBox7, pictureBox8, pictureBox9, pictureBox10, pictureBox11, pictureBox12,
-                pictureBox13, pictureBox14, pictureBox15, pictureBox16, pictureBox17, pictureBox18,
-                pictureBox19, pictureBox20, pictureBox21, pictureBox22, pictureBox23, pictureBox24,
-                pictureBox25, pictureBox26, pictureBox27, pictureBox28, pictureBox29, pictureBox30
-            };
-            Label[] gameLabels =
-            {
-                label2, label6, label11, label16, label21, label26, label31, label36, label41, label46,
-                label51, label56, label61, label66, label71, label76, label81, label86, label91, label96,
-                label101, label106, label111, label116, label121, label126, label131, label136, label141,
-                label146
-            };
+            //PictureBox[] pictureBoxes =
+            //{
+            //    pictureBox1, pictureBox2, pictureBox3, pictureBox4, pictureBox5, pictureBox6,
+            //    pictureBox7, pictureBox8, pictureBox9, pictureBox10, pictureBox11, pictureBox12,
+            //    pictureBox13, pictureBox14, pictureBox15, pictureBox16, pictureBox17, pictureBox18,
+            //    pictureBox19, pictureBox20, pictureBox21, pictureBox22, pictureBox23, pictureBox24,
+            //    pictureBox25, pictureBox26, pictureBox27, pictureBox28, pictureBox29, pictureBox30
+            //};
+            //Label[] gameLabels =
+            //{
+            //    label2, label6, label11, label16, label21, label26, label31, label36, label41, label46,
+            //    label51, label56, label61, label66, label71, label76, label81, label86, label91, label96,
+            //    label101, label106, label111, label116, label121, label126, label131, label136, label141,
+            //    label146
+            //};
 
-            foreach (PictureBox pb in pictureBoxes.Where(pb => pb.Image != null))
-            {
-                pb.Image = null;
-            }
+            //foreach (PictureBox pb in pictureBoxes.Where(pb => pb.Image != null))
+            //{
+            //    pb.Image = null;
+            //}
 
-            foreach (Label gameLabel in gameLabels)
-            {
-                gameLabel.Visible = false;
-            }
+            //foreach (Label gameLabel in gameLabels)
+            //{
+            //    gameLabel.Visible = false;
+            //}
             flowLayoutPanel1.Visible = false;
         }
 
@@ -338,35 +282,36 @@ namespace SteamUI
             else
             {
                 ElapsedTime = 0;
-                Timer elaspedTimer = new Timer();
+                Timer elaspedTimer = new Timer {Interval = 1000};
                 elaspedTimer.Elapsed += timer1_Tick;
-                elaspedTimer.Interval = 1000;
                 elaspedTimer.Start();
 
                 loadingPictureBox.Visible = true;
                 Cursor.Current = Cursors.WaitCursor;
+                flowLayoutPanel1.Visible = false;
                 BackgroundWorker bgWorker = new BackgroundWorker();
+                List<Game> gameList = new List<Game>();
+
                 bgWorker.DoWork += (s, a) =>
                 {
-                        //For testing purposes GenerateGameList can be called instead of the RecommendButtomClick delegate
-                    List<Game> gameList = RecommendButtomClick(steamIdTextBox.Text); //If you crash use GenerateGameList()
-                    DisplayGamesInUI(gameList);
+                    gameList = RecommendButtomClick(steamIdTextBox.Text);
                 };
                 bgWorker.RunWorkerCompleted += (s, a) =>
                 {
-                    flowLayoutPanel1.Visible = true;
+                    DisplayGamesInUI(gameList);
                     Cursor.Current = Cursors.Default;
                     timeElapsedLabel.Text = "Time elapsed: " + ElapsedTime + " sec";
                     elaspedTimer.Stop();
                     elaspedTimer.Dispose();
                     loadingPictureBox.Visible = false;
+                    flowLayoutPanel1.Visible = true;
                 };
                 bgWorker.RunWorkerAsync();
+
             }
         }
 
-
-        //Event: Clicking on the specified object calls the TLP converter and 
+        //Event: Clicking on the specified object calls the TLP converter and ResizeTablePanels 
         private void object_Click(object sender, EventArgs e)
         {
             TableLayoutPanel tableObject = tplConverter(sender) as TableLayoutPanel;
@@ -394,13 +339,6 @@ namespace SteamUI
             }
             TableLayoutPanel pbtpl = pbClick.Parent as TableLayoutPanel;
             return pbtpl;
-        }
-
-        //Prompts the user for a steam API key obtained at http://steamcommunity.com/dev/apikey
-        private void btnDevKey_Click(object sender, EventArgs e)
-        {
-            Form devPrompt = new DevPrompt();
-            devPrompt.ShowDialog();
         }
 
         private void timer1_Tick(object sender, EventArgs e)

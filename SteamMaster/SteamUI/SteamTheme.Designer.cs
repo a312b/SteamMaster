@@ -35,7 +35,6 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.loadingPictureBox = new System.Windows.Forms.PictureBox();
             this.linkLabel1 = new System.Windows.Forms.LinkLabel();
-            this.btnDevKey = new System.Windows.Forms.Button();
             this.steamIdTextBox = new System.Windows.Forms.TextBox();
             this.btnStart = new System.Windows.Forms.Button();
             this.timeElapsedLabel = new System.Windows.Forms.Label();
@@ -221,8 +220,7 @@
             this.label89 = new System.Windows.Forms.Label();
             this.label90 = new System.Windows.Forms.Label();
             this.button19 = new System.Windows.Forms.Button();
-            this.devToolTip1 = new System.Windows.Forms.ToolTip(this.components);
-            this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.tableLayoutPanel49 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel37 = new System.Windows.Forms.TableLayoutPanel();
             this.pictureBox19 = new System.Windows.Forms.PictureBox();
             this.label91 = new System.Windows.Forms.Label();
@@ -232,6 +230,7 @@
             this.button20 = new System.Windows.Forms.Button();
             this.label94 = new System.Windows.Forms.Label();
             this.label95 = new System.Windows.Forms.Label();
+            this.tableLayoutPanel50 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel38 = new System.Windows.Forms.TableLayoutPanel();
             this.pictureBox20 = new System.Windows.Forms.PictureBox();
             this.label96 = new System.Windows.Forms.Label();
@@ -241,6 +240,7 @@
             this.button21 = new System.Windows.Forms.Button();
             this.label99 = new System.Windows.Forms.Label();
             this.label100 = new System.Windows.Forms.Label();
+            this.tableLayoutPanel51 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel39 = new System.Windows.Forms.TableLayoutPanel();
             this.pictureBox21 = new System.Windows.Forms.PictureBox();
             this.label101 = new System.Windows.Forms.Label();
@@ -250,6 +250,7 @@
             this.label104 = new System.Windows.Forms.Label();
             this.label105 = new System.Windows.Forms.Label();
             this.button22 = new System.Windows.Forms.Button();
+            this.tableLayoutPanel52 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel40 = new System.Windows.Forms.TableLayoutPanel();
             this.pictureBox22 = new System.Windows.Forms.PictureBox();
             this.label106 = new System.Windows.Forms.Label();
@@ -259,6 +260,7 @@
             this.label109 = new System.Windows.Forms.Label();
             this.label110 = new System.Windows.Forms.Label();
             this.button23 = new System.Windows.Forms.Button();
+            this.tableLayoutPanel53 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel41 = new System.Windows.Forms.TableLayoutPanel();
             this.pictureBox23 = new System.Windows.Forms.PictureBox();
             this.label111 = new System.Windows.Forms.Label();
@@ -268,6 +270,7 @@
             this.label114 = new System.Windows.Forms.Label();
             this.label115 = new System.Windows.Forms.Label();
             this.button24 = new System.Windows.Forms.Button();
+            this.tableLayoutPanel54 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel42 = new System.Windows.Forms.TableLayoutPanel();
             this.pictureBox24 = new System.Windows.Forms.PictureBox();
             this.label116 = new System.Windows.Forms.Label();
@@ -277,6 +280,7 @@
             this.label119 = new System.Windows.Forms.Label();
             this.label120 = new System.Windows.Forms.Label();
             this.button25 = new System.Windows.Forms.Button();
+            this.tableLayoutPanel55 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel43 = new System.Windows.Forms.TableLayoutPanel();
             this.pictureBox25 = new System.Windows.Forms.PictureBox();
             this.label121 = new System.Windows.Forms.Label();
@@ -286,6 +290,7 @@
             this.label124 = new System.Windows.Forms.Label();
             this.label125 = new System.Windows.Forms.Label();
             this.button26 = new System.Windows.Forms.Button();
+            this.tableLayoutPanel56 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel44 = new System.Windows.Forms.TableLayoutPanel();
             this.pictureBox26 = new System.Windows.Forms.PictureBox();
             this.label126 = new System.Windows.Forms.Label();
@@ -295,6 +300,7 @@
             this.label129 = new System.Windows.Forms.Label();
             this.label130 = new System.Windows.Forms.Label();
             this.button27 = new System.Windows.Forms.Button();
+            this.tableLayoutPanel57 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel45 = new System.Windows.Forms.TableLayoutPanel();
             this.pictureBox27 = new System.Windows.Forms.PictureBox();
             this.label131 = new System.Windows.Forms.Label();
@@ -304,6 +310,7 @@
             this.label134 = new System.Windows.Forms.Label();
             this.label135 = new System.Windows.Forms.Label();
             this.button28 = new System.Windows.Forms.Button();
+            this.tableLayoutPanel58 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel46 = new System.Windows.Forms.TableLayoutPanel();
             this.pictureBox28 = new System.Windows.Forms.PictureBox();
             this.label136 = new System.Windows.Forms.Label();
@@ -313,6 +320,7 @@
             this.button29 = new System.Windows.Forms.Button();
             this.label139 = new System.Windows.Forms.Label();
             this.label140 = new System.Windows.Forms.Label();
+            this.tableLayoutPanel59 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel47 = new System.Windows.Forms.TableLayoutPanel();
             this.pictureBox29 = new System.Windows.Forms.PictureBox();
             this.label141 = new System.Windows.Forms.Label();
@@ -322,6 +330,7 @@
             this.button30 = new System.Windows.Forms.Button();
             this.label144 = new System.Windows.Forms.Label();
             this.label145 = new System.Windows.Forms.Label();
+            this.tableLayoutPanel60 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel48 = new System.Windows.Forms.TableLayoutPanel();
             this.pictureBox30 = new System.Windows.Forms.PictureBox();
             this.label146 = new System.Windows.Forms.Label();
@@ -331,18 +340,7 @@
             this.button31 = new System.Windows.Forms.Button();
             this.label149 = new System.Windows.Forms.Label();
             this.label150 = new System.Windows.Forms.Label();
-            this.tableLayoutPanel49 = new System.Windows.Forms.TableLayoutPanel();
-            this.tableLayoutPanel50 = new System.Windows.Forms.TableLayoutPanel();
-            this.tableLayoutPanel51 = new System.Windows.Forms.TableLayoutPanel();
-            this.tableLayoutPanel52 = new System.Windows.Forms.TableLayoutPanel();
-            this.tableLayoutPanel53 = new System.Windows.Forms.TableLayoutPanel();
-            this.tableLayoutPanel54 = new System.Windows.Forms.TableLayoutPanel();
-            this.tableLayoutPanel55 = new System.Windows.Forms.TableLayoutPanel();
-            this.tableLayoutPanel56 = new System.Windows.Forms.TableLayoutPanel();
-            this.tableLayoutPanel57 = new System.Windows.Forms.TableLayoutPanel();
-            this.tableLayoutPanel58 = new System.Windows.Forms.TableLayoutPanel();
-            this.tableLayoutPanel59 = new System.Windows.Forms.TableLayoutPanel();
-            this.tableLayoutPanel60 = new System.Windows.Forms.TableLayoutPanel();
+            this.steamIDToolTip = new System.Windows.Forms.ToolTip(this.components);
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.loadingPictureBox)).BeginInit();
             this.flowLayoutPanel1.SuspendLayout();
@@ -449,7 +447,6 @@
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(27)))), ((int)(((byte)(27)))));
             this.panel1.Controls.Add(this.loadingPictureBox);
             this.panel1.Controls.Add(this.linkLabel1);
-            this.panel1.Controls.Add(this.btnDevKey);
             this.panel1.Controls.Add(this.steamIdTextBox);
             this.panel1.Controls.Add(this.btnStart);
             this.panel1.Location = new System.Drawing.Point(12, 29);
@@ -470,6 +467,7 @@
             // 
             // linkLabel1
             // 
+            this.linkLabel1.ActiveLinkColor = System.Drawing.Color.DimGray;
             this.linkLabel1.AutoSize = true;
             this.linkLabel1.LinkColor = System.Drawing.Color.Gray;
             this.linkLabel1.Location = new System.Drawing.Point(443, 22);
@@ -478,27 +476,9 @@
             this.linkLabel1.TabIndex = 3;
             this.linkLabel1.TabStop = true;
             this.linkLabel1.Text = "Get Steam64 ID";
-            this.devToolTip1.SetToolTip(this.linkLabel1, "Directs you to steamid.xyz to get a Steam64 ID");
+            this.steamIDToolTip.SetToolTip(this.linkLabel1, "Directs you to steamid.xyz to get a Steam64 ID \r\n(Looks like 76561197987505654)");
+            this.linkLabel1.VisitedLinkColor = System.Drawing.Color.Gray;
             this.linkLabel1.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel1_LinkClicked);
-            // 
-            // btnDevKey
-            // 
-            this.btnDevKey.BackColor = System.Drawing.Color.Transparent;
-            this.btnDevKey.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnDevKey.BackgroundImage")));
-            this.btnDevKey.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnDevKey.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnDevKey.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(27)))), ((int)(((byte)(27)))));
-            this.btnDevKey.FlatAppearance.BorderSize = 0;
-            this.btnDevKey.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
-            this.btnDevKey.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
-            this.btnDevKey.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnDevKey.Location = new System.Drawing.Point(656, 3);
-            this.btnDevKey.Name = "btnDevKey";
-            this.btnDevKey.Size = new System.Drawing.Size(13, 13);
-            this.btnDevKey.TabIndex = 2;
-            this.devToolTip1.SetToolTip(this.btnDevKey, "Developer Key settings");
-            this.btnDevKey.UseVisualStyleBackColor = false;
-            this.btnDevKey.Click += new System.EventHandler(this.btnDevKey_Click);
             // 
             // steamIdTextBox
             // 
@@ -510,7 +490,7 @@
             this.steamIdTextBox.Name = "steamIdTextBox";
             this.steamIdTextBox.Size = new System.Drawing.Size(181, 23);
             this.steamIdTextBox.TabIndex = 1;
-            this.steamIdTextBox.Text = "76561198019106142";
+            this.steamIdTextBox.Text = "Steam64 ID";
             this.steamIdTextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.steamIdTextBox.Click += new System.EventHandler(this.steamIdTextBox_Click);
             // 
@@ -3381,14 +3361,17 @@
             this.button19.Visible = false;
             this.button19.Click += new System.EventHandler(this.btnSteamStore1_Click);
             // 
-            // devToolTip1
+            // tableLayoutPanel49
             // 
-            this.devToolTip1.AutomaticDelay = 200;
-            // 
-            // timer1
-            // 
-            this.timer1.Interval = 1000;
-            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
+            this.tableLayoutPanel49.CellBorderStyle = System.Windows.Forms.TableLayoutPanelCellBorderStyle.Single;
+            this.tableLayoutPanel49.ColumnCount = 1;
+            this.tableLayoutPanel49.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel49.Location = new System.Drawing.Point(3, 2127);
+            this.tableLayoutPanel49.Name = "tableLayoutPanel49";
+            this.tableLayoutPanel49.RowCount = 1;
+            this.tableLayoutPanel49.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel49.Size = new System.Drawing.Size(646, 2);
+            this.tableLayoutPanel49.TabIndex = 12;
             // 
             // tableLayoutPanel37
             // 
@@ -3504,6 +3487,7 @@
             this.button20.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             this.button20.UseVisualStyleBackColor = true;
             this.button20.Visible = false;
+            this.button20.Click += new System.EventHandler(this.btnSteamStore1_Click);
             // 
             // label94
             // 
@@ -3530,6 +3514,18 @@
             this.label95.TabIndex = 6;
             this.label95.Text = "Release";
             this.label95.Visible = false;
+            // 
+            // tableLayoutPanel50
+            // 
+            this.tableLayoutPanel50.CellBorderStyle = System.Windows.Forms.TableLayoutPanelCellBorderStyle.Single;
+            this.tableLayoutPanel50.ColumnCount = 1;
+            this.tableLayoutPanel50.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel50.Location = new System.Drawing.Point(3, 2245);
+            this.tableLayoutPanel50.Name = "tableLayoutPanel50";
+            this.tableLayoutPanel50.RowCount = 1;
+            this.tableLayoutPanel50.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel50.Size = new System.Drawing.Size(646, 2);
+            this.tableLayoutPanel50.TabIndex = 12;
             // 
             // tableLayoutPanel38
             // 
@@ -3645,6 +3641,7 @@
             this.button21.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             this.button21.UseVisualStyleBackColor = true;
             this.button21.Visible = false;
+            this.button21.Click += new System.EventHandler(this.btnSteamStore1_Click);
             // 
             // label99
             // 
@@ -3671,6 +3668,18 @@
             this.label100.TabIndex = 6;
             this.label100.Text = "Release";
             this.label100.Visible = false;
+            // 
+            // tableLayoutPanel51
+            // 
+            this.tableLayoutPanel51.CellBorderStyle = System.Windows.Forms.TableLayoutPanelCellBorderStyle.Single;
+            this.tableLayoutPanel51.ColumnCount = 1;
+            this.tableLayoutPanel51.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel51.Location = new System.Drawing.Point(3, 2363);
+            this.tableLayoutPanel51.Name = "tableLayoutPanel51";
+            this.tableLayoutPanel51.RowCount = 1;
+            this.tableLayoutPanel51.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel51.Size = new System.Drawing.Size(646, 2);
+            this.tableLayoutPanel51.TabIndex = 12;
             // 
             // tableLayoutPanel39
             // 
@@ -3811,6 +3820,19 @@
             this.button22.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             this.button22.UseVisualStyleBackColor = true;
             this.button22.Visible = false;
+            this.button22.Click += new System.EventHandler(this.btnSteamStore1_Click);
+            // 
+            // tableLayoutPanel52
+            // 
+            this.tableLayoutPanel52.CellBorderStyle = System.Windows.Forms.TableLayoutPanelCellBorderStyle.Single;
+            this.tableLayoutPanel52.ColumnCount = 1;
+            this.tableLayoutPanel52.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel52.Location = new System.Drawing.Point(3, 2481);
+            this.tableLayoutPanel52.Name = "tableLayoutPanel52";
+            this.tableLayoutPanel52.RowCount = 1;
+            this.tableLayoutPanel52.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel52.Size = new System.Drawing.Size(646, 2);
+            this.tableLayoutPanel52.TabIndex = 12;
             // 
             // tableLayoutPanel40
             // 
@@ -3951,6 +3973,19 @@
             this.button23.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             this.button23.UseVisualStyleBackColor = true;
             this.button23.Visible = false;
+            this.button23.Click += new System.EventHandler(this.btnSteamStore1_Click);
+            // 
+            // tableLayoutPanel53
+            // 
+            this.tableLayoutPanel53.CellBorderStyle = System.Windows.Forms.TableLayoutPanelCellBorderStyle.Single;
+            this.tableLayoutPanel53.ColumnCount = 1;
+            this.tableLayoutPanel53.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel53.Location = new System.Drawing.Point(3, 2599);
+            this.tableLayoutPanel53.Name = "tableLayoutPanel53";
+            this.tableLayoutPanel53.RowCount = 1;
+            this.tableLayoutPanel53.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel53.Size = new System.Drawing.Size(646, 2);
+            this.tableLayoutPanel53.TabIndex = 12;
             // 
             // tableLayoutPanel41
             // 
@@ -4091,6 +4126,19 @@
             this.button24.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             this.button24.UseVisualStyleBackColor = true;
             this.button24.Visible = false;
+            this.button24.Click += new System.EventHandler(this.btnSteamStore1_Click);
+            // 
+            // tableLayoutPanel54
+            // 
+            this.tableLayoutPanel54.CellBorderStyle = System.Windows.Forms.TableLayoutPanelCellBorderStyle.Single;
+            this.tableLayoutPanel54.ColumnCount = 1;
+            this.tableLayoutPanel54.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel54.Location = new System.Drawing.Point(3, 2717);
+            this.tableLayoutPanel54.Name = "tableLayoutPanel54";
+            this.tableLayoutPanel54.RowCount = 1;
+            this.tableLayoutPanel54.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel54.Size = new System.Drawing.Size(646, 2);
+            this.tableLayoutPanel54.TabIndex = 12;
             // 
             // tableLayoutPanel42
             // 
@@ -4231,6 +4279,19 @@
             this.button25.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             this.button25.UseVisualStyleBackColor = true;
             this.button25.Visible = false;
+            this.button25.Click += new System.EventHandler(this.btnSteamStore1_Click);
+            // 
+            // tableLayoutPanel55
+            // 
+            this.tableLayoutPanel55.CellBorderStyle = System.Windows.Forms.TableLayoutPanelCellBorderStyle.Single;
+            this.tableLayoutPanel55.ColumnCount = 1;
+            this.tableLayoutPanel55.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel55.Location = new System.Drawing.Point(3, 2835);
+            this.tableLayoutPanel55.Name = "tableLayoutPanel55";
+            this.tableLayoutPanel55.RowCount = 1;
+            this.tableLayoutPanel55.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel55.Size = new System.Drawing.Size(646, 2);
+            this.tableLayoutPanel55.TabIndex = 12;
             // 
             // tableLayoutPanel43
             // 
@@ -4371,6 +4432,19 @@
             this.button26.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             this.button26.UseVisualStyleBackColor = true;
             this.button26.Visible = false;
+            this.button26.Click += new System.EventHandler(this.btnSteamStore1_Click);
+            // 
+            // tableLayoutPanel56
+            // 
+            this.tableLayoutPanel56.CellBorderStyle = System.Windows.Forms.TableLayoutPanelCellBorderStyle.Single;
+            this.tableLayoutPanel56.ColumnCount = 1;
+            this.tableLayoutPanel56.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel56.Location = new System.Drawing.Point(3, 2953);
+            this.tableLayoutPanel56.Name = "tableLayoutPanel56";
+            this.tableLayoutPanel56.RowCount = 1;
+            this.tableLayoutPanel56.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel56.Size = new System.Drawing.Size(646, 2);
+            this.tableLayoutPanel56.TabIndex = 12;
             // 
             // tableLayoutPanel44
             // 
@@ -4511,6 +4585,19 @@
             this.button27.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             this.button27.UseVisualStyleBackColor = true;
             this.button27.Visible = false;
+            this.button27.Click += new System.EventHandler(this.btnSteamStore1_Click);
+            // 
+            // tableLayoutPanel57
+            // 
+            this.tableLayoutPanel57.CellBorderStyle = System.Windows.Forms.TableLayoutPanelCellBorderStyle.Single;
+            this.tableLayoutPanel57.ColumnCount = 1;
+            this.tableLayoutPanel57.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel57.Location = new System.Drawing.Point(3, 3071);
+            this.tableLayoutPanel57.Name = "tableLayoutPanel57";
+            this.tableLayoutPanel57.RowCount = 1;
+            this.tableLayoutPanel57.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel57.Size = new System.Drawing.Size(646, 2);
+            this.tableLayoutPanel57.TabIndex = 12;
             // 
             // tableLayoutPanel45
             // 
@@ -4651,6 +4738,19 @@
             this.button28.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             this.button28.UseVisualStyleBackColor = true;
             this.button28.Visible = false;
+            this.button28.Click += new System.EventHandler(this.btnSteamStore1_Click);
+            // 
+            // tableLayoutPanel58
+            // 
+            this.tableLayoutPanel58.CellBorderStyle = System.Windows.Forms.TableLayoutPanelCellBorderStyle.Single;
+            this.tableLayoutPanel58.ColumnCount = 1;
+            this.tableLayoutPanel58.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel58.Location = new System.Drawing.Point(3, 3189);
+            this.tableLayoutPanel58.Name = "tableLayoutPanel58";
+            this.tableLayoutPanel58.RowCount = 1;
+            this.tableLayoutPanel58.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel58.Size = new System.Drawing.Size(646, 2);
+            this.tableLayoutPanel58.TabIndex = 12;
             // 
             // tableLayoutPanel46
             // 
@@ -4766,6 +4866,7 @@
             this.button29.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             this.button29.UseVisualStyleBackColor = true;
             this.button29.Visible = false;
+            this.button29.Click += new System.EventHandler(this.btnSteamStore1_Click);
             // 
             // label139
             // 
@@ -4792,6 +4893,18 @@
             this.label140.TabIndex = 6;
             this.label140.Text = "Release";
             this.label140.Visible = false;
+            // 
+            // tableLayoutPanel59
+            // 
+            this.tableLayoutPanel59.CellBorderStyle = System.Windows.Forms.TableLayoutPanelCellBorderStyle.Single;
+            this.tableLayoutPanel59.ColumnCount = 1;
+            this.tableLayoutPanel59.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel59.Location = new System.Drawing.Point(3, 3307);
+            this.tableLayoutPanel59.Name = "tableLayoutPanel59";
+            this.tableLayoutPanel59.RowCount = 1;
+            this.tableLayoutPanel59.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel59.Size = new System.Drawing.Size(646, 2);
+            this.tableLayoutPanel59.TabIndex = 12;
             // 
             // tableLayoutPanel47
             // 
@@ -4908,6 +5021,7 @@
             this.button30.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             this.button30.UseVisualStyleBackColor = true;
             this.button30.Visible = false;
+            this.button30.Click += new System.EventHandler(this.btnSteamStore1_Click);
             // 
             // label144
             // 
@@ -4934,6 +5048,18 @@
             this.label145.TabIndex = 6;
             this.label145.Text = "Release";
             this.label145.Visible = false;
+            // 
+            // tableLayoutPanel60
+            // 
+            this.tableLayoutPanel60.CellBorderStyle = System.Windows.Forms.TableLayoutPanelCellBorderStyle.Single;
+            this.tableLayoutPanel60.ColumnCount = 1;
+            this.tableLayoutPanel60.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel60.Location = new System.Drawing.Point(3, 3425);
+            this.tableLayoutPanel60.Name = "tableLayoutPanel60";
+            this.tableLayoutPanel60.RowCount = 1;
+            this.tableLayoutPanel60.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel60.Size = new System.Drawing.Size(646, 2);
+            this.tableLayoutPanel60.TabIndex = 12;
             // 
             // tableLayoutPanel48
             // 
@@ -5050,6 +5176,7 @@
             this.button31.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             this.button31.UseVisualStyleBackColor = true;
             this.button31.Visible = false;
+            this.button31.Click += new System.EventHandler(this.btnSteamStore1_Click);
             // 
             // label149
             // 
@@ -5077,149 +5204,13 @@
             this.label150.Text = "Release";
             this.label150.Visible = false;
             // 
-            // tableLayoutPanel49
+            // steamIDToolTip
             // 
-            this.tableLayoutPanel49.CellBorderStyle = System.Windows.Forms.TableLayoutPanelCellBorderStyle.Single;
-            this.tableLayoutPanel49.ColumnCount = 1;
-            this.tableLayoutPanel49.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel49.Location = new System.Drawing.Point(3, 2127);
-            this.tableLayoutPanel49.Name = "tableLayoutPanel49";
-            this.tableLayoutPanel49.RowCount = 1;
-            this.tableLayoutPanel49.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel49.Size = new System.Drawing.Size(646, 2);
-            this.tableLayoutPanel49.TabIndex = 12;
-            // 
-            // tableLayoutPanel50
-            // 
-            this.tableLayoutPanel50.CellBorderStyle = System.Windows.Forms.TableLayoutPanelCellBorderStyle.Single;
-            this.tableLayoutPanel50.ColumnCount = 1;
-            this.tableLayoutPanel50.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel50.Location = new System.Drawing.Point(3, 2245);
-            this.tableLayoutPanel50.Name = "tableLayoutPanel50";
-            this.tableLayoutPanel50.RowCount = 1;
-            this.tableLayoutPanel50.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel50.Size = new System.Drawing.Size(646, 2);
-            this.tableLayoutPanel50.TabIndex = 12;
-            // 
-            // tableLayoutPanel51
-            // 
-            this.tableLayoutPanel51.CellBorderStyle = System.Windows.Forms.TableLayoutPanelCellBorderStyle.Single;
-            this.tableLayoutPanel51.ColumnCount = 1;
-            this.tableLayoutPanel51.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel51.Location = new System.Drawing.Point(3, 2363);
-            this.tableLayoutPanel51.Name = "tableLayoutPanel51";
-            this.tableLayoutPanel51.RowCount = 1;
-            this.tableLayoutPanel51.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel51.Size = new System.Drawing.Size(646, 2);
-            this.tableLayoutPanel51.TabIndex = 12;
-            // 
-            // tableLayoutPanel52
-            // 
-            this.tableLayoutPanel52.CellBorderStyle = System.Windows.Forms.TableLayoutPanelCellBorderStyle.Single;
-            this.tableLayoutPanel52.ColumnCount = 1;
-            this.tableLayoutPanel52.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel52.Location = new System.Drawing.Point(3, 2481);
-            this.tableLayoutPanel52.Name = "tableLayoutPanel52";
-            this.tableLayoutPanel52.RowCount = 1;
-            this.tableLayoutPanel52.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel52.Size = new System.Drawing.Size(646, 2);
-            this.tableLayoutPanel52.TabIndex = 12;
-            // 
-            // tableLayoutPanel53
-            // 
-            this.tableLayoutPanel53.CellBorderStyle = System.Windows.Forms.TableLayoutPanelCellBorderStyle.Single;
-            this.tableLayoutPanel53.ColumnCount = 1;
-            this.tableLayoutPanel53.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel53.Location = new System.Drawing.Point(3, 2599);
-            this.tableLayoutPanel53.Name = "tableLayoutPanel53";
-            this.tableLayoutPanel53.RowCount = 1;
-            this.tableLayoutPanel53.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel53.Size = new System.Drawing.Size(646, 2);
-            this.tableLayoutPanel53.TabIndex = 12;
-            // 
-            // tableLayoutPanel54
-            // 
-            this.tableLayoutPanel54.CellBorderStyle = System.Windows.Forms.TableLayoutPanelCellBorderStyle.Single;
-            this.tableLayoutPanel54.ColumnCount = 1;
-            this.tableLayoutPanel54.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel54.Location = new System.Drawing.Point(3, 2717);
-            this.tableLayoutPanel54.Name = "tableLayoutPanel54";
-            this.tableLayoutPanel54.RowCount = 1;
-            this.tableLayoutPanel54.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel54.Size = new System.Drawing.Size(646, 2);
-            this.tableLayoutPanel54.TabIndex = 12;
-            // 
-            // tableLayoutPanel55
-            // 
-            this.tableLayoutPanel55.CellBorderStyle = System.Windows.Forms.TableLayoutPanelCellBorderStyle.Single;
-            this.tableLayoutPanel55.ColumnCount = 1;
-            this.tableLayoutPanel55.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel55.Location = new System.Drawing.Point(3, 2835);
-            this.tableLayoutPanel55.Name = "tableLayoutPanel55";
-            this.tableLayoutPanel55.RowCount = 1;
-            this.tableLayoutPanel55.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel55.Size = new System.Drawing.Size(646, 2);
-            this.tableLayoutPanel55.TabIndex = 12;
-            // 
-            // tableLayoutPanel56
-            // 
-            this.tableLayoutPanel56.CellBorderStyle = System.Windows.Forms.TableLayoutPanelCellBorderStyle.Single;
-            this.tableLayoutPanel56.ColumnCount = 1;
-            this.tableLayoutPanel56.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel56.Location = new System.Drawing.Point(3, 2953);
-            this.tableLayoutPanel56.Name = "tableLayoutPanel56";
-            this.tableLayoutPanel56.RowCount = 1;
-            this.tableLayoutPanel56.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel56.Size = new System.Drawing.Size(646, 2);
-            this.tableLayoutPanel56.TabIndex = 12;
-            // 
-            // tableLayoutPanel57
-            // 
-            this.tableLayoutPanel57.CellBorderStyle = System.Windows.Forms.TableLayoutPanelCellBorderStyle.Single;
-            this.tableLayoutPanel57.ColumnCount = 1;
-            this.tableLayoutPanel57.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel57.Location = new System.Drawing.Point(3, 3071);
-            this.tableLayoutPanel57.Name = "tableLayoutPanel57";
-            this.tableLayoutPanel57.RowCount = 1;
-            this.tableLayoutPanel57.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel57.Size = new System.Drawing.Size(646, 2);
-            this.tableLayoutPanel57.TabIndex = 12;
-            // 
-            // tableLayoutPanel58
-            // 
-            this.tableLayoutPanel58.CellBorderStyle = System.Windows.Forms.TableLayoutPanelCellBorderStyle.Single;
-            this.tableLayoutPanel58.ColumnCount = 1;
-            this.tableLayoutPanel58.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel58.Location = new System.Drawing.Point(3, 3189);
-            this.tableLayoutPanel58.Name = "tableLayoutPanel58";
-            this.tableLayoutPanel58.RowCount = 1;
-            this.tableLayoutPanel58.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel58.Size = new System.Drawing.Size(646, 2);
-            this.tableLayoutPanel58.TabIndex = 12;
-            // 
-            // tableLayoutPanel59
-            // 
-            this.tableLayoutPanel59.CellBorderStyle = System.Windows.Forms.TableLayoutPanelCellBorderStyle.Single;
-            this.tableLayoutPanel59.ColumnCount = 1;
-            this.tableLayoutPanel59.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel59.Location = new System.Drawing.Point(3, 3307);
-            this.tableLayoutPanel59.Name = "tableLayoutPanel59";
-            this.tableLayoutPanel59.RowCount = 1;
-            this.tableLayoutPanel59.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel59.Size = new System.Drawing.Size(646, 2);
-            this.tableLayoutPanel59.TabIndex = 12;
-            // 
-            // tableLayoutPanel60
-            // 
-            this.tableLayoutPanel60.CellBorderStyle = System.Windows.Forms.TableLayoutPanelCellBorderStyle.Single;
-            this.tableLayoutPanel60.ColumnCount = 1;
-            this.tableLayoutPanel60.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel60.Location = new System.Drawing.Point(3, 3425);
-            this.tableLayoutPanel60.Name = "tableLayoutPanel60";
-            this.tableLayoutPanel60.RowCount = 1;
-            this.tableLayoutPanel60.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel60.Size = new System.Drawing.Size(646, 2);
-            this.tableLayoutPanel60.TabIndex = 12;
+            this.steamIDToolTip.AutomaticDelay = 200;
+            this.steamIDToolTip.AutoPopDelay = 5000;
+            this.steamIDToolTip.BackColor = System.Drawing.SystemColors.ControlDark;
+            this.steamIDToolTip.InitialDelay = 200;
+            this.steamIDToolTip.ReshowDelay = 40;
             // 
             // SteamTheme
             // 
@@ -5469,10 +5460,8 @@
         private System.Windows.Forms.Label label60;
         private System.Windows.Forms.Button button13;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel24;
-        private System.Windows.Forms.Button btnDevKey;
-        private System.Windows.Forms.ToolTip devToolTip1;
+        private System.Windows.Forms.ToolTip steamIDToolTip;
         private System.Windows.Forms.Label timeElapsedLabel;
-        private System.Windows.Forms.Timer timer1;
         private System.Windows.Forms.LinkLabel linkLabel1;
         private System.Windows.Forms.PictureBox loadingPictureBox;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel25;
