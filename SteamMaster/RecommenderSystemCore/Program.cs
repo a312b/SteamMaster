@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using DatabaseCore;
 using MongoDB.Bson.IO;
-using PageRank;
+using GameRank;
 using RecommenderSystemCore.Controller;
 using SteamSharpCore;
 using SteamSharpCore.steamStore;
