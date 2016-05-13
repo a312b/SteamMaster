@@ -206,12 +206,9 @@ namespace SteamUI
             }
             foreach (Label label in sender.Controls.OfType<Label>())
             {
-                foreach (Label hiddenLabel in hiddenLabels)
+                foreach (Label hiddenLabel in hiddenLabels.Where(hiddenLabel => label.Name == hiddenLabel.Name))
                 {
-                    if (label.Name == hiddenLabel.Name)
-                    {
-                        label.Visible = label.Visible == false;
-                    }
+                    label.Visible = label.Visible == false;
                 }
             }
         }
@@ -305,14 +302,25 @@ namespace SteamUI
             return pbtpl;
         }
 
+        //At every tick (1000 ms) of the timer1 the variable ElapsedTime is counted up
         private void timer1_Tick(object sender, EventArgs e)
         {
             ElapsedTime++;
         }
 
+        //Opens link for user to obtain a Steam64 ID
         private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
             Process.Start("http://steamid.xyz");
+        }
+
+        //For testing - if steamIdTextBox is selected and the "alt" key is pressed a replacement ID is used.
+        private void steamIdTextBox_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.Alt)
+            {
+                steamIdTextBox.Text = "76561197987505654";
+            }
         }
     }
 }
