@@ -37,7 +37,7 @@ namespace GameRank
         #endregion
 
         #region Methods
-        
+
         public List<Game> GetRankedGameList()
         {
             Start();
@@ -46,65 +46,47 @@ namespace GameRank
             return recommendations;
         }
 
-        public List<GRGame> DontUseThisOne()
+        /// <summary>
+        /// Use this overloaded method if you already calculated the GameRank for each tag
+        /// </summary>
+        /// <param name="precalculatedTagGameRank"></param>
+        /// <returns></returns>
+        public List<Game> GetRankedGameList(Dictionary<string,double> precalculatedTagGameRank)
         {
-            //This is a test class for getting actual GameRank scores
-            Start();
-            return _userRecommendations.Take(50).ToList();
+            Start(precalculatedTagGameRank);
+            List<Game> recommendations = _userRecommendations.Select(game => _databaseGames[game.AppID]).ToList();
+            return recommendations;
         }
 
 
 
         /// <summary>
-        /// Starts all the GameRank calculations. Point of no return.
+        /// If no input parameters are given it calculates the GameRank network. Otherwise it uses the precalculations
         /// </summary>
-        private void Start()
+        private void Start(Dictionary<string, double> precalculatedTagGameRank = null)
         {
-
             GRTagGameDictionaries tagsAndGames = new GRTagGameDictionaries(_databaseGames);
             tagsAndGames.Start();
-            try
-            {
-                tagsAndGames = RemoveRedundantTags(tagsAndGames);
-            }
-            catch (Exception e)
-            {
-                Console.WriteLine(e.Message);
-                Console.WriteLine("Place the file \"Exclude list.txt\" in your My Documents folder");
-                Console.WriteLine("This file can be found in the GameRank main folder");
-            }
 
-            GRCalculateGameRank unbiasedGameRank = new GRCalculateGameRank(tagsAndGames);
-            unbiasedGameRank.Start();
-
+            GRCalculateGameRank unbiasedGameRank = precalculatedTagGameRank == null ? Calculate(tagsAndGames) : new GRCalculateGameRank(tagsAndGames, precalculatedTagGameRank);
+            //GRCalculateGameRank unbiasedGameRank = new GRCalculateGameRank(tagsAndGames, precalculatedTagGameRank);
+            
             var userBiasedGameRank = new GRCalculateBiasedGameRank(unbiasedGameRank, _userGames);
             userBiasedGameRank.Start();
 
             _userRecommendations = new List<GRGame>(userBiasedGameRank.CalculateGameRank.Games.Values.ToList());
             _userRecommendations.Sort();
+
         }
 
-        /// <summary>
-        /// This function removes the tags that I have deemed redundant, either
-        /// because they don't really describe a game quality, or because
-        /// it is not related to gaming at all. This includes joke tags
-        /// </summary>
-        /// <param name="tagsAndGames"></param>
-        /// <returns></returns>
-        private GRTagGameDictionaries RemoveRedundantTags(GRTagGameDictionaries tagsAndGames)
+        private GRCalculateGameRank Calculate(GRTagGameDictionaries tagsAndGames)
         {
-            string path = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) + @"\Exclude list.txt";
-            StreamReader reader = new StreamReader(path);
-            while (!reader.EndOfStream)
-            {
-                string line = reader.ReadLine();
-                if (line == null) break;
-                if (tagsAndGames.TagDictionary.ContainsKey(line))
-                    tagsAndGames.TagDictionary.Remove(line);
-            }
-            return tagsAndGames;
+            
+            GRCalculateGameRank unbiasedGameRank = new GRCalculateGameRank(tagsAndGames);
+            unbiasedGameRank.Start();
+            return unbiasedGameRank;
         }
-
+        
         #endregion
     }
 }

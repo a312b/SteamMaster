@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using DatabaseCore.lib.converter.models;
 
 namespace GameRank
 {
@@ -9,8 +10,8 @@ namespace GameRank
     {
         #region Fields
 
-        public Dictionary<int, GRGame> Games { get; }
-        public Dictionary<string, GRTag> Tags { get; }
+        public Dictionary<int, GRGame> Games { get; set; }
+        public Dictionary<string, GRTag> Tags { get; set; }
 
         private readonly double _dampingFactor;
         private readonly double _convergence;
@@ -28,6 +29,18 @@ namespace GameRank
             _dampingFactor = dampingFactor;
             _convergence = convergence;
             _iterations = iterations;
+        }
+
+        public GRCalculateGameRank(GRTagGameDictionaries tagGameDictionaries, Dictionary<string, double> precalculatedGameRankDictionary)
+        {
+            Games = tagGameDictionaries.GameDictionary;
+            Tags = tagGameDictionaries.TagDictionary;
+
+            foreach (var entry in precalculatedGameRankDictionary)
+            {
+                Tags[entry.Key].GameRank = entry.Value;
+            }
+            UpdateGameRanks();
         }
 
         #endregion
@@ -53,16 +66,6 @@ namespace GameRank
                 //Break if convergence requirements are met
                 if (previousIteration - currentIteration <= _convergence) break;
             }
-            StreamWriter writer = new StreamWriter(@"C:\Users\Alex\Desktop\TagsAndRanks.txt");
-            List<GRTag> tagList = new List<GRTag>(Tags.Values);
-            tagList.Sort();
-            foreach (var tag in tagList)
-            {
-                writer.WriteLine(tag.Tag + ":" + tag.GameRank);
-            }
-            writer.Close();
-
-            Console.WriteLine($"done");
         }
 
         private void PerformIteration()

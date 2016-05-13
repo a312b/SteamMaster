@@ -1,4 +1,6 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using DatabaseCore.lib.converter.models;
 using SteamSharpCore.steamStore.models;
@@ -40,22 +42,47 @@ namespace GameRank
 
         private void InitializeTags()
         {
+            List<string> blacklistedTags = GetBlacklistedTags();
             //Iterates through all the tag lists in GameTagDictionary
             //foreach (string tag in GameTagDictionary.Values.SelectMany(gameTagList => gameTagList))
             foreach(Game game in DatabaseGames.Values)
             {
-                foreach (SteamStoreGame.Tag gameTag in game.Tags)
+                foreach (string gameTag in game.Tags.Select(tag => tag.description))
                 {
-                    string tag = gameTag.description;
-                    if (string.IsNullOrWhiteSpace(tag)) continue;
+                    if (blacklistedTags.Contains(gameTag))
+                        continue;
+                    if (string.IsNullOrWhiteSpace(gameTag)) continue;
 
-                    if (TagDictionary.ContainsKey(tag))
-                        TagDictionary[tag].Outlinks++;
-                    else if (!TagDictionary.ContainsKey(tag))
-                        TagDictionary.Add(tag, new GRTag(tag));
+                    if (TagDictionary.ContainsKey(gameTag))
+                        TagDictionary[gameTag].Outlinks++;
+                    else if (!TagDictionary.ContainsKey(gameTag))
+                        TagDictionary.Add(gameTag, new GRTag(gameTag));
                 }
             }
             
+        }
+
+        /// <summary>
+        /// This function removes the tags that I have deemed redundant, either
+        /// because they don't really describe a game quality, or because
+        /// it is not related to gaming at all. This includes joke tags
+        /// </summary>
+        /// <param name="tagsAndGames"></param>
+        /// <returns></returns>
+
+        private List<string> GetBlacklistedTags()
+        {
+            List<string> blacklistedTags = new List<string>();
+            string path = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) + @"\Exclude list.txt";
+            StreamReader reader = new StreamReader(path);
+            while (!reader.EndOfStream)
+            {
+                string line = reader.ReadLine();
+                if (line == null) break;
+                blacklistedTags.Add(line);
+            }
+            reader.Close();
+            return blacklistedTags;
         }
 
         private void InitializeGames()

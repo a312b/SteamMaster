@@ -32,7 +32,6 @@ namespace GameRank
             _userGames = userGames;
             CalculateGameRank = calculateGameRank;
         }
-
         #endregion
 
         #region Methods

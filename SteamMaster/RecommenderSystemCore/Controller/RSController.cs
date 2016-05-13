@@ -1,4 +1,6 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using DatabaseCore;
 using DatabaseCore.lib.converter.models;
@@ -33,17 +35,38 @@ namespace RecommenderSystemCore.Controller
 
         private List<Game> ExecuteRecommendation(string steamID)
         {
+            Dictionary<string, double> precalculations = ReadFromFile(); //This should read from the database
             List<Game> RecommenderList = new List<Game>();
             UserWorkClass User = new UserWorkClass(steamID);
 
             Dictionary<int, Game> dbGames = database.FindAllGames();
             dbGames = RemoveGamesWithBlacklistedWords(dbGames);
             GameRank = new GRGameRank(dbGames, User.userListGameList);
-            RecommenderList = GameRank.GetRankedGameList();
+            RecommenderList = GameRank.GetRankedGameList(precalculations);
+            //RecommenderList = GameRank.GetRankedGameList();
 
-            RecommenderList = FilterManagement(RecommenderList, User);
+            //RecommenderList = FilterManagement(RecommenderList, User);
 
             return RecommenderList;
+        }
+
+        private Dictionary<string, double> ReadFromFile()
+        {
+            //File can be found in the main GameRank folder. Should be placed in your My Documents folder
+            string path = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) + @"\TagsAndRanks.txt";
+            StreamReader reader = new StreamReader(path);
+            Dictionary<string, double> result = new Dictionary<string, double>();
+            while (!reader.EndOfStream)
+            {
+                string[] line = reader.ReadLine().Split(':');
+                string tag = line[0];
+                double tagGameRank = double.Parse(line[1]);
+                
+                result.Add(tag,tagGameRank);
+            }
+            reader.Close();
+            return result;
+
         }
 
         private Dictionary<int, Game> RemoveGamesWithBlacklistedWords(Dictionary<int, Game> dbGames)
