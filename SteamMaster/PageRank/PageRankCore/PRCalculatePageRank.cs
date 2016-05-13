@@ -36,19 +36,13 @@ namespace PageRank
         public void Start()
         {
             double currentIteration = Games.Values.Sum(game => game.GamePageRank);
-            int iterations = 0;
 
-            while (iterations < Iterations)
+            for (int iteration = 0; iteration < Iterations; iteration++)
             {
-
-                foreach (PRTag tag in Tags.Values)
-                {
-                    tag.TagPageRank = ComputePageRank(tag);
-                }
+                PerformIteration();
                 UpdateGamePageRanks();
 
-                iterations++;
-                //Prints for debugging purposes
+                //Print for debugging
                 Console.WriteLine(currentIteration);
 
                 //Keeps track of the iterations to check the convergence
@@ -56,10 +50,18 @@ namespace PageRank
                 currentIteration = Games.Values.Sum(game => game.GamePageRank);
 
                 //Break if convergence requirements are met
-                if (previousIteration - currentIteration < Convergence) break;
+                if (previousIteration - currentIteration <= Convergence) break;
             }
 
-            Console.WriteLine($"done after {iterations} iterations");
+            Console.WriteLine($"done");
+        }
+
+        private void PerformIteration()
+        {
+            foreach (PRTag tag in Tags.Values)
+            {
+                tag.TagPageRank = ComputePageRank(tag);
+            }
         }
 
 
@@ -99,14 +101,14 @@ namespace PageRank
             return tagPageRank;
         }
 
+        /// <summary>
+        /// Placeholder comment. This is going to be awesome, just wait for it.
+        /// </summary>
+        /// <param name="game"></param>
+        /// <returns></returns>
         private double AdjustDivisor(PRGame game)
         {
-            //The denominator of the fractions in the second part of the equation must be multiplied
-            //by a constant that is sufficiently large so that the total sum of the pagerank of games
-            //decreases after each iteration. Otherwise the convergence requirement is never met
-            //Currently this is a constant, but in future development this value might vary 
-            //depending on certain qualities of the input game
-            return 5000;
+            return Games.Count;
         }
 
         #endregion

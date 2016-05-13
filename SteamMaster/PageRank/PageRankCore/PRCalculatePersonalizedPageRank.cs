@@ -59,7 +59,7 @@ namespace PageRank
         private Dictionary<int, PRUserGame> GenerateUserGameDictionary()
         {
             Dictionary<int, PRUserGame> userGameDictionary = new Dictionary<int, PRUserGame>();
-            foreach (UserGameTime.Game game in _userGames.Where(game => game.playtime_forever > 0))
+            foreach (UserGameTime.Game game in _userGames)//.Where(game => game.playtime_forever > 0))
             {
                 if (CalculatePageRank.Games.ContainsKey(game.appid))
                 {
