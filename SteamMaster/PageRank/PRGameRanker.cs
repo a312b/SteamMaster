@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.IO;
 using System.Linq;
 using DatabaseCore;
@@ -64,7 +65,7 @@ namespace PageRank
             tagsAndGames.Start();
             tagsAndGames = RemoveRedundantTags(tagsAndGames);
 
-            PRCalculatePageRank unbiasedPageRank = new PRCalculatePageRank(tagsAndGames, 0.25,0.0001, 10);
+            PRCalculatePageRank unbiasedPageRank = new PRCalculatePageRank(tagsAndGames, 0.25,0.0001, 100);
             unbiasedPageRank.Start();
 
             var userPageRank = new PRCalculatePersonalizedPageRank(unbiasedPageRank, _userGames);
@@ -89,20 +90,9 @@ namespace PageRank
             foreach (Game game in gameDictionary.Values)
             {
                 string[] segments = game.Title.Split(' ');
-                foreach (string segment in segments)
+                if (segments.Any(CheckSegment))
                 {
-                    if (segment.ToLower().Contains("sdk"))
-                    {
-                        demoGames.Add(game.SteamAppId);
-                        continue;
-                    }
-                    if (segment.ToLower().Contains("dlc"))
-                    {
-                        demoGames.Add(game.SteamAppId);
-                        continue;
-                    }
-                    if (segment.ToLower().Equals("demo"))
-                        demoGames.Add(game.SteamAppId);
+                    demoGames.Add(game.SteamAppId);
                 }
             }
             foreach (int id in demoGames)
@@ -111,6 +101,21 @@ namespace PageRank
             }
             return gameDictionary;
         }
+
+        private bool CheckSegment(string segment)
+        {
+            string currentSegment = segment.Where(char.IsLetter).Aggregate("", (current, ch) => current + ch).ToLower();
+            List<string> banList = new List<string>()
+            {
+                "soundtrack",
+                "sdk",
+                "dlc",
+                "demo"
+            };
+            return banList.Any(banWord => currentSegment.Contains(banWord));
+        }
+    
+
         /// <summary>
         /// This function removes the tags that I have deemed redundant, either
         /// because they don't really describe a game quality, or because
