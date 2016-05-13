@@ -16,13 +16,8 @@ namespace GameRank
     /// </summary>
     class GRCalculateBiasedGameRank
     {
-        #region Public Fields
-
-        public GRCalculateGameRank CalculateGameRank;
-
-        #endregion
-
-        #region Private Fields
+        #region Fields
+        public GRCalculateGameRank CalculateGameRank { get; }
 
         private GRTagGameDictionaries _tagGameDictionaries;
         private Dictionary<int, GRUserGame> _userGameDictionary;

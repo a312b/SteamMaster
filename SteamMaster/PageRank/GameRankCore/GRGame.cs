@@ -6,7 +6,7 @@ namespace GameRank
 {
     /// <summary>
     /// This class contains all the necessary information
-    /// about a game regarding calculating GameRank
+    /// about a game with regards to calculating GameRank
     /// </summary>
     public class GRGame : IComparable<GRGame>
     {
@@ -23,6 +23,8 @@ namespace GameRank
 
         #endregion
 
+        #region Constructor
+
         public GRGame(int appID, int[] tagVector, List<string> gameTags, string title)
         {
             AppID = appID;
@@ -31,14 +33,13 @@ namespace GameRank
             GameTags = gameTags;
             Title = title;
             GameRank = 1; //Starting value for GameRank
-            //GetInitialValue();
-
         }
 
-        //private double GetInitialValue()
-        //{
-        //    return OutgoingLinks < 10 ? 1 : 2;
-        //}
+        #endregion
+
+
+        #region Methods
+
         public int CompareTo(GRGame other)
         {
             return other.GameRank.CompareTo(this.GameRank);
@@ -56,5 +57,8 @@ namespace GameRank
             Console.CursorLeft = Console.WindowWidth/2;
             Console.WriteLine(GameRank);
         }
+
+        #endregion
+
     }
 }
