@@ -40,7 +40,6 @@ namespace GameRank
 
         private void InitializeTags()
         {
-            int tagIndexCounter = 0;
             //Iterates through all the tag lists in GameTagDictionary
             //foreach (string tag in GameTagDictionary.Values.SelectMany(gameTagList => gameTagList))
             foreach(Game game in DatabaseGames.Values)
@@ -53,7 +52,7 @@ namespace GameRank
                     if (TagDictionary.ContainsKey(tag))
                         TagDictionary[tag].Outlinks++;
                     else if (!TagDictionary.ContainsKey(tag))
-                        TagDictionary.Add(tag, new GRTag(tag, tagIndexCounter++));
+                        TagDictionary.Add(tag, new GRTag(tag));
                 }
             }
             
@@ -65,10 +64,9 @@ namespace GameRank
             foreach (var game in DatabaseGames)
             {
                 List<string> tagList = GetGenreTagsAndCategories(game.Value);
-                int[] tagVector = GetTagVector(tagList);
-                if (tagVector.Sum() != 0)
+                if (tagList.Count > 0)
                     GameDictionary.Add(game.Value.SteamAppId, 
-                        new GRGame(game.Value.SteamAppId, tagVector, tagList, game.Value.Title));
+                        new GRGame(game.Value.SteamAppId, tagList, game.Value.Title));
             }
         }
 
@@ -84,20 +82,6 @@ namespace GameRank
                 gameTags.AddRange(game.Genres.Select(genre => genre.description));
 
             return gameTags;
-        }
-
-        //A tag vector is generated for each game according to its tags
-        //For this purpose, genres and categories are treated the same as tags
-        //Each tag has a unique index. The tag vector of this index will be either "1" or "0"
-        private int[] GetTagVector(List<string> gameTagList)
-        {
-            int[] tagVector = new int[TagDictionary.Count];
-
-            foreach (KeyValuePair<string, GRTag> tag in TagDictionary)
-            {
-                tagVector[tag.Value.TagIndex] = gameTagList.Contains(tag.Key) ? 1 : 0;
-            }
-            return tagVector;
         }
         #endregion
     }

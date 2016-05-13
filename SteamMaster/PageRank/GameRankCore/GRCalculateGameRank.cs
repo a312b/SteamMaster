@@ -21,7 +21,7 @@ namespace GameRank
         #region Constructor
 
         public GRCalculateGameRank(GRTagGameDictionaries tagGameDictionaries, double dampingFactor = 0.25,
-            double convergence = 0.0001, int iterations = 10)
+            double convergence = 0.0001, int iterations = 100)
         {
             Games = tagGameDictionaries.GameDictionary;
             Tags = tagGameDictionaries.TagDictionary;
@@ -53,6 +53,14 @@ namespace GameRank
                 //Break if convergence requirements are met
                 if (previousIteration - currentIteration <= _convergence) break;
             }
+            StreamWriter writer = new StreamWriter(@"C:\Users\Alex\Desktop\TagsAndRanks.txt");
+            List<GRTag> tagList = new List<GRTag>(Tags.Values);
+            tagList.Sort();
+            foreach (var tag in tagList)
+            {
+                writer.WriteLine(tag.Tag + ":" + tag.GameRank);
+            }
+            writer.Close();
 
             Console.WriteLine($"done");
         }
@@ -72,11 +80,10 @@ namespace GameRank
             foreach (GRGame game in Games.Values)
             {
                 game.GameRank = 0;
-                List<string> gameTags = game.GameTags;
                 //The game's new GameRank is the sum of the GameRank of its tags
-                foreach (string tag in gameTags)
+                foreach (string tag in game.Tags)
                 {
-                    if (Tags.ContainsKey(tag)) //Game may contain redundant tags that have been removed
+                    if (this.Tags.ContainsKey(tag)) //Game may contain redundant tags that have been removed
                         game.GameRank += Tags[tag].GameRank;
                 }
             }
@@ -92,9 +99,9 @@ namespace GameRank
             //The first fraction is the random teleportation variable
             double firstFraction = (1 - _dampingFactor)/tag.Outlinks;
             double gamePRSum = 0;
-            foreach (var prGame in Games.Values.Where(game => game.GameTags.Contains(tag.Tag)))
+            foreach (var prGame in Games.Values.Where(game => game.Tags.Contains(tag.Tag)))
             {
-                double divisor = AdjustDivisor(prGame)*prGame.OutgoingLinks;
+                double divisor = AdjustDivisor(prGame)*prGame.Outlinks;
                 gamePRSum += prGame.GameRank/divisor;
             }
             double tagGameRank = firstFraction + _dampingFactor*gamePRSum;

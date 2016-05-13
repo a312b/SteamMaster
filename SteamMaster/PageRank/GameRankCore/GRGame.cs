@@ -13,11 +13,9 @@ namespace GameRank
         #region Fields
 
         public string Title { get; }
-
-        public int AppID { get; private set; }
-        public int[] TagVector { get; }
-        public List<string> GameTags { get; private set; }
-        public int OutgoingLinks { get; private set; }
+        public int AppID { get; }
+        public List<string> Tags { get; }
+        public int Outlinks { get; }
         //public Dictionary<string, int>  
         public double GameRank { get; set; }
 
@@ -25,12 +23,11 @@ namespace GameRank
 
         #region Constructor
 
-        public GRGame(int appID, int[] tagVector, List<string> gameTags, string title)
+        public GRGame(int appID, List<string> tags, string title)
         {
             AppID = appID;
-            TagVector = tagVector;
-            OutgoingLinks = TagVector.Sum();
-            GameTags = gameTags;
+            Tags = tags;
+            Outlinks = Tags.Count;
             Title = title;
             GameRank = 1; //Starting value for GameRank
         }

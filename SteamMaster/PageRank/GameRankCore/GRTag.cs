@@ -10,7 +10,6 @@ namespace GameRank
         #region Fields
 
         public string Tag { get; }
-        public int TagIndex { get; } //The index of the tag in tag vector
         public int Outlinks { get; set; } // Tag Frequency
         public double GameRank { get; set; }
 
@@ -18,10 +17,9 @@ namespace GameRank
 
         #region Constructor
 
-        public GRTag(string tag, int index)
+        public GRTag(string tag)
         {
             Tag = tag;
-            TagIndex = index;
             Outlinks = 1;
             GameRank = 1; //Starting value, reconsider and / or argue this value
         }

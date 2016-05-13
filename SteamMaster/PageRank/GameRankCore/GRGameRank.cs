@@ -46,7 +46,7 @@ namespace GameRank
             return recommendations;
         }
 
-        public List<GRGame> GetRankedGameList(string lol)
+        public List<GRGame> DontUseThisOne()
         {
             //This is a test class for getting actual GameRank scores
             Start();
@@ -74,7 +74,7 @@ namespace GameRank
                 Console.WriteLine("This file can be found in the GameRank main folder");
             }
 
-            GRCalculateGameRank unbiasedGameRank = new GRCalculateGameRank(tagsAndGames, 0.25, 0.0001, 100);
+            GRCalculateGameRank unbiasedGameRank = new GRCalculateGameRank(tagsAndGames);
             unbiasedGameRank.Start();
 
             var userBiasedGameRank = new GRCalculateBiasedGameRank(unbiasedGameRank, _userGames);

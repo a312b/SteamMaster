@@ -18,7 +18,7 @@ namespace GameRank
         #region Constructor
 
         public GRUserGame(GRGame game, UserGameTime.Game gameInfo)
-            : base(game.AppID, game.TagVector, game.GameTags, game.Title)
+            : base(game.AppID, game.Tags, game.Title)
         {
             _gameInfo = gameInfo;
         }
