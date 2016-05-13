@@ -22,17 +22,5 @@ namespace DummyClassSolution.Properties {
                 return defaultInstance;
             }
         }
-        
-        [global::System.Configuration.UserScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("null")]
-        public string DevKey {
-            get {
-                return ((string)(this["DevKey"]));
-            }
-            set {
-                this["DevKey"] = value;
-            }
-        }
     }
 }
