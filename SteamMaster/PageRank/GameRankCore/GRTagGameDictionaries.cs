@@ -3,28 +3,28 @@ using System.Linq;
 using DatabaseCore.lib.converter.models;
 using SteamSharpCore.steamStore.models;
 
-namespace PageRank
+namespace GameRank
 {
     /// <summary>
     /// This class receives a dictionary of games and their associated app id's
     /// and translates this into two separate dictionaries. One containing tags,
     /// another containing games. The tags are assigned a unique index position
     /// which decides their position in the tag vector that is assigned to each game.
-    /// The instance of this class is then passed to PRCalculatePageRank.
+    /// The instance of this class is then passed to GRCalculateGameRank.
     /// </summary>
-    class PRTagGameDictionaries
+    class GRTagGameDictionaries
     {
         #region Fields
 
         private readonly Dictionary<int, Game> DatabaseGames; 
-        public Dictionary<string, PRTag> TagDictionary = new Dictionary<string, PRTag>();
-        public Dictionary<int, PRGame> GameDictionary = new Dictionary<int, PRGame>();
+        public Dictionary<string, GRTag> TagDictionary = new Dictionary<string, GRTag>();
+        public Dictionary<int, GRGame> GameDictionary = new Dictionary<int, GRGame>();
 
         #endregion
 
         #region Constructor
 
-        public PRTagGameDictionaries(Dictionary<int,Game> databaseGames)
+        public GRTagGameDictionaries(Dictionary<int,Game> databaseGames)
         {
             DatabaseGames = databaseGames;
         }
@@ -53,7 +53,7 @@ namespace PageRank
                     if (TagDictionary.ContainsKey(tag))
                         TagDictionary[tag].OutLinks++;
                     else if (!TagDictionary.ContainsKey(tag))
-                        TagDictionary.Add(tag, new PRTag(tag, tagIndexCounter++));
+                        TagDictionary.Add(tag, new GRTag(tag, tagIndexCounter++));
                 }
             }
             
@@ -68,7 +68,7 @@ namespace PageRank
                 int[] tagVector = GetTagVector(tagList);
                 if (tagVector.Sum() != 0)
                     GameDictionary.Add(game.Value.SteamAppId, 
-                        new PRGame(game.Value.SteamAppId, tagVector, tagList, game.Value.Title));
+                        new GRGame(game.Value.SteamAppId, tagVector, tagList, game.Value.Title));
             }
         }
 
@@ -93,7 +93,7 @@ namespace PageRank
         {
             int[] tagVector = new int[TagDictionary.Count];
 
-            foreach (KeyValuePair<string, PRTag> tag in TagDictionary)
+            foreach (KeyValuePair<string, GRTag> tag in TagDictionary)
             {
                 tagVector[tag.Value.TagIndex] = gameTagList.Contains(tag.Key) ? 1 : 0;
             }

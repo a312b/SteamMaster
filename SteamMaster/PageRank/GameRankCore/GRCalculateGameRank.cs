@@ -3,30 +3,31 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 
-namespace PageRank
+namespace GameRank
 {
-    class PRCalculatePageRank
+    class GRCalculateGameRank
     {
         #region Fields
 
-        private double DampeningFactor;
-        public Dictionary<int, PRGame> Games;
-        public Dictionary<string, PRTag> Tags;
-        private double Convergence;
-        private int Iterations;
+        public Dictionary<int, GRGame> Games { get; }
+        public Dictionary<string, GRTag> Tags { get; }
+
+        private readonly double _dampingFactor;
+        private readonly double _convergence;
+        private readonly int _iterations;
 
         #endregion
 
         #region Constructor
 
-        public PRCalculatePageRank(PRTagGameDictionaries tagGameDictionaries, double dampeningFactor = 0.25,
+        public GRCalculateGameRank(GRTagGameDictionaries tagGameDictionaries, double dampingFactor = 0.25,
             double convergence = 0.0001, int iterations = 10)
         {
             Games = tagGameDictionaries.GameDictionary;
             Tags = tagGameDictionaries.TagDictionary;
-            DampeningFactor = dampeningFactor;
-            Convergence = convergence;
-            Iterations = iterations;
+            _dampingFactor = dampingFactor;
+            _convergence = convergence;
+            _iterations = iterations;
         }
 
         #endregion
@@ -35,22 +36,22 @@ namespace PageRank
 
         public void Start()
         {
-            double currentIteration = Games.Values.Sum(game => game.GamePageRank);
+            double currentIteration = Games.Values.Sum(game => game.GameRank);
 
-            for (int iteration = 0; iteration < Iterations; iteration++)
+            for (int iteration = 0; iteration < _iterations; iteration++)
             {
                 PerformIteration();
-                UpdateGamePageRanks();
+                UpdateGameGameRanks();
 
                 //Print for debugging
                 Console.WriteLine(currentIteration);
 
                 //Keeps track of the iterations to check the convergence
                 double previousIteration = currentIteration;
-                currentIteration = Games.Values.Sum(game => game.GamePageRank);
+                currentIteration = Games.Values.Sum(game => game.GameRank);
 
                 //Break if convergence requirements are met
-                if (previousIteration - currentIteration <= Convergence) break;
+                if (previousIteration - currentIteration <= _convergence) break;
             }
 
             Console.WriteLine($"done");
@@ -58,25 +59,25 @@ namespace PageRank
 
         private void PerformIteration()
         {
-            foreach (PRTag tag in Tags.Values)
+            foreach (GRTag tag in Tags.Values)
             {
-                tag.TagPageRank = ComputePageRank(tag);
+                tag.GameRank = ComputeGameRank(tag);
             }
         }
 
 
-        //Here the games PageRanks are updated after finished iterations
-        public void UpdateGamePageRanks()
+        //Here the games GameRanks are updated after finished iterations
+        public void UpdateGameGameRanks()
         {
-            foreach (PRGame game in Games.Values)
+            foreach (GRGame game in Games.Values)
             {
-                game.GamePageRank = 0;
+                game.GameRank = 0;
                 List<string> gameTags = game.GameTags;
-                //The game's new GamePageRank is the sum of the GamePageRank of its tags
+                //The game's new GameRank is the sum of the GameRank of its tags
                 foreach (string tag in gameTags)
                 {
                     if (Tags.ContainsKey(tag)) //Game may contain redundant tags that have been removed
-                        game.GamePageRank += Tags[tag].TagPageRank;
+                        game.GameRank += Tags[tag].GameRank;
                 }
             }
         }
@@ -86,19 +87,19 @@ namespace PageRank
 
 
         //This is where the magic happens
-        private double ComputePageRank(PRTag tag)
+        private double ComputeGameRank(GRTag tag)
         {
             //The first fraction is the random teleportation variable
-            double firstFraction = (1 - DampeningFactor)/tag.OutLinks;
+            double firstFraction = (1 - _dampingFactor)/tag.OutLinks;
             double gamePRSum = 0;
             foreach (var prGame in Games.Values.Where(game => game.GameTags.Contains(tag.Tag)))
             {
                 double divisor = AdjustDivisor(prGame)*prGame.OutgoingLinks;
-                gamePRSum += prGame.GamePageRank/divisor;
+                gamePRSum += prGame.GameRank/divisor;
             }
-            double tagPageRank = firstFraction + DampeningFactor*gamePRSum;
+            double tagGameRank = firstFraction + _dampingFactor*gamePRSum;
 
-            return tagPageRank;
+            return tagGameRank;
         }
 
         /// <summary>
@@ -106,7 +107,7 @@ namespace PageRank
         /// </summary>
         /// <param name="game"></param>
         /// <returns></returns>
-        private double AdjustDivisor(PRGame game)
+        private double AdjustDivisor(GRGame game)
         {
             return Games.Count;
         }

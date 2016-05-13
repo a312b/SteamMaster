@@ -2,13 +2,13 @@
 using System.Collections.Generic;
 using System.Linq;
 
-namespace PageRank
+namespace GameRank
 {
     /// <summary>
     /// This class contains all the necessary information
-    /// about a game regarding calculating pagerank
+    /// about a game regarding calculating GameRank
     /// </summary>
-    public class PRGame : IComparable<PRGame>
+    public class GRGame : IComparable<GRGame>
     {
         #region Fields
 
@@ -19,18 +19,18 @@ namespace PageRank
         public List<string> GameTags { get; private set; }
         public int OutgoingLinks { get; private set; }
         //public Dictionary<string, int>  
-        public double GamePageRank { get; set; }
+        public double GameRank { get; set; }
 
         #endregion
 
-        public PRGame(int appID, int[] tagVector, List<string> gameTags, string title)
+        public GRGame(int appID, int[] tagVector, List<string> gameTags, string title)
         {
             AppID = appID;
             TagVector = tagVector;
             OutgoingLinks = TagVector.Sum();
             GameTags = gameTags;
             Title = title;
-            GamePageRank = 1; //Starting value for GamePageRank
+            GameRank = 1; //Starting value for GameRank
             //GetInitialValue();
 
         }
@@ -39,22 +39,22 @@ namespace PageRank
         //{
         //    return OutgoingLinks < 10 ? 1 : 2;
         //}
-        public int CompareTo(PRGame other)
+        public int CompareTo(GRGame other)
         {
-            return other.GamePageRank.CompareTo(this.GamePageRank);
-            //return other.GamePageRank.CompareTo(this.GamePageRank);
+            return other.GameRank.CompareTo(this.GameRank);
+            //return other.GameRank.CompareTo(this.GameRank);
         }
 
         public override string ToString()
         {
-            return $"{Title} --- {GamePageRank}";
+            return $"{Title} --- {GameRank}";
         }
 
         public void PrintGame()
         {
             Console.Write(Title);
             Console.CursorLeft = Console.WindowWidth/2;
-            Console.WriteLine(GamePageRank);
+            Console.WriteLine(GameRank);
         }
     }
 }

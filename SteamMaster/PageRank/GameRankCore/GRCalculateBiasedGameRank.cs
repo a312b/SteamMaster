@@ -6,7 +6,7 @@ using DatabaseCore.lib.converter.models;
 using SteamSharpCore;
 using SteamSharpCore.steamUser.models;
 
-namespace PageRank
+namespace GameRank
 {
     /// <summary>
     /// In this class the previously calculated rank for each tag is
@@ -14,28 +14,28 @@ namespace PageRank
     /// frequency of each tag in the users game library.
     /// Afterwards the rank of each game is updated accordingly
     /// </summary>
-    class PRCalculatePersonalizedPageRank
+    class GRCalculateBiasedGameRank
     {
         #region Public Fields
 
-        public PRCalculatePageRank CalculatePageRank;
+        public GRCalculateGameRank CalculateGameRank;
 
         #endregion
 
         #region Private Fields
 
-        private PRTagGameDictionaries _tagGameDictionaries;
-        private Dictionary<int, PRUserGame> _userGameDictionary;
-        private List<UserGameTime.Game> _userGames;
+        private GRTagGameDictionaries _tagGameDictionaries;
+        private Dictionary<int, GRUserGame> _userGameDictionary;
+        private readonly List<UserGameTime.Game> _userGames;
 
         #endregion
 
         #region Constructor
 
-        public PRCalculatePersonalizedPageRank(PRCalculatePageRank calculatePageRank, List<UserGameTime.Game> userGames)
+        public GRCalculateBiasedGameRank(GRCalculateGameRank calculateGameRank, List<UserGameTime.Game> userGames)
         {
             _userGames = userGames;
-            CalculatePageRank = calculatePageRank;
+            CalculateGameRank = calculateGameRank;
         }
 
         #endregion
@@ -45,44 +45,44 @@ namespace PageRank
         /// Some preliminary calculations are performed here. A user game 
         /// dictionary is made so that it can be uesd as input for generating
         /// tag and game dictionaries for the purpose of counting tag frequency
-        /// which is needed for the BiasTagPageRank function.
+        /// which is needed for the BiasTagGameRank function.
         /// </summary>
         public void Start()
         {
             _userGameDictionary = GenerateUserGameDictionary();
             _tagGameDictionaries = GenerateTagGameDictionaries(_userGameDictionary);
             _tagGameDictionaries.Start();
-            BiasTagPageRank();
+            BiasTagGameRank();
 
         }
 
-        private Dictionary<int, PRUserGame> GenerateUserGameDictionary()
+        private Dictionary<int, GRUserGame> GenerateUserGameDictionary()
         {
-            Dictionary<int, PRUserGame> userGameDictionary = new Dictionary<int, PRUserGame>();
+            Dictionary<int, GRUserGame> userGameDictionary = new Dictionary<int, GRUserGame>();
             foreach (UserGameTime.Game game in _userGames)//.Where(game => game.playtime_forever > 0))
             {
-                if (CalculatePageRank.Games.ContainsKey(game.appid))
+                if (CalculateGameRank.Games.ContainsKey(game.appid))
                 {
-                    PRUserGame userGame = new PRUserGame(CalculatePageRank.Games[game.appid], game);
+                    GRUserGame userGame = new GRUserGame(CalculateGameRank.Games[game.appid], game);
                     userGameDictionary.Add(game.appid, userGame);
-                    CalculatePageRank.Games.Remove(game.appid);
+                    CalculateGameRank.Games.Remove(game.appid);
                 }
             }
             return userGameDictionary;
         }
 
-        private PRTagGameDictionaries GenerateTagGameDictionaries(Dictionary<int, PRUserGame> userGameDictionary)
+        private GRTagGameDictionaries GenerateTagGameDictionaries(Dictionary<int, GRUserGame> userGameDictionary)
         {
             Database db = new Database();
             Dictionary<int, Game> gameIDs =
                 db.FindGamesById(userGameDictionary.Values.Select(item => item.AppID).ToList());
-            PRTagGameDictionaries tagGameDictionaries = new PRTagGameDictionaries(gameIDs);
+            GRTagGameDictionaries tagGameDictionaries = new GRTagGameDictionaries(gameIDs);
 
             return tagGameDictionaries;
         }
 
         
-        private void BiasTagPageRank()
+        private void BiasTagGameRank()
         {
             //This is where the value of each tag is adjusted according to the user
             //Afterwards the rank of each game is updated accordingly
@@ -90,18 +90,18 @@ namespace PageRank
             //CalculateMultiplier(); -- Changed algorithm. This function is now obsolete
             //leaving it here just in case
 
-            foreach (PRTag prTag in CalculatePageRank.Tags.Values)
+            foreach (GRTag prTag in CalculateGameRank.Tags.Values)
             {
                 if (_tagGameDictionaries.TagDictionary.ContainsKey(prTag.Tag))
                 {
                     int tagFrequency = GetTagOutlinks(prTag);
-                    prTag.TagPageRank = prTag.TagPageRank * tagFrequency;
+                    prTag.GameRank = prTag.GameRank * tagFrequency;
                     continue;
                 }
-                prTag.TagPageRank = 1.0/CalculatePageRank.Games.Count;
+                prTag.GameRank = 1.0/CalculateGameRank.Games.Count;
             }
 
-            CalculatePageRank.UpdateGamePageRanks();
+            CalculateGameRank.UpdateGameGameRanks();
         }
 
         private void CalculateMultiplier()
@@ -132,25 +132,25 @@ namespace PageRank
             //In this loop, each tag that exists in the user's library is multiplied by
             //the value specified by its number of outlinks. If it does not exist in the user's library,
             //its value is set to one divided by the total number of games.
-            foreach (PRTag prTag in CalculatePageRank.Tags.Values)
+            foreach (GRTag prTag in CalculateGameRank.Tags.Values)
             {
                 if (_tagGameDictionaries.TagDictionary.ContainsKey(prTag.Tag))
                 {
                     int outlinks = GetTagOutlinks(prTag);
                     //double tagMultiplier = tagMultipliers[outlinks];
                     double tagMultiplier = outlinks;
-                    prTag.TagPageRank = prTag.TagPageRank*tagMultiplier;
+                    prTag.GameRank = prTag.GameRank*tagMultiplier;
                     continue;
                 }
-                prTag.TagPageRank = (double)1/CalculatePageRank.Games.Count;
+                prTag.GameRank = (double)1/CalculateGameRank.Games.Count;
                 
             }
         }
 
-        private int GetTagOutlinks(PRTag prTag)
+        private int GetTagOutlinks(GRTag grTag)
         {
             //Gets the number of outlinks for a tag based on the corresponding entry in the tag dictionary.
-            return _tagGameDictionaries.TagDictionary[prTag.Tag].OutLinks;
+            return _tagGameDictionaries.TagDictionary[grTag.Tag].OutLinks;
         }
 
         #endregion

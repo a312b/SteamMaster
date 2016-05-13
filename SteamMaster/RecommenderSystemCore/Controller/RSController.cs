@@ -1,8 +1,9 @@
 ﻿using System.Collections.Generic;
+using System.Linq;
 using DatabaseCore;
 using DatabaseCore.lib.converter.models;
 using Filter_System.Filter_Core.Filters_2._0;
-using PageRank;
+using GameRank;
 using RecommenderSystemCore.User_Data_Handling.Models;
 using SteamUI;
 
@@ -19,7 +20,7 @@ namespace RecommenderSystemCore.Controller
 
         }
 
-        private PRGameRanker PageRank { get; set; }
+        private GRGameRank GameRank { get; set; }
 
         private Database database { get; set; }
 
@@ -36,12 +37,45 @@ namespace RecommenderSystemCore.Controller
             UserWorkClass User = new UserWorkClass(steamID);
 
             Dictionary<int, Game> dbGames = database.FindAllGames();
-            PageRank = new PRGameRanker(dbGames, User.userListGameList);
-            RecommenderList = PageRank.GetRankedGameList();
+            dbGames = RemoveGamesWithBlacklistedWords(dbGames);
+            GameRank = new GRGameRank(dbGames, User.userListGameList);
+            RecommenderList = GameRank.GetRankedGameList();
 
             RecommenderList = FilterManagement(RecommenderList, User);
 
             return RecommenderList;
+        }
+
+        private Dictionary<int, Game> RemoveGamesWithBlacklistedWords(Dictionary<int, Game> dbGames)
+        {
+            List<int> bannedGames = new List<int>();
+            //The linq though
+            foreach (Game game in dbGames.Values)
+            {
+                string[] segments = game.Title.Split(' ');
+                if (segments.Any(CheckSegment))
+                {
+                    bannedGames.Add(game.SteamAppId);
+                }
+            }
+            foreach (int id in bannedGames)
+            {
+                dbGames.Remove(id);
+            }
+            return dbGames;
+        }
+
+        private bool CheckSegment(string segment)
+        {
+            string currentSegment = segment.Where(char.IsLetter).Aggregate("", (current, ch) => current + ch).ToLower();
+            List<string> banList = new List<string>()
+            {
+                "soundtrack",
+                "sdk",
+                "dlc",
+                "demo"
+            };
+            return banList.Any(banWord => currentSegment.Contains(banWord));
         }
 
         private List<Game> FilterManagement(List<Game> ListToFilter, UserWorkClass User)
