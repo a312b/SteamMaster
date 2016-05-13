@@ -53,15 +53,36 @@ namespace PageRank
             return _userRecommendations.Take(50).ToList();
         }
 
-    /// <summary>
-    /// This function removes demo games. Not because they are irrelevant, but because
-    /// demo games usually have the same tags as the actual released game, and therefore
-    /// will have the same ranking. And we would rather recommend a released game than 
-    /// a game demo.
-    /// </summary>
-    /// <param name="gameDictionary"></param>
-    /// <returns></returns>
-    private Dictionary<int, Game> RemoveDemoGames(Dictionary<int, Game> gameDictionary)
+
+
+
+        private void Start()
+        {
+            _databaseGames = RemoveDemoGames(_databaseGames);
+
+            PRTagGameDictionaries tagsAndGames = new PRTagGameDictionaries(_databaseGames);
+            tagsAndGames.Start();
+            tagsAndGames = RemoveRedundantTags(tagsAndGames);
+
+            PRCalculatePageRank unbiasedPageRank = new PRCalculatePageRank(tagsAndGames, 0.25,0.0001, 10);
+            unbiasedPageRank.Start();
+
+            var userPageRank = new PRCalculatePersonalizedPageRank(unbiasedPageRank, _userGames);
+            userPageRank.Start();
+
+            _userRecommendations = new List<PRGame>(userPageRank.CalculatePageRank.Games.Values.ToList());
+            _userRecommendations.Sort();
+        }
+
+        /// <summary>
+        /// This function removes demo games. Not because they are irrelevant, but because
+        /// demo games usually have the same tags as the actual released game, and therefore
+        /// will have the same ranking. And we would rather recommend a released game than 
+        /// a game demo.
+        /// </summary>
+        /// <param name="gameDictionary"></param>
+        /// <returns></returns>
+        private Dictionary<int, Game> RemoveDemoGames(Dictionary<int, Game> gameDictionary)
         {
             List<int> demoGames = new List<int>();
             //The linq though
@@ -70,6 +91,16 @@ namespace PageRank
                 string[] segments = game.Title.Split(' ');
                 foreach (string segment in segments)
                 {
+                    if (segment.ToLower().Contains("sdk"))
+                    {
+                        demoGames.Add(game.SteamAppId);
+                        continue;
+                    }
+                    if (segment.ToLower().Contains("dlc"))
+                    {
+                        demoGames.Add(game.SteamAppId);
+                        continue;
+                    }
                     if (segment.ToLower().Equals("demo"))
                         demoGames.Add(game.SteamAppId);
                 }
@@ -80,25 +111,6 @@ namespace PageRank
             }
             return gameDictionary;
         }
-
-        private void Start()
-        {
-            _databaseGames = RemoveDemoGames(_databaseGames);
-
-            PRTagGameDictionaries tagsAndGames = new PRTagGameDictionaries(_databaseGames);
-            tagsAndGames.Start();
-            tagsAndGames = RemoveRedundantTags(tagsAndGames);
-
-            PRCalculatePageRank unbiasedPageRank = new PRCalculatePageRank(tagsAndGames);
-            unbiasedPageRank.Start();
-
-            var userPageRank = new PRCalculatePersonalizedPageRank(unbiasedPageRank, _userGames);
-            userPageRank.Start();
-
-            _userRecommendations = new List<PRGame>(userPageRank.CalculatePageRank.Games.Values.ToList());
-            _userRecommendations.Sort();
-        }
-
         /// <summary>
         /// This function removes the tags that I have deemed redundant, either
         /// because they don't really describe a game quality, or because

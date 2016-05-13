@@ -180,11 +180,13 @@ namespace SteamUI
                 richTextBox26, richTextBox27, richTextBox28, richTextBox29, richTextBox30
             };
 
-            if (roundCount < gameLabels.Length && game.Developer != null)
+            if (roundCount < gameLabels.Length)
             {
                 gameLabels[roundCount].Text = game.Title;
                 gameLabels[roundCount].Visible = true;
 
+                if (game.Developer == null)
+                    game.Developer = new List<string>() {"No Developer"};
                 foreach (string developer in game.Developer)
                     SB.Append(developer + ", ");
 

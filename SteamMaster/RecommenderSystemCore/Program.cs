@@ -14,7 +14,6 @@ using SteamSharpCore;
 using SteamSharpCore.steamStore;
 using SteamSharpCore.steamStore.models;
 using SteamUI;
-using System.Windows.Forms;
 
 namespace RecommenderSystemCore
 {
