@@ -37,7 +37,6 @@ namespace GameRank
         #endregion
 
         #region Methods
-
         
         public List<Game> GetRankedGameList()
         {

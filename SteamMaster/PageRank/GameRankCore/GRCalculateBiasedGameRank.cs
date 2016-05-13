@@ -96,13 +96,13 @@ namespace GameRank
                 prTag.GameRank = 1.0/CalculateGameRank.Games.Count;
             }
 
-            CalculateGameRank.UpdateGameGameRanks();
+            CalculateGameRank.UpdateGameRanks();
         }
 
         private void CalculateMultiplier()
         {
-            int minimumOutlinks = _tagGameDictionaries.TagDictionary.Values.Min(tag => tag.OutLinks);
-            int maximumOutlinks = _tagGameDictionaries.TagDictionary.Values.Max(tag => tag.OutLinks);
+            int minimumOutlinks = _tagGameDictionaries.TagDictionary.Values.Min(tag => tag.Outlinks);
+            int maximumOutlinks = _tagGameDictionaries.TagDictionary.Values.Max(tag => tag.Outlinks);
             
             int variance = maximumOutlinks - minimumOutlinks;
 
@@ -145,7 +145,7 @@ namespace GameRank
         private int GetTagOutlinks(GRTag grTag)
         {
             //Gets the number of outlinks for a tag based on the corresponding entry in the tag dictionary.
-            return _tagGameDictionaries.TagDictionary[grTag.Tag].OutLinks;
+            return _tagGameDictionaries.TagDictionary[grTag.Tag].Outlinks;
         }
 
         #endregion

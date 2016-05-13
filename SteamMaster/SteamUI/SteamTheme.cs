@@ -237,7 +237,7 @@ namespace SteamUI
             Process.Start("http://store.steampowered.com/app/" + currentAppId);
         }
 
-        public event RecommendDelegate RecommendButtomClick;
+        public event RecommendDelegate RecommendButtonClick;
 
         private void btnRecommend_Click(object sender, EventArgs e)
         {
@@ -260,7 +260,7 @@ namespace SteamUI
 
                 bgWorker.DoWork += (s, a) =>
                 {
-                    gameList = RecommendButtomClick(steamIdTextBox.Text);
+                    gameList = RecommendButtonClick(steamIdTextBox.Text);
                 };
                 bgWorker.RunWorkerCompleted += (s, a) =>
                 {

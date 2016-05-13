@@ -11,11 +11,10 @@ namespace GameRank
 
         public string Tag { get; }
         public int TagIndex { get; } //The index of the tag in tag vector
-        public int OutLinks { get; set; } // Tag Frequency
+        public int Outlinks { get; set; } // Tag Frequency
         public double GameRank { get; set; }
 
         #endregion
-
 
         #region Constructor
 
@@ -23,12 +22,11 @@ namespace GameRank
         {
             Tag = tag;
             TagIndex = index;
-            OutLinks = 1;
+            Outlinks = 1;
             GameRank = 1; //Starting value, reconsider and / or argue this value
         }
 
         #endregion
-
 
         #region Methods
 

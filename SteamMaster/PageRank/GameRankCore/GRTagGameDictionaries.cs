@@ -51,7 +51,7 @@ namespace GameRank
                     if (string.IsNullOrWhiteSpace(tag)) continue;
 
                     if (TagDictionary.ContainsKey(tag))
-                        TagDictionary[tag].OutLinks++;
+                        TagDictionary[tag].Outlinks++;
                     else if (!TagDictionary.ContainsKey(tag))
                         TagDictionary.Add(tag, new GRTag(tag, tagIndexCounter++));
                 }

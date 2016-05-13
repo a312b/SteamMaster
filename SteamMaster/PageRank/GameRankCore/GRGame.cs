@@ -37,7 +37,6 @@ namespace GameRank
 
         #endregion
 
-
         #region Methods
 
         public int CompareTo(GRGame other)

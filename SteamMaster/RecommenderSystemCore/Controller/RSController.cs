@@ -16,7 +16,7 @@ namespace RecommenderSystemCore.Controller
             database = new Database();
             UI = ui;
 
-            UI.RecommendButtomClick += ExecuteRecommendation;
+            UI.RecommendButtonClick += ExecuteRecommendation;
 
         }
 

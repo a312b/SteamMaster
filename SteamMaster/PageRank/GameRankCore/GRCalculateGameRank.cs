@@ -41,7 +41,7 @@ namespace GameRank
             for (int iteration = 0; iteration < _iterations; iteration++)
             {
                 PerformIteration();
-                UpdateGameGameRanks();
+                UpdateGameRanks();
 
                 //Print for debugging
                 Console.WriteLine(currentIteration);
@@ -67,7 +67,7 @@ namespace GameRank
 
 
         //Here the games GameRanks are updated after finished iterations
-        public void UpdateGameGameRanks()
+        public void UpdateGameRanks()
         {
             foreach (GRGame game in Games.Values)
             {
@@ -90,7 +90,7 @@ namespace GameRank
         private double ComputeGameRank(GRTag tag)
         {
             //The first fraction is the random teleportation variable
-            double firstFraction = (1 - _dampingFactor)/tag.OutLinks;
+            double firstFraction = (1 - _dampingFactor)/tag.Outlinks;
             double gamePRSum = 0;
             foreach (var prGame in Games.Values.Where(game => game.GameTags.Contains(tag.Tag)))
             {
