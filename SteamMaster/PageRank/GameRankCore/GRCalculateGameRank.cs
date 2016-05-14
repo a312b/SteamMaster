@@ -1,8 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.IO;
 using System.Linq;
-using DatabaseCore.lib.converter.models;
 
 namespace GameRank
 {
@@ -31,7 +29,8 @@ namespace GameRank
             _iterations = iterations;
         }
 
-        public GRCalculateGameRank(GRTagGameDictionaries tagGameDictionaries, Dictionary<string, double> precalculatedGameRankDictionary)
+        public GRCalculateGameRank(GRTagGameDictionaries tagGameDictionaries,
+            Dictionary<string, double> precalculatedGameRankDictionary)
         {
             Games = tagGameDictionaries.GameDictionary;
             Tags = tagGameDictionaries.TagDictionary;
@@ -113,7 +112,7 @@ namespace GameRank
         }
 
         /// <summary>
-        /// Placeholder comment. This is going to be awesome, just wait for it.
+        ///     Placeholder comment. This is going to be awesome, just wait for it.
         /// </summary>
         /// <param name="game"></param>
         /// <returns></returns>

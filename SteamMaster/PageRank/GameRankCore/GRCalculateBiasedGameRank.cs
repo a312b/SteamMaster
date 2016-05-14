@@ -1,22 +1,31 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
 using DatabaseCore;
 using DatabaseCore.lib.converter.models;
-using SteamSharpCore;
 using SteamSharpCore.steamUser.models;
 
 namespace GameRank
 {
     /// <summary>
-    /// In this class the previously calculated rank for each tag is
-    /// adjusted with respect to the input steam user based on the
-    /// frequency of each tag in the users game library.
-    /// Afterwards the rank of each game is updated accordingly
+    ///     In this class the previously calculated rank for each tag is
+    ///     adjusted with respect to the input steam user based on the
+    ///     frequency of each tag in the users game library.
+    ///     Afterwards the rank of each game is updated accordingly
     /// </summary>
     class GRCalculateBiasedGameRank
     {
+        #region Constructor
+
+        public GRCalculateBiasedGameRank(GRCalculateGameRank calculateGameRank, List<UserGameTime.Game> userGames)
+        {
+            _userGames = userGames;
+            CalculateGameRank = calculateGameRank;
+        }
+
+        #endregion
+
         #region Fields
+
         public GRCalculateGameRank CalculateGameRank { get; }
 
         private GRTagGameDictionaries _tagGameDictionaries;
@@ -25,22 +34,13 @@ namespace GameRank
 
         #endregion
 
-        #region Constructor
-
-        public GRCalculateBiasedGameRank(GRCalculateGameRank calculateGameRank, List<UserGameTime.Game> userGames)
-        {
-            _userGames = userGames;
-            CalculateGameRank = calculateGameRank;
-        }
-        #endregion
-
         #region Methods
 
         /// <summary>
-        /// Some preliminary calculations are performed here. A user game 
-        /// dictionary is made so that it can be uesd as input for generating
-        /// tag and game dictionaries for the purpose of counting tag frequency
-        /// which is needed for the BiasTagGameRank function.
+        ///     Some preliminary calculations are performed here. A user game
+        ///     dictionary is made so that it can be uesd as input for generating
+        ///     tag and game dictionaries for the purpose of counting tag frequency
+        ///     which is needed for the BiasTagGameRank function.
         /// </summary>
         public void Start()
         {
@@ -48,13 +48,12 @@ namespace GameRank
             _tagGameDictionaries = GenerateTagGameDictionaries(_userGameDictionary);
             _tagGameDictionaries.Start();
             BiasTagGameRank();
-
         }
 
         private Dictionary<int, GRUserGame> GenerateUserGameDictionary()
         {
             Dictionary<int, GRUserGame> userGameDictionary = new Dictionary<int, GRUserGame>();
-            foreach (UserGameTime.Game game in _userGames)//.Where(game => game.playtime_forever > 0))
+            foreach (UserGameTime.Game game in _userGames) //.Where(game => game.playtime_forever > 0))
             {
                 if (CalculateGameRank.Games.ContainsKey(game.appid))
                 {
@@ -76,7 +75,7 @@ namespace GameRank
             return tagGameDictionaries;
         }
 
-        
+
         private void BiasTagGameRank()
         {
             //This is where the value of each tag is adjusted according to the user
@@ -90,7 +89,7 @@ namespace GameRank
                 if (_tagGameDictionaries.TagDictionary.ContainsKey(prTag.Tag))
                 {
                     int tagFrequency = GetTagOutlinks(prTag);
-                    prTag.GameRank = prTag.GameRank * tagFrequency;
+                    prTag.GameRank = prTag.GameRank*tagFrequency;
                     continue;
                 }
                 prTag.GameRank = 1.0/CalculateGameRank.Games.Count;
@@ -106,6 +105,5 @@ namespace GameRank
         }
 
         #endregion
-
     }
 }

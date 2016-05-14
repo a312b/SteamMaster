@@ -1,26 +1,14 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
 
 namespace GameRank
 {
     /// <summary>
-    /// This class contains all the necessary information
-    /// about a game with regards to calculating GameRank
+    ///     This class contains all the necessary information
+    ///     about a game with regards to calculating GameRank
     /// </summary>
     public class GRGame : IComparable<GRGame>
     {
-        #region Fields
-
-        public string Title { get; }
-        public int AppID { get; }
-        public List<string> Tags { get; }
-        public int Outlinks { get; }
-        //public Dictionary<string, int>  
-        public double GameRank { get; set; }
-
-        #endregion
-
         #region Constructor
 
         public GRGame(int appID, List<string> tags, string title)
@@ -31,6 +19,17 @@ namespace GameRank
             Title = title;
             GameRank = 1; //Starting value for GameRank
         }
+
+        #endregion
+
+        #region Fields
+
+        public string Title { get; }
+        public int AppID { get; }
+        public List<string> Tags { get; }
+        public int Outlinks { get; }
+        //public Dictionary<string, int>  
+        public double GameRank { get; set; }
 
         #endregion
 
@@ -55,6 +54,5 @@ namespace GameRank
         }
 
         #endregion
-
     }
 }

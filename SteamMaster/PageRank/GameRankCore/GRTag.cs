@@ -3,18 +3,10 @@
 namespace GameRank
 {
     /// <summary>
-    /// This class contains the necessary information for tags for calculating their individual GameRank
+    ///     This class contains the necessary information for tags for calculating their individual GameRank
     /// </summary>
     class GRTag : IComparable<GRTag>
     {
-        #region Fields
-
-        public string Tag { get; }
-        public int Outlinks { get; set; } // Tag Frequency
-        public double GameRank { get; set; }
-
-        #endregion
-
         #region Constructor
 
         public GRTag(string tag)
@@ -35,5 +27,12 @@ namespace GameRank
 
         #endregion
 
+        #region Fields
+
+        public string Tag { get; }
+        public int Outlinks { get; set; } // Tag Frequency
+        public double GameRank { get; set; }
+
+        #endregion
     }
 }
