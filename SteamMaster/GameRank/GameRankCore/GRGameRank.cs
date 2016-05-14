@@ -48,7 +48,15 @@ namespace GameRank
         public List<Game> GetRankedGameList(Dictionary<string, double> precalculatedTagGameRank)
         {
             Start(precalculatedTagGameRank);
-            List<Game> recommendations = _userRecommendations.Select(game => _databaseGames[game.AppID]).ToList();
+            List<Game> recommendations = new List<Game>();
+            foreach (var game in _userRecommendations)
+            {
+                Game dbGame = _databaseGames[game.AppID];
+                //dbGame
+                recommendations.Add(dbGame);
+                
+            }
+                //_userRecommendations.Select(game => _databaseGames[game.AppID]).ToList();
             return recommendations;
         }
 

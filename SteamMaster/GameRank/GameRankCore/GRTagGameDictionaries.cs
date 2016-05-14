@@ -49,8 +49,7 @@ namespace GameRank
             {
                 foreach (string gameTag in game.Tags.Select(tag => tag.description))
                 {
-                    if (blacklistedTags.Contains(gameTag))
-                        continue;
+                    if (blacklistedTags.Contains(gameTag)) continue;
                     if (string.IsNullOrWhiteSpace(gameTag)) continue;
 
                     if (TagDictionary.ContainsKey(gameTag))
