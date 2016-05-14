@@ -71,7 +71,7 @@ namespace GameRank
         private List<string> GetBlacklistedTags()
         {
             List<string> blacklistedTags = new List<string>();
-            string path = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) + @"\Exclude list.txt";
+            string path = Directory.GetCurrentDirectory() + @"\Exclude list.txt";
             StreamReader reader = new StreamReader(path);
             while (!reader.EndOfStream)
             {

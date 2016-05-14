@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.IO;
 using System.Linq;
 using DatabaseCore;
@@ -53,7 +54,7 @@ namespace RecommenderSystemCore.Controller
         private Dictionary<string, double> ReadFromFile()
         {
             //File can be found in the main GameRank folder. Should be placed in your My Documents folder
-            string path = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) + @"\TagsAndRanks.txt";
+            string path = Directory.GetCurrentDirectory() + @"\TagsAndRanks.txt";
             StreamReader reader = new StreamReader(path);
             Dictionary<string, double> result = new Dictionary<string, double>();
             while (!reader.EndOfStream)
