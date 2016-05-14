@@ -39,7 +39,6 @@ namespace GameRank
             {
                 Tags[entry.Key].GameRank = entry.Value;
             }
-            UpdateGameRanks();
         }
 
         #endregion
