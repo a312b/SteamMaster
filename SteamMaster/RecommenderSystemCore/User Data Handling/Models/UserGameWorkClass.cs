@@ -10,7 +10,7 @@ using SteamSharpCore.steamUser.models;
 
 namespace RecommenderSystemCore.User_Data_Handling.Models
 {
-    class UserGameWorkClass : IComparable<UserGameWorkClass>
+    public class UserGameWorkClass : IComparable<UserGameWorkClass>
     {
         public UserGameWorkClass(UserGameTime.Game game)
         {

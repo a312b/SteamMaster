@@ -1,12 +1,16 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.IO;
+using System.Linq;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using SteamSharpCore;
 using DatabaseCore;
 using DatabaseCore.lib.converter.models;
 using SteamUI;
 using RecommenderSystemCore;
+using RecommenderSystemCore.User_Data_Handling.Models;
+using GameRank;
 using SteamSharpCore.steamSpy.models;
 using SteamSharpCore.steamStore.models;
 using SteamSharpCore.steamUser.models;
@@ -78,6 +82,23 @@ namespace SteamUnitTesting
             //Assert
             string actual = steamSpyDataById.name;
             Assert.AreEqual(excepted, actual);
+        }
+
+        [TestMethod]
+        public void RecommendedListTest()
+        {
+            //Arrange
+            const string expected = "PAYDAY 2 Demo";
+            string steamID = "76561198019106142";
+            UserWorkClass user = new UserWorkClass(steamID);
+            Dictionary<int, Game> allDatabaseGames = _database.FindAllGames();
+            GRGameRank gameRank = new GRGameRank(allDatabaseGames, user.userListGameList);
+            
+            //Act
+            List<Game> actualRecommendedList = new List<Game>(gameRank.GetRankedGameList());
+            
+            //Assert
+            Assert.AreEqual(expected, actualRecommendedList[0].Title);
         }
     }
 }

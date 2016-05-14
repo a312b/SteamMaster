@@ -13,7 +13,7 @@ using Filter_System.Filter_Core.Models;
 
 namespace RecommenderSystemCore.User_Data_Handling.Models
 {
-    class UserWorkClass // Ikke færdig
+    public class UserWorkClass // Ikke færdig
     {
         public UserWorkClass(string steamID)
         {
