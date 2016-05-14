@@ -109,7 +109,7 @@
       <Project>{77568c8d-01c6-4158-b685-4197c6918b55}</Project>
       <Name>Filter System</Name>
     </ProjectReference>
-    <ProjectReference Include="..\PageRank\GameRank.csproj">
+    <ProjectReference Include="..\GameRank\GameRank.csproj">
       <Project>{8ae4f059-243c-43d0-8469-37179e68c8c7}</Project>
       <Name>GameRank</Name>
     </ProjectReference>

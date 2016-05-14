@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 14
-VisualStudioVersion = 14.0.25123.0
+VisualStudioVersion = 14.0.24720.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SteamUI", "SteamUI\SteamUI.csproj", "{77C469A8-1C13-487D-8547-54C5D9F35E6C}"
 EndProject
@@ -11,7 +11,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Filter System", "Filter Sys
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SteamUnitTesting", "SteamUnitTesting\SteamUnitTesting.csproj", "{38908592-C8DC-4E4A-B5FE-B736A20A26E9}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GameRank", "PageRank\GameRank.csproj", "{8AE4F059-243C-43D0-8469-37179E68C8C7}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GameRank", "GameRank\GameRank.csproj", "{8AE4F059-243C-43D0-8469-37179E68C8C7}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
