@@ -52,11 +52,10 @@ namespace GameRank
             foreach (var game in _userRecommendations)
             {
                 Game dbGame = _databaseGames[game.AppID];
-                //dbGame
+                dbGame.RecommenderScore = game.GameRank;
                 recommendations.Add(dbGame);
                 
             }
-                //_userRecommendations.Select(game => _databaseGames[game.AppID]).ToList();
             return recommendations;
         }
 
