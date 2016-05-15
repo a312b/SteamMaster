@@ -8,6 +8,9 @@ using SteamSharpCore.steamStore.models;
 
 namespace DatabaseCore
 {
+    /// <summary>
+    /// The database class that makes requests to the local database. Requires mongodb to be running
+    /// </summary>
     public class Database
     {
         private MongoDb Mongo { get; }

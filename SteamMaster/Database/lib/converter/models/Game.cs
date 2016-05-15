@@ -5,6 +5,9 @@ using SteamSharpCore.steamStore.models;
 
 namespace DatabaseCore.lib.converter.models
 {
+    /// <summary>
+    /// The class containing all available data about steam games
+    /// </summary>
     public class Game : IComparable<Game>
     {
         public ObjectId _id { get; set; }
