@@ -181,8 +181,9 @@ namespace RecommenderSystemCore.Controller
 
         public void writeToFile(List<Game> inputList, string fileName)
         {
-
-            StreamWriter writer = new StreamWriter(@"C:\Users\jeppe\Documents\" + fileName + ".txt", false);
+            DirectoryInfo fileFolder = new DirectoryInfo(Directory.GetCurrentDirectory());
+            string path = fileFolder.FullName;
+            StreamWriter writer = new StreamWriter(path + "\\" + fileName + ".txt", false);
 
 
             foreach (var game in inputList)
