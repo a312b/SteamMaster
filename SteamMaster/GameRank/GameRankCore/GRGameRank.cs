@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using DatabaseCore.lib.converter.models;
 using SteamSharpCore.steamUser.models;
@@ -36,7 +37,14 @@ namespace GameRank
         {
             Start();
 
-            List<Game> recommendations = _userRecommendations.Select(game => _databaseGames[game.AppID]).ToList();
+            List<Game> recommendations = new List<Game>();
+            foreach (var game in _userRecommendations)
+            {
+                Game dbGame = _databaseGames[game.AppID];
+                dbGame.RecommenderScore = game.GameRank;
+                recommendations.Add(dbGame);
+
+            }
             return recommendations;
         }
 

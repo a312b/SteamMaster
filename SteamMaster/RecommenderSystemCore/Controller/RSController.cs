@@ -45,8 +45,9 @@ namespace RecommenderSystemCore.Controller
             GameRank = new GRGameRank(dbGames, User.userListGameList);
 
             List<Game> RecommenderList = GameRank.GetRankedGameList(precalculations);
-            RecommenderList = FilterManagement(RecommenderList, User);
-            
+            //List<Game> RecommenderList = GameRank.GetRankedGameList();
+            //RecommenderList = FilterManagement(RecommenderList, User);
+
             return RecommenderList;
         }
 
