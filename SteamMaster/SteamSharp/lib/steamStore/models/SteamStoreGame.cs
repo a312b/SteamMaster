@@ -85,6 +85,8 @@ namespace SteamSharpCore.steamStore.models
         {
             //public string id { get; set; }
             public string description { get; set; }
+
+            public double TagRank { get; set; }
         }
 
         public class Screenshot

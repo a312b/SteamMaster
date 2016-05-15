@@ -13,9 +13,9 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SteamUnitTesting", "SteamUn
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GameRank", "GameRank\GameRank.csproj", "{8AE4F059-243C-43D0-8469-37179E68C8C7}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Database", "..\..\SteamSharp\Database\Database.csproj", "{D75D116F-B418-4D10-A8D7-C722E3521580}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Database", "Database\Database.csproj", "{D75D116F-B418-4D10-A8D7-C722E3521580}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SteamSharp", "..\..\SteamSharp\SteamSharp\SteamSharp.csproj", "{36DF0E1A-EA75-4B5B-B2C1-FB2C8838D0D6}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SteamSharp", "SteamSharp\SteamSharp.csproj", "{36DF0E1A-EA75-4B5B-B2C1-FB2C8838D0D6}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

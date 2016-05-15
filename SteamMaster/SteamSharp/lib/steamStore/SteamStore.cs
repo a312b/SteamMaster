@@ -1,7 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
-using System.Net;
 using HtmlAgilityPack;
 using RestSharp;
 using SteamSharpCore.restsharp;
@@ -30,57 +28,26 @@ namespace SteamSharpCore.steamStore
 
         public List<SteamStoreGame.Tag> GetTags(string gameId)
         {
-            //Implements a CookieAwareWebClient that downloads the html with a cookie to string so it's able to be passed to HtmlAgilityPack's LoadHtml
-            WebClient wc = new CookieAwareWebClient();
-            string getpage = wc.DownloadString("http://store.steampowered.com/app/" + gameId);
-
-            var document = new HtmlDocument();
-            document.LoadHtml(getpage);
+            var src = new HtmlWeb();
+            HtmlDocument document = src.Load("http://store.steampowered.com/app/" + gameId);
             //A lot happens here
             //First an array of htmlnodes are created
             //The array is filled using the ToArray() function
             //The data is scraped from the html document using the provided xpath
-            if (gameId != null && gameId != "219540")
+            HtmlNode[] nodes = document.DocumentNode.SelectNodes("//*[@id=\"game_highlights\"]/div[1]/div/div[4]/div/div[2]//a").ToArray();
+
+            var gameTagsList = new List<SteamStoreGame.Tag>();
+
+            foreach (HtmlNode item in nodes)
             {
-                HtmlNode[] nodes = document.DocumentNode.SelectNodes("//*[@id=\"game_highlights\"]/div[1]/div/div[4]/div/div[2]//a").ToArray();
-
-                var gameTagsList = new List<SteamStoreGame.Tag>();
-
-                foreach (HtmlNode item in nodes)
-                {
-                    var tag = new SteamStoreGame.Tag();
-                    string tagDescription = item.InnerHtml;
-                    tag.description = tagDescription.Trim();
-                    gameTagsList.Add(tag);
-
-                }
-
-                return gameTagsList;
+                var tag = new SteamStoreGame.Tag();
+                string tagDescription = item.InnerHtml;
+                tag.description = tagDescription.Trim();
+                gameTagsList.Add(tag);
+                
             }
-            var emptyTagsList = new List<SteamStoreGame.Tag>();
-            return emptyTagsList;
-        }
 
-        //Overrides the GetWebRequest in WebRequest and adds the necessary cookie to avoid ageCheck
-        private class CookieAwareWebClient : WebClient
-        {
-            private readonly CookieContainer cookieContainer = new CookieContainer();
-            private readonly Cookie ageCookie = new Cookie("birthtime", "441759601");
-
-            protected override WebRequest GetWebRequest(Uri address)
-            {
-                ageCookie.Domain = "store.steampowered.com";
-                ageCookie.Expires = DateTime.MaxValue;
-                ageCookie.Path = "/";
-                cookieContainer.Add(ageCookie);
-                WebRequest request = base.GetWebRequest(address);
-                HttpWebRequest webRequest = request as HttpWebRequest;
-                if (webRequest != null)
-                {
-                    webRequest.CookieContainer = cookieContainer;
-                }
-                return request;
-            }
+            return gameTagsList;
         }
 
         public SteamStoreGame GetSteamStoreGameById(string gameId)

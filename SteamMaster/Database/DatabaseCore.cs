@@ -18,23 +18,37 @@ namespace DatabaseCore
         }
         public void InsertGame(SteamStoreGame game, SteamSpyData data)
         {
-            Mongo.DbInsertGame(game, data);
+            Mongo.DbInsertGame(game, data, true);
+            Mongo.DbInsertGame(game, data, false);
+
         }
         public void InsertGameNoPrice(SteamStoreGame game, SteamSpyData data)
         {
             Mongo.DbInsertGameNoPrice(game, data);
+            Mongo.DbInsertGame(game, data, false);
         }
 
         public Dictionary<int, Game> FindAllGames()
         {
             var filter = Builders<Game>.Filter.Empty;
             var gameList = Mongo.DbFindGameByFilter(filter);
-            return gameList.ToDictionary(game => game.SteamAppId);
+            Dictionary<int, Game> returnDictionary = new Dictionary<int, Game>();
+
+            foreach (var game in gameList)
+            {
+                if (!returnDictionary.ContainsKey(game.SteamAppId))
+                {
+                    returnDictionary.Add(game.SteamAppId, game);
+                }
+            }
+
+            return returnDictionary;
         }
         public List<Game> FindAllGamesList()
         {
             var filter = Builders<Game>.Filter.Empty;
             var gameList = Mongo.DbFindGameByFilter(filter);
+
             return gameList;
         }
 
@@ -46,7 +60,18 @@ namespace DatabaseCore
                 var filter = Builders<Game>.Filter.Eq("SteamAppId", appId);
                 gamesList.AddRange(Mongo.DbFindGameByFilter(filter));
             }
-            return gamesList.ToDictionary(game => game.SteamAppId);
+
+            Dictionary<int, Game> returnDictionary = new Dictionary<int, Game>();
+
+            foreach (var game in gamesList)
+            {
+                if (!returnDictionary.ContainsKey(game.SteamAppId))
+                {
+                    returnDictionary.Add(game.SteamAppId, game);
+                }
+            }
+
+            return returnDictionary;
         }
 
         public List<Game> FindGameByFilter(FilterDefinition<Game> filter)

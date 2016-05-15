@@ -81,11 +81,11 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\..\SteamSharp\Database\Database.csproj">
+    <ProjectReference Include="..\Database\Database.csproj">
       <Project>{d75d116f-b418-4d10-a8d7-c722e3521580}</Project>
       <Name>Database</Name>
     </ProjectReference>
-    <ProjectReference Include="..\..\..\SteamSharp\SteamSharp\SteamSharp.csproj">
+    <ProjectReference Include="..\SteamSharp\SteamSharp.csproj">
       <Project>{36df0e1a-ea75-4b5b-b2c1-fb2c8838d0d6}</Project>
       <Name>SteamSharp</Name>
     </ProjectReference>
