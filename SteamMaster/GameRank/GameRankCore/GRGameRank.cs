@@ -62,7 +62,6 @@ namespace GameRank
                 Game dbGame = _databaseGames[game.AppID];
                 dbGame.RecommenderScore = game.GameRank;
                 recommendations.Add(dbGame);
-                
             }
             return recommendations;
         }

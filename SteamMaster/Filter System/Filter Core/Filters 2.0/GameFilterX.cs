@@ -31,12 +31,12 @@ namespace Filter_System.Filter_Core.Filters_2._0
 
             Dictionary<int, double> returnDictionary = new Dictionary<int, double>();
             double valueIncrease = 100 / gamesToSort.Count;
-            double value = valueIncrease;
+            double value = 100;
 
             foreach (var game in gamesToSort)
             {
                 returnDictionary.Add(game.SteamAppId, value);
-                value += valueIncrease;
+                value -= valueIncrease;
             }
 
             return returnDictionary;

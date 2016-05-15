@@ -41,13 +41,9 @@ namespace Filter_System.Filter_Core.Filters_2._0.Models
 
         public virtual List<Game> Execute(List<Game> gamesToSort)
         {
-            List<Game> noRecommenderScoreList = gamesToSort;
-            foreach (var game in noRecommenderScoreList)
-            {
-                game.RecommenderScore = 0;
-            }
+            List<Game> workList = new List<Game>(gamesToSort);
 
-            Dictionary<int, double> scoreDictionary = FilterSort(noRecommenderScoreList);
+            Dictionary<int, double> scoreDictionary = FilterSort(workList);
 
             foreach (var game in gamesToSort)
             {

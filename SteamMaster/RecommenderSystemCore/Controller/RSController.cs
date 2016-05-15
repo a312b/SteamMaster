@@ -105,47 +105,58 @@ namespace RecommenderSystemCore.Controller
 
         private List<Game> FilterManagement(List<Game> InputList, UserWorkClass User)
         {
-            List<Game> FilterWorkList = InputList;
-            foreach (var game in FilterWorkList)
-            {
-                game.RecommenderScore = 0;
-            }
             //Controls the weight of the filters
-            double MostOwnedValue = 0.3;
+            double MostOwnedValue = 1;
             double AvgPlayedForeverValue = 0;
             double AvgPlayTime2WeeksValue = 0;
-            double Metacritic = 0.1;
+            double Metacritic = 1;
+            double InputListValue = 1;
 
-            GameFilterX StandardGameFilter = new GameFilterX();
-            PlayerGameFilterX PlayerGameRemoval = new PlayerGameFilterX();
-            
+            double active = MostOwnedValue + AvgPlayedForeverValue + AvgPlayTime2WeeksValue + Metacritic;
 
-            StandardGameFilter.OwnerCount(MostOwnedValue);
-            FilterWorkList = StandardGameFilter.Execute(FilterWorkList);
-
-            StandardGameFilter.AvgPlayTimeForever(AvgPlayedForeverValue);
-            FilterWorkList = StandardGameFilter.Execute(FilterWorkList);
-
-            StandardGameFilter.AvgPlayTime2Weeks(AvgPlayTime2WeeksValue);
-            FilterWorkList = StandardGameFilter.Execute(FilterWorkList);
-
-            StandardGameFilter.MetaCritic(Metacritic);
-            FilterWorkList = StandardGameFilter.Execute(FilterWorkList);
-
-            FilterWorkList = PlayerGameRemoval.Execute(FilterWorkList, User.DBGameList);
-
-            Dictionary<int, double> FilterWorkDictionary = FilterWorkList.ToDictionary(game => game.SteamAppId,
+            if (active > 0)
+            {
+                #region FilterExecution
+                Dictionary<int, double> recommenderScoreDictionary = InputList.ToDictionary(game => game.SteamAppId,
                 game => game.RecommenderScore);
 
-            foreach (var game in InputList)
-            {
-                int appID = game.SteamAppId;
-                if (FilterWorkDictionary.ContainsKey(appID))
+                foreach (var game in InputList)
                 {
-                    game.RecommenderScore *= FilterWorkDictionary[appID];
+                    game.RecommenderScore = 0;
                 }
-            }
 
+                GameFilterX StandardGameFilter = new GameFilterX();
+                PlayerGameFilterX PlayerGameRemoval = new PlayerGameFilterX();
+
+
+                StandardGameFilter.OwnerCount(MostOwnedValue);
+                InputList = StandardGameFilter.Execute(InputList);
+
+                StandardGameFilter.AvgPlayTimeForever(AvgPlayedForeverValue);
+                InputList = StandardGameFilter.Execute(InputList);
+
+                StandardGameFilter.AvgPlayTime2Weeks(AvgPlayTime2WeeksValue);
+                InputList = StandardGameFilter.Execute(InputList);
+
+                StandardGameFilter.MetaCritic(Metacritic);
+                InputList = StandardGameFilter.Execute(InputList);
+
+                InputList = PlayerGameRemoval.Execute(InputList, User.DBGameList);
+
+                foreach (var game in InputList)
+                {
+                    int appID = game.SteamAppId;
+                    if (recommenderScoreDictionary.ContainsKey(appID))
+                    {
+                        game.RecommenderScore *= recommenderScoreDictionary[appID] * InputListValue;
+                    }
+                }
+
+                InputList.Sort();
+                #endregion
+            }
+           
+            
             return InputList;
         }
 
@@ -163,5 +174,7 @@ namespace RecommenderSystemCore.Controller
 
             return gameDictionary;
         }
+
+
     }
 }
