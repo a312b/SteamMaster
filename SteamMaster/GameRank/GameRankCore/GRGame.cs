@@ -38,19 +38,6 @@ namespace GameRank
         public int CompareTo(GRGame other)
         {
             return other.GameRank.CompareTo(this.GameRank);
-            //return other.GameRank.CompareTo(this.GameRank);
-        }
-
-        public override string ToString()
-        {
-            return $"{Title} --- {GameRank}";
-        }
-
-        public void PrintGame()
-        {
-            Console.Write(Title);
-            Console.CursorLeft = Console.WindowWidth/2;
-            Console.WriteLine(GameRank);
         }
 
         #endregion
