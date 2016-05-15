@@ -112,20 +112,31 @@ namespace RecommenderSystemCore.Controller
             double Metacritic = 1;
             double InputListValue = 1;
 
-            double active = MostOwnedValue + AvgPlayedForeverValue + AvgPlayTime2WeeksValue + Metacritic;
+            double active = MostOwnedValue + AvgPlayedForeverValue + AvgPlayTime2WeeksValue + Metacritic +
+                            InputListValue;
 
-            writeToFile(InputList, "pageRank");
 
             if (active > 0)
             {
                 #region FilterExecution
-                Dictionary<int, double> recommenderScoreDictionary = InputList.ToDictionary(game => game.SteamAppId,
-                game => game.RecommenderScore);
 
+                InputList.Sort((x, y) => x.RecommenderScore.CompareTo(y.RecommenderScore));
+
+                int score = 1;
                 foreach (var game in InputList)
                 {
-                    game.RecommenderScore = 0;
+                    game.RecommenderScore = score * InputListValue;
+                    score++;
                 }
+
+                //Dictionary<int, double> recommenderScoreDictionary = InputList.ToDictionary(game => game.SteamAppId, game => game.RecommenderScore);
+
+                //foreach (var game in InputList)
+                //{
+                //    game.RecommenderScore = 0;
+                //}
+
+              //  writeToFile(InputList, "pageRank");
 
                 GameFilterX StandardGameFilter = new GameFilterX();
                 PlayerGameFilterX PlayerGameRemoval = new PlayerGameFilterX();
@@ -133,7 +144,7 @@ namespace RecommenderSystemCore.Controller
 
                 StandardGameFilter.OwnerCount(MostOwnedValue);
                 InputList = StandardGameFilter.Execute(InputList);
-                writeToFile(InputList, "MostOwned");
+             //   writeToFile(InputList, "MostOwned");
 
                 StandardGameFilter.AvgPlayTimeForever(AvgPlayedForeverValue);
                 InputList = StandardGameFilter.Execute(InputList);
@@ -143,24 +154,24 @@ namespace RecommenderSystemCore.Controller
 
                 StandardGameFilter.MetaCritic(Metacritic);
                 InputList = StandardGameFilter.Execute(InputList);
-                writeToFile(InputList, "MetaCritic");
+              //  writeToFile(InputList, "MetaCritic");
 
                 InputList = PlayerGameRemoval.Execute(InputList, User.DBGameList);
 
-                foreach (var game in InputList)
-                {
-                    int appID = game.SteamAppId;
-                    if (recommenderScoreDictionary.ContainsKey(appID))
-                    {
-                        game.RecommenderScore *= recommenderScoreDictionary[appID] * InputListValue;
-                    }
-                }
+                //foreach (var game in InputList)
+                //{
+                //    int appID = game.SteamAppId;
+                //    if (recommenderScoreDictionary.ContainsKey(appID))
+                //    {
+                //        game.RecommenderScore *= recommenderScoreDictionary[appID] * InputListValue;
+                //    }
+                //}
 
                 InputList.Sort();
                 #endregion
             }
            
-            writeToFile(InputList, "End");
+       //     writeToFile(InputList, "End");
             return InputList;
         }
 
@@ -179,20 +190,21 @@ namespace RecommenderSystemCore.Controller
             return gameDictionary;
         }
 
-        public void writeToFile(List<Game> inputList, string fileName)
-        {
-            DirectoryInfo fileFolder = new DirectoryInfo(Directory.GetCurrentDirectory());
-            string path = fileFolder.FullName;
-            StreamWriter writer = new StreamWriter(path + "\\" + fileName + ".txt", false);
+        //public void writeToFile(List<Game> inputList, string fileName)
+        //{
+        //    DirectoryInfo fileFolder = new DirectoryInfo(Directory.GetCurrentDirectory());
+        //    string path = fileFolder.FullName;
+        //    StreamWriter writer = new StreamWriter(path + "\\" + fileName + ".txt", false);
 
+        //    int i = 1;
+        //    foreach (var game in inputList)
+        //    {
+        //        writer.WriteLine($"{i} : {game.Title} : {game.RecommenderScore}");
+        //        i++;
+        //    }
 
-            foreach (var game in inputList)
-            {
-                writer.WriteLine($"{game.SteamAppId} : {game.RecommenderScore}");
-            }
-
-            writer.Close();
-        }
+        //    writer.Close();
+        //}
 
     }
 }

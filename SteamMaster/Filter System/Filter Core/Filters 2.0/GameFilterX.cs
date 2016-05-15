@@ -52,10 +52,20 @@ namespace Filter_System.Filter_Core.Filters_2._0
             FilterWeight = filterWeight;
         }
 
+        public void AvgPlayTime2Weeks()
+        {
+            activeFilter = game => game.AveragePlayTime2Weeks;
+        }
+
         public void AvgPlayTimeForever(double filterWeight)
         {
             activeFilter = game => game.AveragePlayTime;
             FilterWeight = filterWeight;
+        }
+
+        public void AvgPlayTimeForever()
+        {
+            activeFilter = game => game.AveragePlayTime;
         }
 
         public void OwnerCount(double filterWeight)
@@ -64,10 +74,20 @@ namespace Filter_System.Filter_Core.Filters_2._0
             FilterWeight = filterWeight;
         }
 
+        public void OwnerCount()
+        {
+            activeFilter = game => game.OwnerCount;
+        }
+
         public void AgeRating(double filterWeight)
         {
             activeFilter = game => game.AgeRating;
             FilterWeight = filterWeight;
+        }
+
+        public void AgeRating()
+        {
+            activeFilter = game => game.AgeRating;
         }
 
         public void Price(double filterWeight)
@@ -76,35 +96,15 @@ namespace Filter_System.Filter_Core.Filters_2._0
             FilterWeight = filterWeight;
         }
 
+        public void Price()
+        {
+            activeFilter = game => game.Price;
+        }
+
         public void MetaCritic(double filterWeight)
         {
             activeFilter = game => game.MetaCritic;
             FilterWeight = filterWeight;
-        }
-
-        public void AvgPlayTime2Weeks()
-        {
-            activeFilter = game => game.AveragePlayTime2Weeks;
-        }
-
-        public void AvgPlayTimeForever()
-        {
-            activeFilter = game => game.AveragePlayTime;
-        }
-
-        public void OwnerCount()
-        {
-            activeFilter = game => game.OwnerCount;
-        }
-
-        public void AgeRating()
-        {
-            activeFilter = game => game.AgeRating;
-        }
-
-        public void Price()
-        {
-            activeFilter = game => game.Price;
         }
 
         public void MetaCritic()
@@ -113,3 +113,10 @@ namespace Filter_System.Filter_Core.Filters_2._0
         }
     }
 }
+
+
+
+
+
+
+
