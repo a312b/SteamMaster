@@ -45,8 +45,9 @@ namespace RecommenderSystemCore.Controller
             GameRank = new GRGameRank(dbGames, User.userListGameList);
 
             List<Game> RecommenderList = GameRank.GetRankedGameList(precalculations);
-           // RecommenderList = FilterManagement(RecommenderList, User);
-            
+            RecommenderList = FilterManagement(RecommenderList, User);
+            RecommenderList.Sort();
+
             return RecommenderList;
         }
 
@@ -110,10 +111,10 @@ namespace RecommenderSystemCore.Controller
                 game.RecommenderScore = 0;
             }
             //Controls the weight of the filters
-            double MostOwnedValue = 0.2;
+            double MostOwnedValue = 0.3;
             double AvgPlayedForeverValue = 0;
             double AvgPlayTime2WeeksValue = 0;
-            double Metacritic = 0;
+            double Metacritic = 0.1;
 
             GameFilterX StandardGameFilter = new GameFilterX();
             PlayerGameFilterX PlayerGameRemoval = new PlayerGameFilterX();
