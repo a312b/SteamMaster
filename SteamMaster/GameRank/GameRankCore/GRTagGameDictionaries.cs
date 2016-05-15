@@ -70,7 +70,9 @@ namespace GameRank
         private List<string> GetBlacklistedTags()
         {
             List<string> blacklistedTags = new List<string>();
-            string path = Directory.GetCurrentDirectory() + @"\Exclude list.txt";
+            DirectoryInfo fileFolder = new DirectoryInfo(Directory.GetCurrentDirectory()).Parent.Parent.Parent;
+            string path = fileFolder.FullName + @"\Exclude list.txt";
+
             StreamReader reader = new StreamReader(path);
             while (!reader.EndOfStream)
             {

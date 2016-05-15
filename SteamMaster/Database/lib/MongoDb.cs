@@ -23,7 +23,6 @@ namespace DatabaseCore.lib
             Database = Client.GetDatabase(database);
             Collection = Database.GetCollection<Game>(collection);
             SSGCollection = Database.GetCollection<SteamStoreGame>("SteamStoreCollection");
-            TagRankDictionary = LoadTagRank();
         }
         public async void DbInsertGame(SteamStoreGame storeGame, SteamSpyData steamSpy, bool convertToDBGame)
         {
@@ -124,23 +123,6 @@ namespace DatabaseCore.lib
 
         public Dictionary<string, double> TagRankDictionary { get; set; }
 
-        public Dictionary<string, double> LoadTagRank()
-        {
-            Dictionary<string, double> returnDictionary = new Dictionary<string, double>();
-            string filePath = @"C:\Shits and giggles\Random Software related stuff\TagsAndRanks.txt";
-            StreamReader file = new StreamReader(filePath);
-
-            while (!file.EndOfStream)
-            {
-                string line = file.ReadLine();
-                List<string> lineSplitList = line.Split(':').ToList();
-                double rank = 0;
-                double.TryParse(lineSplitList[1], out rank);
-                returnDictionary.Add(lineSplitList[0].ToLower(), rank);
-            }
-
-            return returnDictionary;
-        }
 
         public List<Game> DbFindGameByFilter(FilterDefinition<Game> filter )
         {

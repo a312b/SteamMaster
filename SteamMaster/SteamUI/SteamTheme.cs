@@ -126,7 +126,7 @@ namespace SteamUI
                 gameLabels[roundCount].Text = game.Title;
                 gameLabels[roundCount].Visible = true;
 
-                if (game.Developer == null)
+                if (game.Developer == null || game.Developer.Count <= 0)
                     game.Developer = new List<string>() {"No Developer"};
                 foreach (string developer in game.Developer)
                     SB.Append(developer + ", ");
