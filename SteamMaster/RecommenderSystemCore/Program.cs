@@ -21,7 +21,7 @@ namespace RecommenderSystemCore
     {
         static void Main(string[] args)
         {
-            Application.EnableVisualStyles();//
+            Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             SteamTheme UI = new SteamTheme();
             RSController controller = new RSController(UI);
