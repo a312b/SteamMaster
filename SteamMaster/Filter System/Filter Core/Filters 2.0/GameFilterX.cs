@@ -22,7 +22,23 @@ namespace Filter_System.Filter_Core.Filters_2._0
 
         protected override Dictionary<int, double> FilterSort(List<Game> gamesToSort)
         {
-            return gamesToSort.ToDictionary(game => game.SteamAppId, game => activeFilter(game));
+            foreach (var game in gamesToSort)
+            {
+                game.RecommenderScore = activeFilter(game);
+            }
+
+            gamesToSort.Sort();
+
+            Dictionary<int, double> returnDictionary = new Dictionary<int, double>();
+            int value = 1;
+
+            foreach (var game in gamesToSort)
+            {
+                returnDictionary.Add(game.SteamAppId, value);
+                value++;
+            }
+
+            return returnDictionary;
         }
 
         public virtual List<Game> Execute(List<Game> gamesToSort, double filterWeight)
