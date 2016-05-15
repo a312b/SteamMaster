@@ -37,17 +37,16 @@ namespace RecommenderSystemCore.Controller
         private List<Game> ExecuteRecommendation(string steamID)
         {
             Dictionary<string, double> precalculations = ReadFromFile(); //This should read from the database
-            List<Game> RecommenderList = new List<Game>();
             UserWorkClass User = new UserWorkClass(steamID);
 
             Dictionary<int, Game> dbGames = database.FindAllGames();
             dbGames = RemoveGamesWithBlacklistedWords(dbGames);
+            dbGames = RemoveDLCFromList(dbGames);
             GameRank = new GRGameRank(dbGames, User.userListGameList);
-            RecommenderList = GameRank.GetRankedGameList(precalculations);
-            //RecommenderList = GameRank.GetRankedGameList();
 
-            //RecommenderList = FilterManagement(RecommenderList, User);
-
+            List<Game> RecommenderList = GameRank.GetRankedGameList(precalculations);
+            RecommenderList = FilterManagement(RecommenderList, User);
+            
             return RecommenderList;
         }
 
@@ -102,60 +101,65 @@ namespace RecommenderSystemCore.Controller
             return banList.Any(banWord => currentSegment.Contains(banWord));
         }
 
-        private List<Game> FilterManagement(List<Game> ListToFilter, UserWorkClass User)
+        private List<Game> FilterManagement(List<Game> InputList, UserWorkClass User)
         {
-            //Controls the weight of the filters in PopularityFilter
+            List<Game> FilterWorkList = InputList;
+            foreach (var game in FilterWorkList)
+            {
+                game.RecommenderScore = 0;
+            }
+            //Controls the weight of the filters
             double MostOwnedValue = 1;
             double AvgPlayedForeverValue = 0;
             double AvgPlayTime2WeeksValue = 0;
+            double Metacritic = 1;
 
             GameFilterX StandardGameFilter = new GameFilterX();
             PlayerGameFilterX PlayerGameRemoval = new PlayerGameFilterX();
             
 
-
             StandardGameFilter.OwnerCount(MostOwnedValue);
-            ListToFilter = StandardGameFilter.Execute(ListToFilter);
+            FilterWorkList = StandardGameFilter.Execute(FilterWorkList);
 
             StandardGameFilter.AvgPlayTimeForever(AvgPlayedForeverValue);
-            ListToFilter = StandardGameFilter.Execute(ListToFilter);
+            FilterWorkList = StandardGameFilter.Execute(FilterWorkList);
 
             StandardGameFilter.AvgPlayTime2Weeks(AvgPlayTime2WeeksValue);
-            ListToFilter = StandardGameFilter.Execute(ListToFilter);
+            FilterWorkList = StandardGameFilter.Execute(FilterWorkList);
 
-            ListToFilter = PlayerGameRemoval.Execute(ListToFilter, User.DBGameList);
-        
-            return ListToFilter;
+            StandardGameFilter.MetaCritic(Metacritic);
+            FilterWorkList = StandardGameFilter.Execute(FilterWorkList);
+
+            FilterWorkList = PlayerGameRemoval.Execute(FilterWorkList, User.DBGameList);
+
+            Dictionary<int, double> FilterWorkDictionary = FilterWorkList.ToDictionary(game => game.SteamAppId,
+                game => game.RecommenderScore);
+
+            foreach (var game in InputList)
+            {
+                int appID = game.SteamAppId;
+                if (FilterWorkDictionary.ContainsKey(appID))
+                {
+                    game.RecommenderScore *= FilterWorkDictionary[appID];
+                }
+            }
+
+            return InputList;
         }
 
+        public Dictionary<int, Game> RemoveDLCFromList(Dictionary<int, Game> gameDictionary)
+        {
+            List<int> gameDLCList = gameDictionary.SelectMany(game => game.Value.DLC).ToList();
 
-        //private void RecommendGameList(string steamID) // fix senere - mere funktion findes i funktionen GenerateGameList() under UI;
-        //{
-        //    SteamSharpCore.SteamSharp _steamSharpTest = new SteamSharpCore.SteamSharp("");
-        //    int roundCount = 0;
-        //    string steamId = UI.steamIdTextBox.Text.ToLower(); //not used
-        //    string[] idArray =
-        //    {
-        //        "340", "280", "570", "80", "240", "400", "343780", "500", "374320", "10500", "252950", "300", "7940",
-        //        "10180"
-        //    };
-        //    //150, 22380, 377160 == nullreference på htmlagility 
-        //    //340, 570 == nullreference på prisen (der findes f.eks. "price_in_cents_with_discount" i stedet)
+            foreach (var appID in gameDLCList)
+            {
+                if (gameDictionary.ContainsKey(appID))
+                {
+                    gameDictionary.Remove(appID);
+                }
+            }
 
-        //    List<SteamStoreGame> formGameList = _steamSharpTest.GameListByIds(idArray);
-        //    if (formGameList != null)
-        //    {
-        //        UI.ClearGameListBox();
-        //        foreach (SteamStoreGame game in formGameList)
-        //        {
-        //            //ThreadPool.QueueUserWorkItem(LoadHeaderImages(game.data.steam_appid, roundCount));
-        //            UI.LoadHeaderImages(game.data.steam_appid, roundCount);
-        //            //UI.LoadGameInfo(game, roundCount);
-        //            roundCount++;
-        //        }
-        //    }
-        //}
-
-
+            return gameDictionary;
+        }
     }
 }

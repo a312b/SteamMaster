@@ -13,6 +13,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SteamUnitTesting", "SteamUn
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GameRank", "GameRank\GameRank.csproj", "{8AE4F059-243C-43D0-8469-37179E68C8C7}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Database", "..\..\SteamSharp\Database\Database.csproj", "{D75D116F-B418-4D10-A8D7-C722E3521580}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SteamSharp", "..\..\SteamSharp\SteamSharp\SteamSharp.csproj", "{36DF0E1A-EA75-4B5B-B2C1-FB2C8838D0D6}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -39,6 +43,14 @@ Global
 		{8AE4F059-243C-43D0-8469-37179E68C8C7}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{8AE4F059-243C-43D0-8469-37179E68C8C7}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{8AE4F059-243C-43D0-8469-37179E68C8C7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D75D116F-B418-4D10-A8D7-C722E3521580}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D75D116F-B418-4D10-A8D7-C722E3521580}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D75D116F-B418-4D10-A8D7-C722E3521580}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D75D116F-B418-4D10-A8D7-C722E3521580}.Release|Any CPU.Build.0 = Release|Any CPU
+		{36DF0E1A-EA75-4B5B-B2C1-FB2C8838D0D6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{36DF0E1A-EA75-4B5B-B2C1-FB2C8838D0D6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{36DF0E1A-EA75-4B5B-B2C1-FB2C8838D0D6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{36DF0E1A-EA75-4B5B-B2C1-FB2C8838D0D6}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

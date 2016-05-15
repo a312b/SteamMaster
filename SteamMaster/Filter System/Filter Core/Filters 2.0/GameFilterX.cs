@@ -36,6 +36,7 @@ namespace Filter_System.Filter_Core.Filters_2._0
         public void AvgPlayTime2Weeks(double filterWeight)
         {
             activeFilter = game => game.AveragePlayTime2Weeks;
+            FilterWeight = filterWeight;
         }
 
         public void AvgPlayTimeForever(double filterWeight)
@@ -60,6 +61,42 @@ namespace Filter_System.Filter_Core.Filters_2._0
         {
             activeFilter = game => game.Price;
             FilterWeight = filterWeight;
+        }
+
+        public void MetaCritic(double filterWeight)
+        {
+            activeFilter = game => game.MetaCritic;
+            FilterWeight = filterWeight;
+        }
+
+        public void AvgPlayTime2Weeks()
+        {
+            activeFilter = game => game.AveragePlayTime2Weeks;
+        }
+
+        public void AvgPlayTimeForever()
+        {
+            activeFilter = game => game.AveragePlayTime;
+        }
+
+        public void OwnerCount()
+        {
+            activeFilter = game => game.OwnerCount;
+        }
+
+        public void AgeRating()
+        {
+            activeFilter = game => game.AgeRating;
+        }
+
+        public void Price()
+        {
+            activeFilter = game => game.Price;
+        }
+
+        public void MetaCritic()
+        {
+            activeFilter = game => game.MetaCritic;
         }
     }
 }
