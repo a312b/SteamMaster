@@ -114,6 +114,8 @@ namespace RecommenderSystemCore.Controller
 
             double active = MostOwnedValue + AvgPlayedForeverValue + AvgPlayTime2WeeksValue + Metacritic;
 
+            writeToFile(InputList, "pageRank");
+
             if (active > 0)
             {
                 #region FilterExecution
@@ -131,6 +133,7 @@ namespace RecommenderSystemCore.Controller
 
                 StandardGameFilter.OwnerCount(MostOwnedValue);
                 InputList = StandardGameFilter.Execute(InputList);
+                writeToFile(InputList, "MostOwned");
 
                 StandardGameFilter.AvgPlayTimeForever(AvgPlayedForeverValue);
                 InputList = StandardGameFilter.Execute(InputList);
@@ -140,6 +143,7 @@ namespace RecommenderSystemCore.Controller
 
                 StandardGameFilter.MetaCritic(Metacritic);
                 InputList = StandardGameFilter.Execute(InputList);
+                writeToFile(InputList, "MetaCritic");
 
                 InputList = PlayerGameRemoval.Execute(InputList, User.DBGameList);
 
@@ -156,7 +160,7 @@ namespace RecommenderSystemCore.Controller
                 #endregion
             }
            
-            
+            writeToFile(InputList, "End");
             return InputList;
         }
 
@@ -175,6 +179,19 @@ namespace RecommenderSystemCore.Controller
             return gameDictionary;
         }
 
+        public void writeToFile(List<Game> inputList, string fileName)
+        {
+
+            StreamWriter writer = new StreamWriter(@"C:\Users\jeppe\Documents\" + fileName + ".txt", false);
+
+
+            foreach (var game in inputList)
+            {
+                writer.WriteLine($"{game.SteamAppId} : {game.RecommenderScore}");
+            }
+
+            writer.Close();
+        }
 
     }
 }

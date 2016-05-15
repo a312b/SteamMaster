@@ -22,21 +22,17 @@ namespace Filter_System.Filter_Core.Filters_2._0
 
         protected override Dictionary<int, double> FilterSort(List<Game> gamesToSort)
         {
-            foreach (var game in gamesToSort)
-            {
-                game.RecommenderScore = activeFilter(game);
-            }
+            List<Tuple<int, double>> valueTuples = gamesToSort.Select(game => new Tuple<int, double>(game.SteamAppId, activeFilter(game))).ToList();
 
-            gamesToSort.Sort();
+            valueTuples.Sort((x, y) => x.Item2.CompareTo(y.Item2));
 
             Dictionary<int, double> returnDictionary = new Dictionary<int, double>();
-            double valueIncrease = 100 / gamesToSort.Count;
-            double value = 100;
+            double value = 1;
 
-            foreach (var game in gamesToSort)
+            foreach (var entry in valueTuples)
             {
-                returnDictionary.Add(game.SteamAppId, value);
-                value -= valueIncrease;
+                returnDictionary.Add(entry.Item1, value);
+                value++;
             }
 
             return returnDictionary;
