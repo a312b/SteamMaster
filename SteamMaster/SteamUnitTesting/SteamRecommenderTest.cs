@@ -15,20 +15,29 @@ using SteamSharpCore.steamSpy.models;
 using SteamSharpCore.steamStore.models;
 using SteamSharpCore.steamUser.models;
 using gameDatabase = DatabaseCore.Database;
-
+using GameRank;
 
 namespace SteamUnitTesting
 {
     [TestClass]
     public class SteamRecommenderTests
     {
+        #region Test Class Instances
+
         private readonly gameDatabase _database = new gameDatabase();
         private readonly SteamSharp _steamSharp = new SteamSharp("CA552B4A7A38C341BF5CE9F29B136A3C");
+        private readonly GRGameRank _gameRank = new GRGameRank();
+
+        #endregion
+
+
+        #region Database Tests
+
         [TestMethod]
         public void DatabaseGamesByIdRequestTest()
         {
             //Arrange 
-            List<int> testAppId = new List<int> { 240 };
+            List<int> testAppId = new List<int> {240};
             const string expected = "Counter-Strike: Source";
 
             //Act
@@ -38,6 +47,11 @@ namespace SteamUnitTesting
             string actual = userGameListFromIds[240].Title;
             Assert.AreEqual(expected, actual);
         }
+
+        #endregion
+
+
+        #region SteamSharp Tests
 
         [TestMethod]
         public void SteamSharpGameTimeListTest()
@@ -58,7 +72,7 @@ namespace SteamUnitTesting
         public void SteamSharpUserDataTest()
         {
             //Arrange
-            string[] idArray = { "76561198019106142" };
+            string[] idArray = {"76561198019106142"};
             const int excepted = 1262258157;
 
             //Act
@@ -84,6 +98,11 @@ namespace SteamUnitTesting
             Assert.AreEqual(excepted, actual);
         }
 
+        #endregion
+
+
+        #region GameRank Tests
+
         [TestMethod]
         public void RecommendedListTest()
         {
@@ -93,12 +112,22 @@ namespace SteamUnitTesting
             UserWorkClass user = new UserWorkClass(steamID);
             Dictionary<int, Game> allDatabaseGames = _database.FindAllGames();
             GRGameRank gameRank = new GRGameRank(allDatabaseGames, user.userListGameList);
-            
+
             //Act
             List<Game> actualRecommendedList = new List<Game>(gameRank.GetRankedGameList());
-            
+
             //Assert
             Assert.AreEqual(expected, actualRecommendedList[0].Title);
         }
+
+        [TestMethod]
+        public void UpdateGameRankTest()
+        {
+            
+        }
+        
+
+        #endregion
+
     }
 }

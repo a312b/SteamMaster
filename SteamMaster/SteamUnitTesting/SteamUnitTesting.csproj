@@ -88,6 +88,10 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\GameRank\GameRank.csproj">
+      <Project>{8ae4f059-243c-43d0-8469-37179e68c8c7}</Project>
+      <Name>GameRank</Name>
+    </ProjectReference>
     <ProjectReference Include="..\RecommenderSystemCore\RecommenderSystemCore.csproj">
       <Project>{44977c3e-d6df-4904-81ab-a914cdffb914}</Project>
       <Name>RecommenderSystemCore</Name>
