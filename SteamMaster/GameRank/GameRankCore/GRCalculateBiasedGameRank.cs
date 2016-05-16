@@ -29,7 +29,7 @@ namespace GameRank
         public GRCalculateGameRank CalculateGameRank { get; }
 
         private GRTagGameDictionaries _tagGameDictionaries;
-        private Dictionary<int, GRUserGame> _userGameDictionary;
+        private Dictionary<int, GRGame> _userGameDictionary;
         private readonly List<UserGameTime.Game> _userGames;
 
         #endregion
@@ -50,14 +50,14 @@ namespace GameRank
             BiasTagGameRank();
         }
 
-        private Dictionary<int, GRUserGame> GenerateUserGameDictionary()
+        private Dictionary<int, GRGame> GenerateUserGameDictionary()
         {
-            Dictionary<int, GRUserGame> userGameDictionary = new Dictionary<int, GRUserGame>();
+            Dictionary<int, GRGame> userGameDictionary = new Dictionary<int, GRGame>();
             foreach (UserGameTime.Game game in _userGames) //.Where(game => game.playtime_forever > 0))
             {
                 if (CalculateGameRank.Games.ContainsKey(game.appid))
                 {
-                    GRUserGame userGame = new GRUserGame(CalculateGameRank.Games[game.appid], game);
+                    GRGame userGame = CalculateGameRank.Games[game.appid];
                     userGameDictionary.Add(game.appid, userGame);
                     CalculateGameRank.Games.Remove(game.appid);
                 }
@@ -65,12 +65,12 @@ namespace GameRank
             return userGameDictionary;
         }
 
-        private GRTagGameDictionaries GenerateTagGameDictionaries(Dictionary<int, GRUserGame> userGameDictionary)
+        private GRTagGameDictionaries GenerateTagGameDictionaries(Dictionary<int, GRGame> userGameDictionary)
         {
             Database db = new Database();
-            Dictionary<int, Game> gameIDs =
+            Dictionary<int, Game> userGames =
                 db.FindGamesById(userGameDictionary.Values.Select(item => item.AppID).ToList());
-            GRTagGameDictionaries tagGameDictionaries = new GRTagGameDictionaries(gameIDs);
+            GRTagGameDictionaries tagGameDictionaries = new GRTagGameDictionaries(userGames);
 
             return tagGameDictionaries;
         }

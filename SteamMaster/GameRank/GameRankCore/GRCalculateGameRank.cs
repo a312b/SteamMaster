@@ -20,7 +20,7 @@ namespace GameRank
         #region Constructor
 
         public GRCalculateGameRank(GRTagGameDictionaries tagGameDictionaries, double dampingFactor = 0.25,
-            double convergence = 0.0001, int iterations = 100)
+            double convergence = 0.0001, int iterations = 20)
         {
             Games = tagGameDictionaries.GameDictionary;
             Tags = tagGameDictionaries.TagDictionary;

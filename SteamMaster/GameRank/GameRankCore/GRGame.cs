@@ -11,12 +11,12 @@ namespace GameRank
     {
         #region Constructor
 
-        public GRGame(int appID, List<string> tags, string title)
+        public GRGame(int appID, List<string> tags)
         {
             AppID = appID;
             Tags = tags;
             Outlinks = Tags.Count;
-            Title = title;
+            
             GameRank = 1; //Starting value for GameRank
         }
 
@@ -24,7 +24,7 @@ namespace GameRank
 
         #region Fields
 
-        public string Title { get; }
+        
         public int AppID { get; }
         public List<string> Tags { get; }
         public int Outlinks { get; }

@@ -36,27 +36,33 @@ namespace GameRank
 
         public void Start()
         {
-            InitializeTags();
-            InitializeGames();
+            InitializeTagsAndGames();
         }
 
-        private void InitializeTags()
+        /// <summary>
+        /// Initializes the tag and game dictionaries
+        /// </summary>
+        private void InitializeTagsAndGames()
         {
             List<string> blacklistedTags = GetBlacklistedTags();
-            //Iterates through all the tag lists in GameTagDictionary
-            //foreach (string tag in GameTagDictionary.Values.SelectMany(gameTagList => gameTagList))
+
             foreach (Game game in DatabaseGames.Values)
             {
-                foreach (string gameTag in game.Tags.Select(tag => tag.description))
+                List<string> tags = game.Tags.Select(tag => tag.description).ToList();
+                List<string> gameTags = new List<string>();
+                foreach (string tag in tags)
                 {
-                    if (blacklistedTags.Contains(gameTag)) continue;
-                    if (string.IsNullOrWhiteSpace(gameTag)) continue;
+                    if (blacklistedTags.Contains(tag)) continue;
+                    if (string.IsNullOrWhiteSpace(tag)) continue;
 
-                    if (TagDictionary.ContainsKey(gameTag))
-                        TagDictionary[gameTag].Outlinks++;
-                    else if (!TagDictionary.ContainsKey(gameTag))
-                        TagDictionary.Add(gameTag, new GRTag(gameTag));
+                    if (TagDictionary.ContainsKey(tag))
+                        TagDictionary[tag].Outlinks++;
+                    else if (!TagDictionary.ContainsKey(tag))
+                        TagDictionary.Add(tag, new GRTag(tag));
+
+                    gameTags.Add(tag);
                 }
+                GameDictionary.Add(game.SteamAppId, new GRGame(game.SteamAppId, gameTags));
             }
         }
 
@@ -82,32 +88,6 @@ namespace GameRank
             }
             reader.Close();
             return blacklistedTags;
-        }
-
-        private void InitializeGames()
-        {
-            //If a game contains at least one tag, genre or category, it is added to the game dictionary
-            foreach (var game in DatabaseGames)
-            {
-                List<string> tagList = GetGenreTagsAndCategories(game.Value);
-                if (tagList.Count > 0)
-                    GameDictionary.Add(game.Value.SteamAppId,
-                        new GRGame(game.Value.SteamAppId, tagList, game.Value.Title));
-            }
-        }
-
-        //Tags, genres and categories are added to a collective list henceforth referred to as tags
-        private List<string> GetGenreTagsAndCategories(Game game)
-        {
-            List<string> gameTags = new List<string>();
-            if (game.Tags != null)
-                gameTags.AddRange(game.Tags.Select(tag => tag.description));
-            if (game.Categories != null)
-                gameTags.AddRange(game.Categories.Select(category => category.description));
-            if (game.Genres != null)
-                gameTags.AddRange(game.Genres.Select(genre => genre.description));
-
-            return gameTags;
         }
 
         #endregion
