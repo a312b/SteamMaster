@@ -238,7 +238,8 @@ namespace SteamUI
 
         private void btnRecommend_Click(object sender, EventArgs e)
         {
-            if (string.IsNullOrWhiteSpace(steamIdTextBox.Text))
+            double steamId;
+            if (string.IsNullOrWhiteSpace(steamIdTextBox.Text) || !double.TryParse(steamIdTextBox.Text, out steamId))
             {
                 MessageBox.Show("Please enter a Steam64 ID");
             }
