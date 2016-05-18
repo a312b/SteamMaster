@@ -8,6 +8,7 @@ using System.Runtime.InteropServices;
 using System.Text;
 using System.Windows.Forms;
 using DatabaseCore.lib.converter.models;
+using DummyClassSolution;
 using SteamSharpCore.steamStore.models;
 using Timer = System.Timers.Timer;
 
@@ -111,14 +112,14 @@ namespace SteamUI
                 label105, label110, label115, label120, label125, label130, label135, label138, label143,
                 label148
             };
-            RichTextBox[] descriptionBoxes =
+            DescriptionBox[] descriptionBoxes =
             {
-                richTextBox1, richTextBox2, richTextBox3, richTextBox4, richTextBox5,
-                richTextBox6, richTextBox7, richTextBox8, richTextBox9, richTextBox10,
-                richTextBox11, richTextBox12, richTextBox13, richTextBox14, richTextBox15,
-                richTextBox16, richTextBox17, richTextBox18, richTextBox19, richTextBox20,
-                richTextBox21, richTextBox22, richTextBox23, richTextBox24, richTextBox25,
-                richTextBox26, richTextBox27, richTextBox28, richTextBox29, richTextBox30
+                descriptionBox1, descriptionBox2, descriptionBox3, descriptionBox4, descriptionBox5,
+                descriptionBox6, descriptionBox7, descriptionBox8, descriptionBox9, descriptionBox10,
+                descriptionBox11, descriptionBox12, descriptionBox13, descriptionBox14, descriptionBox15,
+                descriptionBox16, descriptionBox17, descriptionBox18, descriptionBox19, descriptionBox20,
+                descriptionBox21, descriptionBox22, descriptionBox23, descriptionBox24, descriptionBox25,
+                descriptionBox26, descriptionBox27, descriptionBox28, descriptionBox29, descriptionBox30
             };
 
             if (roundCount < gameLabels.Length)
@@ -179,7 +180,7 @@ namespace SteamUI
         //Resizes the TableLayoutPanels and makes sure the labels that are hidden are in the correct visible state.
         private void ResizeTablePanels(TableLayoutPanel sender)
         {
-            Size full = new Size(646, 164);
+            Size full = new Size(646, 204);
             Size regular = new Size(646, 104);
             sender.Size = sender.Size != full ? full : regular;
             Label[] hiddenLabels =
@@ -196,9 +197,9 @@ namespace SteamUI
                 TableLayoutPanel tpl = pictureBox.Parent as TableLayoutPanel;
                 tpl.SetRowSpan(pictureBox, tpl.GetRowSpan(pictureBox) == 3 ? 4 : 3);
             }
-            foreach (RichTextBox richTextBox in sender.Controls.OfType<RichTextBox>())
+            foreach (DescriptionBox descriptionBox in sender.Controls.OfType<DescriptionBox>())
             {
-                richTextBox.Visible = richTextBox.Visible == false;
+                descriptionBox.Visible = descriptionBox.Visible == false;
             }
             foreach (Button storeBtn in sender.Controls.OfType<Button>())
             {
@@ -292,7 +293,7 @@ namespace SteamUI
                 Label labelClick = sender as Label;
                 if (labelClick == null)
                 {
-                    RichTextBox textBoxClick = sender as RichTextBox;
+                    DescriptionBox textBoxClick = sender as DescriptionBox;
                     TableLayoutPanel textBoxTpl = textBoxClick.Parent as TableLayoutPanel;
                     return textBoxTpl;
                 }
