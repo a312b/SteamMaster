@@ -17,8 +17,8 @@ namespace DatabaseCore
 
         public Database()
         {
-            Mongo = new MongoDb("mongodb://localhost:27017", "SteamSharp", "Games");
-        }
+            Mongo = new MongoDb("mongodb://localhost:27017", "SteamSharp", "Games"); //Replace with ("mongodb://a312b:a312b@ds033123.mlab.com:33123/steamsharp", "steamsharp", "Games") for really SLOW but ONLINE database.
+        }                                                                               //Use only online database if program HAS to be portable
         public void InsertGame(SteamStoreGame game, SteamSpyData data)
         {
             Mongo.DbInsertGame(game, data, true);
