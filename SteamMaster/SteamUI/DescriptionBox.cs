@@ -11,7 +11,7 @@ namespace DummyClassSolution
     public class DescriptionBox : RichTextBox
     {
 
-        //// see http://social.msdn.microsoft.com/Forums/vstudio/en-US/ba339154-95b7-4e13-a2c0-32593cadb984/descriptionBox-vscrollbar?forum=vbgeneral
+        //// Source of idea https://social.msdn.microsoft.com/Forums/vstudio/en-US/ba339154-95b7-4e13-a2c0-32593cadb984/richtextbox-vscrollbar?forum=vbgeneral
         [DllImport("user32.dll")]
         private static extern IntPtr SendMessage(IntPtr hWnd, uint Msg, int wParam, int lParam);
         private uint WM_VSCROLL = 0x115;
