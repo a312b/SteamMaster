@@ -123,7 +123,7 @@ namespace RecommenderSystemCore.Controller
             double AvgPlayedForeverValue = 0;
             double AvgPlayTime2WeeksValue = 0;
             double Metacritic = 1;
-            double InputListValue = 1;
+            double InputListValue = 0;
 
             double active = MostOwnedValue + AvgPlayedForeverValue + AvgPlayTime2WeeksValue + Metacritic +
                             InputListValue;
@@ -142,22 +142,12 @@ namespace RecommenderSystemCore.Controller
                     score++;
                 }
 
-                //Dictionary<int, double> recommenderScoreDictionary = InputList.ToDictionary(game => game.SteamAppId, game => game.RecommenderScore);
-
-                //foreach (var game in InputList)
-                //{
-                //    game.RecommenderScore = 0;
-                //}
-
-              //  writeToFile(InputList, "pageRank");
-
                 GameFilterX StandardGameFilter = new GameFilterX();
                 PlayerGameFilterX PlayerGameRemoval = new PlayerGameFilterX();
 
 
                 StandardGameFilter.OwnerCount(MostOwnedValue);
                 InputList = StandardGameFilter.Execute(InputList);
-             //   writeToFile(InputList, "MostOwned");
 
                 StandardGameFilter.AvgPlayTimeForever(AvgPlayedForeverValue);
                 InputList = StandardGameFilter.Execute(InputList);
@@ -167,24 +157,12 @@ namespace RecommenderSystemCore.Controller
 
                 StandardGameFilter.MetaCritic(Metacritic);
                 InputList = StandardGameFilter.Execute(InputList);
-              //  writeToFile(InputList, "MetaCritic");
 
                 InputList = PlayerGameRemoval.Execute(InputList, User.DBGameList);
-
-                //foreach (var game in InputList)
-                //{
-                //    int appID = game.SteamAppId;
-                //    if (recommenderScoreDictionary.ContainsKey(appID))
-                //    {
-                //        game.RecommenderScore *= recommenderScoreDictionary[appID] * InputListValue;
-                //    }
-                //}
 
                 InputList.Sort();
                 #endregion
             }
-           
-       //     writeToFile(InputList, "End");
             return InputList;
         }
 
