@@ -44,7 +44,12 @@ namespace RecommenderSystemCore.Controller
             dbGames = RemoveDLCFromList(dbGames);
             GameRank = new GRGameRank(dbGames, User.userListGameList);
 
-            List<Game> RecommenderList = GameRank.GetRankedGameList(precalculations);
+            Debug.WriteLine(precalculations.Count);
+
+            List<Game> RecommenderList = precalculations.Count > 0
+                ? GameRank.GetRankedGameList(precalculations)
+                : GameRank.GetRankedGameList();
+
             RecommenderList = FilterManagement(RecommenderList, User);
             RecommenderList.Sort();
 
@@ -53,20 +58,28 @@ namespace RecommenderSystemCore.Controller
 
         private Dictionary<string, double> ReadFromFile()
         {
-            //File can be found in the main GameRank folder. Should be placed in your My Documents folder
-            DirectoryInfo fileFolder = new DirectoryInfo(Directory.GetCurrentDirectory()).Parent.Parent.Parent;
-            string path = fileFolder.FullName + @"\TagsAndRanks.txt";
-            StreamReader reader = new StreamReader(path);
             Dictionary<string, double> result = new Dictionary<string, double>();
-            while (!reader.EndOfStream)
+
+            //File should be in the main folder next to the solution file.
+            try
             {
-                string[] line = reader.ReadLine().Split(':');
-                string tag = line[0];
-                double tagGameRank = double.Parse(line[1]);
+                DirectoryInfo fileFolder = new DirectoryInfo(Directory.GetCurrentDirectory()).Parent.Parent.Parent;
+                string path = fileFolder.FullName + @"\TagsAndRanks.txt";
+                StreamReader reader = new StreamReader(path);
+                while (!reader.EndOfStream)
+                {
+                    string[] line = reader.ReadLine().Split(':');
+                    string tag = line[0];
+                    double tagGameRank = double.Parse(line[1]);
                 
-                result.Add(tag,tagGameRank);
+                    result.Add(tag,tagGameRank);
+                }
+                reader.Close();
             }
-            reader.Close();
+            catch (IOException e)
+            {
+                Debug.WriteLine(e.Message);
+            }
             return result;
 
         }
@@ -95,10 +108,10 @@ namespace RecommenderSystemCore.Controller
             string currentSegment = segment.Where(char.IsLetter).Aggregate("", (current, ch) => current + ch).ToLower();
             List<string> banList = new List<string>()
             {
-                "soundtrack",
-                "sdk",
-                "dlc",
-                "demo"
+                "soundtrack", //Not a game
+                "sdk", //Software development kit
+                "dlc", //Downloadable content
+                "demo" //Not a full game - Has the exact same tags as the actual game
             };
             return banList.Any(banWord => currentSegment.Contains(banWord));
         }
