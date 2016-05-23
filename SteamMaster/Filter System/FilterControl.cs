@@ -59,7 +59,7 @@ namespace Filter_System
                 #region FilterExecution
 
                 GameFilterX StandardGameFilter = new GameFilterX();
-                PlayerGameFilterX PlayerGameRemoval = new PlayerGameFilterX();
+                RemoveGamesFilter removeGamesRemoval = new RemoveGamesFilter();
 
 
                 StandardGameFilter.OwnerCount(MostOwnedValue);
@@ -74,7 +74,7 @@ namespace Filter_System
                 StandardGameFilter.MetaCritic(MetaCriticValue);
                 InputList = StandardGameFilter.Execute(InputList);
 
-                InputList = PlayerGameRemoval.Execute(InputList, userGames);
+                InputList = removeGamesRemoval.Execute(InputList, userGames);
 
                 InputList.Sort();
                 #endregion
