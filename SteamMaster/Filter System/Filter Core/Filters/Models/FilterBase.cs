@@ -20,23 +20,7 @@ namespace Filter_System.Filter_Core.Filters_2._0.Models
         }
 
 
-        private double _filterWeight;
-
-        public double FilterWeight // Used to adjust weight of the filter by setting the value between 0-1 - default is 1
-        {
-            get { return _filterWeight; }
-            set
-            {
-                if (value >= 0 && value <= 1)
-                {
-                    _filterWeight = value;
-                }
-                else
-                {
-                    throw new ArgumentException("Weight have to be between 0 and 1");
-                }
-            }
-        }
+        public double FilterWeight { get; set; } // Used to adjust weight of the filter by setting the value - default is 1
 
 
         public virtual List<Game> Execute(List<Game> gamesToSort)
@@ -55,6 +39,7 @@ namespace Filter_System.Filter_Core.Filters_2._0.Models
             return gamesToSort;
         }
 
+        //FilterSort is the method that sort the list of games. It is implemented in the classes inheriting from FilterBase
         protected abstract Dictionary<int, double> FilterSort(List<Game> gamesToSort);
     }
 }

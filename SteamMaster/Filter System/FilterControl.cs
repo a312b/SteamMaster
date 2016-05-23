@@ -33,8 +33,6 @@ namespace Filter_System
 
         public List<Game> ExecuteFiltering(List<Game> gamesToFilter, List<Game> userGames)
         {
-            if (GamesToFilterValue != 0)
-            {
                 gamesToFilter.Sort((x, y) => x.RecommenderScore.CompareTo(y.RecommenderScore));
 
                 int score = 1;
@@ -43,14 +41,6 @@ namespace Filter_System
                     game.RecommenderScore = score*GamesToFilterValue;
                     score++;
                 }
-            }
-            else
-            {
-                foreach (var game in gamesToFilter)
-                {
-                    game.RecommenderScore = 0;
-                }
-            }
 
             return FilterManagement(gamesToFilter, userGames);
         }
