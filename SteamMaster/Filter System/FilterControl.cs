@@ -13,14 +13,14 @@ namespace Filter_System
         public FilterControl()
         {
             //Standard settings are intiated
-            RecommendationListValue = 1;
+            GamesToFilterValue = 1;
             MostOwnedValue = 1;
             AvgPlayedForeverValue = 0;
             AvgPlayTime2WeeksValue = 0;
             MetaCriticValue = 1;
         }
 
-        public double RecommendationListValue { get; set; }
+        public double GamesToFilterValue { get; set; }
 
         public double MostOwnedValue { get; set; }
 
@@ -31,28 +31,18 @@ namespace Filter_System
         public double MetaCriticValue { get; set; }
 
 
-        public List<Game> ExecuteFiltering(List<Game> recommendationList, List<Game> userGames)
+        public List<Game> ExecuteFiltering(List<Game> gamesToFilter, List<Game> userGames)
         {
-            if (RecommendationListValue != 0)
-            {
-                recommendationList.Sort((x, y) => x.RecommenderScore.CompareTo(y.RecommenderScore));
+                gamesToFilter.Sort((x, y) => x.RecommenderScore.CompareTo(y.RecommenderScore));
 
                 int score = 1;
-                foreach (var game in recommendationList)
+                foreach (var game in gamesToFilter)
                 {
-                    game.RecommenderScore = score*RecommendationListValue;
+                    game.RecommenderScore = score*GamesToFilterValue;
                     score++;
                 }
-            }
-            else
-            {
-                foreach (var game in recommendationList)
-                {
-                    game.RecommenderScore = 0;
-                }
-            }
 
-            return FilterManagement(recommendationList, userGames);
+            return FilterManagement(gamesToFilter, userGames);
         }
 
 

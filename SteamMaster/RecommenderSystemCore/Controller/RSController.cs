@@ -33,12 +33,7 @@ namespace RecommenderSystemCore.Controller
 
         private Database database { get; }
 
-        SteamTheme UI { get; }
-
-        public void Start()
-        {
-            UI.Show(); 
-        }
+        private SteamTheme UI { get; }
 
         private List<Game> ExecuteRecommendation(string steamID)
         {
