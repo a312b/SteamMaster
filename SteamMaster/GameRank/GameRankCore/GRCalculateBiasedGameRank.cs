@@ -12,7 +12,7 @@ namespace GameRank
     ///     frequency of each tag in the users game library.
     ///     Afterwards the rank of each game is updated accordingly
     /// </summary>
-    class GRCalculateBiasedGameRank
+    internal class GRCalculateBiasedGameRank
     {
         #region Constructor
 

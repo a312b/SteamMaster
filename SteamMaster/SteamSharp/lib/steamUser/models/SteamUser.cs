@@ -4,6 +4,8 @@ namespace SteamSharpCore.steamUser.models
 {
     public class SteamUser
     {
+        public List<Player> players { get; set; }
+
         public class Player
         {
             public string steamid { get; set; }
@@ -24,8 +26,5 @@ namespace SteamSharpCore.steamUser.models
             public string locstatecode { get; set; }
             public int loccityid { get; set; }
         }
-
-        public List<Player> players { get; set; }
-
     }
 }

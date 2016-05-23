@@ -1,11 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Collections.Generic;
 using DatabaseCore.lib.converter.models;
 using Filter_System.Filter_Core.Filters_2._0.Models;
-using SteamSharpCore.steamUser.models;
 
 namespace Filter_System.Filter_Core.Filters_2._0
 {
@@ -60,6 +55,5 @@ namespace Filter_System.Filter_Core.Filters_2._0
             FilterWeight = 0;
             return gamesToSort;
         }
-
     }
 }

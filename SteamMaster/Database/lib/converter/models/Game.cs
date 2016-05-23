@@ -47,7 +47,7 @@ namespace DatabaseCore.lib.converter.models
         public List<SteamStoreGame.Tag> Tags { get; set; }
 
         public List<int> DLC { get; set; }
-        
+
         public int MetaCritic { get; set; }
 
         public double RecommenderScore { get; set; }

@@ -1,5 +1,4 @@
 ﻿using System.Collections.Generic;
-using System.Diagnostics;
 using System.Linq;
 using DatabaseCore.lib.converter.models;
 using SteamSharpCore.steamUser.models;

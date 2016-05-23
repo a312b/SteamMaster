@@ -4,7 +4,7 @@ using System.Linq;
 
 namespace GameRank
 {
-    class GRCalculateGameRank
+    internal class GRCalculateGameRank
     {
         #region Fields
 
@@ -84,7 +84,7 @@ namespace GameRank
                 //The game's new GameRank is the sum of the GameRank of its tags
                 foreach (string tag in game.Tags)
                 {
-                    if (this.Tags.ContainsKey(tag)) //Game may contain redundant tags that have been removed
+                    if (Tags.ContainsKey(tag)) //Game may contain redundant tags that have been removed
                         game.GameRank += Tags[tag].GameRank;
                 }
             }

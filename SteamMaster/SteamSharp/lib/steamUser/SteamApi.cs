@@ -7,13 +7,14 @@ namespace SteamSharpCore.steamUser
 {
     internal class SteamApi : RestRequestBase
     {
-        private string SteamDelveoperKey { get; }
-
         public SteamApi(string steamKey)
         {
             SteamDelveoperKey = steamKey;
             BaseUrl = " http://api.steampowered.com/";
         }
+
+        private string SteamDelveoperKey { get; }
+
         public SteamUser GetSteamUserData(string[] steamUserIds)
         {
             var idString = Join(",", steamUserIds); //Convert to a comma seperated string (This is the format required by the api)
@@ -37,6 +38,5 @@ namespace SteamSharpCore.steamUser
 
             return Execute<UserGameTime>(request);
         }
-        
     }
 }

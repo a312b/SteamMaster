@@ -1,8 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using DatabaseCore.lib.converter.models;
 using Filter_System.Filter_Core.Filters_2._0.Models;
 
@@ -10,6 +8,8 @@ namespace Filter_System.Filter_Core.Filters_2._0
 {
     public class GameFilterX : FilterBase
     {
+        private Func<Game, double> activeFilter; //Change the activeFilter by executing one of the methods for it. Standard is set for OwnerCount.
+
         public GameFilterX()
         {
             OwnerCount(1);
@@ -43,8 +43,6 @@ namespace Filter_System.Filter_Core.Filters_2._0
             FilterWeight = filterWeight;
             return Execute(gamesToSort);
         }
-
-        private Func<Game, double> activeFilter; //Change the activeFilter by executing one of the methods for it. Standard is set for OwnerCount.
 
         public void AvgPlayTime2Weeks(double filterWeight)
         {

@@ -22,23 +22,22 @@ namespace GameRank
 
         #endregion
 
+        #region Methods
+
+        public int CompareTo(GRGame other)
+        {
+            return other.GameRank.CompareTo(GameRank);
+        }
+
+        #endregion
+
         #region Fields
 
-        
         public int AppID { get; }
         public List<string> Tags { get; }
         public int Outlinks { get; }
         //public Dictionary<string, int>  
         public double GameRank { get; set; }
-
-        #endregion
-
-        #region Methods
-
-        public int CompareTo(GRGame other)
-        {
-            return other.GameRank.CompareTo(this.GameRank);
-        }
 
         #endregion
     }

@@ -1,7 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.IO;
-using System.Linq;
 using System.Text.RegularExpressions;
 using DatabaseCore.lib.converter.models;
 using MongoDB.Driver;
@@ -12,11 +10,6 @@ namespace DatabaseCore.lib
 {
     internal class MongoDb
     {
-        private MongoClient Client { get; }
-        private IMongoDatabase Database { get; }
-        private IMongoCollection<Game> Collection { get; } 
-        private IMongoCollection<SteamStoreGame> SSGCollection { get; }
-
         public MongoDb(string connectionString, string database, string collection)
         {
             Client = new MongoClient(connectionString);
@@ -24,6 +17,15 @@ namespace DatabaseCore.lib
             Collection = Database.GetCollection<Game>(collection);
             SSGCollection = Database.GetCollection<SteamStoreGame>("SteamStoreCollection");
         }
+
+        private MongoClient Client { get; }
+        private IMongoDatabase Database { get; }
+        private IMongoCollection<Game> Collection { get; }
+        private IMongoCollection<SteamStoreGame> SSGCollection { get; }
+
+
+        public Dictionary<string, double> TagRankDictionary { get; set; }
+
         public async void DbInsertGame(SteamStoreGame storeGame, SteamSpyData steamSpy, bool convertToDBGame)
         {
             if (convertToDBGame)
@@ -74,7 +76,6 @@ namespace DatabaseCore.lib
             }
 
         }
-        
 
 
         public async void DbInsertGameNoPrice(SteamStoreGame storeGame, SteamSpyData steamSpy)
@@ -121,9 +122,6 @@ namespace DatabaseCore.lib
         }
 
 
-        public Dictionary<string, double> TagRankDictionary { get; set; }
-
-
         public List<Game> DbFindGameByFilter(FilterDefinition<Game> filter )
         {
             var result = Collection.Find(filter).ToList();
@@ -135,6 +133,5 @@ namespace DatabaseCore.lib
 
             Collection.DeleteOne(filter);
         }
-       
     }
 }

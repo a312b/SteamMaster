@@ -10,6 +10,7 @@ namespace SteamSharpCore.steamSpy
         {
             BaseUrl = "http://www.steamspy.com/api.php";
         }
+
         public SteamSpyData GetSteamSpyDataById(string steamId)
         {
             var request = new RestRequest();
