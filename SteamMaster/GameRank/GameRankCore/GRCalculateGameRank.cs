@@ -44,7 +44,7 @@ namespace GameRank
         #endregion
 
         #region Methods
-         
+        
         public void Start()
         {
             double currentIteration = Games.Values.Sum(game => game.GameRank);
@@ -94,7 +94,11 @@ namespace GameRank
         //Other tags that we have deemed redundant have also been removed.
 
 
-        //This is where the magic happens
+        /// <summary>
+        /// This is where the magic happens
+        /// </summary>
+        /// <param name="tag"></param>
+        /// <returns></returns>
         private double ComputeGameRank(GRTag tag)
         {
             //The first fraction is the random teleportation variable
