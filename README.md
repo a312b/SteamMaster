@@ -16,7 +16,7 @@ Setup batch files are included in the Mongo folder. The batch files assume you i
 ## How to setup:
 If you are running the database for the first time, the database needs to be restored.
 
-Simply run MongoRestore.bat and it should take care of everything. The database it generates takes up roughly 300mB of disk space.
+Simply run MongoSetup.bat and it should take care of everything. The database it generates takes up roughly 300mB of disk space.
 
 If you need to run the database again, simply run MongoStart.bat
 
