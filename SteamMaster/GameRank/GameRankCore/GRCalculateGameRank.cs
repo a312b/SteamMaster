@@ -44,7 +44,7 @@ namespace GameRank
         #endregion
 
         #region Methods
-
+         
         public void Start()
         {
             double currentIteration = Games.Values.Sum(game => game.GameRank);
