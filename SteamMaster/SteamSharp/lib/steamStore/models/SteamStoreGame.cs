@@ -5,6 +5,9 @@ namespace SteamSharpCore.steamStore.models
     //This is the model for the data provided by the steam store api. The model is used by the serializer
     public class SteamStoreGame
     {
+        public bool succes { get; set; }
+
+        public Data data { get; set; }
 
         public class PcRequirements
         {
@@ -175,10 +178,5 @@ namespace SteamSharpCore.steamStore.models
             public SupportInfo support_info { get; set; }
             public string background { get; set; }
         }
-
-        public bool succes { get; set; }
-
-        public Data data { get; set; }
-
     }
 }

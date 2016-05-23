@@ -4,7 +4,7 @@ using System.Linq;
 
 namespace GameRank
 {
-    class GRCalculateGameRank
+    internal class GRCalculateGameRank
     {
         #region Fields
 
@@ -44,7 +44,7 @@ namespace GameRank
         #endregion
 
         #region Methods
-
+        
         public void Start()
         {
             double currentIteration = Games.Values.Sum(game => game.GameRank);
@@ -74,8 +74,9 @@ namespace GameRank
             }
         }
 
-
-        //Here the games GameRanks are updated after finished iterations
+        /// <summary>
+        /// Here the games GameRanks are updated after finished iterations 
+        /// </summary>
         public void UpdateGameRanks()
         {
             foreach (GRGame game in Games.Values)
@@ -84,7 +85,7 @@ namespace GameRank
                 //The game's new GameRank is the sum of the GameRank of its tags
                 foreach (string tag in game.Tags)
                 {
-                    if (this.Tags.ContainsKey(tag)) //Game may contain redundant tags that have been removed
+                    if (Tags.ContainsKey(tag)) //Game may contain redundant tags that have been removed
                         game.GameRank += Tags[tag].GameRank;
                 }
             }
@@ -94,7 +95,11 @@ namespace GameRank
         //Other tags that we have deemed redundant have also been removed.
 
 
-        //This is where the magic happens
+        /// <summary>
+        /// This is where the magic happens
+        /// </summary>
+        /// <param name="tag"></param>
+        /// <returns></returns>
         private double ComputeGameRank(GRTag tag)
         {
             //The first fraction is the random teleportation variable

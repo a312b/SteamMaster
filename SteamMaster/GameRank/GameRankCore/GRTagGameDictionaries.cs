@@ -1,5 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using DatabaseCore.lib.converter.models;
@@ -13,7 +12,7 @@ namespace GameRank
     ///     which decides their position in the tag vector that is assigned to each game.
     ///     The instance of this class is then passed to GRCalculateGameRank.
     /// </summary>
-    class GRTagGameDictionaries
+    internal class GRTagGameDictionaries
     {
         #region Constructor
 

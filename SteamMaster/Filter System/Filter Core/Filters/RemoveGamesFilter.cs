@@ -1,24 +1,14 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Collections.Generic;
 using DatabaseCore.lib.converter.models;
 using Filter_System.Filter_Core.Filters_2._0.Models;
-using SteamSharpCore.steamUser.models;
 
 namespace Filter_System.Filter_Core.Filters_2._0
 {
-    public class PlayerGameFilterX : FilterBase
+    public class RemoveGamesFilter : FilterBase
     {
-        public PlayerGameFilterX()
+        public RemoveGamesFilter()
         {
             FilterWeight = 0;
-        }
-
-        public PlayerGameFilterX(double filterWeight) : base(filterWeight)
-        {
-            
         }
 
         private List<Game> UserGames { get; set; }
@@ -63,8 +53,7 @@ namespace Filter_System.Filter_Core.Filters_2._0
         public override List<Game> Execute(List<Game> gamesToSort)
         {
             FilterWeight = 0;
-            return Execute(gamesToSort, new List<Game>());
+            return gamesToSort;
         }
-
     }
 }

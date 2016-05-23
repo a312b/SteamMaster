@@ -5,7 +5,7 @@ namespace GameRank
     /// <summary>
     ///     This class contains the necessary information for tags for calculating their individual GameRank
     /// </summary>
-    class GRTag : IComparable<GRTag>
+    internal class GRTag : IComparable<GRTag>
     {
         #region Constructor
 
@@ -22,7 +22,7 @@ namespace GameRank
 
         public int CompareTo(GRTag other)
         {
-            return other.GameRank.CompareTo(this.GameRank);
+            return other.GameRank.CompareTo(GameRank);
         }
 
         #endregion

@@ -1,5 +1,4 @@
 ﻿using System.Collections.Generic;
-using System.Linq;
 using DatabaseCore.lib;
 using DatabaseCore.lib.converter.models;
 using MongoDB.Driver;
@@ -13,18 +12,19 @@ namespace DatabaseCore
     /// </summary>
     public class Database
     {
-        private MongoDb Mongo { get; }
-
         public Database()
         {
             Mongo = new MongoDb("mongodb://localhost:27017", "SteamSharp", "Games"); //Replace with ("mongodb://a312b:a312b@ds033123.mlab.com:33123/steamsharp", "steamsharp", "Games") for really SLOW but ONLINE database.
-        }                                                                               //Use only online database if program HAS to be portable
+        } //Use only online database if program HAS to be portable
+        private MongoDb Mongo { get; }
+
         public void InsertGame(SteamStoreGame game, SteamSpyData data)
         {
             Mongo.DbInsertGame(game, data, true);
             Mongo.DbInsertGame(game, data, false);
 
         }
+
         public void InsertGameNoPrice(SteamStoreGame game, SteamSpyData data)
         {
             Mongo.DbInsertGameNoPrice(game, data);
@@ -47,6 +47,7 @@ namespace DatabaseCore
 
             return returnDictionary;
         }
+
         public List<Game> FindAllGamesList()
         {
             var filter = Builders<Game>.Filter.Empty;

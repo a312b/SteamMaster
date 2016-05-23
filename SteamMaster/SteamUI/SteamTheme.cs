@@ -30,6 +30,7 @@ namespace SteamUI
 
         [DllImport("User32.dll")]
         public static extern bool ReleaseCapture();
+
         [DllImport("User32.dll")]
         public static extern int SendMessage(IntPtr hWnd, int msg, int wParam, int lParam);
 
@@ -128,7 +129,7 @@ namespace SteamUI
                 gameLabels[roundCount].Visible = true;
 
                 if (game.Developer == null || game.Developer.Count <= 0)
-                    game.Developer = new List<string>() {"No Developer"};
+                    game.Developer = new List<string> {"No Developer"};
                 foreach (string developer in game.Developer)
                     SB.Append(developer + ", ");
 

@@ -1,12 +1,8 @@
-﻿using System;
-using System.Collections;
-using System.Collections.Generic;
-using System.IO;
-using System.Linq;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
-using SteamSharpCore;
+﻿using System.Collections.Generic;
 using DatabaseCore.lib.converter.models;
 using GameRank;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
+using SteamSharpCore;
 using SteamSharpCore.steamSpy.models;
 using SteamSharpCore.steamUser.models;
 using gameDatabase = DatabaseCore.Database;
@@ -16,14 +12,6 @@ namespace SteamUnitTesting
     [TestClass]
     public class SteamRecommenderTests
     {
-        #region Test Class Instances
-
-        private readonly gameDatabase _database = new gameDatabase();
-        private readonly SteamSharp _steamSharp = new SteamSharp("CA552B4A7A38C341BF5CE9F29B136A3C");
-
-        #endregion
-
-
         #region Database Tests
 
         [TestMethod]
@@ -43,6 +31,33 @@ namespace SteamUnitTesting
 
         #endregion
 
+        #region GameRank Tests
+
+        [TestMethod]
+        public void RecommendedListTest()
+        {
+            //Arrange
+            const string expected = "Team Fortress 2";
+            string steamID = "76561198052052843";
+            List<UserGameTime.Game> userGameList = _steamSharp.SteamUserGameTimeListById(steamID);
+            Dictionary<int, Game> allDatabaseGames = _database.FindAllGames();
+            GRGameRank gameRank = new GRGameRank(allDatabaseGames, userGameList);
+
+            //Act
+            List<Game> actualRecommendedList = new List<Game>(gameRank.GetRankedGameList());
+
+            //Assert
+            Assert.AreEqual(expected, actualRecommendedList[0].Title);
+        }
+
+        #endregion
+
+        #region Test Class Instances
+
+        private readonly gameDatabase _database = new gameDatabase();
+        private readonly SteamSharp _steamSharp = new SteamSharp("CA552B4A7A38C341BF5CE9F29B136A3C");
+
+        #endregion
 
         #region SteamSharp Tests
 
@@ -92,27 +107,5 @@ namespace SteamUnitTesting
         }
 
         #endregion
-
-
-        #region GameRank Tests
-
-        [TestMethod]
-        public void RecommendedListTest()
-        {
-            //Arrange
-            const string expected = "Team Fortress 2";
-            string steamID = "76561198052052843";
-            List<UserGameTime.Game> userGameList = _steamSharp.SteamUserGameTimeListById(steamID);
-            Dictionary<int, Game> allDatabaseGames = _database.FindAllGames();
-            GRGameRank gameRank = new GRGameRank(allDatabaseGames, userGameList);
-
-            //Act
-            List<Game> actualRecommendedList = new List<Game>(gameRank.GetRankedGameList());
-
-            //Assert
-            Assert.AreEqual(expected, actualRecommendedList[0].Title);
-        }
-        #endregion
-
     }
 }

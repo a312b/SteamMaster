@@ -13,19 +13,19 @@ using SteamUI;
 
 namespace RecommenderSystemCore.Controller
 {
-    class RSController
+    internal class RSController
     {
+        private readonly SteamSharp sharpCore;
+
         public RSController(SteamTheme ui)
         {
             database = new Database();
             UI = ui;
-
-            UI.RecommendButtonClick += ExecuteRecommendation;
             Filter = new FilterControl();
             sharpCore = new SteamSharp("DCBF7FBBE0781730FA846CEF21DBE6D5");
-        }
 
-        readonly SteamSharp sharpCore;
+            UI.RecommendButtonClick += ExecuteRecommendation;
+        }
 
         private FilterControl Filter { get;}
 
@@ -107,7 +107,7 @@ namespace RecommenderSystemCore.Controller
         private bool CheckSegment(string segment)
         {
             string currentSegment = segment.Where(char.IsLetter).Aggregate("", (current, ch) => current + ch).ToLower();
-            List<string> banList = new List<string>()
+            List<string> banList = new List<string>
             {
                 "soundtrack", //Not a game
                 "sdk", //Software development kit
