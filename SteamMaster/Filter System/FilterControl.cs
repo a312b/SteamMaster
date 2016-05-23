@@ -31,14 +31,14 @@ namespace Filter_System
         public double MetaCriticValue { get; set; }
 
 
-        public List<Game> ExecuteFiltering(List<Game> recommendationList, List<Game> userGames)
+        public List<Game> ExecuteFiltering(List<Game> gamesToFilter, List<Game> userGames)
         {
             if (RecommendationListValue != 0)
             {
-                recommendationList.Sort((x, y) => x.RecommenderScore.CompareTo(y.RecommenderScore));
+                gamesToFilter.Sort((x, y) => x.RecommenderScore.CompareTo(y.RecommenderScore));
 
                 int score = 1;
-                foreach (var game in recommendationList)
+                foreach (var game in gamesToFilter)
                 {
                     game.RecommenderScore = score*RecommendationListValue;
                     score++;
@@ -46,13 +46,13 @@ namespace Filter_System
             }
             else
             {
-                foreach (var game in recommendationList)
+                foreach (var game in gamesToFilter)
                 {
                     game.RecommenderScore = 0;
                 }
             }
 
-            return FilterManagement(recommendationList, userGames);
+            return FilterManagement(gamesToFilter, userGames);
         }
 
 
