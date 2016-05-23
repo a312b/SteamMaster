@@ -74,8 +74,9 @@ namespace GameRank
             }
         }
 
-
-        //Here the games GameRanks are updated after finished iterations
+        /// <summary>
+        /// Here the games GameRanks are updated after finished iterations 
+        /// </summary>
         public void UpdateGameRanks()
         {
             foreach (GRGame game in Games.Values)
