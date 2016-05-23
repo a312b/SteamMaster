@@ -64,21 +64,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Filter Core\Filters 2.0\GameFilterX.cs" />
-    <Compile Include="Filter Core\Filters 2.0\Models\FilterBase.cs" />
-    <Compile Include="Filter Core\Filters 2.0\PlayerGameFilterX.cs" />
-    <Compile Include="Filter Core\Filters\DiversificationFilter.cs" />
-    <Compile Include="Filter Core\Filters\Filter Pre-Calculations\Models\AppWorkClass.cs" />
-    <Compile Include="Filter Core\Filters\Filter Pre-Calculations\Models\ListComparer.cs" />
-    <Compile Include="Filter Core\Filters\Filter Pre-Calculations\Models\UseFullMethods.cs" />
-    <Compile Include="Filter Core\Filters\Filter Pre-Calculations\Pre-Calculations.cs" />
-    <Compile Include="Filter Core\Filters\Filter Pre-Calculations\Models\TagReader.cs" />
-    <Compile Include="Filter Core\Filters\GameValueXFilter.cs" />
-    <Compile Include="Filter Core\Filters\FilterMerge.cs" />
-    <Compile Include="Filter Core\Filters\PlayerGameXFilter.cs" />
+    <Compile Include="Filter Core\Filters\GameFilterX.cs" />
+    <Compile Include="Filter Core\Filters\Models\FilterBase.cs" />
+    <Compile Include="Filter Core\Filters\PlayerGameFilterX.cs" />
+    <Compile Include="FilterControl.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Filter Core\Filters\Models\Filter.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

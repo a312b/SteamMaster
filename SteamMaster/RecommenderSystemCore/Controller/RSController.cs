@@ -5,9 +5,10 @@ using System.IO;
 using System.Linq;
 using DatabaseCore;
 using DatabaseCore.lib.converter.models;
-using Filter_System.Filter_Core.Filters_2._0;
+using Filter_System;
 using GameRank;
-using RecommenderSystemCore.User_Data_Handling.Models;
+using SteamSharpCore;
+using SteamSharpCore.steamUser.models;
 using SteamUI;
 
 namespace RecommenderSystemCore.Controller
@@ -20,14 +21,19 @@ namespace RecommenderSystemCore.Controller
             UI = ui;
 
             UI.RecommendButtonClick += ExecuteRecommendation;
-
+            Filter = new FilterControl();
+            sharpCore = new SteamSharp("DCBF7FBBE0781730FA846CEF21DBE6D5");
         }
+
+        readonly SteamSharp sharpCore;
+
+        private FilterControl Filter { get;}
 
         private GRGameRank GameRank { get; set; }
 
-        private Database database { get; set; }
+        private Database database { get; }
 
-        SteamTheme UI { get; set; }
+        SteamTheme UI { get; }
 
         public void Start()
         {
@@ -36,13 +42,13 @@ namespace RecommenderSystemCore.Controller
 
         private List<Game> ExecuteRecommendation(string steamID)
         {
-            Dictionary<string, double> precalculations = ReadFromFile(); //This should read from the database
-            UserWorkClass User = new UserWorkClass(steamID);
+            Dictionary<string, double> precalculations = ReadFromFile();
+            Tuple<List<Game>, List<UserGameTime.Game>> userData = LoadUserGames(steamID);
 
             Dictionary<int, Game> dbGames = database.FindAllGames();
             dbGames = RemoveGamesWithBlacklistedWords(dbGames);
             dbGames = RemoveDLCFromList(dbGames);
-            GameRank = new GRGameRank(dbGames, User.userListGameList);
+            GameRank = new GRGameRank(dbGames, userData.Item2);
 
             Debug.WriteLine(precalculations.Count);
 
@@ -50,7 +56,7 @@ namespace RecommenderSystemCore.Controller
                 ? GameRank.GetRankedGameList(precalculations)
                 : GameRank.GetRankedGameList();
 
-            RecommenderList = FilterManagement(RecommenderList, User);
+            RecommenderList = Filter.ExecuteFiltering(RecommenderList, userData.Item1);
             RecommenderList.Sort();
 
             return RecommenderList;
@@ -116,56 +122,6 @@ namespace RecommenderSystemCore.Controller
             return banList.Any(banWord => currentSegment.Contains(banWord));
         }
 
-        private List<Game> FilterManagement(List<Game> InputList, UserWorkClass User)
-        {
-            //Controls the weight of the filters
-            double MostOwnedValue = 1;
-            double AvgPlayedForeverValue = 0;
-            double AvgPlayTime2WeeksValue = 0;
-            double Metacritic = 1;
-            double InputListValue = 0;
-
-            double active = MostOwnedValue + AvgPlayedForeverValue + AvgPlayTime2WeeksValue + Metacritic +
-                            InputListValue;
-
-
-            if (active > 0)
-            {
-                #region FilterExecution
-
-                InputList.Sort((x, y) => x.RecommenderScore.CompareTo(y.RecommenderScore));
-
-                int score = 1;
-                foreach (var game in InputList)
-                {
-                    game.RecommenderScore = score * InputListValue;
-                    score++;
-                }
-
-                GameFilterX StandardGameFilter = new GameFilterX();
-                PlayerGameFilterX PlayerGameRemoval = new PlayerGameFilterX();
-
-
-                StandardGameFilter.OwnerCount(MostOwnedValue);
-                InputList = StandardGameFilter.Execute(InputList);
-
-                StandardGameFilter.AvgPlayTimeForever(AvgPlayedForeverValue);
-                InputList = StandardGameFilter.Execute(InputList);
-
-                StandardGameFilter.AvgPlayTime2Weeks(AvgPlayTime2WeeksValue);
-                InputList = StandardGameFilter.Execute(InputList);
-
-                StandardGameFilter.MetaCritic(Metacritic);
-                InputList = StandardGameFilter.Execute(InputList);
-
-                InputList = PlayerGameRemoval.Execute(InputList, User.DBGameList);
-
-                InputList.Sort();
-                #endregion
-            }
-            return InputList;
-        }
-
         public Dictionary<int, Game> RemoveDLCFromList(Dictionary<int, Game> gameDictionary)
         {
             List<int> gameDLCList = gameDictionary.SelectMany(game => game.Value.DLC).ToList();
@@ -181,21 +137,13 @@ namespace RecommenderSystemCore.Controller
             return gameDictionary;
         }
 
-        //public void writeToFile(List<Game> inputList, string fileName)
-        //{
-        //    DirectoryInfo fileFolder = new DirectoryInfo(Directory.GetCurrentDirectory());
-        //    string path = fileFolder.FullName;
-        //    StreamWriter writer = new StreamWriter(path + "\\" + fileName + ".txt", false);
+        private Tuple<List<Game>, List<UserGameTime.Game>> LoadUserGames(string steamID)
+        {
+            List<UserGameTime.Game> userGameList = sharpCore.SteamUserGameTimeListById(steamID);
+            List<int> UserGameIDs = userGameList.Select(game => game.appid).ToList();
+            List<Game> DBGameList = database.FindGamesById(UserGameIDs).Select(game => game.Value).ToList();
 
-        //    int i = 1;
-        //    foreach (var game in inputList)
-        //    {
-        //        writer.WriteLine($"{i} : {game.Title} : {game.RecommenderScore}");
-        //        i++;
-        //    }
-
-        //    writer.Close();
-        //}
-
+            return new Tuple<List<Game>, List<UserGameTime.Game>>(DBGameList, userGameList);
+        }
     }
 }

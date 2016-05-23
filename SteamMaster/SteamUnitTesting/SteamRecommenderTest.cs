@@ -6,8 +6,6 @@ using System.Linq;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using SteamSharpCore;
 using DatabaseCore.lib.converter.models;
-using RecommenderSystemCore;
-using RecommenderSystemCore.User_Data_Handling.Models;
 using GameRank;
 using SteamSharpCore.steamSpy.models;
 using SteamSharpCore.steamUser.models;
@@ -104,9 +102,9 @@ namespace SteamUnitTesting
             //Arrange
             const string expected = "Team Fortress 2";
             string steamID = "76561198052052843";
-            UserWorkClass user = new UserWorkClass(steamID);
+            List<UserGameTime.Game> userGameList = _steamSharp.SteamUserGameTimeListById(steamID);
             Dictionary<int, Game> allDatabaseGames = _database.FindAllGames();
-            GRGameRank gameRank = new GRGameRank(allDatabaseGames, user.userListGameList);
+            GRGameRank gameRank = new GRGameRank(allDatabaseGames, userGameList);
 
             //Act
             List<Game> actualRecommendedList = new List<Game>(gameRank.GetRankedGameList());
