@@ -45,9 +45,6 @@ namespace Filter_System
             return FilterManagement(gamesToFilter, userGames);
         }
 
-
-
-
         private List<Game> FilterManagement(List<Game> InputList, List<Game> userGames)
         {
 
