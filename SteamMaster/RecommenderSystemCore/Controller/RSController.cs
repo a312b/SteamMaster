@@ -19,10 +19,10 @@ namespace RecommenderSystemCore.Controller
         {
             database = new Database();
             UI = ui;
-
-            UI.RecommendButtonClick += ExecuteRecommendation;
             Filter = new FilterControl();
             sharpCore = new SteamSharp("DCBF7FBBE0781730FA846CEF21DBE6D5");
+
+            UI.RecommendButtonClick += ExecuteRecommendation;
         }
 
         readonly SteamSharp sharpCore;
